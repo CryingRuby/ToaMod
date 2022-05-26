@@ -1,0 +1,20 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Campfire cooking",
+    "xpReward": 0.0,
+    "cookingTime": 300,
+    "recipeRetstackSize": 1,
+    "group": "food",
+    "recipeShapeless": false,
+    "campfireCookingInputStack": {
+      "value": "CUSTOM:RawMutton"
+    },
+    "campfireCookingReturnStack": {
+      "value": "CUSTOM:CookedMutton"
+    },
+    "name": "rec_cooked_mutton",
+    "namespace": "mod"
+  }
+}

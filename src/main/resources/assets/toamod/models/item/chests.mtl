@@ -1,0 +1,21 @@
+newmtl Mat_0
+Ka 0.0 0.0 0.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+map_Kd toamod:blocks/chest_legendary
+Ns 100.0
+d 1.0
+newmtl Mat_1
+Ka 0.0 0.0 0.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+map_Kd toamod:blocks/chest_normal
+Ns 100.0
+d 1.0
+newmtl Mat_2
+Ka 0.0 0.0 0.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+map_Kd toamod:blocks/chest_epic
+Ns 100.0
+d 1.0

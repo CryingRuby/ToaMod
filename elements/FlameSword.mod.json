@@ -1,0 +1,33 @@
+{
+  "_fv": 28,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "hell_sword",
+    "customModelName": "Normal",
+    "name": "§5Flame Sword§r",
+    "specialInfo": [
+      "§7Rarity: §5Epic§r",
+      "§7Type: §9Sword§r"
+    ],
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 1,
+    "efficiency": 1.0,
+    "attackSpeed": 1.55,
+    "enchantability": 2,
+    "damageVsEntity": 7.5,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onCrafted": {
+      "name": "FlameSwordItemIsCrafted"
+    }
+  }
+}

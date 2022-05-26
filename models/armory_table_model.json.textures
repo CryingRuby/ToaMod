@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "armory_table_texture"
+      },
+      "name": "default"
+    }
+  }
+}

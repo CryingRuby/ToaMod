@@ -1,0 +1,57 @@
+{
+  "_fv": 28,
+  "_type": "item",
+  "definition": {
+    "renderType": 0,
+    "texture": "book",
+    "customModelName": "Normal",
+    "name": "Sharpness II",
+    "rarity": "COMMON",
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "stackSize": 1,
+    "enchantability": 0,
+    "useDuration": 0,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInfo": [
+      "§7Rarity: §fComman",
+      "§7Type: §9Enchantment Book§r",
+      "§7Sharpness II§r",
+      "§7Right Click to activate enchantment with §b20 magic dust§7.§r"
+    ],
+    "hasGlow": false,
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "EnchantableBookActivated"
+    },
+    "onRightClickedOnBlock": {
+      "name": "EnchantableBookActivated"
+    },
+    "onCrafted": {
+      "name": "BookSharpness2Crafted"
+    },
+    "hasDispenseBehavior": false,
+    "isFood": false,
+    "nutritionalValue": 0,
+    "saturation": 0.30000001192092896,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "eat"
+  }
+}

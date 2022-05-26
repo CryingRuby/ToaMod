@@ -1,0 +1,10 @@
+{
+  "group": "food",
+  "type": "minecraft:campfire_cooking",
+  "experience": 0,
+  "cookingtime": 210,
+  "ingredient": {
+    "item": "toamod:raw_turkey"
+  },
+  "result": "toamod:cooked_turkey"
+}

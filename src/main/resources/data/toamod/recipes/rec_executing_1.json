@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "toamod:cristal_shard"
+    },
+    "1": {
+      "item": "toamod:iron_ingot"
+    },
+    "2": {
+      "item": "toamod:cristal_shard"
+    },
+    "3": {
+      "item": "toamod:iron_ingot"
+    },
+    "4": {
+      "item": "toamod:coal"
+    },
+    "5": {
+      "item": "toamod:iron_ingot"
+    },
+    "6": {
+      "item": "toamod:cristal_shard"
+    },
+    "7": {
+      "item": "toamod:iron_ingot"
+    },
+    "8": {
+      "item": "toamod:cristal_shard"
+    }
+  },
+  "result": {
+    "item": "toamod:book_executing_1",
+    "count": 1
+  }
+}

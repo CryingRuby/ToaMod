@@ -1,0 +1,8 @@
+{
+  "parent": "toamod:custom/chest_legendary_model",
+  "textures": {
+    "all": "toamod:blocks/chest_legendary_texture",
+    "particle": "toamod:blocks/chest_legendary_texture",
+    "0": "toamod:blocks/chest_legendary_texture"
+  }
+}

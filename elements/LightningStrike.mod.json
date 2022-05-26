@@ -1,0 +1,20 @@
+{
+  "_fv": 28,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Lighting Strike",
+    "icon": "lightning_effect.png",
+    "color": {
+      "value": -15815688,
+      "falpha": 0.0
+    },
+    "isInstant": true,
+    "isBad": false,
+    "isBenefitical": false,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "LightningStrikeApplied"
+    }
+  }
+}

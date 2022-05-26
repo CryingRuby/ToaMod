@@ -1,0 +1,4736 @@
+{
+  "mod_elements": [
+    {
+      "name": "Cristal",
+      "type": "item",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cristal",
+      "path": "~/items"
+    },
+    {
+      "name": "CristalShard",
+      "type": "item",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cristal_shard",
+      "path": "~/items"
+    },
+    {
+      "name": "EnrichtedCristal",
+      "type": "item",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enrichted_cristal",
+      "path": "~/items"
+    },
+    {
+      "name": "Obsidian",
+      "type": "item",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "obsidian",
+      "path": "~/items"
+    },
+    {
+      "name": "RecCristalShard",
+      "type": "recipe",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_cristal_shard",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecCristal2",
+      "type": "recipe",
+      "sortid": 103,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_cristal_2",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecCristal1",
+      "type": "recipe",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_cristal_1",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecEnrichtedCristal",
+      "type": "recipe",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_enrichted_cristal",
+      "path": "~/recipes"
+    },
+    {
+      "name": "Coal",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coal",
+      "path": "~/items"
+    },
+    {
+      "name": "IronIngot",
+      "type": "item",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_ingot",
+      "path": "~/items"
+    },
+    {
+      "name": "GoldIngot",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gold_ingot",
+      "path": "~/items"
+    },
+    {
+      "name": "Jade",
+      "type": "item",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jade",
+      "path": "~/items"
+    },
+    {
+      "name": "GoldenHeart",
+      "type": "item",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "golden_heart",
+      "path": "~/items"
+    },
+    {
+      "name": "FieryHeart",
+      "type": "item",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fiery_heart",
+      "path": "~/items"
+    },
+    {
+      "name": "MagmaShard",
+      "type": "item",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magma_shard",
+      "path": "~/items"
+    },
+    {
+      "name": "EnrichtedMagmaShard",
+      "type": "item",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enrichted_magma_shard",
+      "path": "~/items"
+    },
+    {
+      "name": "CursedObsidian",
+      "type": "block",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_obsidian",
+      "path": "~/blocks"
+    },
+    {
+      "name": "Magma",
+      "type": "block",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magma",
+      "path": "~/blocks"
+    },
+    {
+      "name": "CoalOre",
+      "type": "block",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coal_ore",
+      "path": "~/blocks"
+    },
+    {
+      "name": "IronOre",
+      "type": "block",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_ore",
+      "path": "~/blocks"
+    },
+    {
+      "name": "GoldOre",
+      "type": "block",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gold_ore",
+      "path": "~/blocks"
+    },
+    {
+      "name": "JadeOre",
+      "type": "block",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jade_ore",
+      "path": "~/blocks"
+    },
+    {
+      "name": "LootMagma",
+      "type": "loottable",
+      "sortid": 106,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loot_magma",
+      "path": "~/loottables/blocks"
+    },
+    {
+      "name": "LootCursedObsidian",
+      "type": "loottable",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loot_cursed_obsidian",
+      "path": "~/loottables/blocks"
+    },
+    {
+      "name": "LootCoalOre",
+      "type": "loottable",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loot_coal_ore",
+      "path": "~/loottables/blocks"
+    },
+    {
+      "name": "LootIronOre",
+      "type": "loottable",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loot_iron_ore",
+      "path": "~/loottables/blocks"
+    },
+    {
+      "name": "LootGoldOre",
+      "type": "loottable",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loot_gold_ore",
+      "path": "~/loottables/blocks"
+    },
+    {
+      "name": "LootJadeOre",
+      "type": "loottable",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loot_jade_ore",
+      "path": "~/loottables/blocks"
+    },
+    {
+      "name": "LootCristalOre",
+      "type": "loottable",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loot_cristal_ore",
+      "path": "~/loottables/blocks"
+    },
+    {
+      "name": "CristalOre",
+      "type": "block",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cristal_ore",
+      "path": "~/blocks"
+    },
+    {
+      "name": "RecEnrichtedMagmaShard",
+      "type": "recipe",
+      "sortid": 113,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_enrichted_magma_shard",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecMagmaShard",
+      "type": "recipe",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_magma_shard",
+      "path": "~/recipes"
+    },
+    {
+      "name": "Executing",
+      "type": "enchantment",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "executing",
+      "path": "~/enchantments"
+    },
+    {
+      "name": "LifeSteel",
+      "type": "enchantment",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "life_steel",
+      "path": "~/enchantments"
+    },
+    {
+      "name": "Sharpness",
+      "type": "enchantment",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sharpness",
+      "path": "~/enchantments"
+    },
+    {
+      "name": "Protection",
+      "type": "enchantment",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "protection",
+      "path": "~/enchantments"
+    },
+    {
+      "name": "StickyFeet",
+      "type": "enchantment",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sticky_feet",
+      "path": "~/enchantments"
+    },
+    {
+      "name": "Spikes",
+      "type": "enchantment",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spikes",
+      "path": "~/enchantments"
+    },
+    {
+      "name": "CmdGamemaster",
+      "type": "command",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_gamemaster",
+      "path": "~/commands"
+    },
+    {
+      "name": "CristalSword",
+      "type": "tool",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cristal_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "StoneSword",
+      "type": "tool",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "WoodenSword",
+      "type": "tool",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "HardenedStoneSword",
+      "type": "tool",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hardened_stone_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "IronSword",
+      "type": "tool",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "GoldenSword",
+      "type": "tool",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "golden_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "Ignite",
+      "type": "enchantment",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ignite",
+      "path": "~/enchantments"
+    },
+    {
+      "name": "CmdGamemasterExecuted",
+      "type": "procedure",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_gamemaster_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Commands"
+    },
+    {
+      "name": "UpgradingTable",
+      "type": "block",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "upgrading_table",
+      "path": "~/blocks"
+    },
+    {
+      "name": "UpgradingTableCostCalcByRarity",
+      "type": "procedure",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "upgrading_table_cost_calc_by_rarity",
+      "metadata": {
+        "return_type": "number",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradingTableGui"
+    },
+    {
+      "name": "UpgradingTableGui",
+      "type": "gui",
+      "sortid": 125,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "upgrading_table_gui",
+      "path": "~/guis"
+    },
+    {
+      "name": "CmdGetMagicDustExecuted",
+      "type": "procedure",
+      "sortid": 126,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_get_magic_dust_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Commands"
+    },
+    {
+      "name": "GetMagicDust",
+      "type": "command",
+      "sortid": 127,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_magic_dust",
+      "path": "~/commands"
+    },
+    {
+      "name": "Egg",
+      "type": "item",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "egg",
+      "path": "~/items"
+    },
+    {
+      "name": "CristalSwordItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 128,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cristal_sword_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "WoodenSwordItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 129,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_sword_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "StoneSwordItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 130,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_sword_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "HardenedStoneSwordItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 131,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hardened_stone_sword_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "IronSwordItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 132,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_sword_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "ScrollLightningStrike",
+      "type": "item",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_lightning_strike",
+      "path": "~/items"
+    },
+    {
+      "name": "ScrollWeakness",
+      "type": "item",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_weakness",
+      "path": "~/items"
+    },
+    {
+      "name": "ScrollBerserk",
+      "type": "item",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_berserk",
+      "path": "~/items"
+    },
+    {
+      "name": "ChestNormalGui",
+      "type": "gui",
+      "sortid": 133,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_normal_gui",
+      "path": "~/guis"
+    },
+    {
+      "name": "ChestEpicGui",
+      "type": "gui",
+      "sortid": 134,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_epic_gui",
+      "path": "~/guis"
+    },
+    {
+      "name": "BookExecuting1Crafted",
+      "type": "procedure",
+      "sortid": 135,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_1_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "EnchtantedBook",
+      "type": "item",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enchtanted_book",
+      "path": "~/items"
+    },
+    {
+      "name": "EnchantableBookActivated",
+      "type": "procedure",
+      "sortid": 136,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enchantable_book_activated",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookExecuting1",
+      "type": "item",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_1",
+      "path": "~/items"
+    },
+    {
+      "name": "RecExecuting1",
+      "type": "recipe",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_executing_1",
+      "path": "~/recipes"
+    },
+    {
+      "name": "BookExecuting2Crafted",
+      "type": "procedure",
+      "sortid": 138,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_2_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookExecuting3Crafted",
+      "type": "procedure",
+      "sortid": 139,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_3_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookExecuting4Crafted",
+      "type": "procedure",
+      "sortid": 140,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_4_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookExecuting5Crafted",
+      "type": "procedure",
+      "sortid": 141,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_5_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookExecuting2",
+      "type": "item",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_2",
+      "path": "~/items"
+    },
+    {
+      "name": "BookExecuting3",
+      "type": "item",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_3",
+      "path": "~/items"
+    },
+    {
+      "name": "BookExecuting4",
+      "type": "item",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_4",
+      "path": "~/items"
+    },
+    {
+      "name": "BookExecuting5",
+      "type": "item",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_executing_5",
+      "path": "~/items"
+    },
+    {
+      "name": "RecExecuting2",
+      "type": "recipe",
+      "sortid": 142,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_executing_2",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecExecuting3",
+      "type": "recipe",
+      "sortid": 143,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_executing_3",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecExecuting4",
+      "type": "recipe",
+      "sortid": 144,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_executing_4",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecExecuting5",
+      "type": "recipe",
+      "sortid": 145,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_executing_5",
+      "path": "~/recipes"
+    },
+    {
+      "name": "BookLifesteel1",
+      "type": "item",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_lifesteel_1",
+      "path": "~/items"
+    },
+    {
+      "name": "BookLifesteel2",
+      "type": "item",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_lifesteel_2",
+      "path": "~/items"
+    },
+    {
+      "name": "BookLifesteel3",
+      "type": "item",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_lifesteel_3",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness1",
+      "type": "item",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_1",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness2",
+      "type": "item",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_2",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness3",
+      "type": "item",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_3",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness4",
+      "type": "item",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_4",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness5",
+      "type": "item",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_5",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness6",
+      "type": "item",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_6",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness7",
+      "type": "item",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_7",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness8",
+      "type": "item",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_8",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness9",
+      "type": "item",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_9",
+      "path": "~/items"
+    },
+    {
+      "name": "BookSharpness10",
+      "type": "item",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_10",
+      "path": "~/items"
+    },
+    {
+      "name": "BookLifesteel1Crafted",
+      "type": "procedure",
+      "sortid": 146,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_lifesteel_1_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookLifesteel2Crafted",
+      "type": "procedure",
+      "sortid": 147,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_lifesteel_2_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookLifesteel3Crafted",
+      "type": "procedure",
+      "sortid": 148,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_lifesteel_3_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness1Crafted",
+      "type": "procedure",
+      "sortid": 149,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_1_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness2Crafted",
+      "type": "procedure",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_2_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness3Crafted",
+      "type": "procedure",
+      "sortid": 151,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_3_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness4Crafted",
+      "type": "procedure",
+      "sortid": 152,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_4_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness5Crafted",
+      "type": "procedure",
+      "sortid": 153,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_5_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness6Crafted",
+      "type": "procedure",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_6_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness7Crafted",
+      "type": "procedure",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_7_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness8Crafted",
+      "type": "procedure",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_8_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness9Crafted",
+      "type": "procedure",
+      "sortid": 157,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_9_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "BookSharpness10Crafted",
+      "type": "procedure",
+      "sortid": 158,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_sharpness_10_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradeBooks"
+    },
+    {
+      "name": "ChestNormal",
+      "type": "block",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_normal",
+      "path": "~/blocks"
+    },
+    {
+      "name": "ChestEpic",
+      "type": "block",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_epic",
+      "path": "~/blocks"
+    },
+    {
+      "name": "ChestRightClicked",
+      "type": "procedure",
+      "sortid": 159,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures"
+    },
+    {
+      "name": "WoodenKey",
+      "type": "item",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_key",
+      "path": "~/items"
+    },
+    {
+      "name": "SilverKey",
+      "type": "item",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "silver_key",
+      "path": "~/items"
+    },
+    {
+      "name": "GoldenKey",
+      "type": "item",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "golden_key",
+      "path": "~/items"
+    },
+    {
+      "name": "ChestPlaced",
+      "type": "procedure",
+      "sortid": 160,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_placed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures"
+    },
+    {
+      "name": "ChestLegendary",
+      "type": "block",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_legendary",
+      "path": "~/blocks"
+    },
+    {
+      "name": "ChestParticleCondition",
+      "type": "procedure",
+      "sortid": 161,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_particle_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures"
+    },
+    {
+      "name": "ChestLegendaryGui",
+      "type": "gui",
+      "sortid": 162,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chest_legendary_gui",
+      "path": "~/guis"
+    },
+    {
+      "name": "CorItemRightClicked",
+      "type": "procedure",
+      "sortid": 163,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cor_item_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures"
+    },
+    {
+      "name": "Cor",
+      "type": "item",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cor",
+      "path": "~/items"
+    },
+    {
+      "name": "OreRespawnStone",
+      "type": "block",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ore_respawn_stone",
+      "path": "~/blocks"
+    },
+    {
+      "name": "CursedObsidianDestroyed",
+      "type": "procedure",
+      "sortid": 164,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cursed_obsidian_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/OreRespawn"
+    },
+    {
+      "name": "MagmaDestroyed",
+      "type": "procedure",
+      "sortid": 165,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magma_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/OreRespawn"
+    },
+    {
+      "name": "CoalOreDestroyed",
+      "type": "procedure",
+      "sortid": 166,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coal_ore_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/OreRespawn"
+    },
+    {
+      "name": "IronOreDestroyed",
+      "type": "procedure",
+      "sortid": 167,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_ore_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/OreRespawn"
+    },
+    {
+      "name": "GoldOreDestroyed",
+      "type": "procedure",
+      "sortid": 168,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gold_ore_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/OreRespawn"
+    },
+    {
+      "name": "JadeOreDestroyed",
+      "type": "procedure",
+      "sortid": 169,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jade_ore_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/OreRespawn"
+    },
+    {
+      "name": "CristalOreDestroyed",
+      "type": "procedure",
+      "sortid": 170,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cristal_ore_destroyed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/OreRespawn"
+    },
+    {
+      "name": "OreRespawnStoneUpdateTick",
+      "type": "procedure",
+      "sortid": 171,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ore_respawn_stone_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/OreRespawn"
+    },
+    {
+      "name": "MagicDustItemRightClicked",
+      "type": "procedure",
+      "sortid": 172,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_dust_item_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures"
+    },
+    {
+      "name": "MagicDust",
+      "type": "item",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_dust",
+      "path": "~/items"
+    },
+    {
+      "name": "UpgradingTableGuiTick",
+      "type": "procedure",
+      "sortid": 173,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "upgrading_table_gui_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradingTableGui"
+    },
+    {
+      "name": "CmdGetCorExecuted",
+      "type": "procedure",
+      "sortid": 174,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_get_cor_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Commands"
+    },
+    {
+      "name": "GetCor",
+      "type": "command",
+      "sortid": 175,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_cor",
+      "path": "~/commands"
+    },
+    {
+      "name": "Resetmd",
+      "type": "command",
+      "sortid": 176,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "resetmd",
+      "path": "~/commands"
+    },
+    {
+      "name": "ResetCor",
+      "type": "command",
+      "sortid": 177,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reset_cor",
+      "path": "~/commands"
+    },
+    {
+      "name": "CmdResetmdExecuted",
+      "type": "procedure",
+      "sortid": 178,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_resetmd_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Commands"
+    },
+    {
+      "name": "CmdResetCorExecuted",
+      "type": "procedure",
+      "sortid": 179,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_reset_cor_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Commands"
+    },
+    {
+      "name": "ControlBarrierGui",
+      "type": "gui",
+      "sortid": 180,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_gui",
+      "path": "~/guis"
+    },
+    {
+      "name": "ControlBarrierRightClicked",
+      "type": "procedure",
+      "sortid": 181,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "ControlBarrier",
+      "type": "block",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier",
+      "path": "~/blocks"
+    },
+    {
+      "name": "UpgradingTableCraftedItemTaken",
+      "type": "procedure",
+      "sortid": 182,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "upgrading_table_crafted_item_taken",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradingTableGui"
+    },
+    {
+      "name": "ControlBarrierDestroy",
+      "type": "procedure",
+      "sortid": 183,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "Vulnerable",
+      "type": "potioneffect",
+      "sortid": 184,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vulnerable",
+      "path": "~/effects"
+    },
+    {
+      "name": "ControlBarrierGuiThisGUIOpened",
+      "type": "procedure",
+      "sortid": 185,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_gui_this_gui_opened",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "ControlBarrierChkPlaLvl",
+      "type": "procedure",
+      "sortid": 186,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_chk_pla_lvl",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "ControlBarrierChkBoDef",
+      "type": "procedure",
+      "sortid": 187,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_chk_bo_def",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "ControlBarrierChkDeSkill",
+      "type": "procedure",
+      "sortid": 188,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_chk_de_skill",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "ControlbarrierAtSkill",
+      "type": "procedure",
+      "sortid": 189,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "controlbarrier_at_skill",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "ControlBarrierChkMaSkill",
+      "type": "procedure",
+      "sortid": 190,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_chk_ma_skill",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "Leek",
+      "type": "item",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "leek",
+      "path": "~/items"
+    },
+    {
+      "name": "Grapes",
+      "type": "item",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "grapes",
+      "path": "~/items"
+    },
+    {
+      "name": "UpgradingTableComponentTaken",
+      "type": "procedure",
+      "sortid": 191,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "upgrading_table_component_taken",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/UpgradingTableGui"
+    },
+    {
+      "name": "ControlBarrierPlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 192,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/blocks"
+    },
+    {
+      "name": "ControlBarrierClosed",
+      "type": "procedure",
+      "sortid": 193,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "control_barrier_closed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/ControlBarrier"
+    },
+    {
+      "name": "OnEntityAttacked",
+      "type": "procedure",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_entity_attacked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Global"
+    },
+    {
+      "name": "OnBlockDestroy",
+      "type": "procedure",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_block_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Global"
+    },
+    {
+      "name": "OnDefenseSkillUp",
+      "type": "procedure",
+      "sortid": 196,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_defense_skill_up",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Skillrewards"
+    },
+    {
+      "name": "CmdGetDefSkillXpExecuted",
+      "type": "procedure",
+      "sortid": 197,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_get_def_skill_xp_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Commands"
+    },
+    {
+      "name": "CmdResetDefSkill",
+      "type": "procedure",
+      "sortid": 198,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_reset_def_skill",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Commands"
+    },
+    {
+      "name": "GetDefSkillXp",
+      "type": "command",
+      "sortid": 199,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_def_skill_xp",
+      "path": "~/commands"
+    },
+    {
+      "name": "ResetDefSkill",
+      "type": "command",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reset_def_skill",
+      "path": "~/commands"
+    },
+    {
+      "name": "OnAttackSkillUp",
+      "type": "procedure",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_attack_skill_up",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Skillrewards"
+    },
+    {
+      "name": "OnMagicSkillUp",
+      "type": "procedure",
+      "sortid": 202,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_magic_skill_up",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Skillrewards"
+    },
+    {
+      "name": "PlayerLevelTree",
+      "type": "gui",
+      "sortid": 203,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_level_tree",
+      "path": "~/guis"
+    },
+    {
+      "name": "OnEntityKilled",
+      "type": "procedure",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_entity_killed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Global"
+    },
+    {
+      "name": "OnCookingSkillUp",
+      "type": "procedure",
+      "sortid": 205,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_cooking_skill_up",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Skillrewards"
+    },
+    {
+      "name": "Strawberry",
+      "type": "item",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "strawberry",
+      "path": "~/items"
+    },
+    {
+      "name": "Blueberry",
+      "type": "item",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blueberry",
+      "path": "~/items"
+    },
+    {
+      "name": "Cranberry",
+      "type": "item",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cranberry",
+      "path": "~/items"
+    },
+    {
+      "name": "Broccoli",
+      "type": "item",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "broccoli",
+      "path": "~/items"
+    },
+    {
+      "name": "CoffeeBeans",
+      "type": "item",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coffee_beans",
+      "path": "~/items"
+    },
+    {
+      "name": "CupOfCoffee",
+      "type": "item",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cup_of_coffee",
+      "path": "~/items"
+    },
+    {
+      "name": "RawMutton",
+      "type": "item",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_mutton",
+      "path": "~/items"
+    },
+    {
+      "name": "CookedMutton",
+      "type": "item",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooked_mutton",
+      "path": "~/items"
+    },
+    {
+      "name": "RawTurkey",
+      "type": "item",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_turkey",
+      "path": "~/items"
+    },
+    {
+      "name": "CookedTurkey",
+      "type": "item",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooked_turkey",
+      "path": "~/items"
+    },
+    {
+      "name": "RawRagoutRabbit",
+      "type": "item",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_ragout_rabbit",
+      "path": "~/items"
+    },
+    {
+      "name": "CookedRagoutRabbit",
+      "type": "item",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooked_ragout_rabbit",
+      "path": "~/items"
+    },
+    {
+      "name": "RawCrab",
+      "type": "item",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_crab",
+      "path": "~/items"
+    },
+    {
+      "name": "RawGrouper",
+      "type": "item",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_grouper",
+      "path": "~/items"
+    },
+    {
+      "name": "Tomato",
+      "type": "item",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tomato",
+      "path": "~/items"
+    },
+    {
+      "name": "Onion",
+      "type": "item",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "onion",
+      "path": "~/items"
+    },
+    {
+      "name": "ChickenGumbo",
+      "type": "item",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chicken_gumbo",
+      "path": "~/items"
+    },
+    {
+      "name": "SteakAndChips",
+      "type": "item",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "steak_and_chips",
+      "path": "~/items"
+    },
+    {
+      "name": "SpicySpicedChilli",
+      "type": "item",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spicy_spiced_chilli",
+      "path": "~/items"
+    },
+    {
+      "name": "RecCookedMutton",
+      "type": "recipe",
+      "sortid": 206,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_cooked_mutton",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecCookedTurkey",
+      "type": "recipe",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_cooked_turkey",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RecCookedRagoutRabbit",
+      "type": "recipe",
+      "sortid": 208,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rec_cooked_ragout_rabbit",
+      "path": "~/recipes"
+    },
+    {
+      "name": "RabbitRagout",
+      "type": "item",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rabbit_ragout",
+      "path": "~/items"
+    },
+    {
+      "name": "LootFishing",
+      "type": "loottable",
+      "sortid": 209,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loot_fishing",
+      "path": "~/loottables"
+    },
+    {
+      "name": "FishMeal",
+      "type": "item",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fish_meal",
+      "path": "~/items"
+    },
+    {
+      "name": "HamSoup",
+      "type": "item",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ham_soup",
+      "path": "~/items"
+    },
+    {
+      "name": "LambPlate",
+      "type": "item",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lamb_plate",
+      "path": "~/items"
+    },
+    {
+      "name": "Mango",
+      "type": "item",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mango",
+      "path": "~/items"
+    },
+    {
+      "name": "SweatRoastedChicken",
+      "type": "item",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sweat_roasted_chicken",
+      "path": "~/items"
+    },
+    {
+      "name": "BananaSplit",
+      "type": "item",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "banana_split",
+      "path": "~/items"
+    },
+    {
+      "name": "GetVanillaCrit",
+      "type": "procedure",
+      "sortid": 210,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_vanilla_crit",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "isvanillacritical",
+            "type": "logic"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Global"
+    },
+    {
+      "name": "CmdSetCritChanceExecuted",
+      "type": "procedure",
+      "sortid": 211,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_set_crit_chance_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "cmdparams",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/procedures/Commands"
+    },
+    {
+      "name": "SetCritChance",
+      "type": "command",
+      "sortid": 212,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_crit_chance",
+      "path": "~/commands"
+    },
+    {
+      "name": "ColdEmbrace",
+      "type": "potioneffect",
+      "sortid": 213,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cold_embrace",
+      "path": "~/effects"
+    },
+    {
+      "name": "FreezingCold",
+      "type": "potioneffect",
+      "sortid": 214,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "freezing_cold",
+      "path": "~/effects"
+    },
+    {
+      "name": "ColdEmbraceOnTick",
+      "type": "procedure",
+      "sortid": 215,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cold_embrace_on_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Effects"
+    },
+    {
+      "name": "FreezingColdApplied",
+      "type": "procedure",
+      "sortid": 216,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "freezing_cold_applied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Effects"
+    },
+    {
+      "name": "FreezingColdExpires",
+      "type": "procedure",
+      "sortid": 217,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "freezing_cold_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Effects"
+    },
+    {
+      "name": "SpellImmunity",
+      "type": "potioneffect",
+      "sortid": 218,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spell_immunity",
+      "path": "~/effects"
+    },
+    {
+      "name": "MagicShield",
+      "type": "potioneffect",
+      "sortid": 219,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_shield",
+      "path": "~/effects"
+    },
+    {
+      "name": "SpellImmunityOnTick",
+      "type": "procedure",
+      "sortid": 220,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spell_immunity_on_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Effects"
+    },
+    {
+      "name": "MagicShieldApplied",
+      "type": "procedure",
+      "sortid": 221,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_shield_applied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "amplifier",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/procedures/Effects"
+    },
+    {
+      "name": "MagicShieldOnTick",
+      "type": "procedure",
+      "sortid": 222,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_shield_on_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Effects"
+    },
+    {
+      "name": "LightningStrikeApplied",
+      "type": "procedure",
+      "sortid": 223,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_strike_applied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/procedures/Effects"
+    },
+    {
+      "name": "LightningStrike",
+      "type": "potioneffect",
+      "sortid": 224,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lightning_strike",
+      "path": "~/effects"
+    },
+    {
+      "name": "Chilli",
+      "type": "item",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chilli",
+      "path": "~/items"
+    },
+    {
+      "name": "Chocolate",
+      "type": "item",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chocolate",
+      "path": "~/items"
+    },
+    {
+      "name": "ChocolateStrawberry",
+      "type": "item",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chocolate_strawberry",
+      "path": "~/items"
+    },
+    {
+      "name": "CookingTable",
+      "type": "block",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooking_table",
+      "path": "~/blocks"
+    },
+    {
+      "name": "ArmoryTable",
+      "type": "block",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armory_table",
+      "path": "~/blocks"
+    },
+    {
+      "name": "WeaponTable",
+      "type": "block",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weapon_table",
+      "path": "~/blocks"
+    },
+    {
+      "name": "ArmoryTableGui",
+      "type": "gui",
+      "sortid": 225,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armory_table_gui",
+      "path": "~/guis"
+    },
+    {
+      "name": "WeaponTableGui",
+      "type": "gui",
+      "sortid": 226,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weapon_table_gui",
+      "path": "~/guis"
+    },
+    {
+      "name": "CookingTableGui",
+      "type": "gui",
+      "sortid": 227,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cooking_table_gui",
+      "path": "~/guis"
+    },
+    {
+      "name": "JadeSword",
+      "type": "tool",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jade_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "DeathsDance",
+      "type": "tool",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deaths_dance",
+      "path": "~/tools"
+    },
+    {
+      "name": "DragonSlayer",
+      "type": "tool",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dragon_slayer",
+      "path": "~/tools"
+    },
+    {
+      "name": "TheDarkBlade",
+      "type": "tool",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "the_dark_blade",
+      "path": "~/tools"
+    },
+    {
+      "name": "AncientGuardianWarhammer",
+      "type": "tool",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_guardian_warhammer",
+      "path": "~/tools"
+    },
+    {
+      "name": "WeaponTableGuiOnTick",
+      "type": "procedure",
+      "sortid": 228,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weapon_table_gui_on_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/WeaponTable"
+    },
+    {
+      "name": "WeaponTableGuiLeftTaken",
+      "type": "procedure",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weapon_table_gui_left_taken",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/WeaponTable"
+    },
+    {
+      "name": "WeaponTableGuiRightTaken",
+      "type": "procedure",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "weapon_table_gui_right_taken",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/WeaponTable"
+    },
+    {
+      "name": "ArmoryTableOnTick",
+      "type": "procedure",
+      "sortid": 231,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "armory_table_on_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/ArmoryTable"
+    },
+    {
+      "name": "SkillTreeBtn1Condition",
+      "type": "procedure",
+      "sortid": 232,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_1_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn2Condition",
+      "type": "procedure",
+      "sortid": 233,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_2_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn3Condition",
+      "type": "procedure",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_3_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn4Condition",
+      "type": "procedure",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_4_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn5Condition",
+      "type": "procedure",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_5_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn6Condition",
+      "type": "procedure",
+      "sortid": 237,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_6_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn7Condition",
+      "type": "procedure",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_7_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn8Condition",
+      "type": "procedure",
+      "sortid": 239,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_8_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn9Condition",
+      "type": "procedure",
+      "sortid": 240,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_9_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn10Condition",
+      "type": "procedure",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_10_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn11Condition",
+      "type": "procedure",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_11_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn12Condition",
+      "type": "procedure",
+      "sortid": 243,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_12_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn13Condition",
+      "type": "procedure",
+      "sortid": 244,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_13_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn14Condition",
+      "type": "procedure",
+      "sortid": 245,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_14_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn15Condition",
+      "type": "procedure",
+      "sortid": 246,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_15_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn16Condition",
+      "type": "procedure",
+      "sortid": 247,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_16_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn17Condition",
+      "type": "procedure",
+      "sortid": 248,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_17_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn18Condition",
+      "type": "procedure",
+      "sortid": 249,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_18_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn19Condition",
+      "type": "procedure",
+      "sortid": 250,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_19_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn20Condition",
+      "type": "procedure",
+      "sortid": 251,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_20_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn21Condition",
+      "type": "procedure",
+      "sortid": 252,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_21_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn22Condition",
+      "type": "procedure",
+      "sortid": 253,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_22_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn23Condition",
+      "type": "procedure",
+      "sortid": 254,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_23_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn24Condition",
+      "type": "procedure",
+      "sortid": 255,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_24_condition",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn1Pressed",
+      "type": "procedure",
+      "sortid": 256,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_1_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn2Pressed",
+      "type": "procedure",
+      "sortid": 257,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_2_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn3Pressed",
+      "type": "procedure",
+      "sortid": 258,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_3_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn4Pressed",
+      "type": "procedure",
+      "sortid": 259,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_4_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn5Pressed",
+      "type": "procedure",
+      "sortid": 260,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_5_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn6Pressed",
+      "type": "procedure",
+      "sortid": 261,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_6_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn7Pressed",
+      "type": "procedure",
+      "sortid": 262,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_7_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn8Pressed",
+      "type": "procedure",
+      "sortid": 263,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_8_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn9Pressed",
+      "type": "procedure",
+      "sortid": 264,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_9_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn10Pressed",
+      "type": "procedure",
+      "sortid": 265,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_10_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn11Pressed",
+      "type": "procedure",
+      "sortid": 266,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_11_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn12Pressed",
+      "type": "procedure",
+      "sortid": 267,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_12_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn13Pressed",
+      "type": "procedure",
+      "sortid": 268,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_13_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn14Pressed",
+      "type": "procedure",
+      "sortid": 269,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_14_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn15Pressed",
+      "type": "procedure",
+      "sortid": 270,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_15_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn16Pressed",
+      "type": "procedure",
+      "sortid": 271,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_16_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn17Pressed",
+      "type": "procedure",
+      "sortid": 272,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_17_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn18Pressed",
+      "type": "procedure",
+      "sortid": 273,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_18_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn19Pressed",
+      "type": "procedure",
+      "sortid": 274,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_19_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn20Pressed",
+      "type": "procedure",
+      "sortid": 275,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_20_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn21Pressed",
+      "type": "procedure",
+      "sortid": 276,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_21_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn22Pressed",
+      "type": "procedure",
+      "sortid": 277,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_22_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn23Pressed",
+      "type": "procedure",
+      "sortid": 278,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_23_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "SkillTreeBtn24Pressed",
+      "type": "procedure",
+      "sortid": 279,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_tree_btn_24_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/PlayerSkillTree"
+    },
+    {
+      "name": "CmdGetSkillPointsExecuted",
+      "type": "procedure",
+      "sortid": 280,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_get_skill_points_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "cmdparams",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/commands"
+    },
+    {
+      "name": "GetSkillPoints",
+      "type": "command",
+      "sortid": 281,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_skill_points",
+      "path": "~/commands"
+    },
+    {
+      "name": "CmdGuiExecuted",
+      "type": "procedure",
+      "sortid": 282,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_gui_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/commands"
+    },
+    {
+      "name": "Gui",
+      "type": "command",
+      "sortid": 283,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gui",
+      "path": "~/commands"
+    },
+    {
+      "name": "CmdStatsExecuted",
+      "type": "procedure",
+      "sortid": 284,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cmd_stats_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/commands"
+    },
+    {
+      "name": "Stats",
+      "type": "command",
+      "sortid": 285,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats",
+      "path": "~/commands"
+    },
+    {
+      "name": "ScrollBigSlice",
+      "type": "item",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scroll_big_slice",
+      "path": "~/items"
+    },
+    {
+      "name": "JadeSwordItemCrafted",
+      "type": "procedure",
+      "sortid": 286,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jade_sword_item_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "FlameSwordItemIsCrafted",
+      "type": "procedure",
+      "sortid": 287,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flame_sword_item_is_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "FlameSword",
+      "type": "tool",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flame_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "DeathsDanceItemIsCrafted",
+      "type": "procedure",
+      "sortid": 288,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "deaths_dance_item_is_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "DragonSlayerItemIsCrafted",
+      "type": "procedure",
+      "sortid": 289,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dragon_slayer_item_is_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "TheDarkBladeItemIsCrafted",
+      "type": "procedure",
+      "sortid": 290,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "the_dark_blade_item_is_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    },
+    {
+      "name": "AncientGuardianWarhammerItemIsCrafted",
+      "type": "procedure",
+      "sortid": 291,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_guardian_warhammer_item_is_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/procedures/Tools"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "level",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "xp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "neededxp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "shieldAmount",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "cor",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1000.0"
+    },
+    {
+      "name": "magicdust",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "15.0"
+    },
+    {
+      "name": "bossesDefeated",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "gamemaster",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "skillAttackLvl",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "skillAttackXp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "skillAttackNeededXp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "25.0"
+    },
+    {
+      "name": "skillDefenseLvl",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "skillDefenseXp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "skillDefenseNeededXp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "25.0"
+    },
+    {
+      "name": "skillMagicLvl",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "skillMagicXp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "skillMagicNeededXp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "50.0"
+    },
+    {
+      "name": "playerRecipes",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "bonusAbilityPower",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "skillCookingLvl",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "skillCookingXp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "skillCookingNeededXp",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "kritChance",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "15.0"
+    },
+    {
+      "name": "kritDamage",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "50.0"
+    },
+    {
+      "name": "vanillaCrit",
+      "type": "logic",
+      "scope": "world",
+      "value": "false"
+    },
+    {
+      "name": "shieldAmountMax",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "outOfCombat",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "shieldLvl",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "skillPoints",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "unlockedSkillTree",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "damageReduction",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "enchantment.toamod.life_steel": "Lifesteel",
+      "item.toamod.coal": "Coal",
+      "item.toamod.banana_split": "§5Banana Split§r",
+      "effect.toamod.magic_shield": "Magic Shield",
+      "item.toamod.cranberry": "Cranberry",
+      "item.toamod.raw_grouper": "§aRaw Grouper§r",
+      "block.toamod.gold_ore": "Gold Ore",
+      "enchantment.toamod.spikes": "Spikes",
+      "item.toamod.ancient_guardian_warhammer": "§eAncient Guardian Warhammer§r",
+      "item.toamod.stone_sword": "Stone Sword",
+      "effect.toamod.cold_embrace": "Cold Embrace",
+      "item.toamod.onion": "Onion",
+      "item.toamod.wooden_key": "Wooden Key",
+      "item.toamod.cooked_turkey": "§aCooked Turkey§r",
+      "block.toamod.cooking_table": "Cooking Table",
+      "enchantment.toamod.ignite": "Ignite",
+      "item.toamod.dragon_slayer": "§6Dragon Slayer§r",
+      "item.toamod.fish_meal": "§aFish Meal§r",
+      "item.toamod.hardened_stone_sword": "Hardened Stone Sword",
+      "item.toamod.deaths_dance": "§5Deaths Dance§r",
+      "block.toamod.chest_epic": "Chest Epic",
+      "item.toamod.grapes": "§aGrapes§r",
+      "item.toamod.lamb_plate": "§5Lamb Plate§r",
+      "block.toamod.control_barrier": "Control Barrier",
+      "item.toamod.iron_ingot": "Iron Ingot",
+      "item.toamod.ham_soup": "Ham Soup",
+      "item.toamod.scroll_big_slice": "§6Ability: Big Slice§r",
+      "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
+      "block.toamod.armory_table": "Armory Table",
+      "enchantment.toamod.protection": "Protection",
+      "item.toamod.cristal": "§aCristal§r",
+      "effect.toamod.lightning_strike": "Lighting Strike",
+      "item.toamod.cooked_mutton": "Cooked Mutton",
+      "item.toamod.flame_sword": "§5Flame Sword§r",
+      "item.toamod.raw_mutton": "§aRaw Mutton§r",
+      "item.toamod.raw_ragout_rabbit": "§5Raw Ragout Rabbit§r",
+      "block.toamod.jade_ore": "Jade Ore",
+      "item.toamod.strawberry": "Strawberry",
+      "item.toamod.mango": "§aMango§r",
+      "block.toamod.coal_ore": "Coal Ore",
+      "item.toamod.iron_sword": "§aIron Sword§r",
+      "item.toamod.magic_dust": "§6Magic Dust§r",
+      "item.toamod.cor": "§6Cor§r",
+      "item.toamod.enchtanted_book": "Enchtanted Book",
+      "block.toamod.chest_legendary": "Chest Legendary",
+      "item.toamod.golden_sword": "§aGold Sword§r",
+      "block.toamod.cursed_obsidian": "Cursed Obsidian",
+      "item.toamod.enrichted_magma_shard": "§5Enrichted Magma Shard§r",
+      "enchantment.toamod.executing": "Executing",
+      "item.toamod.rabbit_ragout": "§6Rabbit Ragout§r",
+      "item.toamod.raw_turkey": "§aRaw Turkey§r",
+      "item.toamod.magma_shard": "Magma Shard",
+      "block.toamod.upgrading_table": "Upgrading Table",
+      "item.toamod.golden_heart": "Golden Heart",
+      "item.toamod.silver_key": "§bSilver Key§r",
+      "item.toamod.chilli": "Chilli",
+      "item.toamod.broccoli": "Broccoli",
+      "item.toamod.tomato": "Tomato",
+      "item.toamod.enrichted_cristal": "Enrichted Cristal",
+      "item.toamod.obsidian": "§5Obsidian§r",
+      "item.toamod.sweat_roasted_chicken": "Sweat Roasted Chicken",
+      "effect.toamod.freezing_cold": "Freezing Cold",
+      "item.toamod.jade": "Jade",
+      "item.toamod.cup_of_coffee": "§aCup Of Coffee§r",
+      "item.toamod.book_sharpness_3": "Sharpness III",
+      "item.toamod.book_sharpness_4": "Sharpness IV",
+      "item.toamod.gold_ingot": "§aGold Ingot§r",
+      "item.toamod.book_sharpness_1": "Sharpness I",
+      "item.toamod.book_sharpness_2": "Sharpness II",
+      "item.toamod.book_lifesteel_1": "Lifesteel I",
+      "item.toamod.book_sharpness_7": "Sharpness VII",
+      "item.toamod.jade_sword": "§bJade Sword§r",
+      "item.toamod.book_lifesteel_2": "Lifesteel II",
+      "item.toamod.book_sharpness_8": "Sharpness VIII",
+      "item.toamod.book_sharpness_5": "Sharpness V",
+      "item.toamod.book_sharpness_6": "Sharpness VI",
+      "effect.toamod.vulnerable": "Vulnerable",
+      "item.toamod.book_sharpness_9": "Sharpness IX",
+      "item.toamod.book_lifesteel_3": "Lifesteel III",
+      "block.toamod.cristal_ore": "Cristal Ore",
+      "effect.toamod.spell_immunity": "Spell Immunity",
+      "item.toamod.the_dark_blade": "§6The Dark Blade§r",
+      "item.toamod.chocolate_strawberry": "§aChocolate Strawberry§r",
+      "block.toamod.magma": "Magma",
+      "item.toamod.chicken_gumbo": "Chicken Gumbo",
+      "item.toamod.cristal_shard": "Cristal Shard",
+      "block.toamod.chest_normal": "Chest Normal",
+      "item.toamod.leek": "Leek",
+      "item.toamod.book_sharpness_10": "Sharpness X",
+      "item.toamod.scroll_berserk": "§7Ability: §5Berserk§r",
+      "item.toamod.chocolate": "Chocolate",
+      "item.toamod.book_executing_5": "Executing V",
+      "item.toamod.book_executing_4": "Executing IV",
+      "block.toamod.weapon_table": "Weapon Table",
+      "item.toamod.golden_key": "§6Golden Key§r",
+      "block.toamod.iron_ore": "Iron Ore",
+      "item.toamod.book_executing_1": "Executing I",
+      "item.toamod.book_executing_3": "Executing III",
+      "item.toamod.book_executing_2": "Executing II",
+      "item.toamod.blueberry": "Blueberry",
+      "enchantment.toamod.sharpness": "Sharpness",
+      "item.toamod.scroll_lightning_strike": "§7Ability: §aLightning Strike§r",
+      "item.toamod.steak_and_chips": "§5Steak And Chips§r",
+      "item.toamod.scroll_weakness": "§7Ability: §rWeakness",
+      "item.toamod.raw_crab": "Raw Crab",
+      "item.toamod.coffee_beans": "Coffee Beans",
+      "item.toamod.egg": "Egg",
+      "block.toamod.ore_respawn_stone": "Ore Respawn Stone",
+      "item.toamod.wooden_sword": "Wooden Sword",
+      "item.toamod.cooked_ragout_rabbit": "§6Cooked Ragout Rabbit§r",
+      "item.toamod.fiery_heart": "�6Fiery Heart�r",
+      "item.toamod.cristal_sword": "§bCristal Sword§r",
+      "enchantment.toamod.sticky_feet": "Sticky Feet"
+    },
+    "de_de": {
+      "enchantment.toamod.life_steel": "Life Steel",
+      "item.toamod.coal": "Kohle",
+      "item.toamod.banana_split": "§5Banana Split§r",
+      "effect.toamod.magic_shield": "Magic Shield",
+      "item.toamod.cranberry": "Cranberry",
+      "item.toamod.raw_grouper": "§aRaw Grouper§r",
+      "block.toamod.gold_ore": "Gold Ore",
+      "enchantment.toamod.spikes": "Spikes",
+      "item.toamod.ancient_guardian_warhammer": "§eAncient Guardian Warhammer§r",
+      "item.toamod.stone_sword": "Stone Sword",
+      "effect.toamod.cold_embrace": "Cold Embrace",
+      "item.toamod.onion": "Onion",
+      "item.toamod.wooden_key": "Wooden Key",
+      "item.toamod.cooked_turkey": "§aCooked Turkey§r",
+      "block.toamod.cooking_table": "Cooking Table",
+      "enchantment.toamod.ignite": "Ignite",
+      "item.toamod.dragon_slayer": "§6Dragon Slayer§r",
+      "item.toamod.fish_meal": "§aFish Meal§r",
+      "item.toamod.hardened_stone_sword": "Hardened Stone Sword",
+      "item.toamod.deaths_dance": "§5Deaths Dance§r",
+      "block.toamod.chest_epic": "Chest Epic",
+      "item.toamod.grapes": "�aGrapes�r",
+      "item.toamod.lamb_plate": "§5Lamb Plate§r",
+      "block.toamod.control_barrier": "Control Barrier",
+      "item.toamod.iron_ingot": "Iron",
+      "item.toamod.ham_soup": "Ham Soup",
+      "item.toamod.scroll_big_slice": "Scroll Big Slice",
+      "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
+      "block.toamod.armory_table": "Armory Table",
+      "enchantment.toamod.protection": "Protection",
+      "item.toamod.cristal": "Cristal",
+      "effect.toamod.lightning_strike": "Lighting Strike",
+      "item.toamod.cooked_mutton": "Cooked Mutton",
+      "item.toamod.flame_sword": "§5Hell Sword§r",
+      "item.toamod.raw_mutton": "Raw Mutton",
+      "item.toamod.raw_ragout_rabbit": "§5Raw Ragout Rabbit§r",
+      "block.toamod.jade_ore": "Jade Ore",
+      "item.toamod.strawberry": "Strawberry",
+      "item.toamod.mango": "§aMango§r",
+      "block.toamod.coal_ore": "Coal Ore",
+      "item.toamod.iron_sword": "Iron Sword",
+      "item.toamod.magic_dust": "�6Magic Dust�r",
+      "item.toamod.cor": "�6Cor�r",
+      "item.toamod.enchtanted_book": "Enchtanted Book",
+      "block.toamod.chest_legendary": "Chest Legendary",
+      "item.toamod.golden_sword": "Golden Sword",
+      "block.toamod.cursed_obsidian": "Verfluchtes Obsidian",
+      "item.toamod.enrichted_magma_shard": "Enrichted Magma Shard",
+      "enchantment.toamod.executing": "Executing",
+      "item.toamod.rabbit_ragout": "§6Rabbit Ragout§r",
+      "item.toamod.raw_turkey": "§aRaw Turkey§r",
+      "item.toamod.magma_shard": "Magma Shard",
+      "block.toamod.upgrading_table": "Upgrading Table",
+      "item.toamod.golden_heart": "Golden Heart",
+      "item.toamod.silver_key": "Silver Key",
+      "item.toamod.chilli": "Chilli",
+      "item.toamod.broccoli": "Broccoli",
+      "item.toamod.tomato": "Tomato",
+      "item.toamod.enrichted_cristal": "Enrichted Cristal",
+      "item.toamod.obsidian": "Obsidian",
+      "item.toamod.sweat_roasted_chicken": "Sweat Roasted Chicken",
+      "effect.toamod.freezing_cold": "Freezing Cold",
+      "item.toamod.jade": "Jade",
+      "item.toamod.cup_of_coffee": "§aCup Of Coffee§r",
+      "item.toamod.book_sharpness_3": "Sharpness II",
+      "item.toamod.book_sharpness_4": "Sharpness III",
+      "item.toamod.gold_ingot": "Gold",
+      "item.toamod.book_sharpness_1": "Sharpness I",
+      "item.toamod.book_sharpness_2": "Sharpness II",
+      "item.toamod.book_lifesteel_1": "Lifesteel I",
+      "item.toamod.book_sharpness_7": "Sharpness VI",
+      "item.toamod.jade_sword": "§bJade Sword§r",
+      "item.toamod.book_lifesteel_2": "Lifesteel II",
+      "item.toamod.book_sharpness_8": "Sharpness VII",
+      "item.toamod.book_sharpness_5": "Sharpness IV",
+      "item.toamod.book_sharpness_6": "Sharpness V",
+      "effect.toamod.vulnerable": "Vulnerable",
+      "item.toamod.book_sharpness_9": "Sharpness VIII",
+      "item.toamod.book_lifesteel_3": "Lifesteel III",
+      "block.toamod.cristal_ore": "Cristal Ore",
+      "effect.toamod.spell_immunity": "Spell Immunity",
+      "item.toamod.the_dark_blade": "§6The Dark Blade§r",
+      "item.toamod.chocolate_strawberry": "§aChocolade Strawberry§r",
+      "block.toamod.magma": "Magma",
+      "item.toamod.chicken_gumbo": "Chicken Gumbo",
+      "item.toamod.cristal_shard": "Kristall Splitter",
+      "block.toamod.chest_normal": "Chest Normal",
+      "item.toamod.leek": "Leek",
+      "item.toamod.book_sharpness_10": "Sharpness IX",
+      "item.toamod.scroll_berserk": "�7Ability: �5Berserk�r",
+      "item.toamod.chocolate": "Chocolade",
+      "item.toamod.book_executing_5": "Executing V",
+      "item.toamod.book_executing_4": "Executing IV",
+      "block.toamod.weapon_table": "Weapon Table",
+      "item.toamod.golden_key": "Golden Key",
+      "block.toamod.iron_ore": "Iron Ore",
+      "item.toamod.book_executing_1": "Executing I",
+      "item.toamod.book_executing_3": "Book Executing 3",
+      "item.toamod.book_executing_2": "Executing II",
+      "item.toamod.blueberry": "Blueberry",
+      "enchantment.toamod.sharpness": "Sharpness",
+      "item.toamod.scroll_lightning_strike": "�7Ability: �aLightning Strike�r",
+      "item.toamod.steak_and_chips": "§5Steak And Chips§r",
+      "item.toamod.scroll_weakness": "�7Ability: �rWeakness",
+      "item.toamod.raw_crab": "Raw Crab",
+      "item.toamod.coffee_beans": "Coffee Beans",
+      "item.toamod.egg": "Egg",
+      "block.toamod.ore_respawn_stone": "Ore Respawn Stone",
+      "item.toamod.wooden_sword": "Wooden Sword",
+      "item.toamod.cooked_ragout_rabbit": "§6Cooked Ragout Rabbit§r",
+      "item.toamod.fiery_heart": "Fiery Heart",
+      "item.toamod.cristal_sword": "Cristal Sword",
+      "enchantment.toamod.sticky_feet": "Sticky Feet"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "items",
+        "children": []
+      },
+      {
+        "name": "blocks",
+        "children": []
+      },
+      {
+        "name": "recipes",
+        "children": []
+      },
+      {
+        "name": "mobs",
+        "children": []
+      },
+      {
+        "name": "loottables",
+        "children": [
+          {
+            "name": "blocks",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "effects",
+        "children": []
+      },
+      {
+        "name": "enchantments",
+        "children": []
+      },
+      {
+        "name": "tools",
+        "children": []
+      },
+      {
+        "name": "commands",
+        "children": []
+      },
+      {
+        "name": "procedures",
+        "children": [
+          {
+            "name": "UpgradingTableGui",
+            "children": []
+          },
+          {
+            "name": "Tools",
+            "children": []
+          },
+          {
+            "name": "UpgradeBooks",
+            "children": []
+          },
+          {
+            "name": "OreRespawn",
+            "children": []
+          },
+          {
+            "name": "Commands",
+            "children": []
+          },
+          {
+            "name": "Effects",
+            "children": []
+          },
+          {
+            "name": "ControlBarrier",
+            "children": []
+          },
+          {
+            "name": "Global",
+            "children": []
+          },
+          {
+            "name": "Skillrewards",
+            "children": []
+          },
+          {
+            "name": "WeaponTable",
+            "children": []
+          },
+          {
+            "name": "ArmoryTable",
+            "children": []
+          },
+          {
+            "name": "PlayerSkillTree",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "guis",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "toamod",
+    "modName": "TOA-Mod",
+    "version": "1.0.0",
+    "author": "Ruben, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.toamod",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200120510
+}

@@ -1,0 +1,11 @@
+{
+  "_fv": 28,
+  "_type": "command",
+  "definition": {
+    "commandName": "resetcor",
+    "permissionLevel": "No requirement",
+    "onCommandExecuted": {
+      "name": "CmdResetCorExecuted"
+    }
+  }
+}

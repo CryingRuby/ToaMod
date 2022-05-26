@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "toamod:block/chest_legendary"
+    },
+    "facing=east": {
+      "model": "toamod:block/chest_legendary",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "toamod:block/chest_legendary",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "toamod:block/chest_legendary",
+      "y": 270
+    }
+  }
+}

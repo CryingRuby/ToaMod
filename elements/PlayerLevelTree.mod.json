@@ -1,0 +1,1546 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 425,
+    "height": 238,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Start",
+          "color": {
+            "value": -13261,
+            "falpha": 0.0
+          },
+          "name": "Start",
+          "x": 192,
+          "y": 110
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Offense",
+          "color": {
+            "value": -65485,
+            "falpha": 0.0
+          },
+          "name": "Offense",
+          "x": 385,
+          "y": 110
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Defense",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "name": "Defense",
+          "x": 7,
+          "y": 110
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+1 HP",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "name": "+1 HP",
+          "x": 23,
+          "y": 36
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+1 HP",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "name": "+1 HP",
+          "x": 177,
+          "y": 36
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+1 HP",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "name": "+1 HP",
+          "x": 64,
+          "y": 67
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+1 HP",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "name": "+1 HP",
+          "x": 126,
+          "y": 110
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+1 HP",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "name": "+1 HP",
+          "x": 89,
+          "y": 145
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+2% DR",
+          "color": {
+            "value": -13408513,
+            "falpha": 0.0
+          },
+          "name": "+2% DR",
+          "x": 125,
+          "y": 68
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+2% DR",
+          "color": {
+            "value": -13408513,
+            "falpha": 0.0
+          },
+          "name": "+2% DR",
+          "x": 59,
+          "y": 110
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+3% DR",
+          "color": {
+            "value": -13408513,
+            "falpha": 0.0
+          },
+          "name": "+3% DR",
+          "x": 87,
+          "y": 36
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 223,
+          "y": 110
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 176,
+          "y": 110
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 134,
+          "y": 124
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 134,
+          "y": 136
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "CR = Crit Rate",
+          "color": {
+            "value": -6710887,
+            "falpha": 0.0
+          },
+          "name": "CR = Crit Rate",
+          "x": 308,
+          "y": 226
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "CD = Crit Damage",
+          "color": {
+            "value": -6710887,
+            "falpha": 0.0
+          },
+          "name": "CD = Crit Damage",
+          "x": 308,
+          "y": 214
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 134,
+          "y": 94
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 134,
+          "y": 40
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 141,
+          "y": 35
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 128,
+          "y": 35
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 67,
+          "y": 35
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 103,
+          "y": 109
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 70,
+          "y": 93
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 105,
+          "y": 67
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 134,
+          "y": 148
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 134,
+          "y": 160
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 134,
+          "y": 168
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 66,
+          "y": 144
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 66,
+          "y": 174
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+3% DR",
+          "color": {
+            "value": -13408513,
+            "falpha": 0.0
+          },
+          "name": "+3% DR",
+          "x": 87,
+          "y": 174
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+5% DR",
+          "color": {
+            "value": -13408513,
+            "falpha": 0.0
+          },
+          "name": "+5% DR",
+          "x": 17,
+          "y": 160
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+2% CR",
+          "color": {
+            "value": -6750208,
+            "falpha": 0.0
+          },
+          "name": "+2% CR",
+          "x": 256,
+          "y": 111
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+2% CR",
+          "color": {
+            "value": -6750208,
+            "falpha": 0.0
+          },
+          "name": "+2% CR",
+          "x": 186,
+          "y": 74
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+5% CD",
+          "color": {
+            "value": -3586276,
+            "falpha": 0.0
+          },
+          "name": "+5% CD",
+          "x": 256,
+          "y": 74
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+5% AP",
+          "color": {
+            "value": -6750055,
+            "falpha": 0.0
+          },
+          "name": "+5% AP",
+          "x": 256,
+          "y": 34
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+4% CR",
+          "color": {
+            "value": -6750208,
+            "falpha": 0.0
+          },
+          "name": "+4% CR",
+          "x": 331,
+          "y": 34
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+15% CD",
+          "color": {
+            "value": -3914980,
+            "falpha": 0.0
+          },
+          "name": "+15% CD",
+          "x": 328,
+          "y": 68
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+10% CR",
+          "color": {
+            "value": -6750208,
+            "falpha": 0.0
+          },
+          "name": "+10% CR",
+          "x": 331,
+          "y": 100
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+2% CR",
+          "color": {
+            "value": -6750208,
+            "falpha": 0.0
+          },
+          "name": "+2% CR",
+          "x": 256,
+          "y": 143
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+15% CD",
+          "color": {
+            "value": -3914980,
+            "falpha": 0.0
+          },
+          "name": "+15% CD",
+          "x": 346,
+          "y": 131
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+5% CR",
+          "color": {
+            "value": -6750208,
+            "falpha": 0.0
+          },
+          "name": "+5% CR",
+          "x": 382,
+          "y": 173
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+3% AP",
+          "color": {
+            "value": -6750055,
+            "falpha": 0.0
+          },
+          "name": "+3% AP",
+          "x": 316,
+          "y": 173
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+5% CR",
+          "color": {
+            "value": -6750208,
+            "falpha": 0.0
+          },
+          "name": "+5% CR",
+          "x": 256,
+          "y": 173
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+10% CD",
+          "color": {
+            "value": -3914980,
+            "falpha": 0.0
+          },
+          "name": "+10% CD",
+          "x": 192,
+          "y": 173
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "+7% AP",
+          "color": {
+            "value": -6750055,
+            "falpha": 0.0
+          },
+          "name": "+7% AP",
+          "x": 174,
+          "y": 142
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 60,
+          "y": 149
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 60,
+          "y": 168
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 60,
+          "y": 158
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+2% CR",
+          "onClick": {
+            "name": "SkillTreeBtn11Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn11Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+2% CR",
+          "x": 246,
+          "y": 106
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+1 HP",
+          "onClick": {
+            "name": "SkillTreeBtn1Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn1Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+1 HP",
+          "x": 114,
+          "y": 105
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+1 HP",
+          "onClick": {
+            "name": "SkillTreeBtn2Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn2Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+1 HP",
+          "x": 77,
+          "y": 140
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+1 HP",
+          "onClick": {
+            "name": "SkillTreeBtn7Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn7Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+1 HP",
+          "x": 52,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+1 HP",
+          "onClick": {
+            "name": "SkillTreeBtn10Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn10Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+1 HP",
+          "x": 11,
+          "y": 31
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+1 HP",
+          "onClick": {
+            "name": "SkillTreeBtn8Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn8Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+1 HP",
+          "x": 165,
+          "y": 31
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+2% CR",
+          "onClick": {
+            "name": "SkillTreeBtn12Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn12Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+2% CR",
+          "x": 246,
+          "y": 138
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+4% CR",
+          "onClick": {
+            "name": "SkillTreeBtn22Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn22Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+4% CR",
+          "x": 321,
+          "y": 29
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+2% CR",
+          "onClick": {
+            "name": "SkillTreeBtn20Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn20Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+2% CR",
+          "x": 176,
+          "y": 69
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+5% CR",
+          "onClick": {
+            "name": "SkillTreeBtn17Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn17Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+5% CR",
+          "x": 372,
+          "y": 168
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+5% CR",
+          "onClick": {
+            "name": "SkillTreeBtn15Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn15Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+5% CR",
+          "x": 246,
+          "y": 168
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+10% CR",
+          "onClick": {
+            "name": "SkillTreeBtn24Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn24Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+10% CR",
+          "x": 324,
+          "y": 95
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+5% CD",
+          "onClick": {
+            "name": "SkillTreeBtn19Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn19Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+5% CD",
+          "x": 246,
+          "y": 69
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+10% CD",
+          "onClick": {
+            "name": "SkillTreeBtn13Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn13Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+10% CD",
+          "x": 185,
+          "y": 168
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+15% CD",
+          "onClick": {
+            "name": "SkillTreeBtn18Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn18Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+15% CD",
+          "x": 339,
+          "y": 126
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+15% CD",
+          "onClick": {
+            "name": "SkillTreeBtn23Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn23Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+15% CD",
+          "x": 321,
+          "y": 63
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+3% AP",
+          "onClick": {
+            "name": "SkillTreeBtn16Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn16Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+3% AP",
+          "x": 306,
+          "y": 168
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+7% AP",
+          "onClick": {
+            "name": "SkillTreeBtn14Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn14Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+7% AP",
+          "x": 164,
+          "y": 137
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+5% AP",
+          "onClick": {
+            "name": "SkillTreeBtn21Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn21Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+5% AP",
+          "x": 246,
+          "y": 29
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "AP = Ability Power",
+          "color": {
+            "value": -6710887,
+            "falpha": 0.0
+          },
+          "name": "AP = Ability Power",
+          "x": 309,
+          "y": 203
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 265,
+          "y": 95
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 297,
+          "y": 142
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 309,
+          "y": 142
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 315,
+          "y": 142
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 321,
+          "y": 147
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 235,
+          "y": 142
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 223,
+          "y": 142
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 216,
+          "y": 147
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 337,
+          "y": 157
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 344,
+          "y": 152
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 356,
+          "y": 152
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 368,
+          "y": 152
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 385,
+          "y": 158
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 235,
+          "y": 73
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 265,
+          "y": 57
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 297,
+          "y": 33
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 340,
+          "y": 48
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 380,
+          "y": 152
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_req_up.png",
+          "use1Xscale": true,
+          "name": "symbol_req_up.png",
+          "x": 350,
+          "y": 115
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_req_down.png",
+          "use1Xscale": true,
+          "name": "symbol_req_down.png",
+          "x": 340,
+          "y": 83
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_req_right.png",
+          "use1Xscale": true,
+          "name": "symbol_req_right.png",
+          "x": 158,
+          "y": 202
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "= Requires Mutiple",
+          "color": {
+            "value": -6710887,
+            "falpha": 0.0
+          },
+          "name": "= Requires Mutiple",
+          "x": 175,
+          "y": 203
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_req_up.png",
+          "use1Xscale": true,
+          "name": "symbol_req_up.png",
+          "x": 70,
+          "y": 82
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_req_left.png",
+          "use1Xscale": true,
+          "name": "symbol_req_left.png",
+          "x": 103,
+          "y": 67
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "DR = Damage Reduction",
+          "color": {
+            "value": -6710887,
+            "falpha": 0.0
+          },
+          "name": "DR = Damage Reduction",
+          "x": 4,
+          "y": 226
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+2% DR",
+          "onClick": {
+            "name": "SkillTreeBtn5Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn5Condition"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "+2% DR",
+          "x": 54,
+          "y": 105
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+3% DR",
+          "onClick": {
+            "name": "SkillTreeBtn3Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn3Condition"
+          },
+          "width": 51,
+          "height": 20,
+          "name": "+3% DR",
+          "x": 77,
+          "y": 169
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+2% DR",
+          "onClick": {
+            "name": "SkillTreeBtn6Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn6Condition"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "+2% DR",
+          "x": 117,
+          "y": 63
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+3% DR",
+          "onClick": {
+            "name": "SkillTreeBtn9Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn9Condition"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "+3% DR",
+          "x": 79,
+          "y": 31
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "+5% DR",
+          "onClick": {
+            "name": "SkillTreeBtn4Pressed"
+          },
+          "displayCondition": {
+            "name": "SkillTreeBtn4Condition"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "+5% DR",
+          "x": 9,
+          "y": 155
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_right.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_right.png",
+          "x": 234,
+          "y": 110
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_left.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_left.png",
+          "x": 165,
+          "y": 110
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_up.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_up.png",
+          "x": 134,
+          "y": 83
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_left.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_left.png",
+          "x": 125,
+          "y": 35
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_right.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_right.png",
+          "x": 153,
+          "y": 35
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 148,
+          "y": 35
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_left.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_left.png",
+          "x": 62,
+          "y": 35
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_left.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_left.png",
+          "x": 94,
+          "y": 109
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_left.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_left.png",
+          "x": 128,
+          "y": 174
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 129,
+          "y": 174
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_left.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_left.png",
+          "x": 128,
+          "y": 144
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_up.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_up.png",
+          "x": 191,
+          "y": 157
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_down.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_down.png",
+          "x": 216,
+          "y": 156
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_down.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_down.png",
+          "x": 265,
+          "y": 126
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_down.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_down.png",
+          "x": 265,
+          "y": 156
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_down.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_down.png",
+          "x": 321,
+          "y": 156
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_right.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_right.png",
+          "x": 360,
+          "y": 172
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_right.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_right.png",
+          "x": 309,
+          "y": 33
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 302,
+          "y": 33
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_down.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_down.png",
+          "x": 340,
+          "y": 51
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_up.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_up.png",
+          "x": 265,
+          "y": 49
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_up.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_up.png",
+          "x": 265,
+          "y": 89
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_arrow_left.png",
+          "use1Xscale": true,
+          "name": "symbol_arrow_left.png",
+          "x": 227,
+          "y": 73
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_req_left.png",
+          "use1Xscale": true,
+          "name": "symbol_req_left.png",
+          "x": 55,
+          "y": 159
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_req_up.png",
+          "use1Xscale": true,
+          "name": "symbol_req_up.png",
+          "x": 360,
+          "y": 146
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_vertical.png",
+          "use1Xscale": true,
+          "name": "symbol_line_vertical.png",
+          "x": 134,
+          "y": 52
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_line_horizontal.png",
+          "use1Xscale": true,
+          "name": "symbol_line_horizontal.png",
+          "x": 357,
+          "y": 172
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

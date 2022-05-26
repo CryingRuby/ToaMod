@@ -1,0 +1,8 @@
+{
+  "parent": "toamod:custom/chest_epic_model",
+  "textures": {
+    "all": "toamod:blocks/chest_epic_texture",
+    "particle": "toamod:blocks/chest_epic_texture",
+    "1": "toamod:blocks/chest_epic_texture"
+  }
+}

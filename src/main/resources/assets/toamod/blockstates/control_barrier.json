@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "toamod:block/control_barrier"
+    }
+  }
+}

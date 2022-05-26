@@ -1,0 +1,154 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 425,
+    "height": 238,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Bound to Bosses defeated",
+          "isCheckedProcedure": {
+            "name": "ControlBarrierChkBoDef"
+          },
+          "name": "chkBossesDef",
+          "x": 100,
+          "y": 49
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "1",
+          "width": 30,
+          "height": 20,
+          "name": "inputBossesDef",
+          "x": 278,
+          "y": 49
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Bound to Attack-Skill",
+          "isCheckedProcedure": {
+            "name": "ControlbarrierAtSkill"
+          },
+          "name": "chkAttackSkill",
+          "x": 100,
+          "y": 111
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Bound to Defense-Skill",
+          "isCheckedProcedure": {
+            "name": "ControlBarrierChkDeSkill"
+          },
+          "name": "chkDefenseSkill",
+          "x": 100,
+          "y": 142
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Bound to Magic-Skill",
+          "isCheckedProcedure": {
+            "name": "ControlBarrierChkMaSkill"
+          },
+          "name": "chkMagicSkill",
+          "x": 100,
+          "y": 172
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "1",
+          "width": 30,
+          "height": 20,
+          "name": "inputAttackSLvl",
+          "x": 278,
+          "y": 111
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "1",
+          "width": 30,
+          "height": 20,
+          "name": "inputDefenseSLvl",
+          "x": 278,
+          "y": 142
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "1",
+          "width": 30,
+          "height": 20,
+          "name": "inputMagicSLvl",
+          "x": 278,
+          "y": 172
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Bound to Player Level",
+          "isCheckedProcedure": {
+            "name": "ControlBarrierChkPlaLvl"
+          },
+          "name": "chkPlayerLvl",
+          "x": 100,
+          "y": 80
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "1",
+          "width": 29,
+          "height": 20,
+          "name": "inputPlayerLvl",
+          "x": 278,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Confirm",
+          "onClick": {
+            "name": "ControlBarrierClosed"
+          },
+          "width": 61,
+          "height": 20,
+          "name": "Confirm",
+          "x": 336,
+          "y": 192
+        }
+      }
+    ],
+    "onOpen": {
+      "name": "ControlBarrierGuiThisGUIOpened"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

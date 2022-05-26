@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "chest_legendary_texture"
+      },
+      "name": "default"
+    }
+  }
+}

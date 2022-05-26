@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "toamod:blocks/ore_respawn_stone",
+    "particle": "toamod:blocks/ore_respawn_stone"
+  }
+}

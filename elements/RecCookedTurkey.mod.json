@@ -1,0 +1,20 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Campfire cooking",
+    "xpReward": 0.0,
+    "cookingTime": 210,
+    "recipeRetstackSize": 1,
+    "group": "food",
+    "recipeShapeless": false,
+    "campfireCookingInputStack": {
+      "value": "CUSTOM:RawTurkey"
+    },
+    "campfireCookingReturnStack": {
+      "value": "CUSTOM:CookedTurkey"
+    },
+    "name": "rec_cooked_turkey",
+    "namespace": "mod"
+  }
+}
