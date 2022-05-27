@@ -105,9 +105,9 @@
     "particleSpawningRadious": 0.8,
     "particleAmount": 7,
     "hasInventory": true,
-    "guiBoundTo": "<NONE>",
-    "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "guiBoundTo": "WeaponTableGui",
+    "openGUIOnRightClick": true,
+    "inventorySize": 14,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -121,6 +121,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onBlockPlayedBy": {
+      "name": "WeaponTablePlaced"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

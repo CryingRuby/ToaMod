@@ -18,6 +18,7 @@ import net.mcreator.toamod.block.WeaponTableBlock;
 import net.mcreator.toamod.block.UpgradingTableBlock;
 import net.mcreator.toamod.block.OreRespawnStoneBlock;
 import net.mcreator.toamod.block.MagmaBlock;
+import net.mcreator.toamod.block.LogBlock;
 import net.mcreator.toamod.block.JadeOreBlock;
 import net.mcreator.toamod.block.IronOreBlock;
 import net.mcreator.toamod.block.GoldOreBlock;
@@ -50,6 +51,7 @@ public class ToamodModBlocks {
 	public static final RegistryObject<Block> COOKING_TABLE = REGISTRY.register("cooking_table", () -> new CookingTableBlock());
 	public static final RegistryObject<Block> ARMORY_TABLE = REGISTRY.register("armory_table", () -> new ArmoryTableBlock());
 	public static final RegistryObject<Block> WEAPON_TABLE = REGISTRY.register("weapon_table", () -> new WeaponTableBlock());
+	public static final RegistryObject<Block> LOG = REGISTRY.register("log", () -> new LogBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {
