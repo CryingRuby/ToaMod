@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "toamod:blocks/oak_log_top",
+    "up": "toamod:blocks/oak_log_top",
+    "north": "toamod:blocks/oak_log",
+    "east": "toamod:blocks/oak_log",
+    "south": "toamod:blocks/oak_log",
+    "west": "toamod:blocks/oak_log",
+    "particle": "toamod:blocks/oak_log_top"
+  }
+}

@@ -12,15 +12,17 @@ public class WeaponTableGuiRightTakenProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		double i = 0;
-		i = 10;
-		for (int index0 = 0; index0 < (int) (2); index0++) {
-			if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
-					&& _current.get() instanceof Map _slots) {
-				((Slot) _slots.get((int) i)).set(ItemStack.EMPTY);
-				_player.containerMenu.broadcastChanges();
-			}
-			i = i + 1;
+		if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			((Slot) _slots.get(10)).set(ItemStack.EMPTY);
+			_player.containerMenu.broadcastChanges();
+		}
+		if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			((Slot) _slots.get(11)).set(ItemStack.EMPTY);
+			_player.containerMenu.broadcastChanges();
+		}
+		if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+			((Slot) _slots.get(12)).set(ItemStack.EMPTY);
+			_player.containerMenu.broadcastChanges();
 		}
 	}
 }

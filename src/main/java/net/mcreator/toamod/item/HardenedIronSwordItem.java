@@ -9,27 +9,24 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
-import net.mcreator.toamod.procedures.HardenedStoneSwordItemIsCraftedsmeltedProcedure;
-
 import java.util.List;
 
-public class HardenedStoneSwordItem extends SwordItem {
-	public HardenedStoneSwordItem() {
+public class HardenedIronSwordItem extends SwordItem {
+	public HardenedIronSwordItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 0;
+				return 100;
 			}
 
 			public float getSpeed() {
-				return 1f;
+				return 4f;
 			}
 
 			public float getAttackDamageBonus() {
-				return 1.5f;
+				return 2f;
 			}
 
 			public int getLevel() {
@@ -49,13 +46,7 @@ public class HardenedStoneSwordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("\u00A77Rarity: \u00A7fComman\u00A7r"));
+		list.add(new TextComponent("\u00A77Rarity: \u00A7aUncomman\u00A7r"));
 		list.add(new TextComponent("\u00A77Type: \u00A79Sword\u00A7r"));
-	}
-
-	@Override
-	public void onCraftedBy(ItemStack itemstack, Level world, Player entity) {
-		super.onCraftedBy(itemstack, world, entity);
-		HardenedStoneSwordItemIsCraftedsmeltedProcedure.execute(itemstack);
 	}
 }
