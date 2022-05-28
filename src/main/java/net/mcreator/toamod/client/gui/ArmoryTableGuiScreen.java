@@ -30,7 +30,7 @@ public class ArmoryTableGuiScreen extends AbstractContainerScreen<ArmoryTableGui
 		this.z = container.z;
 		this.entity = container.entity;
 		this.imageWidth = 176;
-		this.imageHeight = 166;
+		this.imageHeight = 200;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/armory_table_gui.png");
@@ -49,6 +49,10 @@ public class ArmoryTableGuiScreen extends AbstractContainerScreen<ArmoryTableGui
 		RenderSystem.defaultBlendFunc();
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_arrow_right.png"));
+		this.blit(ms, this.leftPos + 94, this.topPos + 61, 0, 0, 12, 12, 12, 12);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -68,6 +72,7 @@ public class ArmoryTableGuiScreen extends AbstractContainerScreen<ArmoryTableGui
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
+		this.font.draw(poseStack, "Armory Table", 54, 6, -12829636);
 	}
 
 	@Override

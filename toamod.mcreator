@@ -7,7 +7,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cristal",
-      "path": "~/items/Materials"
+      "path": "~/items"
     },
     {
       "name": "CristalShard",
@@ -16,7 +16,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cristal_shard",
-      "path": "~/items/Materials"
+      "path": "~/items"
     },
     {
       "name": "EnrichtedCristal",
@@ -25,7 +25,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "enrichted_cristal",
-      "path": "~/items/Materials"
+      "path": "~/items"
     },
     {
       "name": "Obsidian",
@@ -34,7 +34,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "obsidian",
-      "path": "~/items/Materials"
+      "path": "~/items"
     },
     {
       "name": "RecCristalShard",
@@ -79,25 +79,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coal",
-      "path": "~/items/Materials"
-    },
-    {
-      "name": "IronIngot",
-      "type": "item",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "iron_ingot",
-      "path": "~/items/Materials"
-    },
-    {
-      "name": "GoldIngot",
-      "type": "item",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gold_ingot",
-      "path": "~/items/Materials"
+      "path": "~/items"
     },
     {
       "name": "Jade",
@@ -106,7 +88,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "jade",
-      "path": "~/items/Materials"
+      "path": "~/items"
     },
     {
       "name": "GoldenHeart",
@@ -115,7 +97,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "golden_heart",
-      "path": "~/items/Special"
+      "path": "~/items"
     },
     {
       "name": "FieryHeart",
@@ -124,7 +106,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fiery_heart",
-      "path": "~/items/Special"
+      "path": "~/items"
     },
     {
       "name": "MagmaShard",
@@ -133,7 +115,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "magma_shard",
-      "path": "~/items/Materials"
+      "path": "~/items"
     },
     {
       "name": "EnrichtedMagmaShard",
@@ -142,7 +124,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "enrichted_magma_shard",
-      "path": "~/items/Materials"
+      "path": "~/items"
     },
     {
       "name": "CursedObsidian",
@@ -482,7 +464,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "egg",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "CristalSwordItemIsCraftedsmelted",
@@ -576,7 +558,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "scroll_lightning_strike",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "ScrollWeakness",
@@ -585,7 +567,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "scroll_weakness",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "ScrollBerserk",
@@ -594,7 +576,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "scroll_berserk",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "ChestNormalGui",
@@ -638,7 +620,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "enchtanted_book",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "EnchantableBookActivated",
@@ -668,7 +650,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_1",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "RecExecuting1",
@@ -754,7 +736,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_2",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookExecuting3",
@@ -763,7 +745,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_3",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookExecuting4",
@@ -772,7 +754,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_4",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookExecuting5",
@@ -781,7 +763,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_5",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "RecExecuting2",
@@ -826,7 +808,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_1",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookLifesteel2",
@@ -835,7 +817,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_2",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookLifesteel3",
@@ -844,7 +826,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_3",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness1",
@@ -853,7 +835,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_1",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness2",
@@ -862,7 +844,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_2",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness3",
@@ -871,7 +853,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_3",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness4",
@@ -880,7 +862,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_4",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness5",
@@ -889,7 +871,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_5",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness6",
@@ -898,7 +880,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_6",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness7",
@@ -907,7 +889,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_7",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness8",
@@ -916,7 +898,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_8",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness9",
@@ -925,7 +907,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_9",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookSharpness10",
@@ -934,7 +916,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_10",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "BookLifesteel1Crafted",
@@ -1219,7 +1201,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "wooden_key",
-      "path": "~/items/Special"
+      "path": "~/items"
     },
     {
       "name": "SilverKey",
@@ -1228,7 +1210,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "silver_key",
-      "path": "~/items/Special"
+      "path": "~/items"
     },
     {
       "name": "GoldenKey",
@@ -1237,7 +1219,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "golden_key",
-      "path": "~/items/Special"
+      "path": "~/items"
     },
     {
       "name": "ChestPlaced",
@@ -1344,7 +1326,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cor",
-      "path": "~/items/Special"
+      "path": "~/items"
     },
     {
       "name": "OreRespawnStone",
@@ -1615,7 +1597,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "magic_dust",
-      "path": "~/items/Special"
+      "path": "~/items"
     },
     {
       "name": "UpgradingTableGuiTick",
@@ -2012,7 +1994,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "leek",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "Grapes",
@@ -2021,7 +2003,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "grapes",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "UpgradingTableComponentTaken",
@@ -2405,7 +2387,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "strawberry",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "Blueberry",
@@ -2414,7 +2396,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "blueberry",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "Cranberry",
@@ -2423,7 +2405,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cranberry",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "Broccoli",
@@ -2432,7 +2414,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "broccoli",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "CoffeeBeans",
@@ -2441,7 +2423,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_beans",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "CupOfCoffee",
@@ -2450,7 +2432,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cup_of_coffee",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "RawMutton",
@@ -2459,7 +2441,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_mutton",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "CookedMutton",
@@ -2468,7 +2450,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cooked_mutton",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "RawTurkey",
@@ -2477,7 +2459,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_turkey",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "CookedTurkey",
@@ -2486,7 +2468,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cooked_turkey",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "RawRagoutRabbit",
@@ -2495,7 +2477,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_ragout_rabbit",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "CookedRagoutRabbit",
@@ -2504,7 +2486,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cooked_ragout_rabbit",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "RawCrab",
@@ -2513,7 +2495,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_crab",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "RawGrouper",
@@ -2522,7 +2504,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_grouper",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "Tomato",
@@ -2531,7 +2513,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "tomato",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "Onion",
@@ -2540,7 +2522,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "onion",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "ChickenGumbo",
@@ -2549,7 +2531,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "chicken_gumbo",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "SteakAndChips",
@@ -2558,7 +2540,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "steak_and_chips",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "SpicySpicedChilli",
@@ -2567,7 +2549,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "spicy_spiced_chilli",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "RecCookedMutton",
@@ -2603,7 +2585,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "rabbit_ragout",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "LootFishing",
@@ -2621,7 +2603,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "fish_meal",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "HamSoup",
@@ -2630,7 +2612,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "ham_soup",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "LambPlate",
@@ -2639,7 +2621,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "lamb_plate",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "Mango",
@@ -2648,7 +2630,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "mango",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "SweatRoastedChicken",
@@ -2657,7 +2639,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "sweat_roasted_chicken",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "BananaSplit",
@@ -2666,7 +2648,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "banana_split",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "GetVanillaCrit",
@@ -2926,7 +2908,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "chilli",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "Chocolate",
@@ -2935,7 +2917,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "chocolate",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "ChocolateStrawberry",
@@ -2944,7 +2926,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "chocolate_strawberry",
-      "path": "~/items/Food"
+      "path": "~/items"
     },
     {
       "name": "CookingTable",
@@ -3057,22 +3039,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -4074,7 +4040,7 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "scroll_big_slice",
-      "path": "~/items/BooksAndScrolls"
+      "path": "~/items"
     },
     {
       "name": "JadeSwordItemCrafted",
@@ -4188,57 +4154,30 @@
       "path": "~/procedures/Tools"
     },
     {
-      "name": "WoodenHandle",
-      "type": "item",
-      "sortid": 292,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wooden_handle",
-      "path": "~/items/Special"
-    },
-    {
-      "name": "MetalHandle",
+      "name": "PureIron",
       "type": "item",
       "sortid": 293,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "metal_handle",
-      "path": "~/items/Special"
+      "registry_name": "pure_iron",
+      "path": "~/items"
     },
     {
-      "name": "ObsidianHandle",
+      "name": "PureGold",
       "type": "item",
-      "sortid": 294,
+      "sortid": 292,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "obsidian_handle",
-      "path": "~/items/Special"
+      "registry_name": "pure_gold",
+      "path": "~/items"
     },
     {
-      "name": "MetalGuard",
+      "name": "AncientWarhammer",
       "type": "item",
-      "sortid": 295,
+      "sortid": 308,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "metal_guard",
-      "path": "~/items/Special"
-    },
-    {
-      "name": "JadeGuard",
-      "type": "item",
-      "sortid": 296,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "jade_guard",
-      "path": "~/items/Special"
-    },
-    {
-      "name": "MagmaGuard",
-      "type": "item",
-      "sortid": 297,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magma_guard",
+      "registry_name": "ancient_warhammer",
       "path": "~/items/Special"
     },
     {
@@ -4251,21 +4190,12 @@
       "path": "~/blocks"
     },
     {
-      "name": "HardenedIronSword",
-      "type": "tool",
-      "sortid": 299,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hardened_iron_sword",
-      "path": "~/tools"
-    },
-    {
-      "name": "IronBlade",
+      "name": "CristalBlade",
       "type": "item",
-      "sortid": 300,
+      "sortid": 303,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "iron_blade",
+      "registry_name": "cristal_blade",
       "path": "~/items/Special"
     },
     {
@@ -4278,6 +4208,24 @@
       "path": "~/items/Special"
     },
     {
+      "name": "JadeGuard",
+      "type": "item",
+      "sortid": 296,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jade_guard",
+      "path": "~/items/Special"
+    },
+    {
+      "name": "MetalHandle",
+      "type": "item",
+      "sortid": 293,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_handle",
+      "path": "~/items/Special"
+    },
+    {
       "name": "GoldBlade",
       "type": "item",
       "sortid": 302,
@@ -4287,48 +4235,12 @@
       "path": "~/items/Special"
     },
     {
-      "name": "CristalBlade",
-      "type": "item",
-      "sortid": 303,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cristal_blade",
-      "path": "~/items/Special"
-    },
-    {
-      "name": "JadeBlade",
-      "type": "item",
-      "sortid": 304,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "jade_blade",
-      "path": "~/items/Special"
-    },
-    {
       "name": "DragonSlayerBlade",
       "type": "item",
       "sortid": 305,
       "compiles": true,
       "locked_code": false,
       "registry_name": "dragon_slayer_blade",
-      "path": "~/items/Special"
-    },
-    {
-      "name": "DarkBlade",
-      "type": "item",
-      "sortid": 307,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "dark_blade",
-      "path": "~/items/Special"
-    },
-    {
-      "name": "AncientWarhammer",
-      "type": "item",
-      "sortid": 308,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ancient_warhammer",
       "path": "~/items/Special"
     },
     {
@@ -4359,6 +4271,78 @@
         ]
       },
       "path": "~/procedures/WeaponTable"
+    },
+    {
+      "name": "HardenedIronSword",
+      "type": "tool",
+      "sortid": 299,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hardened_iron_sword",
+      "path": "~/tools"
+    },
+    {
+      "name": "DarkBlade",
+      "type": "item",
+      "sortid": 307,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_blade",
+      "path": "~/items/Special"
+    },
+    {
+      "name": "MagmaGuard",
+      "type": "item",
+      "sortid": 297,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magma_guard",
+      "path": "~/items/Special"
+    },
+    {
+      "name": "IronBlade",
+      "type": "item",
+      "sortid": 300,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_blade",
+      "path": "~/items/Special"
+    },
+    {
+      "name": "JadeBlade",
+      "type": "item",
+      "sortid": 304,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jade_blade",
+      "path": "~/items/Special"
+    },
+    {
+      "name": "MetalGuard",
+      "type": "item",
+      "sortid": 295,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_guard",
+      "path": "~/items/Special"
+    },
+    {
+      "name": "WoodenHandle",
+      "type": "item",
+      "sortid": 292,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_handle",
+      "path": "~/items/Special"
+    },
+    {
+      "name": "ObsidianHandle",
+      "type": "item",
+      "sortid": 294,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "obsidian_handle",
+      "path": "~/items/Special"
     }
   ],
   "variable_elements": [
@@ -4554,22 +4538,19 @@
     "en_us": {
       "enchantment.toamod.life_steel": "Lifesteel",
       "item.toamod.coal": "Coal",
-      "item.toamod.magma_guard": "§5Magma Guard§r",
       "item.toamod.banana_split": "§5Banana Split§r",
       "effect.toamod.magic_shield": "Magic Shield",
       "item.toamod.cranberry": "Cranberry",
       "item.toamod.raw_grouper": "§aRaw Grouper§r",
       "block.toamod.gold_ore": "Gold Ore",
-      "enchantment.toamod.spikes": "Spikes",
       "item.toamod.ancient_guardian_warhammer": "§eAncient Guardian Warhammer§r",
+      "enchantment.toamod.spikes": "Spikes",
       "effect.toamod.cold_embrace": "Cold Embrace",
       "item.toamod.onion": "Onion",
       "item.toamod.wooden_key": "Wooden Key",
       "item.toamod.cooked_turkey": "§aCooked Turkey§r",
       "block.toamod.cooking_table": "Cooking Table",
-      "item.toamod.gold_blade": "§aGold Blade§r",
       "enchantment.toamod.ignite": "Ignite",
-      "item.toamod.dragon_slayer_blade": "§6Dragon Slayer Blade§r",
       "item.toamod.dragon_slayer": "§6Dragon Slayer§r",
       "item.toamod.fish_meal": "§aFish Meal§r",
       "item.toamod.deaths_dance": "§5Deaths Dance§r",
@@ -4577,37 +4558,29 @@
       "item.toamod.grapes": "§aGrapes§r",
       "item.toamod.lamb_plate": "§5Lamb Plate§r",
       "block.toamod.control_barrier": "Control Barrier",
-      "item.toamod.iron_ingot": "Iron Ingot",
       "item.toamod.ham_soup": "Ham Soup",
       "item.toamod.scroll_big_slice": "§6Ability: Big Slice§r",
       "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
       "enchantment.toamod.protection": "Protection",
       "block.toamod.armory_table": "Armory Table",
       "item.toamod.cristal": "§aCristal§r",
-      "item.toamod.jade_guard": "§aJade Guard§r",
-      "item.toamod.iron_blade": "Iron Blade",
       "effect.toamod.lightning_strike": "Lighting Strike",
       "item.toamod.cooked_mutton": "Cooked Mutton",
       "item.toamod.flame_sword": "§5Flame Sword§r",
       "item.toamod.raw_mutton": "§aRaw Mutton§r",
-      "item.toamod.hardened_iron_sword": "§aHardened Iron Sword§r",
       "item.toamod.raw_ragout_rabbit": "§5Raw Ragout Rabbit§r",
       "block.toamod.jade_ore": "Jade Ore",
-      "item.toamod.metal_guard": "Metal Guard",
       "item.toamod.strawberry": "Strawberry",
       "item.toamod.mango": "§aMango§r",
       "block.toamod.coal_ore": "Coal Ore",
-      "item.toamod.metal_handle": "§aMetal Handle§r",
       "item.toamod.iron_sword": "§aIron Sword§r",
       "item.toamod.magic_dust": "§6Magic Dust§r",
       "item.toamod.cor": "§6Cor§r",
-      "item.toamod.hardened_iron_blade": "Hardened Iron Blade",
       "item.toamod.enchtanted_book": "Enchtanted Book",
       "block.toamod.chest_legendary": "Chest Legendary",
       "item.toamod.golden_sword": "§aGold Sword§r",
       "block.toamod.cursed_obsidian": "Cursed Obsidian",
       "item.toamod.enrichted_magma_shard": "§5Enrichted Magma Shard§r",
-      "item.toamod.dark_blade": "§6Dark Blade§r",
       "enchantment.toamod.executing": "Executing",
       "item.toamod.rabbit_ragout": "§6Rabbit Ragout§r",
       "item.toamod.raw_turkey": "§aRaw Turkey§r",
@@ -4618,18 +4591,14 @@
       "item.toamod.chilli": "Chilli",
       "item.toamod.broccoli": "Broccoli",
       "item.toamod.tomato": "Tomato",
-      "item.toamod.cristal_blade": "Cristal Blade",
       "item.toamod.enrichted_cristal": "Enrichted Cristal",
-      "item.toamod.jade_blade": "Jade Blade",
       "item.toamod.obsidian": "§5Obsidian§r",
-      "item.toamod.obsidian_handle": "Obsidian Handle",
       "item.toamod.sweat_roasted_chicken": "Sweat Roasted Chicken",
       "effect.toamod.freezing_cold": "Freezing Cold",
       "item.toamod.jade": "Jade",
       "item.toamod.cup_of_coffee": "§aCup Of Coffee§r",
       "item.toamod.book_sharpness_3": "Sharpness III",
       "item.toamod.book_sharpness_4": "Sharpness IV",
-      "item.toamod.gold_ingot": "§aGold Ingot§r",
       "item.toamod.book_sharpness_1": "Sharpness I",
       "item.toamod.book_sharpness_2": "Sharpness II",
       "item.toamod.book_lifesteel_1": "Lifesteel I",
@@ -4645,7 +4614,6 @@
       "block.toamod.cristal_ore": "Cristal Ore",
       "effect.toamod.spell_immunity": "Spell Immunity",
       "item.toamod.the_dark_blade": "§6The Dark Blade§r",
-      "block.toamod.log": "Log",
       "item.toamod.chocolate_strawberry": "§aChocolate Strawberry§r",
       "block.toamod.magma": "Magma",
       "item.toamod.chicken_gumbo": "Chicken Gumbo",
@@ -4663,10 +4631,8 @@
       "item.toamod.book_executing_1": "Executing I",
       "item.toamod.book_executing_3": "Executing III",
       "item.toamod.book_executing_2": "Executing II",
-      "item.toamod.ancient_warhammer": "§eAncient Warhammer§r",
       "item.toamod.blueberry": "Blueberry",
       "enchantment.toamod.sharpness": "Sharpness",
-      "item.toamod.wooden_handle": "Wooden Handle",
       "item.toamod.scroll_lightning_strike": "§7Ability: §aLightning Strike§r",
       "item.toamod.steak_and_chips": "§5Steak And Chips§r",
       "item.toamod.scroll_weakness": "§7Ability: §rWeakness",
@@ -4684,13 +4650,14 @@
       "enchantment.toamod.life_steel": "Life Steel",
       "item.toamod.coal": "Kohle",
       "item.toamod.magma_guard": "§5Magma Guard§r",
+      "item.toamod.pure_iron": "Iron Ingot",
       "item.toamod.banana_split": "§5Banana Split§r",
       "effect.toamod.magic_shield": "Magic Shield",
       "item.toamod.cranberry": "Cranberry",
       "item.toamod.raw_grouper": "§aRaw Grouper§r",
       "block.toamod.gold_ore": "Gold Ore",
-      "enchantment.toamod.spikes": "Spikes",
       "item.toamod.ancient_guardian_warhammer": "§eAncient Guardian Warhammer§r",
+      "enchantment.toamod.spikes": "Spikes",
       "effect.toamod.cold_embrace": "Cold Embrace",
       "item.toamod.onion": "Onion",
       "item.toamod.wooden_key": "Wooden Key",
@@ -4698,15 +4665,14 @@
       "block.toamod.cooking_table": "Cooking Table",
       "item.toamod.gold_blade": "§aGold Blade§r",
       "enchantment.toamod.ignite": "Ignite",
-      "item.toamod.dragon_slayer_blade": "§6Dragon Slayer Blade§r",
       "item.toamod.dragon_slayer": "§6Dragon Slayer§r",
+      "item.toamod.dragon_slayer_blade": "§6Dragon Slayer Blade§r",
       "item.toamod.fish_meal": "§aFish Meal§r",
       "item.toamod.deaths_dance": "§5Deaths Dance§r",
       "block.toamod.chest_epic": "Chest Epic",
       "item.toamod.grapes": "�aGrapes�r",
       "item.toamod.lamb_plate": "§5Lamb Plate§r",
       "block.toamod.control_barrier": "Control Barrier",
-      "item.toamod.iron_ingot": "Iron",
       "item.toamod.ham_soup": "Ham Soup",
       "item.toamod.scroll_big_slice": "Scroll Big Slice",
       "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
@@ -4758,7 +4724,6 @@
       "item.toamod.cup_of_coffee": "§aCup Of Coffee§r",
       "item.toamod.book_sharpness_3": "Sharpness II",
       "item.toamod.book_sharpness_4": "Sharpness III",
-      "item.toamod.gold_ingot": "Gold",
       "item.toamod.book_sharpness_1": "Sharpness I",
       "item.toamod.book_sharpness_2": "Sharpness II",
       "item.toamod.book_lifesteel_1": "Lifesteel I",
@@ -4792,6 +4757,7 @@
       "item.toamod.book_executing_1": "Executing I",
       "item.toamod.book_executing_3": "Book Executing 3",
       "item.toamod.book_executing_2": "Executing II",
+      "item.toamod.pure_gold": "§aGold Ingot§r",
       "item.toamod.ancient_warhammer": "§eAncient Warhammer§r",
       "item.toamod.blueberry": "Blueberry",
       "enchantment.toamod.sharpness": "Sharpness",
@@ -4814,53 +4780,7 @@
     "name": "~",
     "children": [
       {
-        "name": "items",
-        "children": [
-          {
-            "name": "BooksAndScrolls",
-            "children": []
-          },
-          {
-            "name": "Food",
-            "children": []
-          },
-          {
-            "name": "Materials",
-            "children": []
-          },
-          {
-            "name": "Special",
-            "children": []
-          }
-        ]
-      },
-      {
-        "name": "blocks",
-        "children": []
-      },
-      {
-        "name": "recipes",
-        "children": []
-      },
-      {
-        "name": "mobs",
-        "children": []
-      },
-      {
-        "name": "loottables",
-        "children": [
-          {
-            "name": "blocks",
-            "children": []
-          }
-        ]
-      },
-      {
-        "name": "effects",
-        "children": []
-      },
-      {
-        "name": "enchantments",
+        "name": "guis",
         "children": []
       },
       {
@@ -4875,6 +4795,10 @@
         "name": "procedures",
         "children": [
           {
+            "name": "OreRespawn",
+            "children": []
+          },
+          {
             "name": "UpgradingTableGui",
             "children": []
           },
@@ -4887,15 +4811,11 @@
             "children": []
           },
           {
-            "name": "OreRespawn",
-            "children": []
-          },
-          {
-            "name": "Commands",
-            "children": []
-          },
-          {
             "name": "Effects",
+            "children": []
+          },
+          {
+            "name": "PlayerSkillTree",
             "children": []
           },
           {
@@ -4903,15 +4823,7 @@
             "children": []
           },
           {
-            "name": "Global",
-            "children": []
-          },
-          {
             "name": "Skillrewards",
-            "children": []
-          },
-          {
-            "name": "WeaponTable",
             "children": []
           },
           {
@@ -4919,13 +4831,71 @@
             "children": []
           },
           {
-            "name": "PlayerSkillTree",
+            "name": "Commands",
+            "children": []
+          },
+          {
+            "name": "Global",
+            "children": []
+          },
+          {
+            "name": "WeaponTable",
             "children": []
           }
         ]
       },
       {
-        "name": "guis",
+        "name": "effects",
+        "children": []
+      },
+      {
+        "name": "mobs",
+        "children": []
+      },
+      {
+        "name": "enchantments",
+        "children": []
+      },
+      {
+        "name": "items",
+        "children": [
+          {
+            "name": "Special",
+            "children": []
+          },
+          {
+            "name": "Materials",
+            "children": []
+          },
+          {
+            "name": "BooksAndScrolls",
+            "children": []
+          },
+          {
+            "name": "Food",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "blocks",
+        "children": []
+      },
+      {
+        "name": "recipes",
+        "children": []
+      },
+      {
+        "name": "loottables",
+        "children": [
+          {
+            "name": "blocks",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "armor",
         "children": []
       }
     ]
