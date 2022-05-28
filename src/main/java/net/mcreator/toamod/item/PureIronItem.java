@@ -13,8 +13,8 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public class IronIngotItem extends Item {
-	public IronIngotItem() {
+public class PureIronItem extends Item {
+	public PureIronItem() {
 		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(64).rarity(Rarity.COMMON));
 	}
 

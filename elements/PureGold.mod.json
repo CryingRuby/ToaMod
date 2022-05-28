@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "gold_ingot",
+    "texture": "gold",
     "customModelName": "Normal",
-    "name": "§aGold Ingot§r",
+    "name": "§aPure Gold§r",
     "rarity": "UNCOMMON",
     "creativeTab": {
       "value": "MISC"

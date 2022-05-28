@@ -13,8 +13,8 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public class GoldIngotItem extends Item {
-	public GoldIngotItem() {
+public class PureGoldItem extends Item {
+	public PureGoldItem() {
 		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(64).rarity(Rarity.UNCOMMON));
 	}
 

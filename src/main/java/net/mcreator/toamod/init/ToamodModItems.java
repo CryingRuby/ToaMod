@@ -19,7 +19,6 @@ import net.mcreator.toamod.item.TomatoItem;
 import net.mcreator.toamod.item.TheDarkBladeItem;
 import net.mcreator.toamod.item.SweatRoastedChickenItem;
 import net.mcreator.toamod.item.StrawberryItem;
-import net.mcreator.toamod.item.StoneSwordItem;
 import net.mcreator.toamod.item.SteakAndChipsItem;
 import net.mcreator.toamod.item.SpicySpicedChilliItem;
 import net.mcreator.toamod.item.SilverKeyItem;
@@ -33,6 +32,8 @@ import net.mcreator.toamod.item.RawMuttonItem;
 import net.mcreator.toamod.item.RawGrouperItem;
 import net.mcreator.toamod.item.RawCrabItem;
 import net.mcreator.toamod.item.RabbitRagoutItem;
+import net.mcreator.toamod.item.PureIronItem;
+import net.mcreator.toamod.item.PureGoldItem;
 import net.mcreator.toamod.item.OnionItem;
 import net.mcreator.toamod.item.ObsidianItem;
 import net.mcreator.toamod.item.MangoItem;
@@ -43,14 +44,11 @@ import net.mcreator.toamod.item.LambPlateItem;
 import net.mcreator.toamod.item.JadeSwordItem;
 import net.mcreator.toamod.item.JadeItem;
 import net.mcreator.toamod.item.IronSwordItem;
-import net.mcreator.toamod.item.IronIngotItem;
-import net.mcreator.toamod.item.HardenedStoneSwordItem;
 import net.mcreator.toamod.item.HamSoupItem;
 import net.mcreator.toamod.item.GrapesItem;
 import net.mcreator.toamod.item.GoldenSwordItem;
 import net.mcreator.toamod.item.GoldenKeyItem;
 import net.mcreator.toamod.item.GoldenHeartItem;
-import net.mcreator.toamod.item.GoldIngotItem;
 import net.mcreator.toamod.item.FlameSwordItem;
 import net.mcreator.toamod.item.FishMealItem;
 import net.mcreator.toamod.item.FieryHeartItem;
@@ -102,8 +100,6 @@ import net.mcreator.toamod.ToamodMod;
 public class ToamodModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, ToamodMod.MODID);
 	public static final RegistryObject<Item> COAL = REGISTRY.register("coal", () -> new CoalItem());
-	public static final RegistryObject<Item> IRON_INGOT = REGISTRY.register("iron_ingot", () -> new IronIngotItem());
-	public static final RegistryObject<Item> GOLD_INGOT = REGISTRY.register("gold_ingot", () -> new GoldIngotItem());
 	public static final RegistryObject<Item> CRISTAL_SHARD = REGISTRY.register("cristal_shard", () -> new CristalShardItem());
 	public static final RegistryObject<Item> CRISTAL = REGISTRY.register("cristal", () -> new CristalItem());
 	public static final RegistryObject<Item> ENRICHTED_CRISTAL = REGISTRY.register("enrichted_cristal", () -> new EnrichtedCristalItem());
@@ -135,8 +131,6 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> ARMORY_TABLE = block(ToamodModBlocks.ARMORY_TABLE, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> WEAPON_TABLE = block(ToamodModBlocks.WEAPON_TABLE, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> WOODEN_SWORD = REGISTRY.register("wooden_sword", () -> new WoodenSwordItem());
-	public static final RegistryObject<Item> STONE_SWORD = REGISTRY.register("stone_sword", () -> new StoneSwordItem());
-	public static final RegistryObject<Item> HARDENED_STONE_SWORD = REGISTRY.register("hardened_stone_sword", () -> new HardenedStoneSwordItem());
 	public static final RegistryObject<Item> IRON_SWORD = REGISTRY.register("iron_sword", () -> new IronSwordItem());
 	public static final RegistryObject<Item> GOLDEN_SWORD = REGISTRY.register("golden_sword", () -> new GoldenSwordItem());
 	public static final RegistryObject<Item> CRISTAL_SWORD = REGISTRY.register("cristal_sword", () -> new CristalSwordItem());
@@ -203,6 +197,8 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> LAMB_PLATE = REGISTRY.register("lamb_plate", () -> new LambPlateItem());
 	public static final RegistryObject<Item> SWEAT_ROASTED_CHICKEN = REGISTRY.register("sweat_roasted_chicken", () -> new SweatRoastedChickenItem());
 	public static final RegistryObject<Item> BANANA_SPLIT = REGISTRY.register("banana_split", () -> new BananaSplitItem());
+	public static final RegistryObject<Item> PURE_GOLD = REGISTRY.register("pure_gold", () -> new PureGoldItem());
+	public static final RegistryObject<Item> PURE_IRON = REGISTRY.register("pure_iron", () -> new PureIronItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

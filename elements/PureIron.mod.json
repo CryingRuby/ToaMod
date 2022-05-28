@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "iron_ingot",
+    "texture": "iron",
     "customModelName": "Normal",
-    "name": "Iron Ingot",
+    "name": "Pure Iron",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "MISC"

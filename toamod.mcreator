@@ -82,24 +82,6 @@
       "path": "~/items"
     },
     {
-      "name": "IronIngot",
-      "type": "item",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "iron_ingot",
-      "path": "~/items"
-    },
-    {
-      "name": "GoldIngot",
-      "type": "item",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gold_ingot",
-      "path": "~/items"
-    },
-    {
       "name": "Jade",
       "type": "item",
       "sortid": 7,
@@ -361,30 +343,12 @@
       "path": "~/tools"
     },
     {
-      "name": "StoneSword",
-      "type": "tool",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "stone_sword",
-      "path": "~/tools"
-    },
-    {
       "name": "WoodenSword",
       "type": "tool",
       "sortid": 34,
       "compiles": true,
       "locked_code": false,
       "registry_name": "wooden_sword",
-      "path": "~/tools"
-    },
-    {
-      "name": "HardenedStoneSword",
-      "type": "tool",
-      "sortid": 36,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hardened_stone_sword",
       "path": "~/tools"
     },
     {
@@ -4188,6 +4152,24 @@
         ]
       },
       "path": "~/procedures/Tools"
+    },
+    {
+      "name": "PureGold",
+      "type": "item",
+      "sortid": 292,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pure_gold",
+      "path": "~/items"
+    },
+    {
+      "name": "PureIron",
+      "type": "item",
+      "sortid": 293,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pure_iron",
+      "path": "~/items"
     }
   ],
   "variable_elements": [
@@ -4383,14 +4365,14 @@
     "en_us": {
       "enchantment.toamod.life_steel": "Lifesteel",
       "item.toamod.coal": "Coal",
+      "item.toamod.pure_iron": "Pure Iron",
       "item.toamod.banana_split": "§5Banana Split§r",
       "effect.toamod.magic_shield": "Magic Shield",
       "item.toamod.cranberry": "Cranberry",
       "item.toamod.raw_grouper": "§aRaw Grouper§r",
       "block.toamod.gold_ore": "Gold Ore",
-      "enchantment.toamod.spikes": "Spikes",
       "item.toamod.ancient_guardian_warhammer": "§eAncient Guardian Warhammer§r",
-      "item.toamod.stone_sword": "Stone Sword",
+      "enchantment.toamod.spikes": "Spikes",
       "effect.toamod.cold_embrace": "Cold Embrace",
       "item.toamod.onion": "Onion",
       "item.toamod.wooden_key": "Wooden Key",
@@ -4399,18 +4381,16 @@
       "enchantment.toamod.ignite": "Ignite",
       "item.toamod.dragon_slayer": "§6Dragon Slayer§r",
       "item.toamod.fish_meal": "§aFish Meal§r",
-      "item.toamod.hardened_stone_sword": "Hardened Stone Sword",
       "item.toamod.deaths_dance": "§5Deaths Dance§r",
       "block.toamod.chest_epic": "Chest Epic",
       "item.toamod.grapes": "§aGrapes§r",
       "item.toamod.lamb_plate": "§5Lamb Plate§r",
       "block.toamod.control_barrier": "Control Barrier",
-      "item.toamod.iron_ingot": "Iron Ingot",
       "item.toamod.ham_soup": "Ham Soup",
       "item.toamod.scroll_big_slice": "§6Ability: Big Slice§r",
       "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
-      "block.toamod.armory_table": "Armory Table",
       "enchantment.toamod.protection": "Protection",
+      "block.toamod.armory_table": "Armory Table",
       "item.toamod.cristal": "§aCristal§r",
       "effect.toamod.lightning_strike": "Lighting Strike",
       "item.toamod.cooked_mutton": "Cooked Mutton",
@@ -4447,7 +4427,6 @@
       "item.toamod.cup_of_coffee": "§aCup Of Coffee§r",
       "item.toamod.book_sharpness_3": "Sharpness III",
       "item.toamod.book_sharpness_4": "Sharpness IV",
-      "item.toamod.gold_ingot": "§aGold Ingot§r",
       "item.toamod.book_sharpness_1": "Sharpness I",
       "item.toamod.book_sharpness_2": "Sharpness II",
       "item.toamod.book_lifesteel_1": "Lifesteel I",
@@ -4480,6 +4459,7 @@
       "item.toamod.book_executing_1": "Executing I",
       "item.toamod.book_executing_3": "Executing III",
       "item.toamod.book_executing_2": "Executing II",
+      "item.toamod.pure_gold": "§aPure Gold§r",
       "item.toamod.blueberry": "Blueberry",
       "enchantment.toamod.sharpness": "Sharpness",
       "item.toamod.scroll_lightning_strike": "§7Ability: §aLightning Strike§r",
@@ -4498,14 +4478,14 @@
     "de_de": {
       "enchantment.toamod.life_steel": "Life Steel",
       "item.toamod.coal": "Kohle",
+      "item.toamod.pure_iron": "Iron Ingot",
       "item.toamod.banana_split": "§5Banana Split§r",
       "effect.toamod.magic_shield": "Magic Shield",
       "item.toamod.cranberry": "Cranberry",
       "item.toamod.raw_grouper": "§aRaw Grouper§r",
       "block.toamod.gold_ore": "Gold Ore",
-      "enchantment.toamod.spikes": "Spikes",
       "item.toamod.ancient_guardian_warhammer": "§eAncient Guardian Warhammer§r",
-      "item.toamod.stone_sword": "Stone Sword",
+      "enchantment.toamod.spikes": "Spikes",
       "effect.toamod.cold_embrace": "Cold Embrace",
       "item.toamod.onion": "Onion",
       "item.toamod.wooden_key": "Wooden Key",
@@ -4514,18 +4494,16 @@
       "enchantment.toamod.ignite": "Ignite",
       "item.toamod.dragon_slayer": "§6Dragon Slayer§r",
       "item.toamod.fish_meal": "§aFish Meal§r",
-      "item.toamod.hardened_stone_sword": "Hardened Stone Sword",
       "item.toamod.deaths_dance": "§5Deaths Dance§r",
       "block.toamod.chest_epic": "Chest Epic",
       "item.toamod.grapes": "�aGrapes�r",
       "item.toamod.lamb_plate": "§5Lamb Plate§r",
       "block.toamod.control_barrier": "Control Barrier",
-      "item.toamod.iron_ingot": "Iron",
       "item.toamod.ham_soup": "Ham Soup",
       "item.toamod.scroll_big_slice": "Scroll Big Slice",
       "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
-      "block.toamod.armory_table": "Armory Table",
       "enchantment.toamod.protection": "Protection",
+      "block.toamod.armory_table": "Armory Table",
       "item.toamod.cristal": "Cristal",
       "effect.toamod.lightning_strike": "Lighting Strike",
       "item.toamod.cooked_mutton": "Cooked Mutton",
@@ -4562,7 +4540,6 @@
       "item.toamod.cup_of_coffee": "§aCup Of Coffee§r",
       "item.toamod.book_sharpness_3": "Sharpness II",
       "item.toamod.book_sharpness_4": "Sharpness III",
-      "item.toamod.gold_ingot": "Gold",
       "item.toamod.book_sharpness_1": "Sharpness I",
       "item.toamod.book_sharpness_2": "Sharpness II",
       "item.toamod.book_lifesteel_1": "Lifesteel I",
@@ -4595,6 +4572,7 @@
       "item.toamod.book_executing_1": "Executing I",
       "item.toamod.book_executing_3": "Book Executing 3",
       "item.toamod.book_executing_2": "Executing II",
+      "item.toamod.pure_gold": "§aGold Ingot§r",
       "item.toamod.blueberry": "Blueberry",
       "enchantment.toamod.sharpness": "Sharpness",
       "item.toamod.scroll_lightning_strike": "�7Ability: �aLightning Strike�r",
@@ -4710,6 +4688,10 @@
       },
       {
         "name": "guis",
+        "children": []
+      },
+      {
+        "name": "armor",
         "children": []
       }
     ]
