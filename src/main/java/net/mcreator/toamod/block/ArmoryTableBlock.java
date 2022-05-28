@@ -1,9 +1,11 @@
 
 package net.mcreator.toamod.block;
 
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -23,8 +25,15 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
@@ -32,12 +41,15 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.toamod.world.inventory.ArmoryTableGuiMenu;
 import net.mcreator.toamod.init.ToamodModBlocks;
 import net.mcreator.toamod.block.entity.ArmoryTableBlockEntity;
 
 import java.util.Random;
 import java.util.List;
 import java.util.Collections;
+
+import io.netty.buffer.Unpooled;
 
 public class ArmoryTableBlock extends Block
 		implements
@@ -102,6 +114,25 @@ public class ArmoryTableBlock extends Block
 			double z0 = z + 0.5 + (random.nextFloat() - 0.5) * 0.8D;
 			world.addParticle(ParticleTypes.ASH, x0, y0, z0, 0, 0, 0);
 		}
+	}
+
+	@Override
+	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
+		super.use(blockstate, world, pos, entity, hand, hit);
+		if (entity instanceof ServerPlayer player) {
+			NetworkHooks.openGui(player, new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return new TextComponent("Armory Table");
+				}
+
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					return new ArmoryTableGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
+				}
+			}, pos);
+		}
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override
