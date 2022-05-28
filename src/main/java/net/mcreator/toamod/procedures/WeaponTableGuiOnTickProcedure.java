@@ -1,15 +1,10 @@
 package net.mcreator.toamod.procedures;
 
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.init.ToamodModItems;
 import net.mcreator.toamod.init.ToamodModBlocks;
@@ -18,7 +13,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 
 public class WeaponTableGuiOnTickProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
 		boolean validRecipeLeft = false;
@@ -76,15 +71,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "woodhandle");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -93,7 +79,7 @@ public class WeaponTableGuiOnTickProcedure {
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -124,7 +110,7 @@ public class WeaponTableGuiOnTickProcedure {
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(5)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(6)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -148,15 +134,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "metalhandle");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -220,22 +197,13 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "obsidianhandle");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
 				: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -266,7 +234,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(4) == 8
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(5)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -292,15 +260,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "metalguard");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -363,15 +322,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "jadeguard");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -436,22 +386,13 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "magmaguard");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
 				: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -465,7 +406,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(1) == 2
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -479,7 +420,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(2) == 2
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(3)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -506,7 +447,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(4) == 3
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(5)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -533,7 +474,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(6) == 3
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(7)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -554,22 +495,13 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "ironblade");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
 				: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -583,7 +515,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(1) == 4
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -597,7 +529,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(2) == 4
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(3)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -624,7 +556,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(4) == 6
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(5)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -651,7 +583,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(6) == 6
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(7)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -672,22 +604,13 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "hardenedironblade");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
 				: ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.GOLD_INGOT.get()
+						.getItem() == ToamodModItems.PURE_GOLD.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -701,7 +624,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(1) == 2
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.GOLD_INGOT.get()
+						.getItem() == ToamodModItems.PURE_GOLD.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -715,7 +638,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(2) == 2
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(3)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.GOLD_INGOT.get()
+						.getItem() == ToamodModItems.PURE_GOLD.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -742,7 +665,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(4) == 4
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(5)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.GOLD_INGOT.get()
+						.getItem() == ToamodModItems.PURE_GOLD.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -769,7 +692,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(6) == 4
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(7)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.GOLD_INGOT.get()
+						.getItem() == ToamodModItems.PURE_GOLD.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -790,15 +713,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "goldblade");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -908,15 +822,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "cristalblade");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -1022,15 +927,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "jadeblade");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -1142,15 +1038,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "dragonslayerblade");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -1261,15 +1148,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "darkblade");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
@@ -1286,7 +1164,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(0) == 16
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -1302,7 +1180,7 @@ public class WeaponTableGuiOnTickProcedure {
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(3)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -1330,7 +1208,7 @@ public class WeaponTableGuiOnTickProcedure {
 				}.getAmount(4) == 1
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(5)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -1346,7 +1224,7 @@ public class WeaponTableGuiOnTickProcedure {
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(6)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()
 				&& (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 						&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(7)).getItem() : ItemStack.EMPTY)
-						.getItem() == ToamodModItems.IRON_INGOT.get()
+						.getItem() == ToamodModItems.PURE_IRON.get()
 				&& new Object() {
 					public int getAmount(int sltid) {
 						if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
@@ -1380,15 +1258,6 @@ public class WeaponTableGuiOnTickProcedure {
 				_player.containerMenu.broadcastChanges();
 			}
 			validRecipeLeft = true;
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("recipe", "warhammer");
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
 		}
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(10)).getItem()

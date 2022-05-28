@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "toamod:iron_ingot",
+          "name": "toamod:deleted_mod_element",
           "weight": 60,
           "functions": [
             {
@@ -20,7 +20,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "toamod:iron_ingot",
+          "name": "toamod:deleted_mod_element",
           "weight": 40,
           "functions": [
             {

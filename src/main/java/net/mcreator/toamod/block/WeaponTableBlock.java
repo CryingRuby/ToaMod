@@ -26,7 +26,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
@@ -43,7 +42,6 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.toamod.world.inventory.WeaponTableGuiMenu;
-import net.mcreator.toamod.procedures.WeaponTablePlacedProcedure;
 import net.mcreator.toamod.init.ToamodModBlocks;
 import net.mcreator.toamod.block.entity.WeaponTableBlockEntity;
 
@@ -116,12 +114,6 @@ public class WeaponTableBlock extends Block
 			double z0 = z + 0.5 + (random.nextFloat() - 0.5) * 0.8D;
 			world.addParticle(ParticleTypes.ASH, x0, y0, z0, 0, 0, 0);
 		}
-	}
-
-	@Override
-	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
-		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
-		WeaponTablePlacedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
