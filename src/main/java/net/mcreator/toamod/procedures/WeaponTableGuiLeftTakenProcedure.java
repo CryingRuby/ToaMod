@@ -14,7 +14,7 @@ public class WeaponTableGuiLeftTakenProcedure {
 			return;
 		double i = 0;
 		i = 0;
-		for (int index0 = 0; index0 < (int) (8); index0++) {
+		for (int index0 = 0; index0 < (int) (9); index0++) {
 			if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
 					&& _current.get() instanceof Map _slots) {
 				((Slot) _slots.get((int) i)).set(ItemStack.EMPTY);

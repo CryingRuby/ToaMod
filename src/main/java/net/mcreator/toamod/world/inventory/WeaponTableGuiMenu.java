@@ -303,7 +303,7 @@ public class WeaponTableGuiMenu extends AbstractContainerMenu implements Supplie
 			double y = entity.getY();
 			double z = entity.getZ();
 
-			WeaponTableGuiOnTickProcedure.execute(entity);
+			WeaponTableGuiOnTickProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }
