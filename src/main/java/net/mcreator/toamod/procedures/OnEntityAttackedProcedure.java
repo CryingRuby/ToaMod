@@ -54,7 +54,7 @@ public class OnEntityAttackedProcedure {
 				_entity.setHealth(Math.round((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + damage * (1 / 3)));
 			if (sourceentity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(new TextComponent(("dmg before reduce: " + damage)), (false));
-			damage = Math.round(damage * (2 / 3));
+			damage = damage * (2 / 3);
 			if (sourceentity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(new TextComponent(("dmg after reduce: " + damage)), (false));
 			ToamodModVariables.WorldVariables.get(world).vanillaCrit = false;
@@ -73,24 +73,30 @@ public class OnEntityAttackedProcedure {
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.CRIT, x, y, z, 20, 0.5, 0.5, 0.5, 0.5);
 		}
+		damage = damage * (1 - (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new ToamodModVariables.PlayerVariables())).damageReduction);
 		if (entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(ToamodModMobEffects.VULNERABLE.get()) : false) {
-			entity.hurt(DamageSource.MAGIC, (float) (damage * 0.25));
+			entity.hurt(DamageSource.MAGIC, Math.round(damage * 0.25));
 		}
 		if (EnchantmentHelper.getItemEnchantmentLevel(ToamodModEnchantments.EXECUTING.get(), damageItem) != 0) {
 			entity.hurt(DamageSource.GENERIC,
-					(float) (damage * (((((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)
+					Math.round(damage * (((((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)
 							- (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1))
 							/ (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) * 100 * 0.1
 							* EnchantmentHelper.getItemEnchantmentLevel(ToamodModEnchantments.EXECUTING.get(), damageItem)) / 100)));
 		}
 		if (EnchantmentHelper.getItemEnchantmentLevel(ToamodModEnchantments.LIFE_STEEL.get(), damageItem) != 0) {
 			if (sourceentity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1)
+				_entity.setHealth(Math.round((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1)
 						+ damage * 0.1 * EnchantmentHelper.getItemEnchantmentLevel(ToamodModEnchantments.LIFE_STEEL.get(), damageItem)));
 		}
 		if (EnchantmentHelper.getItemEnchantmentLevel(ToamodModEnchantments.IGNITE.get(), damageItem) != 0) {
 			entity.setSecondsOnFire(4);
 		}
+		if (entity instanceof LivingEntity _entity)
+			_entity.setHealth(Math.round((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1)
+					+ damage * (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).damageReduction));
 		if (sourceentity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(new TextComponent(("Damage Dealt: " + damage)), (false));
 	}

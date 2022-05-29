@@ -1,0 +1,70 @@
+{
+  "_fv": 28,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "dragon_helmet",
+    "enableBody": true,
+    "textureBody": "dragon_chestplate",
+    "enableLeggings": true,
+    "textureLeggings": "dragon_leggings",
+    "enableBoots": true,
+    "textureBoots": "dragon_boots",
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "armorTextureFile": "dragon_",
+    "helmetName": "§6Dragon Helmet§r",
+    "bodyName": "§6Dragon Body§r",
+    "leggingsName": "§6Dragon Leggings§r",
+    "bootsName": "§6Dragon Boots§r",
+    "helmetSpecialInfo": [
+      "§7Rarity: §6Legendary§r",
+      "§7Type: §9Armor§r"
+    ],
+    "bodySpecialInfo": [
+      "§7Rarity: §6Legendary§r",
+      "§7Type: §9Armor§r"
+    ],
+    "leggingsSpecialInfo": [
+      "§7Rarity: §6Legendary§r",
+      "§7Type: §9Armor§r"
+    ],
+    "bootsSpecialInfo": [
+      "§7Rarity: §6Legendary§r",
+      "§7Type: §9Armor§r"
+    ],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 0,
+    "damageValueHelmet": 5,
+    "damageValueBody": 8,
+    "damageValueLeggings": 7,
+    "damageValueBoots": 4,
+    "enchantability": 1,
+    "toughness": 0.0,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": "item.armor.equip_netherite"
+    },
+    "repairItems": []
+  }
+}

@@ -13,9 +13,7 @@ public class ArmoryTableOnTickProcedure {
 		if (entity == null)
 			return;
 		boolean validRecipe = false;
-		double i = 0;
 		validRecipe = false;
-		i = 0;
 		if (!validRecipe) {
 			if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current
 					&& _current.get() instanceof Map _slots) {

@@ -35,6 +35,7 @@ import net.mcreator.toamod.ToamodMod;
 
 public class ToamodModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, ToamodMod.MODID);
+	public static final RegistryObject<Block> LOG = REGISTRY.register("log", () -> new LogBlock());
 	public static final RegistryObject<Block> ORE_RESPAWN_STONE = REGISTRY.register("ore_respawn_stone", () -> new OreRespawnStoneBlock());
 	public static final RegistryObject<Block> COAL_ORE = REGISTRY.register("coal_ore", () -> new CoalOreBlock());
 	public static final RegistryObject<Block> IRON_ORE = REGISTRY.register("iron_ore", () -> new IronOreBlock());
@@ -51,7 +52,6 @@ public class ToamodModBlocks {
 	public static final RegistryObject<Block> COOKING_TABLE = REGISTRY.register("cooking_table", () -> new CookingTableBlock());
 	public static final RegistryObject<Block> ARMORY_TABLE = REGISTRY.register("armory_table", () -> new ArmoryTableBlock());
 	public static final RegistryObject<Block> WEAPON_TABLE = REGISTRY.register("weapon_table", () -> new WeaponTableBlock());
-	public static final RegistryObject<Block> LOG = REGISTRY.register("log", () -> new LogBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {

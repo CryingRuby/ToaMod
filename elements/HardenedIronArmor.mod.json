@@ -1,0 +1,70 @@
+{
+  "_fv": 28,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "iron_helmet",
+    "enableBody": true,
+    "textureBody": "iron_chestplate",
+    "enableLeggings": true,
+    "textureLeggings": "iron_leggings",
+    "enableBoots": true,
+    "textureBoots": "iron_boots",
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "armorTextureFile": "iron_",
+    "helmetName": "§aHardened Iron Helmet§r",
+    "bodyName": "§aHardened Iron Body§r",
+    "leggingsName": "§aHardened Iron Leggings§r",
+    "bootsName": "§aHardened Iron Boots§r",
+    "helmetSpecialInfo": [
+      "§7Rarity: §aUncomman§r",
+      "§7Type: §9Armor§r"
+    ],
+    "bodySpecialInfo": [
+      "§7Rarity: §aUncomman§r",
+      "§7Type: §9Armor§r"
+    ],
+    "leggingsSpecialInfo": [
+      "§7Rarity: §aUncomman§r",
+      "§7Type: §9Armor§r"
+    ],
+    "bootsSpecialInfo": [
+      "§7Rarity: §aUncomman§r",
+      "§7Type: §9Armor§r"
+    ],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 0,
+    "damageValueHelmet": 2,
+    "damageValueBody": 4,
+    "damageValueLeggings": 3,
+    "damageValueBoots": 2,
+    "enchantability": 1,
+    "toughness": 0.0,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": "item.armor.equip_iron"
+    },
+    "repairItems": []
+  }
+}

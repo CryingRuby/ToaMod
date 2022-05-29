@@ -34,12 +34,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "obsidian",
-      "path": "~/items/Food"
+      "path": "~/items/Materials"
     },
     {
       "name": "RecCristalShard",
       "type": "recipe",
-      "sortid": 102,
+      "sortid": 122,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_cristal_shard",
@@ -48,7 +48,7 @@
     {
       "name": "RecCristal2",
       "type": "recipe",
-      "sortid": 103,
+      "sortid": 123,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_cristal_2",
@@ -57,7 +57,7 @@
     {
       "name": "RecCristal1",
       "type": "recipe",
-      "sortid": 104,
+      "sortid": 124,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_cristal_1",
@@ -66,7 +66,7 @@
     {
       "name": "RecEnrichtedCristal",
       "type": "recipe",
-      "sortid": 105,
+      "sortid": 125,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_enrichted_cristal",
@@ -129,7 +129,7 @@
     {
       "name": "CursedObsidian",
       "type": "block",
-      "sortid": 25,
+      "sortid": 40,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cursed_obsidian",
@@ -138,7 +138,7 @@
     {
       "name": "Magma",
       "type": "block",
-      "sortid": 24,
+      "sortid": 39,
       "compiles": true,
       "locked_code": false,
       "registry_name": "magma",
@@ -147,7 +147,7 @@
     {
       "name": "CoalOre",
       "type": "block",
-      "sortid": 19,
+      "sortid": 34,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coal_ore",
@@ -156,7 +156,7 @@
     {
       "name": "IronOre",
       "type": "block",
-      "sortid": 20,
+      "sortid": 35,
       "compiles": true,
       "locked_code": false,
       "registry_name": "iron_ore",
@@ -165,7 +165,7 @@
     {
       "name": "GoldOre",
       "type": "block",
-      "sortid": 21,
+      "sortid": 36,
       "compiles": true,
       "locked_code": false,
       "registry_name": "gold_ore",
@@ -174,7 +174,7 @@
     {
       "name": "JadeOre",
       "type": "block",
-      "sortid": 23,
+      "sortid": 38,
       "compiles": true,
       "locked_code": false,
       "registry_name": "jade_ore",
@@ -183,7 +183,7 @@
     {
       "name": "LootMagma",
       "type": "loottable",
-      "sortid": 106,
+      "sortid": 126,
       "compiles": true,
       "locked_code": false,
       "registry_name": "loot_magma",
@@ -192,7 +192,7 @@
     {
       "name": "LootCursedObsidian",
       "type": "loottable",
-      "sortid": 107,
+      "sortid": 127,
       "compiles": true,
       "locked_code": false,
       "registry_name": "loot_cursed_obsidian",
@@ -201,7 +201,7 @@
     {
       "name": "LootCoalOre",
       "type": "loottable",
-      "sortid": 108,
+      "sortid": 128,
       "compiles": true,
       "locked_code": false,
       "registry_name": "loot_coal_ore",
@@ -210,7 +210,7 @@
     {
       "name": "LootIronOre",
       "type": "loottable",
-      "sortid": 109,
+      "sortid": 129,
       "compiles": true,
       "locked_code": false,
       "registry_name": "loot_iron_ore",
@@ -219,7 +219,7 @@
     {
       "name": "LootGoldOre",
       "type": "loottable",
-      "sortid": 110,
+      "sortid": 130,
       "compiles": true,
       "locked_code": false,
       "registry_name": "loot_gold_ore",
@@ -228,7 +228,7 @@
     {
       "name": "LootJadeOre",
       "type": "loottable",
-      "sortid": 111,
+      "sortid": 131,
       "compiles": true,
       "locked_code": false,
       "registry_name": "loot_jade_ore",
@@ -237,7 +237,7 @@
     {
       "name": "LootCristalOre",
       "type": "loottable",
-      "sortid": 112,
+      "sortid": 132,
       "compiles": true,
       "locked_code": false,
       "registry_name": "loot_cristal_ore",
@@ -246,7 +246,7 @@
     {
       "name": "CristalOre",
       "type": "block",
-      "sortid": 22,
+      "sortid": 37,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cristal_ore",
@@ -255,7 +255,7 @@
     {
       "name": "RecEnrichtedMagmaShard",
       "type": "recipe",
-      "sortid": 113,
+      "sortid": 133,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_enrichted_magma_shard",
@@ -264,7 +264,7 @@
     {
       "name": "RecMagmaShard",
       "type": "recipe",
-      "sortid": 114,
+      "sortid": 134,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_magma_shard",
@@ -273,7 +273,7 @@
     {
       "name": "Executing",
       "type": "enchantment",
-      "sortid": 115,
+      "sortid": 135,
       "compiles": true,
       "locked_code": false,
       "registry_name": "executing",
@@ -282,7 +282,7 @@
     {
       "name": "LifeSteel",
       "type": "enchantment",
-      "sortid": 116,
+      "sortid": 136,
       "compiles": true,
       "locked_code": false,
       "registry_name": "life_steel",
@@ -291,7 +291,7 @@
     {
       "name": "Sharpness",
       "type": "enchantment",
-      "sortid": 117,
+      "sortid": 137,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sharpness",
@@ -300,7 +300,7 @@
     {
       "name": "Protection",
       "type": "enchantment",
-      "sortid": 118,
+      "sortid": 138,
       "compiles": true,
       "locked_code": false,
       "registry_name": "protection",
@@ -309,7 +309,7 @@
     {
       "name": "StickyFeet",
       "type": "enchantment",
-      "sortid": 119,
+      "sortid": 139,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sticky_feet",
@@ -318,7 +318,7 @@
     {
       "name": "Spikes",
       "type": "enchantment",
-      "sortid": 120,
+      "sortid": 140,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spikes",
@@ -327,7 +327,7 @@
     {
       "name": "CmdGamemaster",
       "type": "command",
-      "sortid": 121,
+      "sortid": 141,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_gamemaster",
@@ -336,7 +336,7 @@
     {
       "name": "CristalSword",
       "type": "tool",
-      "sortid": 39,
+      "sortid": 53,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cristal_sword",
@@ -345,7 +345,7 @@
     {
       "name": "WoodenSword",
       "type": "tool",
-      "sortid": 34,
+      "sortid": 49,
       "compiles": true,
       "locked_code": false,
       "registry_name": "wooden_sword",
@@ -354,7 +354,7 @@
     {
       "name": "IronSword",
       "type": "tool",
-      "sortid": 37,
+      "sortid": 50,
       "compiles": true,
       "locked_code": false,
       "registry_name": "iron_sword",
@@ -363,7 +363,7 @@
     {
       "name": "GoldenSword",
       "type": "tool",
-      "sortid": 38,
+      "sortid": 52,
       "compiles": true,
       "locked_code": false,
       "registry_name": "golden_sword",
@@ -372,7 +372,7 @@
     {
       "name": "Ignite",
       "type": "enchantment",
-      "sortid": 122,
+      "sortid": 142,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ignite",
@@ -381,7 +381,7 @@
     {
       "name": "CmdGamemasterExecuted",
       "type": "procedure",
-      "sortid": 123,
+      "sortid": 143,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_gamemaster_executed",
@@ -398,7 +398,7 @@
     {
       "name": "UpgradingTable",
       "type": "block",
-      "sortid": 30,
+      "sortid": 45,
       "compiles": true,
       "locked_code": false,
       "registry_name": "upgrading_table",
@@ -407,7 +407,7 @@
     {
       "name": "UpgradingTableCostCalcByRarity",
       "type": "procedure",
-      "sortid": 124,
+      "sortid": 144,
       "compiles": true,
       "locked_code": false,
       "registry_name": "upgrading_table_cost_calc_by_rarity",
@@ -425,7 +425,7 @@
     {
       "name": "UpgradingTableGui",
       "type": "gui",
-      "sortid": 125,
+      "sortid": 145,
       "compiles": true,
       "locked_code": false,
       "registry_name": "upgrading_table_gui",
@@ -434,7 +434,7 @@
     {
       "name": "CmdGetMagicDustExecuted",
       "type": "procedure",
-      "sortid": 126,
+      "sortid": 146,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_get_magic_dust_executed",
@@ -451,7 +451,7 @@
     {
       "name": "GetMagicDust",
       "type": "command",
-      "sortid": 127,
+      "sortid": 147,
       "compiles": true,
       "locked_code": false,
       "registry_name": "get_magic_dust",
@@ -460,16 +460,16 @@
     {
       "name": "Egg",
       "type": "item",
-      "sortid": 70,
+      "sortid": 90,
       "compiles": true,
       "locked_code": false,
       "registry_name": "egg",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "CristalSwordItemIsCraftedsmelted",
       "type": "procedure",
-      "sortid": 128,
+      "sortid": 148,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cristal_sword_item_is_craftedsmelted",
@@ -486,7 +486,7 @@
     {
       "name": "WoodenSwordItemIsCraftedsmelted",
       "type": "procedure",
-      "sortid": 129,
+      "sortid": 149,
       "compiles": true,
       "locked_code": false,
       "registry_name": "wooden_sword_item_is_craftedsmelted",
@@ -503,7 +503,7 @@
     {
       "name": "StoneSwordItemIsCraftedsmelted",
       "type": "procedure",
-      "sortid": 130,
+      "sortid": 150,
       "compiles": true,
       "locked_code": false,
       "registry_name": "stone_sword_item_is_craftedsmelted",
@@ -520,7 +520,7 @@
     {
       "name": "HardenedStoneSwordItemIsCraftedsmelted",
       "type": "procedure",
-      "sortid": 131,
+      "sortid": 151,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hardened_stone_sword_item_is_craftedsmelted",
@@ -537,7 +537,7 @@
     {
       "name": "IronSwordItemIsCraftedsmelted",
       "type": "procedure",
-      "sortid": 132,
+      "sortid": 152,
       "compiles": true,
       "locked_code": false,
       "registry_name": "iron_sword_item_is_craftedsmelted",
@@ -554,7 +554,7 @@
     {
       "name": "ScrollLightningStrike",
       "type": "item",
-      "sortid": 46,
+      "sortid": 60,
       "compiles": true,
       "locked_code": false,
       "registry_name": "scroll_lightning_strike",
@@ -563,7 +563,7 @@
     {
       "name": "ScrollWeakness",
       "type": "item",
-      "sortid": 47,
+      "sortid": 61,
       "compiles": true,
       "locked_code": false,
       "registry_name": "scroll_weakness",
@@ -572,7 +572,7 @@
     {
       "name": "ScrollBerserk",
       "type": "item",
-      "sortid": 48,
+      "sortid": 62,
       "compiles": true,
       "locked_code": false,
       "registry_name": "scroll_berserk",
@@ -581,7 +581,7 @@
     {
       "name": "ChestNormalGui",
       "type": "gui",
-      "sortid": 133,
+      "sortid": 153,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_normal_gui",
@@ -590,7 +590,7 @@
     {
       "name": "ChestEpicGui",
       "type": "gui",
-      "sortid": 134,
+      "sortid": 154,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_epic_gui",
@@ -599,7 +599,7 @@
     {
       "name": "BookExecuting1Crafted",
       "type": "procedure",
-      "sortid": 135,
+      "sortid": 155,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_1_crafted",
@@ -616,16 +616,16 @@
     {
       "name": "EnchtantedBook",
       "type": "item",
-      "sortid": 50,
+      "sortid": 64,
       "compiles": true,
       "locked_code": false,
       "registry_name": "enchtanted_book",
-      "path": "~/items/Materials"
+      "path": "~/items/BooksAndScrolls"
     },
     {
       "name": "EnchantableBookActivated",
       "type": "procedure",
-      "sortid": 136,
+      "sortid": 156,
       "compiles": true,
       "locked_code": false,
       "registry_name": "enchantable_book_activated",
@@ -646,7 +646,7 @@
     {
       "name": "BookExecuting1",
       "type": "item",
-      "sortid": 51,
+      "sortid": 65,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_1",
@@ -655,7 +655,7 @@
     {
       "name": "RecExecuting1",
       "type": "recipe",
-      "sortid": 137,
+      "sortid": 157,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_executing_1",
@@ -664,7 +664,7 @@
     {
       "name": "BookExecuting2Crafted",
       "type": "procedure",
-      "sortid": 138,
+      "sortid": 158,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_2_crafted",
@@ -681,7 +681,7 @@
     {
       "name": "BookExecuting3Crafted",
       "type": "procedure",
-      "sortid": 139,
+      "sortid": 159,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_3_crafted",
@@ -698,7 +698,7 @@
     {
       "name": "BookExecuting4Crafted",
       "type": "procedure",
-      "sortid": 140,
+      "sortid": 160,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_4_crafted",
@@ -715,7 +715,7 @@
     {
       "name": "BookExecuting5Crafted",
       "type": "procedure",
-      "sortid": 141,
+      "sortid": 161,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_5_crafted",
@@ -732,7 +732,7 @@
     {
       "name": "BookExecuting2",
       "type": "item",
-      "sortid": 52,
+      "sortid": 66,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_2",
@@ -741,7 +741,7 @@
     {
       "name": "BookExecuting3",
       "type": "item",
-      "sortid": 53,
+      "sortid": 67,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_3",
@@ -750,7 +750,7 @@
     {
       "name": "BookExecuting4",
       "type": "item",
-      "sortid": 54,
+      "sortid": 68,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_4",
@@ -759,7 +759,7 @@
     {
       "name": "BookExecuting5",
       "type": "item",
-      "sortid": 55,
+      "sortid": 69,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_executing_5",
@@ -768,7 +768,7 @@
     {
       "name": "RecExecuting2",
       "type": "recipe",
-      "sortid": 142,
+      "sortid": 162,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_executing_2",
@@ -777,7 +777,7 @@
     {
       "name": "RecExecuting3",
       "type": "recipe",
-      "sortid": 143,
+      "sortid": 163,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_executing_3",
@@ -786,7 +786,7 @@
     {
       "name": "RecExecuting4",
       "type": "recipe",
-      "sortid": 144,
+      "sortid": 164,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_executing_4",
@@ -795,7 +795,7 @@
     {
       "name": "RecExecuting5",
       "type": "recipe",
-      "sortid": 145,
+      "sortid": 165,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_executing_5",
@@ -804,7 +804,7 @@
     {
       "name": "BookLifesteel1",
       "type": "item",
-      "sortid": 56,
+      "sortid": 70,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_1",
@@ -813,7 +813,7 @@
     {
       "name": "BookLifesteel2",
       "type": "item",
-      "sortid": 57,
+      "sortid": 71,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_2",
@@ -822,7 +822,7 @@
     {
       "name": "BookLifesteel3",
       "type": "item",
-      "sortid": 58,
+      "sortid": 72,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_3",
@@ -831,7 +831,7 @@
     {
       "name": "BookSharpness1",
       "type": "item",
-      "sortid": 59,
+      "sortid": 73,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_1",
@@ -840,7 +840,7 @@
     {
       "name": "BookSharpness2",
       "type": "item",
-      "sortid": 60,
+      "sortid": 74,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_2",
@@ -849,7 +849,7 @@
     {
       "name": "BookSharpness3",
       "type": "item",
-      "sortid": 61,
+      "sortid": 75,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_3",
@@ -858,7 +858,7 @@
     {
       "name": "BookSharpness4",
       "type": "item",
-      "sortid": 62,
+      "sortid": 76,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_4",
@@ -867,7 +867,7 @@
     {
       "name": "BookSharpness5",
       "type": "item",
-      "sortid": 63,
+      "sortid": 77,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_5",
@@ -876,7 +876,7 @@
     {
       "name": "BookSharpness6",
       "type": "item",
-      "sortid": 64,
+      "sortid": 78,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_6",
@@ -885,7 +885,7 @@
     {
       "name": "BookSharpness7",
       "type": "item",
-      "sortid": 65,
+      "sortid": 79,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_7",
@@ -894,7 +894,7 @@
     {
       "name": "BookSharpness8",
       "type": "item",
-      "sortid": 66,
+      "sortid": 80,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_8",
@@ -903,7 +903,7 @@
     {
       "name": "BookSharpness9",
       "type": "item",
-      "sortid": 67,
+      "sortid": 81,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_9",
@@ -912,7 +912,7 @@
     {
       "name": "BookSharpness10",
       "type": "item",
-      "sortid": 68,
+      "sortid": 82,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_10",
@@ -921,7 +921,7 @@
     {
       "name": "BookLifesteel1Crafted",
       "type": "procedure",
-      "sortid": 146,
+      "sortid": 166,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_1_crafted",
@@ -938,7 +938,7 @@
     {
       "name": "BookLifesteel2Crafted",
       "type": "procedure",
-      "sortid": 147,
+      "sortid": 167,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_2_crafted",
@@ -955,7 +955,7 @@
     {
       "name": "BookLifesteel3Crafted",
       "type": "procedure",
-      "sortid": 148,
+      "sortid": 168,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_lifesteel_3_crafted",
@@ -972,7 +972,7 @@
     {
       "name": "BookSharpness1Crafted",
       "type": "procedure",
-      "sortid": 149,
+      "sortid": 169,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_1_crafted",
@@ -989,7 +989,7 @@
     {
       "name": "BookSharpness2Crafted",
       "type": "procedure",
-      "sortid": 150,
+      "sortid": 170,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_2_crafted",
@@ -1006,7 +1006,7 @@
     {
       "name": "BookSharpness3Crafted",
       "type": "procedure",
-      "sortid": 151,
+      "sortid": 171,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_3_crafted",
@@ -1023,7 +1023,7 @@
     {
       "name": "BookSharpness4Crafted",
       "type": "procedure",
-      "sortid": 152,
+      "sortid": 172,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_4_crafted",
@@ -1040,7 +1040,7 @@
     {
       "name": "BookSharpness5Crafted",
       "type": "procedure",
-      "sortid": 153,
+      "sortid": 173,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_5_crafted",
@@ -1057,7 +1057,7 @@
     {
       "name": "BookSharpness6Crafted",
       "type": "procedure",
-      "sortid": 154,
+      "sortid": 174,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_6_crafted",
@@ -1074,7 +1074,7 @@
     {
       "name": "BookSharpness7Crafted",
       "type": "procedure",
-      "sortid": 155,
+      "sortid": 175,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_7_crafted",
@@ -1091,7 +1091,7 @@
     {
       "name": "BookSharpness8Crafted",
       "type": "procedure",
-      "sortid": 156,
+      "sortid": 176,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_8_crafted",
@@ -1108,7 +1108,7 @@
     {
       "name": "BookSharpness9Crafted",
       "type": "procedure",
-      "sortid": 157,
+      "sortid": 177,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_9_crafted",
@@ -1125,7 +1125,7 @@
     {
       "name": "BookSharpness10Crafted",
       "type": "procedure",
-      "sortid": 158,
+      "sortid": 178,
       "compiles": true,
       "locked_code": false,
       "registry_name": "book_sharpness_10_crafted",
@@ -1142,7 +1142,7 @@
     {
       "name": "ChestNormal",
       "type": "block",
-      "sortid": 26,
+      "sortid": 41,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_normal",
@@ -1151,7 +1151,7 @@
     {
       "name": "ChestEpic",
       "type": "block",
-      "sortid": 27,
+      "sortid": 42,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_epic",
@@ -1160,7 +1160,7 @@
     {
       "name": "ChestRightClicked",
       "type": "procedure",
-      "sortid": 159,
+      "sortid": 179,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_right_clicked",
@@ -1224,7 +1224,7 @@
     {
       "name": "ChestPlaced",
       "type": "procedure",
-      "sortid": 160,
+      "sortid": 180,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_placed",
@@ -1253,7 +1253,7 @@
     {
       "name": "ChestLegendary",
       "type": "block",
-      "sortid": 28,
+      "sortid": 43,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_legendary",
@@ -1262,7 +1262,7 @@
     {
       "name": "ChestParticleCondition",
       "type": "procedure",
-      "sortid": 161,
+      "sortid": 181,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_particle_condition",
@@ -1292,7 +1292,7 @@
     {
       "name": "ChestLegendaryGui",
       "type": "gui",
-      "sortid": 162,
+      "sortid": 182,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chest_legendary_gui",
@@ -1301,7 +1301,7 @@
     {
       "name": "CorItemRightClicked",
       "type": "procedure",
-      "sortid": 163,
+      "sortid": 183,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cor_item_right_clicked",
@@ -1326,12 +1326,12 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "cor",
-      "path": "~/items/Materials"
+      "path": "~/items/Special"
     },
     {
       "name": "OreRespawnStone",
       "type": "block",
-      "sortid": 18,
+      "sortid": 33,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ore_respawn_stone",
@@ -1340,7 +1340,7 @@
     {
       "name": "CursedObsidianDestroyed",
       "type": "procedure",
-      "sortid": 164,
+      "sortid": 184,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cursed_obsidian_destroyed",
@@ -1369,7 +1369,7 @@
     {
       "name": "MagmaDestroyed",
       "type": "procedure",
-      "sortid": 165,
+      "sortid": 185,
       "compiles": true,
       "locked_code": false,
       "registry_name": "magma_destroyed",
@@ -1398,7 +1398,7 @@
     {
       "name": "CoalOreDestroyed",
       "type": "procedure",
-      "sortid": 166,
+      "sortid": 186,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coal_ore_destroyed",
@@ -1427,7 +1427,7 @@
     {
       "name": "IronOreDestroyed",
       "type": "procedure",
-      "sortid": 167,
+      "sortid": 187,
       "compiles": true,
       "locked_code": false,
       "registry_name": "iron_ore_destroyed",
@@ -1456,7 +1456,7 @@
     {
       "name": "GoldOreDestroyed",
       "type": "procedure",
-      "sortid": 168,
+      "sortid": 188,
       "compiles": true,
       "locked_code": false,
       "registry_name": "gold_ore_destroyed",
@@ -1485,7 +1485,7 @@
     {
       "name": "JadeOreDestroyed",
       "type": "procedure",
-      "sortid": 169,
+      "sortid": 189,
       "compiles": true,
       "locked_code": false,
       "registry_name": "jade_ore_destroyed",
@@ -1514,7 +1514,7 @@
     {
       "name": "CristalOreDestroyed",
       "type": "procedure",
-      "sortid": 170,
+      "sortid": 190,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cristal_ore_destroyed",
@@ -1543,7 +1543,7 @@
     {
       "name": "OreRespawnStoneUpdateTick",
       "type": "procedure",
-      "sortid": 171,
+      "sortid": 191,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ore_respawn_stone_update_tick",
@@ -1572,7 +1572,7 @@
     {
       "name": "MagicDustItemRightClicked",
       "type": "procedure",
-      "sortid": 172,
+      "sortid": 192,
       "compiles": true,
       "locked_code": false,
       "registry_name": "magic_dust_item_right_clicked",
@@ -1602,7 +1602,7 @@
     {
       "name": "UpgradingTableGuiTick",
       "type": "procedure",
-      "sortid": 173,
+      "sortid": 193,
       "compiles": true,
       "locked_code": false,
       "registry_name": "upgrading_table_gui_tick",
@@ -1619,7 +1619,7 @@
     {
       "name": "CmdGetCorExecuted",
       "type": "procedure",
-      "sortid": 174,
+      "sortid": 194,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_get_cor_executed",
@@ -1636,7 +1636,7 @@
     {
       "name": "GetCor",
       "type": "command",
-      "sortid": 175,
+      "sortid": 195,
       "compiles": true,
       "locked_code": false,
       "registry_name": "get_cor",
@@ -1645,7 +1645,7 @@
     {
       "name": "Resetmd",
       "type": "command",
-      "sortid": 176,
+      "sortid": 196,
       "compiles": true,
       "locked_code": false,
       "registry_name": "resetmd",
@@ -1654,7 +1654,7 @@
     {
       "name": "ResetCor",
       "type": "command",
-      "sortid": 177,
+      "sortid": 197,
       "compiles": true,
       "locked_code": false,
       "registry_name": "reset_cor",
@@ -1663,7 +1663,7 @@
     {
       "name": "CmdResetmdExecuted",
       "type": "procedure",
-      "sortid": 178,
+      "sortid": 198,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_resetmd_executed",
@@ -1680,7 +1680,7 @@
     {
       "name": "CmdResetCorExecuted",
       "type": "procedure",
-      "sortid": 179,
+      "sortid": 199,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_reset_cor_executed",
@@ -1697,7 +1697,7 @@
     {
       "name": "ControlBarrierGui",
       "type": "gui",
-      "sortid": 180,
+      "sortid": 200,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_gui",
@@ -1706,7 +1706,7 @@
     {
       "name": "ControlBarrierRightClicked",
       "type": "procedure",
-      "sortid": 181,
+      "sortid": 201,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_right_clicked",
@@ -1739,7 +1739,7 @@
     {
       "name": "ControlBarrier",
       "type": "block",
-      "sortid": 29,
+      "sortid": 44,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier",
@@ -1748,7 +1748,7 @@
     {
       "name": "UpgradingTableCraftedItemTaken",
       "type": "procedure",
-      "sortid": 182,
+      "sortid": 202,
       "compiles": true,
       "locked_code": false,
       "registry_name": "upgrading_table_crafted_item_taken",
@@ -1765,7 +1765,7 @@
     {
       "name": "ControlBarrierDestroy",
       "type": "procedure",
-      "sortid": 183,
+      "sortid": 203,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_destroy",
@@ -1794,7 +1794,7 @@
     {
       "name": "Vulnerable",
       "type": "potioneffect",
-      "sortid": 184,
+      "sortid": 204,
       "compiles": true,
       "locked_code": false,
       "registry_name": "vulnerable",
@@ -1803,7 +1803,7 @@
     {
       "name": "ControlBarrierGuiThisGUIOpened",
       "type": "procedure",
-      "sortid": 185,
+      "sortid": 205,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_gui_this_gui_opened",
@@ -1840,7 +1840,7 @@
     {
       "name": "ControlBarrierChkPlaLvl",
       "type": "procedure",
-      "sortid": 186,
+      "sortid": 206,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_chk_pla_lvl",
@@ -1870,7 +1870,7 @@
     {
       "name": "ControlBarrierChkBoDef",
       "type": "procedure",
-      "sortid": 187,
+      "sortid": 207,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_chk_bo_def",
@@ -1900,7 +1900,7 @@
     {
       "name": "ControlBarrierChkDeSkill",
       "type": "procedure",
-      "sortid": 188,
+      "sortid": 208,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_chk_de_skill",
@@ -1930,7 +1930,7 @@
     {
       "name": "ControlbarrierAtSkill",
       "type": "procedure",
-      "sortid": 189,
+      "sortid": 209,
       "compiles": true,
       "locked_code": false,
       "registry_name": "controlbarrier_at_skill",
@@ -1960,7 +1960,7 @@
     {
       "name": "ControlBarrierChkMaSkill",
       "type": "procedure",
-      "sortid": 190,
+      "sortid": 210,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_chk_ma_skill",
@@ -1990,7 +1990,7 @@
     {
       "name": "Leek",
       "type": "item",
-      "sortid": 72,
+      "sortid": 92,
       "compiles": true,
       "locked_code": false,
       "registry_name": "leek",
@@ -1999,7 +1999,7 @@
     {
       "name": "Grapes",
       "type": "item",
-      "sortid": 76,
+      "sortid": 96,
       "compiles": true,
       "locked_code": false,
       "registry_name": "grapes",
@@ -2008,7 +2008,7 @@
     {
       "name": "UpgradingTableComponentTaken",
       "type": "procedure",
-      "sortid": 191,
+      "sortid": 211,
       "compiles": true,
       "locked_code": false,
       "registry_name": "upgrading_table_component_taken",
@@ -2025,7 +2025,7 @@
     {
       "name": "ControlBarrierPlayerStartsToDestroy",
       "type": "procedure",
-      "sortid": 192,
+      "sortid": 212,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_player_starts_to_destroy",
@@ -2058,7 +2058,7 @@
     {
       "name": "ControlBarrierClosed",
       "type": "procedure",
-      "sortid": 193,
+      "sortid": 213,
       "compiles": true,
       "locked_code": false,
       "registry_name": "control_barrier_closed",
@@ -2095,7 +2095,7 @@
     {
       "name": "OnEntityAttacked",
       "type": "procedure",
-      "sortid": 194,
+      "sortid": 214,
       "compiles": true,
       "locked_code": false,
       "registry_name": "on_entity_attacked",
@@ -2136,7 +2136,7 @@
     {
       "name": "OnBlockDestroy",
       "type": "procedure",
-      "sortid": 195,
+      "sortid": 215,
       "compiles": true,
       "locked_code": false,
       "registry_name": "on_block_destroy",
@@ -2173,7 +2173,7 @@
     {
       "name": "OnDefenseSkillUp",
       "type": "procedure",
-      "sortid": 196,
+      "sortid": 216,
       "compiles": true,
       "locked_code": false,
       "registry_name": "on_defense_skill_up",
@@ -2206,7 +2206,7 @@
     {
       "name": "CmdGetDefSkillXpExecuted",
       "type": "procedure",
-      "sortid": 197,
+      "sortid": 217,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_get_def_skill_xp_executed",
@@ -2223,7 +2223,7 @@
     {
       "name": "CmdResetDefSkill",
       "type": "procedure",
-      "sortid": 198,
+      "sortid": 218,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_reset_def_skill",
@@ -2240,7 +2240,7 @@
     {
       "name": "GetDefSkillXp",
       "type": "command",
-      "sortid": 199,
+      "sortid": 219,
       "compiles": true,
       "locked_code": false,
       "registry_name": "get_def_skill_xp",
@@ -2249,7 +2249,7 @@
     {
       "name": "ResetDefSkill",
       "type": "command",
-      "sortid": 200,
+      "sortid": 220,
       "compiles": true,
       "locked_code": false,
       "registry_name": "reset_def_skill",
@@ -2258,7 +2258,7 @@
     {
       "name": "OnAttackSkillUp",
       "type": "procedure",
-      "sortid": 201,
+      "sortid": 221,
       "compiles": true,
       "locked_code": false,
       "registry_name": "on_attack_skill_up",
@@ -2291,7 +2291,7 @@
     {
       "name": "OnMagicSkillUp",
       "type": "procedure",
-      "sortid": 202,
+      "sortid": 222,
       "compiles": true,
       "locked_code": false,
       "registry_name": "on_magic_skill_up",
@@ -2324,7 +2324,7 @@
     {
       "name": "PlayerLevelTree",
       "type": "gui",
-      "sortid": 203,
+      "sortid": 223,
       "compiles": true,
       "locked_code": false,
       "registry_name": "player_level_tree",
@@ -2333,7 +2333,7 @@
     {
       "name": "OnEntityKilled",
       "type": "procedure",
-      "sortid": 204,
+      "sortid": 224,
       "compiles": true,
       "locked_code": false,
       "registry_name": "on_entity_killed",
@@ -2342,6 +2342,26 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -2350,7 +2370,7 @@
     {
       "name": "OnCookingSkillUp",
       "type": "procedure",
-      "sortid": 205,
+      "sortid": 225,
       "compiles": true,
       "locked_code": false,
       "registry_name": "on_cooking_skill_up",
@@ -2383,7 +2403,7 @@
     {
       "name": "Strawberry",
       "type": "item",
-      "sortid": 77,
+      "sortid": 97,
       "compiles": true,
       "locked_code": false,
       "registry_name": "strawberry",
@@ -2392,7 +2412,7 @@
     {
       "name": "Blueberry",
       "type": "item",
-      "sortid": 78,
+      "sortid": 98,
       "compiles": true,
       "locked_code": false,
       "registry_name": "blueberry",
@@ -2401,34 +2421,34 @@
     {
       "name": "Cranberry",
       "type": "item",
-      "sortid": 79,
+      "sortid": 99,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cranberry",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "Broccoli",
       "type": "item",
-      "sortid": 73,
+      "sortid": 93,
       "compiles": true,
       "locked_code": false,
       "registry_name": "broccoli",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "CoffeeBeans",
       "type": "item",
-      "sortid": 81,
+      "sortid": 101,
       "compiles": true,
       "locked_code": false,
       "registry_name": "coffee_beans",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "CupOfCoffee",
       "type": "item",
-      "sortid": 82,
+      "sortid": 102,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cup_of_coffee",
@@ -2437,7 +2457,7 @@
     {
       "name": "RawMutton",
       "type": "item",
-      "sortid": 85,
+      "sortid": 105,
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_mutton",
@@ -2446,16 +2466,16 @@
     {
       "name": "CookedMutton",
       "type": "item",
-      "sortid": 86,
+      "sortid": 106,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cooked_mutton",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "RawTurkey",
       "type": "item",
-      "sortid": 87,
+      "sortid": 107,
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_turkey",
@@ -2464,16 +2484,16 @@
     {
       "name": "CookedTurkey",
       "type": "item",
-      "sortid": 88,
+      "sortid": 108,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cooked_turkey",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "RawRagoutRabbit",
       "type": "item",
-      "sortid": 89,
+      "sortid": 109,
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_ragout_rabbit",
@@ -2482,16 +2502,16 @@
     {
       "name": "CookedRagoutRabbit",
       "type": "item",
-      "sortid": 90,
+      "sortid": 110,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cooked_ragout_rabbit",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "RawCrab",
       "type": "item",
-      "sortid": 91,
+      "sortid": 111,
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_crab",
@@ -2500,7 +2520,7 @@
     {
       "name": "RawGrouper",
       "type": "item",
-      "sortid": 92,
+      "sortid": 112,
       "compiles": true,
       "locked_code": false,
       "registry_name": "raw_grouper",
@@ -2509,7 +2529,7 @@
     {
       "name": "Tomato",
       "type": "item",
-      "sortid": 75,
+      "sortid": 95,
       "compiles": true,
       "locked_code": false,
       "registry_name": "tomato",
@@ -2518,7 +2538,7 @@
     {
       "name": "Onion",
       "type": "item",
-      "sortid": 71,
+      "sortid": 91,
       "compiles": true,
       "locked_code": false,
       "registry_name": "onion",
@@ -2527,16 +2547,16 @@
     {
       "name": "ChickenGumbo",
       "type": "item",
-      "sortid": 93,
+      "sortid": 113,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chicken_gumbo",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "SteakAndChips",
       "type": "item",
-      "sortid": 97,
+      "sortid": 117,
       "compiles": true,
       "locked_code": false,
       "registry_name": "steak_and_chips",
@@ -2545,7 +2565,7 @@
     {
       "name": "SpicySpicedChilli",
       "type": "item",
-      "sortid": 96,
+      "sortid": 116,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spicy_spiced_chilli",
@@ -2554,7 +2574,7 @@
     {
       "name": "RecCookedMutton",
       "type": "recipe",
-      "sortid": 206,
+      "sortid": 226,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_cooked_mutton",
@@ -2563,7 +2583,7 @@
     {
       "name": "RecCookedTurkey",
       "type": "recipe",
-      "sortid": 207,
+      "sortid": 227,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_cooked_turkey",
@@ -2572,7 +2592,7 @@
     {
       "name": "RecCookedRagoutRabbit",
       "type": "recipe",
-      "sortid": 208,
+      "sortid": 228,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rec_cooked_ragout_rabbit",
@@ -2581,7 +2601,7 @@
     {
       "name": "RabbitRagout",
       "type": "item",
-      "sortid": 95,
+      "sortid": 115,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rabbit_ragout",
@@ -2590,7 +2610,7 @@
     {
       "name": "LootFishing",
       "type": "loottable",
-      "sortid": 209,
+      "sortid": 229,
       "compiles": true,
       "locked_code": false,
       "registry_name": "loot_fishing",
@@ -2599,7 +2619,7 @@
     {
       "name": "FishMeal",
       "type": "item",
-      "sortid": 98,
+      "sortid": 118,
       "compiles": true,
       "locked_code": false,
       "registry_name": "fish_meal",
@@ -2608,7 +2628,7 @@
     {
       "name": "HamSoup",
       "type": "item",
-      "sortid": 94,
+      "sortid": 114,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ham_soup",
@@ -2617,7 +2637,7 @@
     {
       "name": "LambPlate",
       "type": "item",
-      "sortid": 99,
+      "sortid": 119,
       "compiles": true,
       "locked_code": false,
       "registry_name": "lamb_plate",
@@ -2626,7 +2646,7 @@
     {
       "name": "Mango",
       "type": "item",
-      "sortid": 80,
+      "sortid": 100,
       "compiles": true,
       "locked_code": false,
       "registry_name": "mango",
@@ -2635,7 +2655,7 @@
     {
       "name": "SweatRoastedChicken",
       "type": "item",
-      "sortid": 100,
+      "sortid": 120,
       "compiles": true,
       "locked_code": false,
       "registry_name": "sweat_roasted_chicken",
@@ -2644,7 +2664,7 @@
     {
       "name": "BananaSplit",
       "type": "item",
-      "sortid": 101,
+      "sortid": 121,
       "compiles": true,
       "locked_code": false,
       "registry_name": "banana_split",
@@ -2653,7 +2673,7 @@
     {
       "name": "GetVanillaCrit",
       "type": "procedure",
-      "sortid": 210,
+      "sortid": 230,
       "compiles": true,
       "locked_code": false,
       "registry_name": "get_vanilla_crit",
@@ -2678,7 +2698,7 @@
     {
       "name": "CmdSetCritChanceExecuted",
       "type": "procedure",
-      "sortid": 211,
+      "sortid": 231,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_set_crit_chance_executed",
@@ -2699,7 +2719,7 @@
     {
       "name": "SetCritChance",
       "type": "command",
-      "sortid": 212,
+      "sortid": 232,
       "compiles": true,
       "locked_code": false,
       "registry_name": "set_crit_chance",
@@ -2708,7 +2728,7 @@
     {
       "name": "ColdEmbrace",
       "type": "potioneffect",
-      "sortid": 213,
+      "sortid": 233,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cold_embrace",
@@ -2717,7 +2737,7 @@
     {
       "name": "FreezingCold",
       "type": "potioneffect",
-      "sortid": 214,
+      "sortid": 234,
       "compiles": true,
       "locked_code": false,
       "registry_name": "freezing_cold",
@@ -2726,7 +2746,7 @@
     {
       "name": "ColdEmbraceOnTick",
       "type": "procedure",
-      "sortid": 215,
+      "sortid": 235,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cold_embrace_on_tick",
@@ -2755,7 +2775,7 @@
     {
       "name": "FreezingColdApplied",
       "type": "procedure",
-      "sortid": 216,
+      "sortid": 236,
       "compiles": true,
       "locked_code": false,
       "registry_name": "freezing_cold_applied",
@@ -2772,7 +2792,7 @@
     {
       "name": "FreezingColdExpires",
       "type": "procedure",
-      "sortid": 217,
+      "sortid": 237,
       "compiles": true,
       "locked_code": false,
       "registry_name": "freezing_cold_expires",
@@ -2789,7 +2809,7 @@
     {
       "name": "SpellImmunity",
       "type": "potioneffect",
-      "sortid": 218,
+      "sortid": 238,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spell_immunity",
@@ -2798,7 +2818,7 @@
     {
       "name": "MagicShield",
       "type": "potioneffect",
-      "sortid": 219,
+      "sortid": 239,
       "compiles": true,
       "locked_code": false,
       "registry_name": "magic_shield",
@@ -2807,7 +2827,7 @@
     {
       "name": "SpellImmunityOnTick",
       "type": "procedure",
-      "sortid": 220,
+      "sortid": 240,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spell_immunity_on_tick",
@@ -2824,7 +2844,7 @@
     {
       "name": "MagicShieldApplied",
       "type": "procedure",
-      "sortid": 221,
+      "sortid": 241,
       "compiles": true,
       "locked_code": false,
       "registry_name": "magic_shield_applied",
@@ -2845,7 +2865,7 @@
     {
       "name": "MagicShieldOnTick",
       "type": "procedure",
-      "sortid": 222,
+      "sortid": 242,
       "compiles": true,
       "locked_code": false,
       "registry_name": "magic_shield_on_tick",
@@ -2866,7 +2886,7 @@
     {
       "name": "LightningStrikeApplied",
       "type": "procedure",
-      "sortid": 223,
+      "sortid": 243,
       "compiles": true,
       "locked_code": false,
       "registry_name": "lightning_strike_applied",
@@ -2895,7 +2915,7 @@
     {
       "name": "LightningStrike",
       "type": "potioneffect",
-      "sortid": 224,
+      "sortid": 244,
       "compiles": true,
       "locked_code": false,
       "registry_name": "lightning_strike",
@@ -2904,34 +2924,34 @@
     {
       "name": "Chilli",
       "type": "item",
-      "sortid": 74,
+      "sortid": 94,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chilli",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "Chocolate",
       "type": "item",
-      "sortid": 83,
+      "sortid": 103,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chocolate",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "ChocolateStrawberry",
       "type": "item",
-      "sortid": 84,
+      "sortid": 104,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chocolate_strawberry",
-      "path": "~/items/Materials"
+      "path": "~/items/Food"
     },
     {
       "name": "CookingTable",
       "type": "block",
-      "sortid": 31,
+      "sortid": 46,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cooking_table",
@@ -2940,7 +2960,7 @@
     {
       "name": "ArmoryTable",
       "type": "block",
-      "sortid": 32,
+      "sortid": 47,
       "compiles": true,
       "locked_code": false,
       "registry_name": "armory_table",
@@ -2949,7 +2969,7 @@
     {
       "name": "WeaponTable",
       "type": "block",
-      "sortid": 33,
+      "sortid": 48,
       "compiles": true,
       "locked_code": false,
       "registry_name": "weapon_table",
@@ -2958,7 +2978,7 @@
     {
       "name": "ArmoryTableGui",
       "type": "gui",
-      "sortid": 225,
+      "sortid": 245,
       "compiles": true,
       "locked_code": false,
       "registry_name": "armory_table_gui",
@@ -2967,7 +2987,7 @@
     {
       "name": "WeaponTableGui",
       "type": "gui",
-      "sortid": 226,
+      "sortid": 246,
       "compiles": true,
       "locked_code": false,
       "registry_name": "weapon_table_gui",
@@ -2976,7 +2996,7 @@
     {
       "name": "CookingTableGui",
       "type": "gui",
-      "sortid": 227,
+      "sortid": 247,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cooking_table_gui",
@@ -2985,7 +3005,7 @@
     {
       "name": "JadeSword",
       "type": "tool",
-      "sortid": 40,
+      "sortid": 54,
       "compiles": true,
       "locked_code": false,
       "registry_name": "jade_sword",
@@ -2994,7 +3014,7 @@
     {
       "name": "DeathsDance",
       "type": "tool",
-      "sortid": 42,
+      "sortid": 56,
       "compiles": true,
       "locked_code": false,
       "registry_name": "deaths_dance",
@@ -3003,7 +3023,7 @@
     {
       "name": "DragonSlayer",
       "type": "tool",
-      "sortid": 43,
+      "sortid": 57,
       "compiles": true,
       "locked_code": false,
       "registry_name": "dragon_slayer",
@@ -3012,7 +3032,7 @@
     {
       "name": "TheDarkBlade",
       "type": "tool",
-      "sortid": 44,
+      "sortid": 58,
       "compiles": true,
       "locked_code": false,
       "registry_name": "the_dark_blade",
@@ -3021,7 +3041,7 @@
     {
       "name": "AncientGuardianWarhammer",
       "type": "tool",
-      "sortid": 45,
+      "sortid": 59,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ancient_guardian_warhammer",
@@ -3030,7 +3050,7 @@
     {
       "name": "WeaponTableGuiOnTick",
       "type": "procedure",
-      "sortid": 228,
+      "sortid": 248,
       "compiles": true,
       "locked_code": false,
       "registry_name": "weapon_table_gui_on_tick",
@@ -3047,7 +3067,7 @@
     {
       "name": "WeaponTableGuiLeftTaken",
       "type": "procedure",
-      "sortid": 229,
+      "sortid": 249,
       "compiles": true,
       "locked_code": false,
       "registry_name": "weapon_table_gui_left_taken",
@@ -3064,7 +3084,7 @@
     {
       "name": "WeaponTableGuiRightTaken",
       "type": "procedure",
-      "sortid": 230,
+      "sortid": 250,
       "compiles": true,
       "locked_code": false,
       "registry_name": "weapon_table_gui_right_taken",
@@ -3081,7 +3101,7 @@
     {
       "name": "ArmoryTableOnTick",
       "type": "procedure",
-      "sortid": 231,
+      "sortid": 251,
       "compiles": true,
       "locked_code": false,
       "registry_name": "armory_table_on_tick",
@@ -3098,7 +3118,7 @@
     {
       "name": "SkillTreeBtn1Condition",
       "type": "procedure",
-      "sortid": 232,
+      "sortid": 252,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_1_condition",
@@ -3116,7 +3136,7 @@
     {
       "name": "SkillTreeBtn2Condition",
       "type": "procedure",
-      "sortid": 233,
+      "sortid": 253,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_2_condition",
@@ -3134,7 +3154,7 @@
     {
       "name": "SkillTreeBtn3Condition",
       "type": "procedure",
-      "sortid": 234,
+      "sortid": 254,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_3_condition",
@@ -3152,7 +3172,7 @@
     {
       "name": "SkillTreeBtn4Condition",
       "type": "procedure",
-      "sortid": 235,
+      "sortid": 255,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_4_condition",
@@ -3170,7 +3190,7 @@
     {
       "name": "SkillTreeBtn5Condition",
       "type": "procedure",
-      "sortid": 236,
+      "sortid": 256,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_5_condition",
@@ -3188,7 +3208,7 @@
     {
       "name": "SkillTreeBtn6Condition",
       "type": "procedure",
-      "sortid": 237,
+      "sortid": 257,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_6_condition",
@@ -3206,7 +3226,7 @@
     {
       "name": "SkillTreeBtn7Condition",
       "type": "procedure",
-      "sortid": 238,
+      "sortid": 258,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_7_condition",
@@ -3224,7 +3244,7 @@
     {
       "name": "SkillTreeBtn8Condition",
       "type": "procedure",
-      "sortid": 239,
+      "sortid": 259,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_8_condition",
@@ -3242,7 +3262,7 @@
     {
       "name": "SkillTreeBtn9Condition",
       "type": "procedure",
-      "sortid": 240,
+      "sortid": 260,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_9_condition",
@@ -3260,7 +3280,7 @@
     {
       "name": "SkillTreeBtn10Condition",
       "type": "procedure",
-      "sortid": 241,
+      "sortid": 261,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_10_condition",
@@ -3278,7 +3298,7 @@
     {
       "name": "SkillTreeBtn11Condition",
       "type": "procedure",
-      "sortid": 242,
+      "sortid": 262,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_11_condition",
@@ -3296,7 +3316,7 @@
     {
       "name": "SkillTreeBtn12Condition",
       "type": "procedure",
-      "sortid": 243,
+      "sortid": 263,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_12_condition",
@@ -3314,7 +3334,7 @@
     {
       "name": "SkillTreeBtn13Condition",
       "type": "procedure",
-      "sortid": 244,
+      "sortid": 264,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_13_condition",
@@ -3332,7 +3352,7 @@
     {
       "name": "SkillTreeBtn14Condition",
       "type": "procedure",
-      "sortid": 245,
+      "sortid": 265,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_14_condition",
@@ -3350,7 +3370,7 @@
     {
       "name": "SkillTreeBtn15Condition",
       "type": "procedure",
-      "sortid": 246,
+      "sortid": 266,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_15_condition",
@@ -3368,7 +3388,7 @@
     {
       "name": "SkillTreeBtn16Condition",
       "type": "procedure",
-      "sortid": 247,
+      "sortid": 267,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_16_condition",
@@ -3386,7 +3406,7 @@
     {
       "name": "SkillTreeBtn17Condition",
       "type": "procedure",
-      "sortid": 248,
+      "sortid": 268,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_17_condition",
@@ -3404,7 +3424,7 @@
     {
       "name": "SkillTreeBtn18Condition",
       "type": "procedure",
-      "sortid": 249,
+      "sortid": 269,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_18_condition",
@@ -3422,7 +3442,7 @@
     {
       "name": "SkillTreeBtn19Condition",
       "type": "procedure",
-      "sortid": 250,
+      "sortid": 270,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_19_condition",
@@ -3440,7 +3460,7 @@
     {
       "name": "SkillTreeBtn20Condition",
       "type": "procedure",
-      "sortid": 251,
+      "sortid": 271,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_20_condition",
@@ -3458,7 +3478,7 @@
     {
       "name": "SkillTreeBtn21Condition",
       "type": "procedure",
-      "sortid": 252,
+      "sortid": 272,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_21_condition",
@@ -3476,7 +3496,7 @@
     {
       "name": "SkillTreeBtn22Condition",
       "type": "procedure",
-      "sortid": 253,
+      "sortid": 273,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_22_condition",
@@ -3494,7 +3514,7 @@
     {
       "name": "SkillTreeBtn23Condition",
       "type": "procedure",
-      "sortid": 254,
+      "sortid": 274,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_23_condition",
@@ -3512,7 +3532,7 @@
     {
       "name": "SkillTreeBtn24Condition",
       "type": "procedure",
-      "sortid": 255,
+      "sortid": 275,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_24_condition",
@@ -3530,7 +3550,7 @@
     {
       "name": "SkillTreeBtn1Pressed",
       "type": "procedure",
-      "sortid": 256,
+      "sortid": 276,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_1_pressed",
@@ -3547,7 +3567,7 @@
     {
       "name": "SkillTreeBtn2Pressed",
       "type": "procedure",
-      "sortid": 257,
+      "sortid": 277,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_2_pressed",
@@ -3564,7 +3584,7 @@
     {
       "name": "SkillTreeBtn3Pressed",
       "type": "procedure",
-      "sortid": 258,
+      "sortid": 278,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_3_pressed",
@@ -3581,7 +3601,7 @@
     {
       "name": "SkillTreeBtn4Pressed",
       "type": "procedure",
-      "sortid": 259,
+      "sortid": 279,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_4_pressed",
@@ -3598,7 +3618,7 @@
     {
       "name": "SkillTreeBtn5Pressed",
       "type": "procedure",
-      "sortid": 260,
+      "sortid": 280,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_5_pressed",
@@ -3615,7 +3635,7 @@
     {
       "name": "SkillTreeBtn6Pressed",
       "type": "procedure",
-      "sortid": 261,
+      "sortid": 281,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_6_pressed",
@@ -3632,7 +3652,7 @@
     {
       "name": "SkillTreeBtn7Pressed",
       "type": "procedure",
-      "sortid": 262,
+      "sortid": 282,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_7_pressed",
@@ -3649,7 +3669,7 @@
     {
       "name": "SkillTreeBtn8Pressed",
       "type": "procedure",
-      "sortid": 263,
+      "sortid": 283,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_8_pressed",
@@ -3666,7 +3686,7 @@
     {
       "name": "SkillTreeBtn9Pressed",
       "type": "procedure",
-      "sortid": 264,
+      "sortid": 284,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_9_pressed",
@@ -3683,7 +3703,7 @@
     {
       "name": "SkillTreeBtn10Pressed",
       "type": "procedure",
-      "sortid": 265,
+      "sortid": 285,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_10_pressed",
@@ -3700,7 +3720,7 @@
     {
       "name": "SkillTreeBtn11Pressed",
       "type": "procedure",
-      "sortid": 266,
+      "sortid": 286,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_11_pressed",
@@ -3717,7 +3737,7 @@
     {
       "name": "SkillTreeBtn12Pressed",
       "type": "procedure",
-      "sortid": 267,
+      "sortid": 287,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_12_pressed",
@@ -3734,7 +3754,7 @@
     {
       "name": "SkillTreeBtn13Pressed",
       "type": "procedure",
-      "sortid": 268,
+      "sortid": 288,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_13_pressed",
@@ -3751,7 +3771,7 @@
     {
       "name": "SkillTreeBtn14Pressed",
       "type": "procedure",
-      "sortid": 269,
+      "sortid": 289,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_14_pressed",
@@ -3768,7 +3788,7 @@
     {
       "name": "SkillTreeBtn15Pressed",
       "type": "procedure",
-      "sortid": 270,
+      "sortid": 290,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_15_pressed",
@@ -3785,7 +3805,7 @@
     {
       "name": "SkillTreeBtn16Pressed",
       "type": "procedure",
-      "sortid": 271,
+      "sortid": 291,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_16_pressed",
@@ -3802,7 +3822,7 @@
     {
       "name": "SkillTreeBtn17Pressed",
       "type": "procedure",
-      "sortid": 272,
+      "sortid": 292,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_17_pressed",
@@ -3819,7 +3839,7 @@
     {
       "name": "SkillTreeBtn18Pressed",
       "type": "procedure",
-      "sortid": 273,
+      "sortid": 293,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_18_pressed",
@@ -3836,7 +3856,7 @@
     {
       "name": "SkillTreeBtn19Pressed",
       "type": "procedure",
-      "sortid": 274,
+      "sortid": 294,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_19_pressed",
@@ -3853,7 +3873,7 @@
     {
       "name": "SkillTreeBtn20Pressed",
       "type": "procedure",
-      "sortid": 275,
+      "sortid": 295,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_20_pressed",
@@ -3870,7 +3890,7 @@
     {
       "name": "SkillTreeBtn21Pressed",
       "type": "procedure",
-      "sortid": 276,
+      "sortid": 296,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_21_pressed",
@@ -3887,7 +3907,7 @@
     {
       "name": "SkillTreeBtn22Pressed",
       "type": "procedure",
-      "sortid": 277,
+      "sortid": 297,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_22_pressed",
@@ -3904,7 +3924,7 @@
     {
       "name": "SkillTreeBtn23Pressed",
       "type": "procedure",
-      "sortid": 278,
+      "sortid": 298,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_23_pressed",
@@ -3921,7 +3941,7 @@
     {
       "name": "SkillTreeBtn24Pressed",
       "type": "procedure",
-      "sortid": 279,
+      "sortid": 299,
       "compiles": true,
       "locked_code": false,
       "registry_name": "skill_tree_btn_24_pressed",
@@ -3938,7 +3958,7 @@
     {
       "name": "CmdGetSkillPointsExecuted",
       "type": "procedure",
-      "sortid": 280,
+      "sortid": 300,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_get_skill_points_executed",
@@ -3959,7 +3979,7 @@
     {
       "name": "GetSkillPoints",
       "type": "command",
-      "sortid": 281,
+      "sortid": 301,
       "compiles": true,
       "locked_code": false,
       "registry_name": "get_skill_points",
@@ -3968,7 +3988,7 @@
     {
       "name": "CmdGuiExecuted",
       "type": "procedure",
-      "sortid": 282,
+      "sortid": 302,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_gui_executed",
@@ -4001,7 +4021,7 @@
     {
       "name": "Gui",
       "type": "command",
-      "sortid": 283,
+      "sortid": 303,
       "compiles": true,
       "locked_code": false,
       "registry_name": "gui",
@@ -4010,7 +4030,7 @@
     {
       "name": "CmdStatsExecuted",
       "type": "procedure",
-      "sortid": 284,
+      "sortid": 304,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cmd_stats_executed",
@@ -4027,7 +4047,7 @@
     {
       "name": "Stats",
       "type": "command",
-      "sortid": 285,
+      "sortid": 305,
       "compiles": true,
       "locked_code": false,
       "registry_name": "stats",
@@ -4036,7 +4056,7 @@
     {
       "name": "ScrollBigSlice",
       "type": "item",
-      "sortid": 49,
+      "sortid": 63,
       "compiles": true,
       "locked_code": false,
       "registry_name": "scroll_big_slice",
@@ -4045,7 +4065,7 @@
     {
       "name": "JadeSwordItemCrafted",
       "type": "procedure",
-      "sortid": 286,
+      "sortid": 306,
       "compiles": true,
       "locked_code": false,
       "registry_name": "jade_sword_item_crafted",
@@ -4062,7 +4082,7 @@
     {
       "name": "FlameSwordItemIsCrafted",
       "type": "procedure",
-      "sortid": 287,
+      "sortid": 307,
       "compiles": true,
       "locked_code": false,
       "registry_name": "flame_sword_item_is_crafted",
@@ -4079,7 +4099,7 @@
     {
       "name": "FlameSword",
       "type": "tool",
-      "sortid": 41,
+      "sortid": 55,
       "compiles": true,
       "locked_code": false,
       "registry_name": "flame_sword",
@@ -4088,7 +4108,7 @@
     {
       "name": "DeathsDanceItemIsCrafted",
       "type": "procedure",
-      "sortid": 288,
+      "sortid": 308,
       "compiles": true,
       "locked_code": false,
       "registry_name": "deaths_dance_item_is_crafted",
@@ -4105,7 +4125,7 @@
     {
       "name": "DragonSlayerItemIsCrafted",
       "type": "procedure",
-      "sortid": 289,
+      "sortid": 309,
       "compiles": true,
       "locked_code": false,
       "registry_name": "dragon_slayer_item_is_crafted",
@@ -4122,7 +4142,7 @@
     {
       "name": "TheDarkBladeItemIsCrafted",
       "type": "procedure",
-      "sortid": 290,
+      "sortid": 310,
       "compiles": true,
       "locked_code": false,
       "registry_name": "the_dark_blade_item_is_crafted",
@@ -4139,7 +4159,7 @@
     {
       "name": "AncientGuardianWarhammerItemIsCrafted",
       "type": "procedure",
-      "sortid": 291,
+      "sortid": 311,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ancient_guardian_warhammer_item_is_crafted",
@@ -4156,7 +4176,7 @@
     {
       "name": "AncientWarhammer",
       "type": "item",
-      "sortid": 308,
+      "sortid": 31,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ancient_warhammer",
@@ -4165,7 +4185,7 @@
     {
       "name": "Log",
       "type": "block",
-      "sortid": 298,
+      "sortid": 32,
       "compiles": true,
       "locked_code": false,
       "registry_name": "log",
@@ -4174,7 +4194,7 @@
     {
       "name": "CristalBlade",
       "type": "item",
-      "sortid": 303,
+      "sortid": 27,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cristal_blade",
@@ -4183,7 +4203,7 @@
     {
       "name": "HardenedIronBlade",
       "type": "item",
-      "sortid": 301,
+      "sortid": 25,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hardened_iron_blade",
@@ -4192,7 +4212,7 @@
     {
       "name": "PureGold",
       "type": "item",
-      "sortid": 292,
+      "sortid": 3,
       "compiles": true,
       "locked_code": false,
       "registry_name": "pure_gold",
@@ -4201,7 +4221,7 @@
     {
       "name": "JadeGuard",
       "type": "item",
-      "sortid": 296,
+      "sortid": 22,
       "compiles": true,
       "locked_code": false,
       "registry_name": "jade_guard",
@@ -4210,7 +4230,7 @@
     {
       "name": "MetalHandle",
       "type": "item",
-      "sortid": 293,
+      "sortid": 19,
       "compiles": true,
       "locked_code": false,
       "registry_name": "metal_handle",
@@ -4219,7 +4239,7 @@
     {
       "name": "GoldBlade",
       "type": "item",
-      "sortid": 302,
+      "sortid": 26,
       "compiles": true,
       "locked_code": false,
       "registry_name": "gold_blade",
@@ -4228,7 +4248,7 @@
     {
       "name": "DragonSlayerBlade",
       "type": "item",
-      "sortid": 305,
+      "sortid": 29,
       "compiles": true,
       "locked_code": false,
       "registry_name": "dragon_slayer_blade",
@@ -4237,7 +4257,7 @@
     {
       "name": "PureIron",
       "type": "item",
-      "sortid": 293,
+      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "registry_name": "pure_iron",
@@ -4246,7 +4266,7 @@
     {
       "name": "HardenedIronSword",
       "type": "tool",
-      "sortid": 299,
+      "sortid": 51,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hardened_iron_sword",
@@ -4255,7 +4275,7 @@
     {
       "name": "DarkBlade",
       "type": "item",
-      "sortid": 307,
+      "sortid": 30,
       "compiles": true,
       "locked_code": false,
       "registry_name": "dark_blade",
@@ -4264,7 +4284,7 @@
     {
       "name": "MagmaGuard",
       "type": "item",
-      "sortid": 297,
+      "sortid": 23,
       "compiles": true,
       "locked_code": false,
       "registry_name": "magma_guard",
@@ -4273,7 +4293,7 @@
     {
       "name": "IronBlade",
       "type": "item",
-      "sortid": 300,
+      "sortid": 24,
       "compiles": true,
       "locked_code": false,
       "registry_name": "iron_blade",
@@ -4282,7 +4302,7 @@
     {
       "name": "JadeBlade",
       "type": "item",
-      "sortid": 304,
+      "sortid": 28,
       "compiles": true,
       "locked_code": false,
       "registry_name": "jade_blade",
@@ -4291,7 +4311,7 @@
     {
       "name": "MetalGuard",
       "type": "item",
-      "sortid": 295,
+      "sortid": 21,
       "compiles": true,
       "locked_code": false,
       "registry_name": "metal_guard",
@@ -4300,7 +4320,7 @@
     {
       "name": "WoodenHandle",
       "type": "item",
-      "sortid": 292,
+      "sortid": 18,
       "compiles": true,
       "locked_code": false,
       "registry_name": "wooden_handle",
@@ -4309,11 +4329,133 @@
     {
       "name": "ObsidianHandle",
       "type": "item",
-      "sortid": 294,
+      "sortid": 20,
       "compiles": true,
       "locked_code": false,
       "registry_name": "obsidian_handle",
       "path": "~/items/Special"
+    },
+    {
+      "name": "WoodArmor",
+      "type": "armor",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wood_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/armor"
+    },
+    {
+      "name": "IronArmor",
+      "type": "armor",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/armor"
+    },
+    {
+      "name": "HardenedIronArmor",
+      "type": "armor",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hardened_iron_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/armor"
+    },
+    {
+      "name": "GoldArmor",
+      "type": "armor",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gold_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/armor"
+    },
+    {
+      "name": "CristalArmor",
+      "type": "armor",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cristal_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/armor"
+    },
+    {
+      "name": "JadeArmor",
+      "type": "armor",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jade_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/armor"
+    },
+    {
+      "name": "DragonArmor",
+      "type": "armor",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dragon_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/armor"
+    },
+    {
+      "name": "OnEntityTick",
+      "type": "procedure",
+      "sortid": 312,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_entity_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures/Global"
     }
   ],
   "variable_elements": [
@@ -4513,9 +4655,12 @@
       "item.toamod.pure_iron": "Pure Iron",
       "item.toamod.banana_split": "§5Banana Split§r",
       "effect.toamod.magic_shield": "Magic Shield",
+      "item.toamod.hardened_iron_armor_leggings": "§aHardened Iron Leggings§r",
       "item.toamod.cranberry": "Cranberry",
       "item.toamod.raw_grouper": "§aRaw Grouper§r",
+      "item.toamod.cristal_armor_helmet": "§bCristal Helmet§r",
       "block.toamod.gold_ore": "Gold Ore",
+      "item.toamod.jade_armor_chestplate": "§bJade Body§r",
       "item.toamod.ancient_guardian_warhammer": "§eAncient Guardian Warhammer§r",
       "enchantment.toamod.spikes": "Spikes",
       "item.toamod.stone_sword": "Stone Sword",
@@ -4523,6 +4668,7 @@
       "item.toamod.onion": "Onion",
       "item.toamod.wooden_key": "Wooden Key",
       "item.toamod.cooked_turkey": "§aCooked Turkey§r",
+      "item.toamod.cristal_armor_boots": "§bCristal Boots§r",
       "block.toamod.cooking_table": "Cooking Table",
       "item.toamod.gold_blade": "§aGold Blade§r",
       "enchantment.toamod.ignite": "Ignite",
@@ -4533,21 +4679,27 @@
       "item.toamod.deaths_dance": "§5Deaths Dance§r",
       "block.toamod.chest_epic": "Chest Epic",
       "item.toamod.grapes": "§aGrapes§r",
+      "item.toamod.hardened_iron_armor_chestplate": "§aHardened Iron Body§r",
       "item.toamod.lamb_plate": "§5Lamb Plate§r",
       "block.toamod.control_barrier": "Control Barrier",
+      "item.toamod.jade_armor_boots": "§bJade Boots§r ",
       "item.toamod.iron_ingot": "Iron Ingot",
       "item.toamod.ham_soup": "Ham Soup",
       "item.toamod.scroll_big_slice": "§6Ability: Big Slice§r",
       "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
       "enchantment.toamod.protection": "Protection",
       "block.toamod.armory_table": "Armory Table",
+      "item.toamod.jade_armor_helmet": "§bJade Helmet§r",
+      "item.toamod.hardened_iron_armor_helmet": "§aHardened Iron Helmet§r",
       "item.toamod.cristal": "§aCristal§r",
       "item.toamod.jade_guard": "§aJade Guard§r",
       "item.toamod.iron_blade": "Iron Blade",
       "effect.toamod.lightning_strike": "Lighting Strike",
+      "item.toamod.wood_armor_boots": "Wood Boots",
       "item.toamod.cooked_mutton": "Cooked Mutton",
       "item.toamod.flame_sword": "§5Flame Sword§r",
       "item.toamod.raw_mutton": "§aRaw Mutton§r",
+      "item.toamod.cristal_armor_leggings": "§bCristal Leggings§r",
       "item.toamod.hardened_iron_sword": "§aHardened Iron Sword§r",
       "item.toamod.raw_ragout_rabbit": "§5Raw Ragout Rabbit§r",
       "block.toamod.jade_ore": "Jade Ore",
@@ -4561,6 +4713,7 @@
       "item.toamod.cor": "§6Cor§r",
       "item.toamod.hardened_iron_blade": "Hardened Iron Blade",
       "item.toamod.enchtanted_book": "Enchtanted Book",
+      "item.toamod.wood_armor_chestplate": "Wood Body",
       "block.toamod.chest_legendary": "Chest Legendary",
       "item.toamod.golden_sword": "§aGold Sword§r",
       "block.toamod.cursed_obsidian": "Cursed Obsidian",
@@ -4568,6 +4721,8 @@
       "item.toamod.dark_blade": "§6Dark Blade§r",
       "enchantment.toamod.executing": "Executing",
       "item.toamod.rabbit_ragout": "§6Rabbit Ragout§r",
+      "item.toamod.dragon_armor_helmet": "§6Dragon Helmet§r",
+      "item.toamod.wood_armor_helmet": "Wood Helmet",
       "item.toamod.raw_turkey": "§aRaw Turkey§r",
       "item.toamod.magma_shard": "Magma Shard",
       "block.toamod.upgrading_table": "Upgrading Table",
@@ -4580,9 +4735,12 @@
       "item.toamod.enrichted_cristal": "Enrichted Cristal",
       "item.toamod.jade_blade": "Jade Blade",
       "item.toamod.obsidian": "§5Obsidian§r",
+      "item.toamod.gold_armor_boots": "§aGold Boots§r",
       "item.toamod.obsidian_handle": "Obsidian Handle",
       "item.toamod.sweat_roasted_chicken": "Sweat Roasted Chicken",
       "effect.toamod.freezing_cold": "Freezing Cold",
+      "item.toamod.iron_armor_chestplate": "Iron Body",
+      "item.toamod.iron_armor_leggings": "Iron Leggings",
       "item.toamod.jade": "Jade",
       "item.toamod.cup_of_coffee": "§aCup Of Coffee§r",
       "item.toamod.book_sharpness_3": "Sharpness III",
@@ -4595,8 +4753,10 @@
       "item.toamod.jade_sword": "§bJade Sword§r",
       "item.toamod.book_lifesteel_2": "Lifesteel II",
       "item.toamod.book_sharpness_8": "Sharpness VIII",
+      "item.toamod.gold_armor_leggings": "§aGold Leggings§r",
       "item.toamod.book_sharpness_5": "Sharpness V",
       "item.toamod.book_sharpness_6": "Sharpness VI",
+      "item.toamod.iron_armor_boots": "Iron Boots",
       "effect.toamod.vulnerable": "Vulnerable",
       "item.toamod.book_sharpness_9": "Sharpness IX",
       "item.toamod.book_lifesteel_3": "Lifesteel III",
@@ -4604,25 +4764,32 @@
       "effect.toamod.spell_immunity": "Spell Immunity",
       "item.toamod.the_dark_blade": "§6The Dark Blade§r",
       "block.toamod.log": "Log",
+      "item.toamod.cristal_armor_chestplate": "§bCristal Body§r",
       "item.toamod.chocolate_strawberry": "§aChocolate Strawberry§r",
+      "item.toamod.gold_armor_chestplate": "§aGold Body§r",
       "block.toamod.magma": "Magma",
       "item.toamod.chicken_gumbo": "Chicken Gumbo",
       "item.toamod.cristal_shard": "Cristal Shard",
       "block.toamod.chest_normal": "Chest Normal",
       "item.toamod.leek": "Leek",
       "item.toamod.book_sharpness_10": "Sharpness X",
+      "item.toamod.hardened_iron_armor_boots": "§aHardened Iron Boots§r",
       "item.toamod.scroll_berserk": "§7Ability: §5Berserk§r",
       "item.toamod.chocolate": "Chocolate",
       "item.toamod.book_executing_5": "Executing V",
       "item.toamod.book_executing_4": "Executing IV",
       "block.toamod.weapon_table": "Weapon Table",
+      "item.toamod.iron_armor_helmet": "Iron Helmet",
       "item.toamod.golden_key": "§6Golden Key§r",
       "block.toamod.iron_ore": "Iron Ore",
       "item.toamod.book_executing_1": "Executing I",
+      "item.toamod.dragon_armor_boots": "§6Dragon Boots§r",
       "item.toamod.book_executing_3": "Executing III",
       "item.toamod.book_executing_2": "Executing II",
       "item.toamod.ancient_warhammer": "§eAncient Warhammer§r",
       "item.toamod.pure_gold": "§aPure Gold§r",
+      "item.toamod.gold_armor_helmet": "§aGold Helmet§r",
+      "item.toamod.dragon_armor_leggings": "§6Dragon Leggings§r",
       "item.toamod.blueberry": "Blueberry",
       "enchantment.toamod.sharpness": "Sharpness",
       "item.toamod.wooden_handle": "Wooden Handle",
@@ -4633,9 +4800,12 @@
       "item.toamod.coffee_beans": "Coffee Beans",
       "item.toamod.egg": "Egg",
       "block.toamod.ore_respawn_stone": "Ore Respawn Stone",
+      "item.toamod.jade_armor_leggings": "§bJade Leggings§r",
+      "item.toamod.dragon_armor_chestplate": "§6Dragon Body§r",
       "item.toamod.wooden_sword": "Wooden Sword",
       "item.toamod.cooked_ragout_rabbit": "§6Cooked Ragout Rabbit§r",
       "item.toamod.fiery_heart": "�6Fiery Heart�r",
+      "item.toamod.wood_armor_leggings": "Wood Leggings",
       "item.toamod.cristal_sword": "§bCristal Sword§r",
       "enchantment.toamod.sticky_feet": "Sticky Feet"
     },
@@ -4646,9 +4816,12 @@
       "item.toamod.pure_iron": "Iron Ingot",
       "item.toamod.banana_split": "§5Banana Split§r",
       "effect.toamod.magic_shield": "Magic Shield",
+      "item.toamod.hardened_iron_armor_leggings": "§aHardened Iron Leggings§r",
       "item.toamod.cranberry": "Cranberry",
       "item.toamod.raw_grouper": "§aRaw Grouper§r",
+      "item.toamod.cristal_armor_helmet": "§bCristal Helmet§r",
       "block.toamod.gold_ore": "Gold Ore",
+      "item.toamod.jade_armor_chestplate": "§bJade Body§r",
       "item.toamod.ancient_guardian_warhammer": "§eAncient Guardian Warhammer§r",
       "enchantment.toamod.spikes": "Spikes",
       "item.toamod.stone_sword": "Stone Sword",
@@ -4656,6 +4829,7 @@
       "item.toamod.onion": "Onion",
       "item.toamod.wooden_key": "Wooden Key",
       "item.toamod.cooked_turkey": "§aCooked Turkey§r",
+      "item.toamod.cristal_armor_boots": "§bCristal Boots§r",
       "block.toamod.cooking_table": "Cooking Table",
       "item.toamod.gold_blade": "§aGold Blade§r",
       "enchantment.toamod.ignite": "Ignite",
@@ -4666,21 +4840,27 @@
       "item.toamod.deaths_dance": "§5Deaths Dance§r",
       "block.toamod.chest_epic": "Chest Epic",
       "item.toamod.grapes": "�aGrapes�r",
+      "item.toamod.hardened_iron_armor_chestplate": "§aHardened Iron Body§r",
       "item.toamod.lamb_plate": "§5Lamb Plate§r",
       "block.toamod.control_barrier": "Control Barrier",
+      "item.toamod.jade_armor_boots": "§bJade Boots§r ",
       "item.toamod.iron_ingot": "Iron",
       "item.toamod.ham_soup": "Ham Soup",
       "item.toamod.scroll_big_slice": "Scroll Big Slice",
       "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
       "enchantment.toamod.protection": "Protection",
       "block.toamod.armory_table": "Armory Table",
+      "item.toamod.jade_armor_helmet": "§bJade Helmet§r",
+      "item.toamod.hardened_iron_armor_helmet": "§aHardened Iron Helmet§r",
       "item.toamod.cristal": "Cristal",
       "item.toamod.jade_guard": "§aJade Guard§r",
       "item.toamod.iron_blade": "Iron Blade",
       "effect.toamod.lightning_strike": "Lighting Strike",
+      "item.toamod.wood_armor_boots": "Wood Boots",
       "item.toamod.cooked_mutton": "Cooked Mutton",
       "item.toamod.flame_sword": "§5Hell Sword§r",
       "item.toamod.raw_mutton": "Raw Mutton",
+      "item.toamod.cristal_armor_leggings": "§bCristal Leggings§r",
       "item.toamod.hardened_iron_sword": "§aHardened Iron Sword§r",
       "item.toamod.raw_ragout_rabbit": "§5Raw Ragout Rabbit§r",
       "block.toamod.jade_ore": "Jade Ore",
@@ -4694,6 +4874,7 @@
       "item.toamod.cor": "�6Cor�r",
       "item.toamod.hardened_iron_blade": "Hardened Iron Blade",
       "item.toamod.enchtanted_book": "Enchtanted Book",
+      "item.toamod.wood_armor_chestplate": "Wood Body",
       "block.toamod.chest_legendary": "Chest Legendary",
       "item.toamod.golden_sword": "Golden Sword",
       "block.toamod.cursed_obsidian": "Verfluchtes Obsidian",
@@ -4701,6 +4882,8 @@
       "item.toamod.dark_blade": "§6Dark Blade§r",
       "enchantment.toamod.executing": "Executing",
       "item.toamod.rabbit_ragout": "§6Rabbit Ragout§r",
+      "item.toamod.dragon_armor_helmet": "§6Dragon Helmet§r",
+      "item.toamod.wood_armor_helmet": "Wood Helmet",
       "item.toamod.raw_turkey": "§aRaw Turkey§r",
       "item.toamod.magma_shard": "Magma Shard",
       "block.toamod.upgrading_table": "Upgrading Table",
@@ -4713,9 +4896,12 @@
       "item.toamod.enrichted_cristal": "Enrichted Cristal",
       "item.toamod.jade_blade": "Jade Blade",
       "item.toamod.obsidian": "Obsidian",
+      "item.toamod.gold_armor_boots": "§aGold Boots§r",
       "item.toamod.obsidian_handle": "Obsidian Handle",
       "item.toamod.sweat_roasted_chicken": "Sweat Roasted Chicken",
       "effect.toamod.freezing_cold": "Freezing Cold",
+      "item.toamod.iron_armor_chestplate": "Iron Body",
+      "item.toamod.iron_armor_leggings": "Iron Leggings",
       "item.toamod.jade": "Jade",
       "item.toamod.cup_of_coffee": "§aCup Of Coffee§r",
       "item.toamod.book_sharpness_3": "Sharpness II",
@@ -4728,8 +4914,10 @@
       "item.toamod.jade_sword": "§bJade Sword§r",
       "item.toamod.book_lifesteel_2": "Lifesteel II",
       "item.toamod.book_sharpness_8": "Sharpness VII",
+      "item.toamod.gold_armor_leggings": "§aGold Leggings§r",
       "item.toamod.book_sharpness_5": "Sharpness IV",
       "item.toamod.book_sharpness_6": "Sharpness V",
+      "item.toamod.iron_armor_boots": "Iron Boots",
       "effect.toamod.vulnerable": "Vulnerable",
       "item.toamod.book_sharpness_9": "Sharpness VIII",
       "item.toamod.book_lifesteel_3": "Lifesteel III",
@@ -4737,25 +4925,32 @@
       "effect.toamod.spell_immunity": "Spell Immunity",
       "item.toamod.the_dark_blade": "§6The Dark Blade§r",
       "block.toamod.log": "Log",
+      "item.toamod.cristal_armor_chestplate": "§bCristal Body§r",
       "item.toamod.chocolate_strawberry": "§aChocolade Strawberry§r",
+      "item.toamod.gold_armor_chestplate": "§aGold Body§r",
       "block.toamod.magma": "Magma",
       "item.toamod.chicken_gumbo": "Chicken Gumbo",
       "item.toamod.cristal_shard": "Kristall Splitter",
       "block.toamod.chest_normal": "Chest Normal",
       "item.toamod.leek": "Leek",
       "item.toamod.book_sharpness_10": "Sharpness IX",
+      "item.toamod.hardened_iron_armor_boots": "§aHardened Iron Boots§r",
       "item.toamod.scroll_berserk": "�7Ability: �5Berserk�r",
       "item.toamod.chocolate": "Chocolade",
       "item.toamod.book_executing_5": "Executing V",
       "item.toamod.book_executing_4": "Executing IV",
       "block.toamod.weapon_table": "Weapon Table",
+      "item.toamod.iron_armor_helmet": "Iron Helmet",
       "item.toamod.golden_key": "Golden Key",
       "block.toamod.iron_ore": "Iron Ore",
       "item.toamod.book_executing_1": "Executing I",
+      "item.toamod.dragon_armor_boots": "§6Dragon Boots§r",
       "item.toamod.book_executing_3": "Book Executing 3",
       "item.toamod.book_executing_2": "Executing II",
       "item.toamod.pure_gold": "§aGold Ingot§r",
       "item.toamod.ancient_warhammer": "§eAncient Warhammer§r",
+      "item.toamod.gold_armor_helmet": "§aGold Helmet§r",
+      "item.toamod.dragon_armor_leggings": "§6Dragon Leggings§r",
       "item.toamod.blueberry": "Blueberry",
       "enchantment.toamod.sharpness": "Sharpness",
       "item.toamod.wooden_handle": "Wooden Handle",
@@ -4766,9 +4961,12 @@
       "item.toamod.coffee_beans": "Coffee Beans",
       "item.toamod.egg": "Egg",
       "block.toamod.ore_respawn_stone": "Ore Respawn Stone",
+      "item.toamod.jade_armor_leggings": "§bJade Leggings§r",
+      "item.toamod.dragon_armor_chestplate": "§6Dragon Body§r",
       "item.toamod.wooden_sword": "Wooden Sword",
       "item.toamod.cooked_ragout_rabbit": "§6Cooked Ragout Rabbit§r",
       "item.toamod.fiery_heart": "Fiery Heart",
+      "item.toamod.wood_armor_leggings": "Wood Leggings",
       "item.toamod.cristal_sword": "Cristal Sword",
       "enchantment.toamod.sticky_feet": "Sticky Feet"
     }

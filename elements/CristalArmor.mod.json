@@ -1,0 +1,70 @@
+{
+  "_fv": 28,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "cristal_helmet",
+    "enableBody": true,
+    "textureBody": "cristal_chestplate",
+    "enableLeggings": true,
+    "textureLeggings": "cristal_leggings",
+    "enableBoots": true,
+    "textureBoots": "cristal_boots",
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "armorTextureFile": "cristal_",
+    "helmetName": "§bCristal Helmet§r",
+    "bodyName": "§bCristal Body§r",
+    "leggingsName": "§bCristal Leggings§r",
+    "bootsName": "§bCristal Boots§r",
+    "helmetSpecialInfo": [
+      "§7Rarity: §bRare§r",
+      "§7Type: §9Armor§r"
+    ],
+    "bodySpecialInfo": [
+      "§7Rarity: §bRare§r",
+      "§7Type: §9Armor§r"
+    ],
+    "leggingsSpecialInfo": [
+      "§7Rarity: §bRare§r",
+      "§7Type: §9Armor§r"
+    ],
+    "bootsSpecialInfo": [
+      "§7Rarity: §bRare§r",
+      "§7Type: §9Armor§r"
+    ],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 0,
+    "damageValueHelmet": 3,
+    "damageValueBody": 5,
+    "damageValueLeggings": 4,
+    "damageValueBoots": 3,
+    "enchantability": 1,
+    "toughness": 0.0,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": "item.armor.equip_diamond"
+    },
+    "repairItems": []
+  }
+}
