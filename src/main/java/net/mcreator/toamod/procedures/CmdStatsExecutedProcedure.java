@@ -12,23 +12,32 @@ public class CmdStatsExecutedProcedure {
 			return;
 		if (entity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(
-					new TextComponent(("Crit Chance: " + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new ToamodModVariables.PlayerVariables())).kritChance)),
+					new TextComponent(("Attack Damage: " + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).attackDamage)),
 					(false));
 		if (entity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(
-					new TextComponent(("Crit Damage: " + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new ToamodModVariables.PlayerVariables())).kritDamage)),
+					new TextComponent(("Ability Power: " + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).abilityPower)),
 					(false));
 		if (entity instanceof Player _player && !_player.level.isClientSide())
-			_player.displayClientMessage(
-					new TextComponent(("Anility Power: " + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower)),
-					(false));
+			_player.displayClientMessage(new TextComponent(("Armor: " + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new ToamodModVariables.PlayerVariables())).armor)), (false));
 		if (entity instanceof Player _player && !_player.level.isClientSide())
 			_player.displayClientMessage(
-					new TextComponent(("Damage Reduction: " + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new ToamodModVariables.PlayerVariables())).damageReduction)),
+					new TextComponent(("Magic Resistance: " + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).magicResistance)),
 					(false));
+		if (entity instanceof Player _player && !_player.level.isClientSide())
+			_player.displayClientMessage(new TextComponent(("Crit Chance: " + (entity
+					.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).critRate)),
+					(false));
+		if (entity instanceof Player _player && !_player.level.isClientSide())
+			_player.displayClientMessage(new TextComponent(("Crit Damage: " + (entity
+					.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).critDmg)),
+					(false));
+		if (entity instanceof Player _player && !_player.level.isClientSide())
+			_player.displayClientMessage(new TextComponent(("Max Mana:" + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new ToamodModVariables.PlayerVariables())).maxMana)), (false));
 	}
 }

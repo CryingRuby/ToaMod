@@ -5,8 +5,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.chat.TextComponent;
 
 import javax.annotation.Nullable;
@@ -25,17 +27,11 @@ public class OnEntityTickProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof LivingEntity) {
-			entity.getPersistentData().putDouble("lvl", 17);
+		if (entity instanceof LivingEntity && !(entity instanceof ArmorStand)) {
 			entity.setCustomName(
-					new TextComponent(
-							((entity.getDisplayName().getString()).replace(
-									" lvl. \u00A7d" + entity.getPersistentData().getDouble("lvl") + " \u00A77(\u00A7c"
-											+ Math.round(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + "\u2665\u00A77)\u00A7r",
-									""))));
-			entity.setCustomName(new TextComponent(
-					(entity.getDisplayName().getString() + " \u00A77lvl. \u00A7d" + entity.getPersistentData().getDouble("lvl") + " \u00A77(\u00A7c"
-							+ Math.round(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + "\u2665\u00A77)\u00A7r")));
+					new TextComponent(("\u00A77" + new TranslatableComponent(("mob.type." + entity.getPersistentData().getString("type"))).getString()
+							+ " lvl. \u00A7d" + entity.getPersistentData().getDouble("lvl") + " \u00A77(\u00A7c"
+							+ Math.ceil(entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + "\u2764\u00A77)\u00A7r")));
 			{
 				Entity _ent = entity;
 				if (!_ent.level.isClientSide() && _ent.getServer() != null)

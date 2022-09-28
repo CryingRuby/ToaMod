@@ -7,25 +7,21 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public class JadeGuardItem extends Item {
 	public JadeGuardItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1).rarity(Rarity.UNCOMMON));
+		super(new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB).stacksTo(1).rarity(Rarity.UNCOMMON));
 	}
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
 		return UseAnim.EAT;
-	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
 	}
 
 	@Override

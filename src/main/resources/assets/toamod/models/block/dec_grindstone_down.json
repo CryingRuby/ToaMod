@@ -1,0 +1,8 @@
+{
+  "parent": "toamod:custom/grindstone_down_model",
+  "textures": {
+    "all": "toamod:blocks/grindstone_texture",
+    "particle": "toamod:blocks/grindstone_texture",
+    "0": "toamod:blocks/grindstone_texture"
+  }
+}

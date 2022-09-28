@@ -23,7 +23,7 @@ public class CmdSetCritChanceExecutedProcedure {
 				}
 			}.convert(cmdparams.containsKey("0") ? cmdparams.get("0").toString() : "");
 			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.kritChance = _setval;
+				capability.critRate = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}

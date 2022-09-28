@@ -33,7 +33,7 @@ public class ChestLegendaryGuiScreen extends AbstractContainerScreen<ChestLegend
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/chest_legendary_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/screens/chest_legendary_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

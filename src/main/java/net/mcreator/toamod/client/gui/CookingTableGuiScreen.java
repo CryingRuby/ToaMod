@@ -33,7 +33,7 @@ public class CookingTableGuiScreen extends AbstractContainerScreen<CookingTableG
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/cooking_table_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/screens/cooking_table_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

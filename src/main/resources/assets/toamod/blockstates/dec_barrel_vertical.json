@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "toamod:block/dec_barrel_vertical"
+    },
+    "facing=east": {
+      "model": "toamod:block/dec_barrel_vertical",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "toamod:block/dec_barrel_vertical",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "toamod:block/dec_barrel_vertical",
+      "y": 270
+    }
+  }
+}

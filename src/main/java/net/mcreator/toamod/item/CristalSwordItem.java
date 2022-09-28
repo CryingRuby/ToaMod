@@ -8,12 +8,12 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.toamod.procedures.CristalSwordItemIsCraftedsmeltedProcedure;
+import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class CristalSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, -2.55f, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
+		}, 3, -2.55f, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
 	}
 
 	@Override

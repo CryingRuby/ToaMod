@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "toamod:blocks/barrier",
+    "up": "toamod:blocks/barrier",
+    "north": "toamod:blocks/barrier",
+    "east": "toamod:blocks/barrier",
+    "south": "toamod:blocks/barrier",
+    "west": "toamod:blocks/barrier",
+    "particle": "toamod:blocks/barrier"
+  }
+}

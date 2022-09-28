@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "weapon_table_texture",
@@ -11,6 +11,7 @@
     "renderType": 2,
     "customModelName": "weapon_table_model:default",
     "rotationMode": 1,
+    "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
@@ -39,7 +40,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "BUILDING_BLOCKS"
+      "value": "CUSTOM:ToaModTab"
     },
     "destroyTool": "Not specified",
     "customDrop": {
@@ -47,6 +48,7 @@
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
+    "requiresCorrectTool": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,

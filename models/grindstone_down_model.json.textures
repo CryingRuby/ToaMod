@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "grindstone_texture"
+      },
+      "name": "default"
+    }
+  }
+}

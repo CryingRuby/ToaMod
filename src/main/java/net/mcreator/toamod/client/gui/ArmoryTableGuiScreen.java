@@ -33,7 +33,7 @@ public class ArmoryTableGuiScreen extends AbstractContainerScreen<ArmoryTableGui
 		this.imageHeight = 200;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/armory_table_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/screens/armory_table_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -50,8 +50,8 @@ public class ArmoryTableGuiScreen extends AbstractContainerScreen<ArmoryTableGui
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_arrow_right.png"));
-		this.blit(ms, this.leftPos + 94, this.topPos + 61, 0, 0, 12, 12, 12, 12);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/screens/symbol_arrow_right.png"));
+		this.blit(ms, this.leftPos + 94, this.topPos + 61, 0, 0, 0, 0, 0, 0);
 
 		RenderSystem.disableBlend();
 	}

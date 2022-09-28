@@ -8,7 +8,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionResult;
@@ -18,22 +17,18 @@ import net.minecraft.network.chat.Component;
 
 import net.mcreator.toamod.procedures.EnchantableBookActivatedProcedure;
 import net.mcreator.toamod.procedures.BookExecuting4CraftedProcedure;
+import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public class BookExecuting4Item extends Item {
 	public BookExecuting4Item() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).stacksTo(1).rarity(Rarity.COMMON));
+		super(new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB).stacksTo(1).rarity(Rarity.COMMON));
 	}
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
 		return UseAnim.EAT;
-	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
 	}
 
 	@Override

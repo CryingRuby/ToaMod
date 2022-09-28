@@ -1,0 +1,9 @@
+{
+  "_fv": 33,
+  "_type": "command",
+  "definition": {
+    "commandName": "setweaponad",
+    "permissionLevel": "No requirement",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"number_min\"><field name=\"name\">value</field><field name=\"min\">0</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">word</field><field name=\"name\">dmgType</field><statement name=\"args\"><block type=\"number_min\"><field name=\"name\">armor</field><field name=\"min\">0</field><statement name=\"args\"><block type=\"entity\"><field name=\"name\">targetAR</field><field name=\"type\">entity</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">CmdSetWeaponADExecuted</field></block></statement></block></statement></block></statement></block></statement></block></next></block></xml>"
+  }
+}

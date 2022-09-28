@@ -6,24 +6,20 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public class SteakAndChipsItem extends Item {
 	public SteakAndChipsItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(64).rarity(Rarity.COMMON)
+		super(new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB).stacksTo(64).rarity(Rarity.COMMON)
 				.food((new FoodProperties.Builder()).nutrition(10).saturationMod(1f)
 
 						.build()));
-	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 32;
 	}
 
 	@Override

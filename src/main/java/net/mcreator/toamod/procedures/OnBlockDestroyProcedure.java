@@ -31,6 +31,7 @@ public class OnBlockDestroyProcedure {
 		if (entity == null)
 			return;
 		double mineXp = 0;
+		double minProgBefore = 0;
 		mineXp = 0;
 		if (blockstate.getBlock() == ToamodModBlocks.COAL_ORE.get()) {
 			mineXp = 1;
@@ -57,6 +58,113 @@ public class OnBlockDestroyProcedure {
 					capability.skillDefenseXp = _setval;
 					capability.syncPlayerVariables(entity);
 				});
+			}
+			{
+				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new ToamodModVariables.PlayerVariables())).totalOresMined + 1;
+				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.totalOresMined = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new ToamodModVariables.PlayerVariables())).totalOresMined >= (entity
+							.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneOresNeeded
+					&& (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl < 20) {
+				{
+					double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl + 1;
+					entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.miningMilestoneLvl = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(new TextComponent(("\u00A77Mining Milestone Level Up (You have \u00A76"
+							+ new java.text.DecimalFormat("##").format((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl
+									- (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new ToamodModVariables.PlayerVariables())).MinMilestoneRewardsClaimed)
+							+ "\u00A77 unclaimed rewards, speak to \u00A7bB\u00F6mburr\u00A77 to collect)\u00A7r")), (false));
+				{
+					double _setval = 10
+							* Math.ceil(
+									(20 * ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl + 1) * Math
+													.pow(1.1505,
+															(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl + 1))
+											/ 10)
+							- 10;
+					entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.miningMilestoneOresNeeded = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				if ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl == 20) {
+					{
+						double _setval = 0;
+						entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.miningMilestoneOresNeeded = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else {
+					{
+						double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new ToamodModVariables.PlayerVariables())).minMilNextLvl + 1;
+						entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.minMilNextLvl = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				}
+			}
+			if ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl < 20) {
+				if ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl == 0) {
+					minProgBefore = 0;
+				} else {
+					minProgBefore = 10
+							* Math.ceil(
+									(20 * (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl * Math
+													.pow(1.1505,
+															(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+																	.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl))
+											/ 10)
+							- 10;
+				}
+				{
+					double _setval = Math.round(10 * ((100 * ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).totalOresMined - minProgBefore))
+							/ ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneOresNeeded - minProgBefore)));
+					entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.miningMilestoneProgress = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneProgress / 10;
+					entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.miningMilestoneProgress = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else {
+				{
+					double _setval = 100;
+					entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.miningMilestoneProgress = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 			if ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new ToamodModVariables.PlayerVariables())).skillDefenseLvl == 15) {
@@ -105,7 +213,7 @@ public class OnBlockDestroyProcedure {
 									.orElse(new ToamodModVariables.PlayerVariables())).skillDefenseLvl, 3)
 							+ 1.533 * Math.pow((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new ToamodModVariables.PlayerVariables())).skillDefenseLvl, 2)
-							+ 14.958 + (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							+ 14.958 * (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new ToamodModVariables.PlayerVariables())).skillDefenseLvl
 							+ 28.698);
 					entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

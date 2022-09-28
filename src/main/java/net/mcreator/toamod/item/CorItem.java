@@ -8,7 +8,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionResult;
@@ -17,22 +16,18 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.toamod.procedures.CorItemRightClickedProcedure;
+import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public class CorItem extends Item {
 	public CorItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(64).fireResistant().rarity(Rarity.EPIC));
+		super(new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB).stacksTo(64).fireResistant().rarity(Rarity.EPIC));
 	}
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
 		return UseAnim.EAT;
-	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
 	}
 
 	@Override

@@ -101,9 +101,9 @@ public class OnMagicSkillUpProcedure {
 				_player.displayClientMessage(new TextComponent("\u00A73-----------------------------------------------------\u00A7r"), (false));
 			{
 				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower + 0.01;
+						.orElse(new ToamodModVariables.PlayerVariables())).abilityPower + 1;
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.bonusAbilityPower = _setval;
+					capability.abilityPower = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
@@ -159,9 +159,9 @@ public class OnMagicSkillUpProcedure {
 			}
 			{
 				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower + 0.01;
+						.orElse(new ToamodModVariables.PlayerVariables())).abilityPower + 1;
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.bonusAbilityPower = _setval;
+					capability.abilityPower = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
@@ -239,9 +239,9 @@ public class OnMagicSkillUpProcedure {
 			}
 			{
 				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower + 0.01;
+						.orElse(new ToamodModVariables.PlayerVariables())).abilityPower + 1;
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.bonusAbilityPower = _setval;
+					capability.abilityPower = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
@@ -289,9 +289,9 @@ public class OnMagicSkillUpProcedure {
 				_player.displayClientMessage(new TextComponent("\u00A73-----------------------------------------------------\u00A7r"), (false));
 			{
 				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower + 0.02;
+						.orElse(new ToamodModVariables.PlayerVariables())).abilityPower + 2;
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.bonusAbilityPower = _setval;
+					capability.abilityPower = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
@@ -327,9 +327,9 @@ public class OnMagicSkillUpProcedure {
 			}
 			{
 				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower + 0.02;
+						.orElse(new ToamodModVariables.PlayerVariables())).abilityPower + 2;
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.bonusAbilityPower = _setval;
+					capability.abilityPower = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
@@ -355,9 +355,9 @@ public class OnMagicSkillUpProcedure {
 				_player.displayClientMessage(new TextComponent("\u00A73-----------------------------------------------------\u00A7r"), (false));
 			{
 				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower + 0.02;
+						.orElse(new ToamodModVariables.PlayerVariables())).abilityPower + 2;
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.bonusAbilityPower = _setval;
+					capability.abilityPower = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
@@ -383,9 +383,9 @@ public class OnMagicSkillUpProcedure {
 				_player.displayClientMessage(new TextComponent("\u00A73-----------------------------------------------------\u00A7r"), (false));
 			{
 				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower + 0.03;
+						.orElse(new ToamodModVariables.PlayerVariables())).abilityPower + 3;
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.bonusAbilityPower = _setval;
+					capability.abilityPower = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
@@ -411,9 +411,9 @@ public class OnMagicSkillUpProcedure {
 				_player.displayClientMessage(new TextComponent("\u00A73-----------------------------------------------------\u00A7r"), (false));
 			{
 				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).bonusAbilityPower + 0.03;
+						.orElse(new ToamodModVariables.PlayerVariables())).abilityPower + 3;
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.bonusAbilityPower = _setval;
+					capability.abilityPower = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}

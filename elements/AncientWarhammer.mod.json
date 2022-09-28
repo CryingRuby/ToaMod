@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "item",
   "definition": {
     "renderType": 0,
@@ -8,7 +8,7 @@
     "name": "§eAncient Warhammer§r",
     "rarity": "EPIC",
     "creativeTab": {
-      "value": "MISC"
+      "value": "CUSTOM:ToaModTab"
     },
     "stackSize": 1,
     "enchantability": 0,
@@ -25,14 +25,13 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "§7Rarity: §eMythic§r",
+      "§7Rarity: §cMythic§r",
       "§7Type: §9Special§r"
     ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "hasDispenseBehavior": false,
     "isFood": false,
     "nutritionalValue": 4,
     "saturation": 0.3,

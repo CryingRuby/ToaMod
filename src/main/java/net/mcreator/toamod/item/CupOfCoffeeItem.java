@@ -6,24 +6,20 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public class CupOfCoffeeItem extends Item {
 	public CupOfCoffeeItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(64).rarity(Rarity.UNCOMMON)
+		super(new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB).stacksTo(64).rarity(Rarity.UNCOMMON)
 				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f).alwaysEat()
 
 						.build()));
-	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 32;
 	}
 
 	@Override

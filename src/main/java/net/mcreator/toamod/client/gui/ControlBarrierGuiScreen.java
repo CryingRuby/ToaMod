@@ -116,7 +116,7 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		chkBossesDef = new Checkbox(this.leftPos + 99, this.topPos + 48, 150, 20, new TextComponent("Bound to Bosses defeated"),
+		chkBossesDef = new Checkbox(this.leftPos + 99, this.topPos + 48, 20, 20, new TextComponent("Bound to Bosses defeated"),
 
 				ControlBarrierChkBoDefProcedure.execute(world, x, y, z));
 		guistate.put("checkbox:chkBossesDef", chkBossesDef);
@@ -147,17 +147,17 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 		guistate.put("text:inputBossesDef", inputBossesDef);
 		inputBossesDef.setMaxLength(32767);
 		this.addWidget(this.inputBossesDef);
-		chkAttackSkill = new Checkbox(this.leftPos + 99, this.topPos + 110, 150, 20, new TextComponent("Bound to Attack-Skill"),
+		chkAttackSkill = new Checkbox(this.leftPos + 99, this.topPos + 110, 20, 20, new TextComponent("Bound to Attack-Skill"),
 
 				ControlbarrierAtSkillProcedure.execute(world, x, y, z));
 		guistate.put("checkbox:chkAttackSkill", chkAttackSkill);
 		this.addRenderableWidget(chkAttackSkill);
-		chkDefenseSkill = new Checkbox(this.leftPos + 99, this.topPos + 141, 150, 20, new TextComponent("Bound to Defense-Skill"),
+		chkDefenseSkill = new Checkbox(this.leftPos + 99, this.topPos + 141, 20, 20, new TextComponent("Bound to Defense-Skill"),
 
 				ControlBarrierChkDeSkillProcedure.execute(world, x, y, z));
 		guistate.put("checkbox:chkDefenseSkill", chkDefenseSkill);
 		this.addRenderableWidget(chkDefenseSkill);
-		chkMagicSkill = new Checkbox(this.leftPos + 99, this.topPos + 171, 150, 20, new TextComponent("Bound to Magic-Skill"),
+		chkMagicSkill = new Checkbox(this.leftPos + 99, this.topPos + 171, 20, 20, new TextComponent("Bound to Magic-Skill"),
 
 				ControlBarrierChkMaSkillProcedure.execute(world, x, y, z));
 		guistate.put("checkbox:chkMagicSkill", chkMagicSkill);
@@ -240,7 +240,7 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 		guistate.put("text:inputMagicSLvl", inputMagicSLvl);
 		inputMagicSLvl.setMaxLength(32767);
 		this.addWidget(this.inputMagicSLvl);
-		chkPlayerLvl = new Checkbox(this.leftPos + 99, this.topPos + 79, 150, 20, new TextComponent("Bound to Player Level"),
+		chkPlayerLvl = new Checkbox(this.leftPos + 99, this.topPos + 79, 20, 20, new TextComponent("Bound to Player Level"),
 
 				ControlBarrierChkPlaLvlProcedure.execute(world, x, y, z));
 		guistate.put("checkbox:chkPlayerLvl", chkPlayerLvl);

@@ -8,9 +8,10 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class DragonSlayerItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, -3f, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
+		}, 3, -3f, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
 	}
 
 	@Override

@@ -1,0 +1,11 @@
+{
+  "_fv": 33,
+  "_type": "tab",
+  "definition": {
+    "name": "Mobs",
+    "icon": {
+      "value": "Items.PANDA_SPAWN_EGG"
+    },
+    "showSearch": true
+  }
+}

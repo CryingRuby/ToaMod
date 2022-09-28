@@ -14,7 +14,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.toamod.world.inventory.PlayerLevelTreeMenu;
+import net.mcreator.toamod.world.inventory.CombatMilestoneGuiMenu;
+import net.mcreator.toamod.network.ToamodModVariables;
 
 import io.netty.buffer.Unpooled;
 
@@ -28,15 +29,22 @@ public class CmdGuiExecutedProcedure {
 				NetworkHooks.openGui((ServerPlayer) _ent, new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
-						return new TextComponent("PlayerLevelTree");
+						return new TextComponent("CombatMilestoneGui");
 					}
 
 					@Override
 					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new PlayerLevelTreeMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+						return new CombatMilestoneGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
 				}, _bpos);
 			}
+		}
+		{
+			double _setval = 1;
+			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.currentRegion = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

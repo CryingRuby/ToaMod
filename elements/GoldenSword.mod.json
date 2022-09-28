@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "tool",
   "definition": {
     "renderType": 0,
@@ -11,7 +11,7 @@
       "§7Type: §9Sword§r"
     ],
     "creativeTab": {
-      "value": "COMBAT"
+      "value": "CUSTOM:ToaModTab"
     },
     "toolType": "Sword",
     "harvestLevel": 1,

@@ -15,14 +15,9 @@ import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.Capability;
 
-import net.minecraft.world.level.saveddata.SavedData;
-import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.Tag;
@@ -38,8 +33,6 @@ import java.util.function.Supplier;
 public class ToamodModVariables {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
-		ToamodMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new,
-				SavedDataSyncMessage::handler);
 		ToamodMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new,
 				PlayerVariablesSyncMessage::handler);
 	}
@@ -97,153 +90,44 @@ public class ToamodModVariables {
 			clone.skillMagicXp = original.skillMagicXp;
 			clone.skillMagicNeededXp = original.skillMagicNeededXp;
 			clone.playerRecipes = original.playerRecipes;
-			clone.bonusAbilityPower = original.bonusAbilityPower;
 			clone.skillCookingLvl = original.skillCookingLvl;
 			clone.skillCookingXp = original.skillCookingXp;
 			clone.skillCookingNeededXp = original.skillCookingNeededXp;
-			clone.kritChance = original.kritChance;
-			clone.kritDamage = original.kritDamage;
 			clone.shieldAmountMax = original.shieldAmountMax;
 			clone.outOfCombat = original.outOfCombat;
 			clone.shieldLvl = original.shieldLvl;
 			clone.skillPoints = original.skillPoints;
 			clone.unlockedSkillTree = original.unlockedSkillTree;
-			clone.damageReduction = original.damageReduction;
+			clone.currentRegion = original.currentRegion;
+			clone.attackDamage = original.attackDamage;
+			clone.abilityPower = original.abilityPower;
+			clone.armor = original.armor;
+			clone.magicResistance = original.magicResistance;
+			clone.critRate = original.critRate;
+			clone.critDmg = original.critDmg;
+			clone.maxMana = original.maxMana;
+			clone.totalOresMined = original.totalOresMined;
+			clone.horseLvl = original.horseLvl;
+			clone.horseMSCorNeeded = original.horseMSCorNeeded;
+			clone.horseMoveSpeed = original.horseMoveSpeed;
+			clone.horseColor = original.horseColor;
+			clone.horsePattern = original.horsePattern;
+			clone.miningMilestoneLvl = original.miningMilestoneLvl;
+			clone.miningMilestoneOresNeeded = original.miningMilestoneOresNeeded;
+			clone.miningMilestoneProgress = original.miningMilestoneProgress;
+			clone.minMilNextLvl = original.minMilNextLvl;
+			clone.MinMilestoneRewardsClaimed = original.MinMilestoneRewardsClaimed;
+			clone.totalMobsKilled = original.totalMobsKilled;
+			clone.combatMilestoneLvl = original.combatMilestoneLvl;
+			clone.combatMilestoneKillsNeeded = original.combatMilestoneKillsNeeded;
+			clone.combatMilestoneProgress = original.combatMilestoneProgress;
+			clone.comMilNextLvl = original.comMilNextLvl;
+			clone.comMilestoneRewardsClaimed = original.comMilestoneRewardsClaimed;
+			clone.guiBlockX = original.guiBlockX;
+			clone.guiBlockY = original.guiBlockY;
+			clone.guiBlockZ = original.guiBlockZ;
 			if (!event.isWasDeath()) {
 			}
-		}
-
-		@SubscribeEvent
-		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-			if (!event.getPlayer().level.isClientSide()) {
-				SavedData mapdata = MapVariables.get(event.getPlayer().level);
-				SavedData worlddata = WorldVariables.get(event.getPlayer().level);
-				if (mapdata != null)
-					ToamodMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getPlayer()),
-							new SavedDataSyncMessage(0, mapdata));
-				if (worlddata != null)
-					ToamodMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getPlayer()),
-							new SavedDataSyncMessage(1, worlddata));
-			}
-		}
-
-		@SubscribeEvent
-		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (!event.getPlayer().level.isClientSide()) {
-				SavedData worlddata = WorldVariables.get(event.getPlayer().level);
-				if (worlddata != null)
-					ToamodMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getPlayer()),
-							new SavedDataSyncMessage(1, worlddata));
-			}
-		}
-	}
-
-	public static class WorldVariables extends SavedData {
-		public static final String DATA_NAME = "toamod_worldvars";
-		public boolean vanillaCrit = false;
-
-		public static WorldVariables load(CompoundTag tag) {
-			WorldVariables data = new WorldVariables();
-			data.read(tag);
-			return data;
-		}
-
-		public void read(CompoundTag nbt) {
-			vanillaCrit = nbt.getBoolean("vanillaCrit");
-		}
-
-		@Override
-		public CompoundTag save(CompoundTag nbt) {
-			nbt.putBoolean("vanillaCrit", vanillaCrit);
-			return nbt;
-		}
-
-		public void syncData(LevelAccessor world) {
-			this.setDirty();
-			if (world instanceof Level level && !level.isClientSide())
-				ToamodMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(level::dimension), new SavedDataSyncMessage(1, this));
-		}
-
-		static WorldVariables clientSide = new WorldVariables();
-
-		public static WorldVariables get(LevelAccessor world) {
-			if (world instanceof ServerLevel level) {
-				return level.getDataStorage().computeIfAbsent(e -> WorldVariables.load(e), WorldVariables::new, DATA_NAME);
-			} else {
-				return clientSide;
-			}
-		}
-	}
-
-	public static class MapVariables extends SavedData {
-		public static final String DATA_NAME = "toamod_mapvars";
-
-		public static MapVariables load(CompoundTag tag) {
-			MapVariables data = new MapVariables();
-			data.read(tag);
-			return data;
-		}
-
-		public void read(CompoundTag nbt) {
-		}
-
-		@Override
-		public CompoundTag save(CompoundTag nbt) {
-			return nbt;
-		}
-
-		public void syncData(LevelAccessor world) {
-			this.setDirty();
-			if (world instanceof Level && !world.isClientSide())
-				ToamodMod.PACKET_HANDLER.send(PacketDistributor.ALL.noArg(), new SavedDataSyncMessage(0, this));
-		}
-
-		static MapVariables clientSide = new MapVariables();
-
-		public static MapVariables get(LevelAccessor world) {
-			if (world instanceof ServerLevelAccessor serverLevelAcc) {
-				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(e -> MapVariables.load(e),
-						MapVariables::new, DATA_NAME);
-			} else {
-				return clientSide;
-			}
-		}
-	}
-
-	public static class SavedDataSyncMessage {
-		public int type;
-		public SavedData data;
-
-		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
-			this.type = buffer.readInt();
-			this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
-			if (this.data instanceof MapVariables _mapvars)
-				_mapvars.read(buffer.readNbt());
-			else if (this.data instanceof WorldVariables _worldvars)
-				_worldvars.read(buffer.readNbt());
-		}
-
-		public SavedDataSyncMessage(int type, SavedData data) {
-			this.type = type;
-			this.data = data;
-		}
-
-		public static void buffer(SavedDataSyncMessage message, FriendlyByteBuf buffer) {
-			buffer.writeInt(message.type);
-			buffer.writeNbt(message.data.save(new CompoundTag()));
-		}
-
-		public static void handler(SavedDataSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
-			NetworkEvent.Context context = contextSupplier.get();
-			context.enqueueWork(() -> {
-				if (!context.getDirection().getReceptionSide().isServer()) {
-					if (message.type == 0)
-						MapVariables.clientSide = (MapVariables) message.data;
-					else
-						WorldVariables.clientSide = (WorldVariables) message.data;
-				}
-			});
-			context.setPacketHandled(true);
 		}
 	}
 
@@ -294,20 +178,44 @@ public class ToamodModVariables {
 		public double skillDefenseNeededXp = 25.0;
 		public double skillMagicLvl = 0.0;
 		public double skillMagicXp = 0.0;
-		public double skillMagicNeededXp = 50.0;
+		public double skillMagicNeededXp = 0.0;
 		public String playerRecipes = "\"\"";
-		public double bonusAbilityPower = 0;
 		public double skillCookingLvl = 0;
 		public double skillCookingXp = 0;
 		public double skillCookingNeededXp = 0;
-		public double kritChance = 15.0;
-		public double kritDamage = 50.0;
 		public double shieldAmountMax = 0;
 		public boolean outOfCombat = false;
 		public double shieldLvl = 0;
 		public double skillPoints = 0.0;
 		public String unlockedSkillTree = "\"\"";
-		public double damageReduction = 0;
+		public double currentRegion = 0;
+		public double attackDamage = 0.0;
+		public double abilityPower = 0;
+		public double armor = 18.0;
+		public double magicResistance = 18.0;
+		public double critRate = 15.0;
+		public double critDmg = 50.0;
+		public double maxMana = 100.0;
+		public double totalOresMined = 0.0;
+		public double horseLvl = 0.0;
+		public double horseMSCorNeeded = 1.0;
+		public double horseMoveSpeed = 0.202;
+		public double horseColor = 0.0;
+		public double horsePattern = 0;
+		public double miningMilestoneLvl = 0.0;
+		public double miningMilestoneOresNeeded = 20.0;
+		public double miningMilestoneProgress = 0.0;
+		public double minMilNextLvl = 1.0;
+		public double MinMilestoneRewardsClaimed = 0;
+		public double totalMobsKilled = 0;
+		public double combatMilestoneLvl = 0.0;
+		public double combatMilestoneKillsNeeded = 30.0;
+		public double combatMilestoneProgress = 0.0;
+		public double comMilNextLvl = 1.0;
+		public double comMilestoneRewardsClaimed = 0.0;
+		public double guiBlockX = 0;
+		public double guiBlockY = 0;
+		public double guiBlockZ = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -334,18 +242,42 @@ public class ToamodModVariables {
 			nbt.putDouble("skillMagicXp", skillMagicXp);
 			nbt.putDouble("skillMagicNeededXp", skillMagicNeededXp);
 			nbt.putString("playerRecipes", playerRecipes);
-			nbt.putDouble("bonusAbilityPower", bonusAbilityPower);
 			nbt.putDouble("skillCookingLvl", skillCookingLvl);
 			nbt.putDouble("skillCookingXp", skillCookingXp);
 			nbt.putDouble("skillCookingNeededXp", skillCookingNeededXp);
-			nbt.putDouble("kritChance", kritChance);
-			nbt.putDouble("kritDamage", kritDamage);
 			nbt.putDouble("shieldAmountMax", shieldAmountMax);
 			nbt.putBoolean("outOfCombat", outOfCombat);
 			nbt.putDouble("shieldLvl", shieldLvl);
 			nbt.putDouble("skillPoints", skillPoints);
 			nbt.putString("unlockedSkillTree", unlockedSkillTree);
-			nbt.putDouble("damageReduction", damageReduction);
+			nbt.putDouble("currentRegion", currentRegion);
+			nbt.putDouble("attackDamage", attackDamage);
+			nbt.putDouble("abilityPower", abilityPower);
+			nbt.putDouble("armor", armor);
+			nbt.putDouble("magicResistance", magicResistance);
+			nbt.putDouble("critRate", critRate);
+			nbt.putDouble("critDmg", critDmg);
+			nbt.putDouble("maxMana", maxMana);
+			nbt.putDouble("totalOresMined", totalOresMined);
+			nbt.putDouble("horseLvl", horseLvl);
+			nbt.putDouble("horseMSCorNeeded", horseMSCorNeeded);
+			nbt.putDouble("horseMoveSpeed", horseMoveSpeed);
+			nbt.putDouble("horseColor", horseColor);
+			nbt.putDouble("horsePattern", horsePattern);
+			nbt.putDouble("miningMilestoneLvl", miningMilestoneLvl);
+			nbt.putDouble("miningMilestoneOresNeeded", miningMilestoneOresNeeded);
+			nbt.putDouble("miningMilestoneProgress", miningMilestoneProgress);
+			nbt.putDouble("minMilNextLvl", minMilNextLvl);
+			nbt.putDouble("MinMilestoneRewardsClaimed", MinMilestoneRewardsClaimed);
+			nbt.putDouble("totalMobsKilled", totalMobsKilled);
+			nbt.putDouble("combatMilestoneLvl", combatMilestoneLvl);
+			nbt.putDouble("combatMilestoneKillsNeeded", combatMilestoneKillsNeeded);
+			nbt.putDouble("combatMilestoneProgress", combatMilestoneProgress);
+			nbt.putDouble("comMilNextLvl", comMilNextLvl);
+			nbt.putDouble("comMilestoneRewardsClaimed", comMilestoneRewardsClaimed);
+			nbt.putDouble("guiBlockX", guiBlockX);
+			nbt.putDouble("guiBlockY", guiBlockY);
+			nbt.putDouble("guiBlockZ", guiBlockZ);
 			return nbt;
 		}
 
@@ -369,18 +301,42 @@ public class ToamodModVariables {
 			skillMagicXp = nbt.getDouble("skillMagicXp");
 			skillMagicNeededXp = nbt.getDouble("skillMagicNeededXp");
 			playerRecipes = nbt.getString("playerRecipes");
-			bonusAbilityPower = nbt.getDouble("bonusAbilityPower");
 			skillCookingLvl = nbt.getDouble("skillCookingLvl");
 			skillCookingXp = nbt.getDouble("skillCookingXp");
 			skillCookingNeededXp = nbt.getDouble("skillCookingNeededXp");
-			kritChance = nbt.getDouble("kritChance");
-			kritDamage = nbt.getDouble("kritDamage");
 			shieldAmountMax = nbt.getDouble("shieldAmountMax");
 			outOfCombat = nbt.getBoolean("outOfCombat");
 			shieldLvl = nbt.getDouble("shieldLvl");
 			skillPoints = nbt.getDouble("skillPoints");
 			unlockedSkillTree = nbt.getString("unlockedSkillTree");
-			damageReduction = nbt.getDouble("damageReduction");
+			currentRegion = nbt.getDouble("currentRegion");
+			attackDamage = nbt.getDouble("attackDamage");
+			abilityPower = nbt.getDouble("abilityPower");
+			armor = nbt.getDouble("armor");
+			magicResistance = nbt.getDouble("magicResistance");
+			critRate = nbt.getDouble("critRate");
+			critDmg = nbt.getDouble("critDmg");
+			maxMana = nbt.getDouble("maxMana");
+			totalOresMined = nbt.getDouble("totalOresMined");
+			horseLvl = nbt.getDouble("horseLvl");
+			horseMSCorNeeded = nbt.getDouble("horseMSCorNeeded");
+			horseMoveSpeed = nbt.getDouble("horseMoveSpeed");
+			horseColor = nbt.getDouble("horseColor");
+			horsePattern = nbt.getDouble("horsePattern");
+			miningMilestoneLvl = nbt.getDouble("miningMilestoneLvl");
+			miningMilestoneOresNeeded = nbt.getDouble("miningMilestoneOresNeeded");
+			miningMilestoneProgress = nbt.getDouble("miningMilestoneProgress");
+			minMilNextLvl = nbt.getDouble("minMilNextLvl");
+			MinMilestoneRewardsClaimed = nbt.getDouble("MinMilestoneRewardsClaimed");
+			totalMobsKilled = nbt.getDouble("totalMobsKilled");
+			combatMilestoneLvl = nbt.getDouble("combatMilestoneLvl");
+			combatMilestoneKillsNeeded = nbt.getDouble("combatMilestoneKillsNeeded");
+			combatMilestoneProgress = nbt.getDouble("combatMilestoneProgress");
+			comMilNextLvl = nbt.getDouble("comMilNextLvl");
+			comMilestoneRewardsClaimed = nbt.getDouble("comMilestoneRewardsClaimed");
+			guiBlockX = nbt.getDouble("guiBlockX");
+			guiBlockY = nbt.getDouble("guiBlockY");
+			guiBlockZ = nbt.getDouble("guiBlockZ");
 		}
 	}
 
@@ -424,18 +380,42 @@ public class ToamodModVariables {
 					variables.skillMagicXp = message.data.skillMagicXp;
 					variables.skillMagicNeededXp = message.data.skillMagicNeededXp;
 					variables.playerRecipes = message.data.playerRecipes;
-					variables.bonusAbilityPower = message.data.bonusAbilityPower;
 					variables.skillCookingLvl = message.data.skillCookingLvl;
 					variables.skillCookingXp = message.data.skillCookingXp;
 					variables.skillCookingNeededXp = message.data.skillCookingNeededXp;
-					variables.kritChance = message.data.kritChance;
-					variables.kritDamage = message.data.kritDamage;
 					variables.shieldAmountMax = message.data.shieldAmountMax;
 					variables.outOfCombat = message.data.outOfCombat;
 					variables.shieldLvl = message.data.shieldLvl;
 					variables.skillPoints = message.data.skillPoints;
 					variables.unlockedSkillTree = message.data.unlockedSkillTree;
-					variables.damageReduction = message.data.damageReduction;
+					variables.currentRegion = message.data.currentRegion;
+					variables.attackDamage = message.data.attackDamage;
+					variables.abilityPower = message.data.abilityPower;
+					variables.armor = message.data.armor;
+					variables.magicResistance = message.data.magicResistance;
+					variables.critRate = message.data.critRate;
+					variables.critDmg = message.data.critDmg;
+					variables.maxMana = message.data.maxMana;
+					variables.totalOresMined = message.data.totalOresMined;
+					variables.horseLvl = message.data.horseLvl;
+					variables.horseMSCorNeeded = message.data.horseMSCorNeeded;
+					variables.horseMoveSpeed = message.data.horseMoveSpeed;
+					variables.horseColor = message.data.horseColor;
+					variables.horsePattern = message.data.horsePattern;
+					variables.miningMilestoneLvl = message.data.miningMilestoneLvl;
+					variables.miningMilestoneOresNeeded = message.data.miningMilestoneOresNeeded;
+					variables.miningMilestoneProgress = message.data.miningMilestoneProgress;
+					variables.minMilNextLvl = message.data.minMilNextLvl;
+					variables.MinMilestoneRewardsClaimed = message.data.MinMilestoneRewardsClaimed;
+					variables.totalMobsKilled = message.data.totalMobsKilled;
+					variables.combatMilestoneLvl = message.data.combatMilestoneLvl;
+					variables.combatMilestoneKillsNeeded = message.data.combatMilestoneKillsNeeded;
+					variables.combatMilestoneProgress = message.data.combatMilestoneProgress;
+					variables.comMilNextLvl = message.data.comMilNextLvl;
+					variables.comMilestoneRewardsClaimed = message.data.comMilestoneRewardsClaimed;
+					variables.guiBlockX = message.data.guiBlockX;
+					variables.guiBlockY = message.data.guiBlockY;
+					variables.guiBlockZ = message.data.guiBlockZ;
 				}
 			});
 			context.setPacketHandled(true);

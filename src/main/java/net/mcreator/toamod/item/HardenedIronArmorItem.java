@@ -8,7 +8,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -17,6 +16,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
@@ -67,7 +68,7 @@ public abstract class HardenedIronArmorItem extends ArmorItem {
 
 	public static class Helmet extends HardenedIronArmorItem {
 		public Helmet() {
-			super(EquipmentSlot.HEAD, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
 		}
 
 		@Override
@@ -85,7 +86,7 @@ public abstract class HardenedIronArmorItem extends ArmorItem {
 
 	public static class Chestplate extends HardenedIronArmorItem {
 		public Chestplate() {
-			super(EquipmentSlot.CHEST, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
 		}
 
 		@Override
@@ -103,7 +104,7 @@ public abstract class HardenedIronArmorItem extends ArmorItem {
 
 	public static class Leggings extends HardenedIronArmorItem {
 		public Leggings() {
-			super(EquipmentSlot.LEGS, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
 		}
 
 		@Override
@@ -121,7 +122,7 @@ public abstract class HardenedIronArmorItem extends ArmorItem {
 
 	public static class Boots extends HardenedIronArmorItem {
 		public Boots() {
-			super(EquipmentSlot.FEET, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
+			super(EquipmentSlot.FEET, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
 		}
 
 		@Override

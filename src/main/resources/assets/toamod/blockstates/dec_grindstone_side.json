@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "toamod:block/dec_grindstone_side"
+    },
+    "facing=east": {
+      "model": "toamod:block/dec_grindstone_side",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "toamod:block/dec_grindstone_side",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "toamod:block/dec_grindstone_side",
+      "y": 270
+    }
+  }
+}

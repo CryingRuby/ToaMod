@@ -1,11 +1,9 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "command",
   "definition": {
     "commandName": "getskillpoints",
     "permissionLevel": "No requirement",
-    "onCommandExecuted": {
-      "name": "CmdGetSkillPointsExecuted"
-    }
+    "argsxml": "<xml><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"old_command\"><field name=\"procedure\">CmdGetSkillPointsExecuted</field></block></next></block></xml>"
   }
 }

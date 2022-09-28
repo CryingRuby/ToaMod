@@ -33,7 +33,7 @@ public class ChestEpicGuiScreen extends AbstractContainerScreen<ChestEpicGuiMenu
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/chest_epic_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/screens/chest_epic_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

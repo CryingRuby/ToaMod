@@ -26,7 +26,7 @@ public class EnchantableBookActivatedProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			enchbook = new ItemStack(ToamodModItems.ENCHTANTED_BOOK.get());
+			enchbook = new ItemStack(ToamodModItems.BOOK_EXECUTING_1.get());
 			enchbook.getOrCreateTag().putString("enchantment", (itemstack.getOrCreateTag().getString("enchantment")));
 			enchbook.getOrCreateTag().putDouble("enchlvl", (itemstack.getOrCreateTag().getDouble("enchlvl")));
 			enchbook.getOrCreateTag().putString("type", "enchbook");

@@ -1,0 +1,173 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 260,
+    "height": 194,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "white main color",
+          "isCheckedProcedure": {
+            "name": "CheckWhite"
+          },
+          "name": "white",
+          "x": 97,
+          "y": 40
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Creamy main color",
+          "isCheckedProcedure": {
+            "name": "CheckCreamy"
+          },
+          "name": "creamy",
+          "x": 97,
+          "y": 63
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Chestnut main color",
+          "isCheckedProcedure": {
+            "name": "CheckChestnut"
+          },
+          "name": "chestnut",
+          "x": 97,
+          "y": 86
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Brown main color",
+          "isCheckedProcedure": {
+            "name": "CheckBrown"
+          },
+          "name": "brown",
+          "x": 97,
+          "y": 109
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Black main color",
+          "isCheckedProcedure": {
+            "name": "CheckBlack"
+          },
+          "name": "black",
+          "x": 97,
+          "y": 132
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Gray main color",
+          "isCheckedProcedure": {
+            "name": "CheckGray"
+          },
+          "name": "gray",
+          "x": 97,
+          "y": 155
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Dark Brown main color",
+          "isCheckedProcedure": {
+            "name": "CheckGray"
+          },
+          "name": "dark_brown",
+          "x": 97,
+          "y": 178
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Apply",
+          "onClick": {
+            "name": "OnHorseColorApplyButtonPressed"
+          },
+          "width": 35,
+          "height": 20,
+          "name": "Apply",
+          "x": 271,
+          "y": 75
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "25k Cor",
+          "color": {
+            "value": -10496,
+            "falpha": 0.0
+          },
+          "name": "25k Cor",
+          "x": 271,
+          "y": 97
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Cancel",
+          "onClick": {
+            "name": "HorseColorChangeCancelPressed"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "Cancel",
+          "x": 269,
+          "y": 130
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "(Your Cor: <VAR:integer:cor>)",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "(Your Cor: <VAR:integer:cor>)",
+          "x": 213,
+          "y": 200
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Tick the box with the color you want",
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "name": "Tick the box with the color you want",
+          "x": 124,
+          "y": 28
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

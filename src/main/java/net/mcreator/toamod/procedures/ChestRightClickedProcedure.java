@@ -18,6 +18,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
@@ -37,6 +38,8 @@ public class ChestRightClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
 		if (entity == null)
 			return;
+		boolean initalUnlock = false;
+		initalUnlock = false;
 		if (new Object() {
 			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 				BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -67,6 +70,7 @@ public class ChestRightClickedProcedure {
 								_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
 										_player.inventoryMenu.getCraftSlots());
 							}
+							initalUnlock = true;
 							break;
 						}
 						if (blockstate.getBlock() == ToamodModBlocks.CHEST_EPIC.get()
@@ -85,6 +89,7 @@ public class ChestRightClickedProcedure {
 								_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
 										_player.inventoryMenu.getCraftSlots());
 							}
+							initalUnlock = true;
 							break;
 						}
 						if (blockstate.getBlock() == ToamodModBlocks.CHEST_LEGENDARY.get()
@@ -103,20 +108,37 @@ public class ChestRightClickedProcedure {
 								_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1,
 										_player.inventoryMenu.getCraftSlots());
 							}
+							initalUnlock = true;
 							break;
 						}
 					}
 				}
 			}
 		}
-		if (!(new Object() {
+		if (initalUnlock) {
+			GetChestLootProcedure.execute(world, x, y, z, entity);
+		}
+		if (new Object() {
 			public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
 				BlockEntity blockEntity = world.getBlockEntity(pos);
 				if (blockEntity != null)
 					return blockEntity.getTileData().getBoolean(tag);
 				return false;
 			}
-		}.getValue(world, new BlockPos(x, y, z), "locked"))) {
+		}.getValue(world, new BlockPos(x, y, z), "locked")) {
+			if (blockstate.getBlock() == ToamodModBlocks.CHEST_NORMAL.get()) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(new TextComponent((new TranslatableComponent("msg.needchestkey.bronze").getString())), (false));
+			}
+			if (blockstate.getBlock() == ToamodModBlocks.CHEST_EPIC.get()) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(new TextComponent((new TranslatableComponent("msg.needchestkey.silver").getString())), (false));
+			}
+			if (blockstate.getBlock() == ToamodModBlocks.CHEST_LEGENDARY.get()) {
+				if (entity instanceof Player _player && !_player.level.isClientSide())
+					_player.displayClientMessage(new TextComponent((new TranslatableComponent("msg.needchestkey.golden").getString())), (false));
+			}
+		} else {
 			if (blockstate.getBlock() == ToamodModBlocks.CHEST_NORMAL.get()) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
@@ -199,5 +221,6 @@ public class ChestRightClickedProcedure {
 				}
 			}
 		}
+		initalUnlock = false;
 	}
 }

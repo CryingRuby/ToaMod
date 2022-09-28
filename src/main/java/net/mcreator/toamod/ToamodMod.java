@@ -26,8 +26,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.toamod.init.ToamodModTabs;
 import net.mcreator.toamod.init.ToamodModMobEffects;
 import net.mcreator.toamod.init.ToamodModItems;
+import net.mcreator.toamod.init.ToamodModEntities;
 import net.mcreator.toamod.init.ToamodModEnchantments;
 import net.mcreator.toamod.init.ToamodModBlocks;
 import net.mcreator.toamod.init.ToamodModBlockEntities;
@@ -46,11 +48,11 @@ public class ToamodMod {
 	private static int messageID = 0;
 
 	public ToamodMod() {
-
+		ToamodModTabs.load();
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		ToamodModBlocks.REGISTRY.register(bus);
 		ToamodModItems.REGISTRY.register(bus);
-
+		ToamodModEntities.REGISTRY.register(bus);
 		ToamodModBlockEntities.REGISTRY.register(bus);
 
 		ToamodModEnchantments.REGISTRY.register(bus);

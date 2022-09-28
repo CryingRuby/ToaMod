@@ -1,0 +1,116 @@
+{
+  "_fv": 33,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 251,
+    "height": 154,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "^",
+          "onClick": {
+            "name": "OnUpgradeButtonPressed"
+          },
+          "width": 30,
+          "height": 20,
+          "name": "^",
+          "x": 100,
+          "y": 87
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Upgrade Speed (+0,002) -",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Upgrade Speed (+0,002) -",
+          "x": 138,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "LvL. <VAR:integer:horseLvl> ( <VAR:horseMoveSpeed> MS)",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "LvL. <VAR:integer:horseLvl> ( <VAR:horseMoveSpeed> MS)",
+          "x": 138,
+          "y": 99
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:integer:horseMSCorNeeded>k Cor",
+          "color": {
+            "value": -10496,
+            "falpha": 0.0
+          },
+          "name": "<VAR:integer:horseMSCorNeeded>k Cor",
+          "x": 277,
+          "y": 86
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Change Color",
+          "onClick": {
+            "name": "OnHorseChangeColorPressed"
+          },
+          "width": 87,
+          "height": 20,
+          "name": "Change Color",
+          "x": 110,
+          "y": 146
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "change pattern",
+          "onClick": {
+            "name": "OnHorsePatternChangePressed"
+          },
+          "width": 98,
+          "height": 20,
+          "name": "change pattern",
+          "x": 218,
+          "y": 146
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "(Your Cor: <VAR:integer:cor>)",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "(Your Cor: <VAR:integer:cor>)",
+          "x": 145,
+          "y": 175
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

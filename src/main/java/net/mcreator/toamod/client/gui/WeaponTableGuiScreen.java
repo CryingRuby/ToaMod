@@ -33,7 +33,7 @@ public class WeaponTableGuiScreen extends AbstractContainerScreen<WeaponTableGui
 		this.imageHeight = 169;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/weapon_table_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/screens/weapon_table_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -50,26 +50,26 @@ public class WeaponTableGuiScreen extends AbstractContainerScreen<WeaponTableGui
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_arrow_right.png"));
-		this.blit(ms, this.leftPos + 78, this.topPos + 33, 0, 0, 12, 12, 12, 12);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/screens/symbol_arrow_right.png"));
+		this.blit(ms, this.leftPos + 78, this.topPos + 33, 0, 0, 0, 0, 0, 0);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_arrow_right.png"));
-		this.blit(ms, this.leftPos + 179, this.topPos + 33, 0, 0, 12, 12, 12, 12);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/screens/symbol_arrow_right.png"));
+		this.blit(ms, this.leftPos + 179, this.topPos + 33, 0, 0, 0, 0, 0, 0);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_line_vertical.png"));
-		this.blit(ms, this.leftPos + 127, this.topPos + 9, 0, 0, 12, 12, 12, 12);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/screens/symbol_line_vertical.png"));
+		this.blit(ms, this.leftPos + 127, this.topPos + 9, 0, 0, 0, 0, 0, 0);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_line_vertical.png"));
-		this.blit(ms, this.leftPos + 127, this.topPos + 21, 0, 0, 12, 12, 12, 12);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/screens/symbol_line_vertical.png"));
+		this.blit(ms, this.leftPos + 127, this.topPos + 21, 0, 0, 0, 0, 0, 0);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_line_vertical.png"));
-		this.blit(ms, this.leftPos + 127, this.topPos + 33, 0, 0, 12, 12, 12, 12);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/screens/symbol_line_vertical.png"));
+		this.blit(ms, this.leftPos + 127, this.topPos + 33, 0, 0, 0, 0, 0, 0);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_line_vertical.png"));
-		this.blit(ms, this.leftPos + 127, this.topPos + 45, 0, 0, 12, 12, 12, 12);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/screens/symbol_line_vertical.png"));
+		this.blit(ms, this.leftPos + 127, this.topPos + 45, 0, 0, 0, 0, 0, 0);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/symbol_line_vertical.png"));
-		this.blit(ms, this.leftPos + 127, this.topPos + 57, 0, 0, 12, 12, 12, 12);
+		RenderSystem.setShaderTexture(0, new ResourceLocation("toamod:textures/screens/symbol_line_vertical.png"));
+		this.blit(ms, this.leftPos + 127, this.topPos + 57, 0, 0, 0, 0, 0, 0);
 
 		RenderSystem.disableBlend();
 	}

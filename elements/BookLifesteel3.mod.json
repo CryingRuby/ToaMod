@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "item",
   "definition": {
     "renderType": 0,
@@ -8,7 +8,7 @@
     "name": "Lifesteel III",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "COMBAT"
+      "value": "CUSTOM:ToaModTab"
     },
     "stackSize": 1,
     "enchantability": 0,
@@ -43,7 +43,6 @@
     "onCrafted": {
       "name": "BookLifesteel3Crafted"
     },
-    "hasDispenseBehavior": false,
     "isFood": false,
     "nutritionalValue": 0,
     "saturation": 0.30000001192092896,
