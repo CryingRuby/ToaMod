@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:items/fish_meal"
+    "layer0": "toamod:item/fish_meal"
   }
 }

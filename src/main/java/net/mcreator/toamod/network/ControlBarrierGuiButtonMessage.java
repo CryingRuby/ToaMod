@@ -57,7 +57,7 @@ public class ControlBarrierGuiButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = ControlBarrierGuiMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -70,7 +70,6 @@ public class ControlBarrierGuiButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		ToamodMod.addNetworkMessage(ControlBarrierGuiButtonMessage.class, ControlBarrierGuiButtonMessage::buffer, ControlBarrierGuiButtonMessage::new,
-				ControlBarrierGuiButtonMessage::handler);
+		ToamodMod.addNetworkMessage(ControlBarrierGuiButtonMessage.class, ControlBarrierGuiButtonMessage::buffer, ControlBarrierGuiButtonMessage::new, ControlBarrierGuiButtonMessage::handler);
 	}
 }

@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "tab",
+  "definition": {
+    "name": "TOA Weapons",
+    "icon": {
+      "value": "CUSTOM:FlameSword"
+    },
+    "showSearch": false
+  }
+}

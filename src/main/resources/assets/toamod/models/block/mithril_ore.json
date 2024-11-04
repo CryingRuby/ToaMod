@@ -1,0 +1,9 @@
+{
+  "parent": "toamod:custom/mithrilore_up",
+  "textures": {
+    "all": "toamod:block/jade_ore",
+    "particle": "toamod:block/jade_ore",
+    "0": "toamod:block/mithril_ore_texture"
+  },
+  "render_type": "solid"
+}

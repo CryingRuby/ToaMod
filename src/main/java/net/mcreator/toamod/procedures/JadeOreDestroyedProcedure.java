@@ -10,22 +10,22 @@ import net.mcreator.toamod.init.ToamodModBlocks;
 
 public class JadeOreDestroyedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		world.setBlock(new BlockPos(x, y, z), ToamodModBlocks.ORE_RESPAWN_STONE.get().defaultBlockState(), 3);
+		world.setBlock(BlockPos.containing(x, y, z), ToamodModBlocks.ORE_RESPAWN_STONE.get().defaultBlockState(), 3);
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putString("replace", "jade");
+				_blockEntity.getPersistentData().putString("replace", "jade");
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("timer", 75);
+				_blockEntity.getPersistentData().putDouble("timer", 75);
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}

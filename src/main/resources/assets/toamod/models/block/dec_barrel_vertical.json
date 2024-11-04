@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "toamod:blocks/barrel_bottom",
-    "up": "toamod:blocks/barrel_top",
-    "north": "toamod:blocks/barrel_side",
-    "east": "toamod:blocks/barrel_side",
-    "south": "toamod:blocks/barrel_side",
-    "west": "toamod:blocks/barrel_side",
-    "particle": "toamod:blocks/barrel_bottom"
-  }
+    "down": "toamod:block/barrel_bottom",
+    "up": "toamod:block/barrel_top",
+    "north": "toamod:block/barrel_side",
+    "east": "toamod:block/barrel_side",
+    "south": "toamod:block/barrel_side",
+    "west": "toamod:block/barrel_side",
+    "particle": "toamod:block/barrel_bottom"
+  },
+  "render_type": "solid"
 }

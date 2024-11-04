@@ -5,6 +5,6 @@ import net.minecraft.world.item.ItemStack;
 public class DragonSlayerItemIsCraftedProcedure {
 	public static void execute(ItemStack itemstack) {
 		itemstack.getOrCreateTag().putString("rarity", "legendary");
-		itemstack.getOrCreateTag().putBoolean("hasAbility", (false));
+		itemstack.getOrCreateTag().putBoolean("hasAbility", false);
 	}
 }

@@ -7,25 +7,19 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-
-import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public class SweatRoastedChickenItem extends Item {
 	public SweatRoastedChickenItem() {
-		super(new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB).stacksTo(64).rarity(Rarity.RARE)
-				.food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.7999999999999999f)
-
-						.build()));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.RARE).food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f).build()));
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("\u00A77Rarity: \u00A7bRare\u00A7r"));
-		list.add(new TextComponent("\u00A77Type: \u00A79Food\u00A7r"));
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.literal("\u00A77Rarity: \u00A7bRare\u00A7r"));
+		list.add(Component.literal("\u00A77Type: \u00A79Food\u00A7r"));
 	}
 }

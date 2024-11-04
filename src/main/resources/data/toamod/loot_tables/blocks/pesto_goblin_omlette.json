@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "toamod:blocks/pesto_goblin_omlette",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "toamod:pesto_goblin_omlette"
+        }
+      ]
+    }
+  ]
+}

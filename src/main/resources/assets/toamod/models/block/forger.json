@@ -1,8 +1,9 @@
 {
   "parent": "toamod:custom/upgrading_table_model",
   "textures": {
-    "all": "toamod:blocks/upgrading_table_texture",
-    "particle": "toamod:blocks/upgrading_table_texture",
-    "0": "toamod:blocks/upgrading_table_texture"
-  }
+    "all": "toamod:block/upgrading_table_texture",
+    "particle": "toamod:block/upgrading_table_texture",
+    "0": "toamod:block/upgrading_table_texture"
+  },
+  "render_type": "solid"
 }

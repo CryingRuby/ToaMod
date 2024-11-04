@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:items/chili_pepper"
+    "layer0": "toamod:item/chili_pepper"
   }
 }

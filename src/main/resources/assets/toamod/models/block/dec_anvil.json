@@ -1,8 +1,9 @@
 {
   "parent": "toamod:custom/anvil_model",
   "textures": {
-    "all": "toamod:blocks/anvil_texture",
-    "particle": "toamod:blocks/anvil_texture",
-    "1": "toamod:blocks/anvil_texture"
-  }
+    "all": "toamod:block/anvil_texture",
+    "particle": "toamod:block/anvil_texture",
+    "1": "toamod:block/anvil_texture"
+  },
+  "render_type": "solid"
 }

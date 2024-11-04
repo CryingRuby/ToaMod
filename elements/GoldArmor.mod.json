@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
@@ -10,30 +10,40 @@
     "textureLeggings": "golden_leggings",
     "enableBoots": true,
     "textureBoots": "golden_boots",
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaArmors"
+      }
+    ],
     "armorTextureFile": "gold_",
     "helmetName": "§aGold Helmet§r",
     "bodyName": "§aGold Body§r",
     "leggingsName": "§aGold Leggings§r",
     "bootsName": "§aGold Boots§r",
-    "helmetSpecialInfo": [
-      "§7Rarity: §aUncomman§r",
-      "§7Type: §9Armor§r"
-    ],
-    "bodySpecialInfo": [
-      "§7Rarity: §aUncomman§r",
-      "§7Type: §9Armor§r"
-    ],
-    "leggingsSpecialInfo": [
-      "§7Rarity: §aUncomman§r",
-      "§7Type: §9Armor§r"
-    ],
-    "bootsSpecialInfo": [
-      "§7Rarity: §aUncomman§r",
-      "§7Type: §9Armor§r"
-    ],
+    "helmetSpecialInformation": {
+      "fixedValue": [
+        "§7Rarity: §aUncomman§r",
+        "§7Type: §9Armor§r"
+      ]
+    },
+    "bodySpecialInformation": {
+      "fixedValue": [
+        "§7Rarity: §aUncomman§r",
+        "§7Type: §9Armor§r"
+      ]
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": [
+        "§7Rarity: §aUncomman§r",
+        "§7Type: §9Armor§r"
+      ]
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": [
+        "§7Rarity: §aUncomman§r",
+        "§7Type: §9Armor§r"
+      ]
+    },
     "helmetModelName": "Default",
     "helmetModelPart": "Helmet",
     "helmetModelTexture": "From armor",
@@ -50,6 +60,14 @@
     "bootsModelPartL": "Boots L",
     "bootsModelPartR": "Boots R",
     "bootsModelTexture": "From armor",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
     "helmetImmuneToFire": false,
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,

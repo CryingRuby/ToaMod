@@ -13,8 +13,7 @@ public class CmdGetCorExecutedProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new ToamodModVariables.PlayerVariables())).cor + DoubleArgumentType.getDouble(arguments, "amount");
+			double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).cor + DoubleArgumentType.getDouble(arguments, "amount");
 			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.cor = _setval;
 				capability.syncPlayerVariables(entity);

@@ -1,8 +1,8 @@
 
 package net.mcreator.toamod.block;
 
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -16,7 +16,7 @@ import net.mcreator.toamod.procedures.JadeOreDestroyedProcedure;
 
 public class JadeOreBlock extends Block {
 	public JadeOreBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(2.05f, 10f));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(2.05f, 10f));
 	}
 
 	@Override

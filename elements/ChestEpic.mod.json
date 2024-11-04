@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "block",
   "definition": {
     "texture": "chest_epic_texture",
@@ -34,14 +34,18 @@
       }
     ],
     "name": "Chest Epic",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaModTab"
+      }
+    ],
     "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
@@ -56,7 +60,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 0,
+    "tickRate": 10,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -98,17 +102,8 @@
     },
     "luminance": 0,
     "unbreakable": true,
-    "breakHarvestLevel": 1,
-    "spawnParticles": true,
-    "particleToSpawn": {
-      "value": "GLOW"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 1.25,
-    "particleAmount": 6,
-    "particleCondition": {
-      "name": "ChestParticleCondition"
-    },
+    "vanillaToolTier": "STONE",
+    "isBonemealable": false,
     "hasInventory": true,
     "guiBoundTo": "ChestEpicGui",
     "openGUIOnRightClick": false,
@@ -145,14 +140,26 @@
     "onRightClicked": {
       "name": "ChestRightClicked"
     },
+    "onTickUpdate": {
+      "name": "OnChestTick"
+    },
     "onBlockPlayedBy": {
       "name": "ChestPlaced"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

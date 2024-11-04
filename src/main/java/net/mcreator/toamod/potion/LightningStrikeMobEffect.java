@@ -14,18 +14,13 @@ public class LightningStrikeMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.toamod.lightning_strike";
-	}
-
-	@Override
 	public boolean isInstantenous() {
 		return true;
 	}
 
 	@Override
 	public void applyInstantenousEffect(Entity source, Entity indirectSource, LivingEntity entity, int amplifier, double health) {
-		LightningStrikeAppliedProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
+		LightningStrikeAppliedProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ());
 	}
 
 	@Override

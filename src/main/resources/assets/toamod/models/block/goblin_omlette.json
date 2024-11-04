@@ -1,0 +1,9 @@
+{
+  "parent": "toamod:custom/goblin_omlette",
+  "textures": {
+    "all": "toamod:block/goblin_omlette",
+    "particle": "toamod:block/goblin_omlette",
+    "0": "toamod:block/goblin_omlette"
+  },
+  "render_type": "solid"
+}

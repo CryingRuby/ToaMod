@@ -15,11 +15,6 @@ public class FreezingColdMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.toamod.freezing_cold";
-	}
-
-	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		FreezingColdAppliedProcedure.execute(entity);
 	}

@@ -12,17 +12,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.toamod.procedures.CorItemRightClickedProcedure;
-import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public class CorItem extends Item {
 	public CorItem() {
-		super(new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB).stacksTo(64).fireResistant().rarity(Rarity.EPIC));
+		super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC));
 	}
 
 	@Override
@@ -31,27 +29,26 @@ public class CorItem extends Item {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("\u00A77Right click to collect \u00A76Cor\u00A7r"));
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.literal("\u00A7r"));
+		list.add(Component.literal("\u00A77Right Click to collect \u00A76Cor\u00A7r"));
+		list.add(Component.literal("\u00A7r"));
+		list.add(Component.literal("\u00A77Type: \u00A79Special\u00A7r"));
+		list.add(Component.literal("\u00A77Rarity: \u00A76LEGENDARY\u00A7r"));
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-		ItemStack itemstack = ar.getObject();
-		double x = entity.getX();
-		double y = entity.getY();
-		double z = entity.getZ();
-
-		CorItemRightClickedProcedure.execute(entity, itemstack);
+		CorItemRightClickedProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, ar.getObject());
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
-		InteractionResult retval = super.useOn(context);
-		CorItemRightClickedProcedure.execute(context.getPlayer(), context.getItemInHand());
-		return retval;
+		super.useOn(context);
+		CorItemRightClickedProcedure.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(), context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
+		return InteractionResult.SUCCESS;
 	}
 }

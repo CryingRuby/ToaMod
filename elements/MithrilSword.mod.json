@@ -1,0 +1,38 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "cristal_sword",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "§bMithril Sword§r",
+    "specialInformation": {
+      "fixedValue": [
+        "§7Type: §9Sword§r",
+        "§7Rarity: §3RARE§r"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaModTab"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.6,
+    "enchantability": 2,
+    "damageVsEntity": 4.0,
+    "usageCount": 0,
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onCrafted": {
+      "name": "JadeSwordItemCrafted"
+    }
+  }
+}

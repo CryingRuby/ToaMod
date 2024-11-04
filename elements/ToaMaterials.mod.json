@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "tab",
+  "definition": {
+    "name": "TOA Materials",
+    "icon": {
+      "value": "CUSTOM:Coal"
+    },
+    "showSearch": false
+  }
+}

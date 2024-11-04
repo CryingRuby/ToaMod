@@ -1,0 +1,25 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Swamp Foulness",
+    "icon": "lightning_strike.png",
+    "color": {
+      "value": -11607752,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "HARMFUL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "OnSwampFoulnessApplied"
+    },
+    "onActiveTick": {
+      "name": "OnSwampFoulnessTick"
+    },
+    "activeTickCondition": {
+      "name": "OnSwampFoulnessCondition"
+    }
+  }
+}

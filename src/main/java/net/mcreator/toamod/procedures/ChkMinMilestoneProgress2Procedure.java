@@ -8,7 +8,6 @@ public class ChkMinMilestoneProgress2Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		return (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneProgress >= 12.5;
+		return (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneProgress >= 12.5;
 	}
 }

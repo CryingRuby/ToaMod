@@ -1,0 +1,9 @@
+{
+  "parent": "toamod:custom/respawnore_up",
+  "textures": {
+    "all": "toamod:block/ore_respawn_stone",
+    "particle": "toamod:block/ore_respawn_stone",
+    "0": "toamod:block/respawn_ore_texture"
+  },
+  "render_type": "solid"
+}

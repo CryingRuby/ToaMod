@@ -11,7 +11,7 @@ public class LightningStrikeAppliedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (world instanceof ServerLevel _level) {
 			LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-			entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+			entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x, y, z)));
 			entityToSpawn.setVisualOnly(true);
 			_level.addFreshEntity(entityToSpawn);
 		}

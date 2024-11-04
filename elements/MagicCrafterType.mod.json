@@ -1,0 +1,79 @@
+{
+  "_fv": 66,
+  "_type": "jeirecipetype",
+  "definition": {
+    "textureSelector": "magic_crafter_jei_gui.png",
+    "width": 155,
+    "height": 80,
+    "icon": {
+      "value": "Blocks.ENCHANTING_TABLE"
+    },
+    "craftingtable": {
+      "value": "CUSTOM:MagicCrafter"
+    },
+    "enableCraftingtable": true,
+    "title": "Magic Crafter Type",
+    "slotList": [
+      {
+        "type": "OUTPUT",
+        "x": 141,
+        "y": 31,
+        "slotid": 0
+      },
+      {
+        "type": "INPUT",
+        "x": 42,
+        "y": 4,
+        "slotid": 1
+      },
+      {
+        "type": "INPUT",
+        "x": 24,
+        "y": 13,
+        "slotid": 2
+      },
+      {
+        "type": "INPUT",
+        "x": 60,
+        "y": 13,
+        "slotid": 3
+      },
+      {
+        "type": "INPUT",
+        "x": 15,
+        "y": 31,
+        "slotid": 4
+      },
+      {
+        "type": "INPUT",
+        "x": 42,
+        "y": 31,
+        "slotid": 5
+      },
+      {
+        "type": "INPUT",
+        "x": 69,
+        "y": 31,
+        "slotid": 6
+      },
+      {
+        "type": "INPUT",
+        "x": 24,
+        "y": 49,
+        "slotid": 7
+      },
+      {
+        "type": "INPUT",
+        "x": 60,
+        "y": 49,
+        "slotid": 8
+      },
+      {
+        "type": "INPUT",
+        "x": 42,
+        "y": 58,
+        "slotid": 9
+      }
+    ]
+  }
+}

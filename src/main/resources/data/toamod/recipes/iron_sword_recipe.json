@@ -1,0 +1,17 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "pattern": [
+  	" # ",
+  	" # ",
+  	" # "
+  ],
+  "ingredients": [
+  		{"item":"toamod:iron_bar"},
+  		{"item":"toamod:iron_bar"},
+  		{"item":"toamod:log"}
+  ],
+  "output": {
+    "item": "toamod:iron_sword",
+    "count": 1
+  }
+}

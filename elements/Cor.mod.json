@@ -1,16 +1,20 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "cor",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "§6Cor§r",
     "rarity": "EPIC",
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
-    "stackSize": 64,
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaSpecials"
+      }
+    ],
+    "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
@@ -24,10 +28,15 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [
-      "§7Right click to collect §6Cor§r"
-    ],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": [
+        "§r",
+        "§7Right Click to collect §6Cor§r",
+        "§r",
+        "§7Type: §9Special§r",
+        "§7Rarity: §6LEGENDARY§r"
+      ]
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
@@ -37,6 +46,9 @@
     "onRightClickedOnBlock": {
       "name": "CorItemRightClicked"
     },
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
     "isFood": false,
     "nutritionalValue": 0,
     "saturation": 0.30000001192092896,

@@ -58,7 +58,7 @@ public class HorseColorChangeGuiButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = HorseColorChangeGuiMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -75,7 +75,6 @@ public class HorseColorChangeGuiButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		ToamodMod.addNetworkMessage(HorseColorChangeGuiButtonMessage.class, HorseColorChangeGuiButtonMessage::buffer,
-				HorseColorChangeGuiButtonMessage::new, HorseColorChangeGuiButtonMessage::handler);
+		ToamodMod.addNetworkMessage(HorseColorChangeGuiButtonMessage.class, HorseColorChangeGuiButtonMessage::buffer, HorseColorChangeGuiButtonMessage::new, HorseColorChangeGuiButtonMessage::handler);
 	}
 }

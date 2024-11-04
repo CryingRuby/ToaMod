@@ -5,6 +5,6 @@ import net.minecraft.world.item.ItemStack;
 public class AncientGuardianWarhammerItemIsCraftedProcedure {
 	public static void execute(ItemStack itemstack) {
 		itemstack.getOrCreateTag().putString("rarity", "mythic");
-		itemstack.getOrCreateTag().putBoolean("hasAbility", (false));
+		itemstack.getOrCreateTag().putBoolean("hasAbility", false);
 	}
 }

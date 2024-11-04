@@ -1,0 +1,12 @@
+{
+  "_fv": 66,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "I",
+    "keyBindingName": "TOA Profile",
+    "keyBindingCategoryKey": "toamod",
+    "onKeyPressed": {
+      "name": "OnKeyProfilePressed"
+    }
+  }
+}

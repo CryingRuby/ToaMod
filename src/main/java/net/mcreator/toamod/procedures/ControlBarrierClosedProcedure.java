@@ -10,7 +10,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.Checkbox;
 
 import java.util.HashMap;
 
@@ -19,117 +18,12 @@ public class ControlBarrierClosedProcedure {
 		if (entity == null || guistate == null)
 			return;
 		boolean destroy = false;
-		if (guistate.containsKey("checkbox:chkBossesDef") ? ((Checkbox) guistate.get("checkbox:chkBossesDef")).selected() : false) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkBossesDef", (true));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		} else {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkBossesDef", (false));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		}
-		if (guistate.containsKey("checkbox:chkPlayerLvl") ? ((Checkbox) guistate.get("checkbox:chkPlayerLvl")).selected() : false) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkPlayerLvl", (true));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		} else {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkPlayerLvl", (false));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		}
-		if (guistate.containsKey("checkbox:chkAttackSkill") ? ((Checkbox) guistate.get("checkbox:chkAttackSkill")).selected() : false) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkAttackSkill", (true));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		} else {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkAttackSkill", (false));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		}
-		if (guistate.containsKey("checkbox:chkDefenseSkill") ? ((Checkbox) guistate.get("checkbox:chkDefenseSkill")).selected() : false) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkDefenseSkill", (true));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		} else {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkDefenseSkill", (false));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		}
-		if (guistate.containsKey("checkbox:chkMagicSkill") ? ((Checkbox) guistate.get("checkbox:chkMagicSkill")).selected() : false) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkMagicSkill", (true));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		} else {
-			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null)
-					_blockEntity.getTileData().putBoolean("chkMagicSkill", (false));
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("inputBossesDef", new Object() {
+				_blockEntity.getPersistentData().putDouble("reqBossesDef", new Object() {
 					double convert(String s) {
 						try {
 							return Double.parseDouble(s.trim());
@@ -142,11 +36,11 @@ public class ControlBarrierClosedProcedure {
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("inputPlayerLvl", new Object() {
+				_blockEntity.getPersistentData().putDouble("reqPlyLvl", new Object() {
 					double convert(String s) {
 						try {
 							return Double.parseDouble(s.trim());
@@ -159,11 +53,11 @@ public class ControlBarrierClosedProcedure {
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("inputAttackSLvl", new Object() {
+				_blockEntity.getPersistentData().putDouble("reqAtkSkill", new Object() {
 					double convert(String s) {
 						try {
 							return Double.parseDouble(s.trim());
@@ -176,11 +70,11 @@ public class ControlBarrierClosedProcedure {
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("inputDefenseSLvl", new Object() {
+				_blockEntity.getPersistentData().putDouble("reqDefSkill", new Object() {
 					double convert(String s) {
 						try {
 							return Double.parseDouble(s.trim());
@@ -193,11 +87,11 @@ public class ControlBarrierClosedProcedure {
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 		if (!world.isClientSide()) {
-			BlockPos _bp = new BlockPos(x, y, z);
+			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putDouble("inputMagicSLvl", new Object() {
+				_blockEntity.getPersistentData().putDouble("reqMagicSkill", new Object() {
 					double convert(String s) {
 						try {
 							return Double.parseDouble(s.trim());

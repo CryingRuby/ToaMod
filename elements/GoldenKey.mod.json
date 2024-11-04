@@ -1,16 +1,20 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "golden_key",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "§6Golden Key§r",
     "rarity": "EPIC",
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
-    "stackSize": 1,
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaSpecials"
+      }
+    ],
+    "stackSize": 4,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
@@ -24,14 +28,21 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [
-      "§7Rarity: §6Legendary§r",
-      "§7Type: §9Special§r"
-    ],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": [
+        "§r",
+        "§7Used to open a Golden Chest§r",
+        "§r",
+        "§7Type: §9Special§r",
+        "§7Rarity: §6LEGANDARY§r"
+      ]
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
     "isFood": false,
     "nutritionalValue": 0,
     "saturation": 0.30000001192092896,

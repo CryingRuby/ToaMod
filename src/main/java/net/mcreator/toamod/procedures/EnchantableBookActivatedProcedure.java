@@ -5,54 +5,41 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 import net.mcreator.toamod.network.ToamodModVariables;
 import net.mcreator.toamod.init.ToamodModItems;
-import net.mcreator.toamod.init.ToamodModEnchantments;
 
 public class EnchantableBookActivatedProcedure {
 	public static void execute(Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		ItemStack enchbook = ItemStack.EMPTY;
-		if ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ToamodModVariables.PlayerVariables())).magicdust >= itemstack.getOrCreateTag().getDouble("mdrequired")) {
+		if ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).magicdust >= itemstack.getOrCreateTag().getDouble("mdReq")) {
 			{
-				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new ToamodModVariables.PlayerVariables())).magicdust - 55;
+				double _setval = (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).magicdust - itemstack.getOrCreateTag().getDouble("mdReq");
 				entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.magicdust = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			enchbook = new ItemStack(ToamodModItems.BOOK_EXECUTING_1.get());
+			enchbook = new ItemStack(ToamodModItems.ENCHANTMENT_BOOK.get());
 			enchbook.getOrCreateTag().putString("enchantment", (itemstack.getOrCreateTag().getString("enchantment")));
 			enchbook.getOrCreateTag().putDouble("enchlvl", (itemstack.getOrCreateTag().getDouble("enchlvl")));
-			enchbook.getOrCreateTag().putString("type", "enchbook");
-			if ((enchbook.getOrCreateTag().getString("enchantment")).equals("executing")) {
-				(enchbook).enchant(ToamodModEnchantments.EXECUTING.get(), (int) enchbook.getOrCreateTag().getDouble("enchlvl"));
-			} else if ((enchbook.getOrCreateTag().getString("enchantment")).equals("lifesteel")) {
-				(enchbook).enchant(ToamodModEnchantments.LIFE_STEEL.get(), (int) enchbook.getOrCreateTag().getDouble("enchlvl"));
-			} else if ((enchbook.getOrCreateTag().getString("enchantment")).equals("sharpness")) {
-				(enchbook).enchant(ToamodModEnchantments.SHARPNESS.get(), (int) enchbook.getOrCreateTag().getDouble("enchlvl"));
-			} else if ((enchbook.getOrCreateTag().getString("enchantment")).equals("protection")) {
-				(enchbook).enchant(ToamodModEnchantments.PROTECTION.get(), (int) enchbook.getOrCreateTag().getDouble("enchlvl"));
-			} else if ((enchbook.getOrCreateTag().getString("enchantment")).equals("stickyfeet")) {
-				(enchbook).enchant(ToamodModEnchantments.STICKY_FEET.get(), (int) enchbook.getOrCreateTag().getDouble("enchlvl"));
-			} else if ((enchbook.getOrCreateTag().getString("enchantment")).equals("spikes")) {
-				(enchbook).enchant(ToamodModEnchantments.SPIKES.get(), (int) enchbook.getOrCreateTag().getDouble("enchlvl"));
-			}
+			enchbook.getOrCreateTag().putDouble("rarity", 2);
+			enchbook.setHoverName(Component.literal((((enchbook.getDisplayName().getString()).replace("]", "")).replace("[", "\u00A7f") + " \u00A77(\u00A79"
+					+ Component.translatable(("enchantment.toamod." + (itemstack.getOrCreateTag().getString("enchantment")).toLowerCase())).getString() + " "
+					+ Component.translatable(("number.roman." + new java.text.DecimalFormat("##").format(itemstack.getOrCreateTag().getDouble("enchlvl")))).getString() + "\u00A77)\u00A7r")));
 			if (entity instanceof LivingEntity _entity) {
-				ItemStack _setstack = enchbook;
+				ItemStack _setstack = enchbook.copy();
 				_setstack.setCount(1);
 				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 				if (_entity instanceof Player _player)
 					_player.getInventory().setChanged();
 			}
 		} else {
-			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent("\uFFFDcYou don't have enough \uFFFDbmagic dust\uFFFDc!\uFFFDr"), (false));
+			if (entity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal((Component.translatable("msg.enchbook.mdReq").getString())), false);
 		}
 	}
 }

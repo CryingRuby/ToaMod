@@ -1,8 +1,9 @@
 {
   "parent": "toamod:custom/cooking_table_model",
   "textures": {
-    "all": "toamod:blocks/cooking_table_texture",
-    "particle": "toamod:blocks/cooking_table_texture",
-    "1": "toamod:blocks/cooking_table_texture"
-  }
+    "all": "toamod:block/cooking_table_texture",
+    "particle": "toamod:block/cooking_table_texture",
+    "1": "toamod:block/cooking_table_texture"
+  },
+  "render_type": "solid"
 }

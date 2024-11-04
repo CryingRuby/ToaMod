@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,11 +13,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "white",
           "text": "white main color",
           "isCheckedProcedure": {
             "name": "CheckWhite"
           },
-          "name": "white",
           "x": 97,
           "y": 40
         }
@@ -25,11 +25,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "creamy",
           "text": "Creamy main color",
           "isCheckedProcedure": {
             "name": "CheckCreamy"
           },
-          "name": "creamy",
           "x": 97,
           "y": 63
         }
@@ -37,11 +37,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "chestnut",
           "text": "Chestnut main color",
           "isCheckedProcedure": {
             "name": "CheckChestnut"
           },
-          "name": "chestnut",
           "x": 97,
           "y": 86
         }
@@ -49,11 +49,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "brown",
           "text": "Brown main color",
           "isCheckedProcedure": {
             "name": "CheckBrown"
           },
-          "name": "brown",
           "x": 97,
           "y": 109
         }
@@ -61,11 +61,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "black",
           "text": "Black main color",
           "isCheckedProcedure": {
             "name": "CheckBlack"
           },
-          "name": "black",
           "x": 97,
           "y": 132
         }
@@ -73,11 +73,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "gray",
           "text": "Gray main color",
           "isCheckedProcedure": {
             "name": "CheckGray"
           },
-          "name": "gray",
           "x": 97,
           "y": 155
         }
@@ -85,11 +85,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "dark_brown",
           "text": "Dark Brown main color",
           "isCheckedProcedure": {
             "name": "CheckGray"
           },
-          "name": "dark_brown",
           "x": 97,
           "y": 178
         }
@@ -97,13 +97,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_apply",
           "text": "Apply",
+          "isUndecorated": false,
           "onClick": {
             "name": "OnHorseColorApplyButtonPressed"
           },
           "width": 35,
           "height": 20,
-          "name": "Apply",
           "x": 271,
           "y": 75
         }
@@ -111,12 +112,14 @@
       {
         "type": "label",
         "data": {
-          "text": "25k Cor",
+          "name": "label_25k_cor",
+          "text": {
+            "fixedValue": "25k Cor"
+          },
           "color": {
             "value": -10496,
             "falpha": 0.0
           },
-          "name": "25k Cor",
           "x": 271,
           "y": 97
         }
@@ -124,13 +127,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_cancel",
           "text": "Cancel",
+          "isUndecorated": false,
           "onClick": {
             "name": "HorseColorChangeCancelPressed"
           },
           "width": 40,
           "height": 20,
-          "name": "Cancel",
           "x": 269,
           "y": 130
         }
@@ -138,12 +142,14 @@
       {
         "type": "label",
         "data": {
-          "text": "(Your Cor: <VAR:integer:cor>)",
+          "name": "label_your_cor_varintegercor",
+          "text": {
+            "fixedValue": "(Your Cor: <VAR:integer:cor>)"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "(Your Cor: <VAR:integer:cor>)",
           "x": 213,
           "y": 200
         }
@@ -151,12 +157,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Tick the box with the color you want",
+          "name": "label_tick_the_box_with_the_color_you",
+          "text": {
+            "fixedValue": "Tick the box with the color you want"
+          },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "name": "Tick the box with the color you want",
           "x": 124,
           "y": 28
         }

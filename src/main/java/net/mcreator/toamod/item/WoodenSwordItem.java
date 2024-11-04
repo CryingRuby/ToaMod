@@ -9,11 +9,9 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.toamod.procedures.WoodenSwordItemIsCraftedsmeltedProcedure;
-import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
@@ -29,7 +27,7 @@ public class WoodenSwordItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 0.5f;
+				return -1.5f;
 			}
 
 			public int getLevel() {
@@ -41,16 +39,16 @@ public class WoodenSwordItem extends SwordItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.EMPTY;
+				return Ingredient.of();
 			}
-		}, 3, -2.4f, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
+		}, 3, -2.4f, new Item.Properties());
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("\u00A77Rarity: \u00A7fComman\u00A7r"));
-		list.add(new TextComponent("\u00A77Type: \u00A79Sword\u00A7r"));
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.literal("\u00A77Type: \u00A79Sword\u00A7r"));
+		list.add(Component.literal("\u00A77Rarity: \u00A7fCOMMAN\u00A7r"));
 	}
 
 	@Override

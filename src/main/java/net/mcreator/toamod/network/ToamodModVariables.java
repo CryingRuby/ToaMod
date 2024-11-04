@@ -15,9 +15,15 @@ import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.Tag;
@@ -33,8 +39,8 @@ import java.util.function.Supplier;
 public class ToamodModVariables {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
-		ToamodMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new,
-				PlayerVariablesSyncMessage::handler);
+		ToamodMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new, SavedDataSyncMessage::handler);
+		ToamodMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handler);
 	}
 
 	@SubscribeEvent
@@ -46,32 +52,27 @@ public class ToamodModVariables {
 	public static class EventBusVariableHandlers {
 		@SubscribeEvent
 		public static void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
-			if (!event.getPlayer().level.isClientSide())
-				((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-						.syncPlayerVariables(event.getPlayer());
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerRespawnedSyncPlayerVariables(PlayerEvent.PlayerRespawnEvent event) {
-			if (!event.getPlayer().level.isClientSide())
-				((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-						.syncPlayerVariables(event.getPlayer());
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerChangedDimensionSyncPlayerVariables(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (!event.getPlayer().level.isClientSide())
-				((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-						.syncPlayerVariables(event.getPlayer());
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void clonePlayer(PlayerEvent.Clone event) {
 			event.getOriginal().revive();
-			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PlayerVariables()));
-			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PlayerVariables()));
+			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			clone.level = original.level;
 			clone.xp = original.xp;
 			clone.neededxp = original.neededxp;
@@ -100,7 +101,6 @@ public class ToamodModVariables {
 			clone.unlockedSkillTree = original.unlockedSkillTree;
 			clone.currentRegion = original.currentRegion;
 			clone.attackDamage = original.attackDamage;
-			clone.abilityPower = original.abilityPower;
 			clone.armor = original.armor;
 			clone.magicResistance = original.magicResistance;
 			clone.critRate = original.critRate;
@@ -126,8 +126,174 @@ public class ToamodModVariables {
 			clone.guiBlockX = original.guiBlockX;
 			clone.guiBlockY = original.guiBlockY;
 			clone.guiBlockZ = original.guiBlockZ;
+			clone.maxHealth = original.maxHealth;
+			clone.currentHealth = original.currentHealth;
+			clone.magicPower = original.magicPower;
+			clone.bonusCor = original.bonusCor;
+			clone.bonusMD = original.bonusMD;
+			clone.bonusCombatXp = original.bonusCombatXp;
+			clone.bonusMiningXp = original.bonusMiningXp;
+			clone.bonusMagicXp = original.bonusMagicXp;
+			clone.magicFind = original.magicFind;
+			clone.miningFortune = original.miningFortune;
+			clone.bonusCookingXp = original.bonusCookingXp;
+			clone.IllfangRNGXp = original.IllfangRNGXp;
+			clone.IllfangRNGSelected = original.IllfangRNGSelected;
+			clone.artefacts = original.artefacts;
+			clone.plyRecWeapons = original.plyRecWeapons;
+			clone.plyRecArmor = original.plyRecArmor;
+			clone.plyRecArtefacts = original.plyRecArtefacts;
+			clone.plyRecEnchants = original.plyRecEnchants;
+			clone.plyRecMaterials = original.plyRecMaterials;
+			clone.paramItem = original.paramItem;
+			clone.openRecGui = original.openRecGui;
+			clone.Vitality = original.Vitality;
+			clone.empheiasSoulFound = original.empheiasSoulFound;
+			clone.merchSlotsUnlocked = original.merchSlotsUnlocked;
+			clone.merchMythicRScrolls = original.merchMythicRScrolls;
+			clone.lifeSteal = original.lifeSteal;
+			clone.fraction = original.fraction;
 			if (!event.isWasDeath()) {
 			}
+		}
+
+		@SubscribeEvent
+		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+			if (!event.getEntity().level().isClientSide()) {
+				SavedData mapdata = MapVariables.get(event.getEntity().level());
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
+				if (mapdata != null)
+					ToamodMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(0, mapdata));
+				if (worlddata != null)
+					ToamodMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+
+		@SubscribeEvent
+		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
+			if (!event.getEntity().level().isClientSide()) {
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
+				if (worlddata != null)
+					ToamodMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+	}
+
+	public static class WorldVariables extends SavedData {
+		public static final String DATA_NAME = "toamod_worldvars";
+		public double maxEmpheiasSoul = 15.0;
+		public double difficulty = 0;
+		public double gameStartStage = 0;
+
+		public static WorldVariables load(CompoundTag tag) {
+			WorldVariables data = new WorldVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+			maxEmpheiasSoul = nbt.getDouble("maxEmpheiasSoul");
+			difficulty = nbt.getDouble("difficulty");
+			gameStartStage = nbt.getDouble("gameStartStage");
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			nbt.putDouble("maxEmpheiasSoul", maxEmpheiasSoul);
+			nbt.putDouble("difficulty", difficulty);
+			nbt.putDouble("gameStartStage", gameStartStage);
+			return nbt;
+		}
+
+		public void syncData(LevelAccessor world) {
+			this.setDirty();
+			if (world instanceof Level level && !level.isClientSide())
+				ToamodMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(level::dimension), new SavedDataSyncMessage(1, this));
+		}
+
+		static WorldVariables clientSide = new WorldVariables();
+
+		public static WorldVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevel level) {
+				return level.getDataStorage().computeIfAbsent(e -> WorldVariables.load(e), WorldVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class MapVariables extends SavedData {
+		public static final String DATA_NAME = "toamod_mapvars";
+
+		public static MapVariables load(CompoundTag tag) {
+			MapVariables data = new MapVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			return nbt;
+		}
+
+		public void syncData(LevelAccessor world) {
+			this.setDirty();
+			if (world instanceof Level && !world.isClientSide())
+				ToamodMod.PACKET_HANDLER.send(PacketDistributor.ALL.noArg(), new SavedDataSyncMessage(0, this));
+		}
+
+		static MapVariables clientSide = new MapVariables();
+
+		public static MapVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevelAccessor serverLevelAcc) {
+				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(e -> MapVariables.load(e), MapVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class SavedDataSyncMessage {
+		private final int type;
+		private SavedData data;
+
+		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
+			this.type = buffer.readInt();
+			CompoundTag nbt = buffer.readNbt();
+			if (nbt != null) {
+				this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
+				if (this.data instanceof MapVariables mapVariables)
+					mapVariables.read(nbt);
+				else if (this.data instanceof WorldVariables worldVariables)
+					worldVariables.read(nbt);
+			}
+		}
+
+		public SavedDataSyncMessage(int type, SavedData data) {
+			this.type = type;
+			this.data = data;
+		}
+
+		public static void buffer(SavedDataSyncMessage message, FriendlyByteBuf buffer) {
+			buffer.writeInt(message.type);
+			if (message.data != null)
+				buffer.writeNbt(message.data.save(new CompoundTag()));
+		}
+
+		public static void handler(SavedDataSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+			NetworkEvent.Context context = contextSupplier.get();
+			context.enqueueWork(() -> {
+				if (!context.getDirection().getReceptionSide().isServer() && message.data != null) {
+					if (message.type == 0)
+						MapVariables.clientSide = (MapVariables) message.data;
+					else
+						WorldVariables.clientSide = (WorldVariables) message.data;
+				}
+			});
+			context.setPacketHandled(true);
 		}
 	}
 
@@ -166,7 +332,7 @@ public class ToamodModVariables {
 		public double xp = 0.0;
 		public double neededxp = 0.0;
 		public double shieldAmount = 0.0;
-		public double cor = 1000.0;
+		public double cor = 10000.0;
 		public double magicdust = 15.0;
 		public double bossesDefeated = 0.0;
 		public boolean gamemaster = false;
@@ -184,16 +350,15 @@ public class ToamodModVariables {
 		public double skillCookingXp = 0;
 		public double skillCookingNeededXp = 0;
 		public double shieldAmountMax = 0;
-		public boolean outOfCombat = false;
+		public boolean outOfCombat = true;
 		public double shieldLvl = 0;
 		public double skillPoints = 0.0;
 		public String unlockedSkillTree = "\"\"";
 		public double currentRegion = 0;
 		public double attackDamage = 0.0;
-		public double abilityPower = 0;
 		public double armor = 18.0;
 		public double magicResistance = 18.0;
-		public double critRate = 15.0;
+		public double critRate = 5.0;
 		public double critDmg = 50.0;
 		public double maxMana = 100.0;
 		public double totalOresMined = 0.0;
@@ -216,6 +381,33 @@ public class ToamodModVariables {
 		public double guiBlockX = 0;
 		public double guiBlockY = 0;
 		public double guiBlockZ = 0;
+		public double maxHealth = 100.0;
+		public double currentHealth = 100.0;
+		public double magicPower = 0;
+		public double bonusCor = 0;
+		public double bonusMD = 0;
+		public double bonusCombatXp = 0.0;
+		public double bonusMiningXp = 0.0;
+		public double bonusMagicXp = 0.0;
+		public double magicFind = 0.0;
+		public double miningFortune = 0.0;
+		public double bonusCookingXp = 0.0;
+		public double IllfangRNGXp = 0;
+		public String IllfangRNGSelected = "\"\"";
+		public ItemStack artefacts = ItemStack.EMPTY;
+		public ItemStack plyRecWeapons = ItemStack.EMPTY;
+		public ItemStack plyRecArmor = ItemStack.EMPTY;
+		public ItemStack plyRecArtefacts = ItemStack.EMPTY;
+		public ItemStack plyRecEnchants = ItemStack.EMPTY;
+		public ItemStack plyRecMaterials = ItemStack.EMPTY;
+		public ItemStack paramItem = ItemStack.EMPTY;
+		public String openRecGui = "\"\"";
+		public double Vitality = 0.0;
+		public double empheiasSoulFound = 0.0;
+		public double merchSlotsUnlocked = 6.0;
+		public double merchMythicRScrolls = 0.0;
+		public double lifeSteal = 0;
+		public String fraction = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -252,7 +444,6 @@ public class ToamodModVariables {
 			nbt.putString("unlockedSkillTree", unlockedSkillTree);
 			nbt.putDouble("currentRegion", currentRegion);
 			nbt.putDouble("attackDamage", attackDamage);
-			nbt.putDouble("abilityPower", abilityPower);
 			nbt.putDouble("armor", armor);
 			nbt.putDouble("magicResistance", magicResistance);
 			nbt.putDouble("critRate", critRate);
@@ -278,11 +469,38 @@ public class ToamodModVariables {
 			nbt.putDouble("guiBlockX", guiBlockX);
 			nbt.putDouble("guiBlockY", guiBlockY);
 			nbt.putDouble("guiBlockZ", guiBlockZ);
+			nbt.putDouble("maxHealth", maxHealth);
+			nbt.putDouble("currentHealth", currentHealth);
+			nbt.putDouble("magicPower", magicPower);
+			nbt.putDouble("bonusCor", bonusCor);
+			nbt.putDouble("bonusMD", bonusMD);
+			nbt.putDouble("bonusCombatXp", bonusCombatXp);
+			nbt.putDouble("bonusMiningXp", bonusMiningXp);
+			nbt.putDouble("bonusMagicXp", bonusMagicXp);
+			nbt.putDouble("magicFind", magicFind);
+			nbt.putDouble("miningFortune", miningFortune);
+			nbt.putDouble("bonusCookingXp", bonusCookingXp);
+			nbt.putDouble("IllfangRNGXp", IllfangRNGXp);
+			nbt.putString("IllfangRNGSelected", IllfangRNGSelected);
+			nbt.put("artefacts", artefacts.save(new CompoundTag()));
+			nbt.put("plyRecWeapons", plyRecWeapons.save(new CompoundTag()));
+			nbt.put("plyRecArmor", plyRecArmor.save(new CompoundTag()));
+			nbt.put("plyRecArtefacts", plyRecArtefacts.save(new CompoundTag()));
+			nbt.put("plyRecEnchants", plyRecEnchants.save(new CompoundTag()));
+			nbt.put("plyRecMaterials", plyRecMaterials.save(new CompoundTag()));
+			nbt.put("paramItem", paramItem.save(new CompoundTag()));
+			nbt.putString("openRecGui", openRecGui);
+			nbt.putDouble("Vitality", Vitality);
+			nbt.putDouble("empheiasSoulFound", empheiasSoulFound);
+			nbt.putDouble("merchSlotsUnlocked", merchSlotsUnlocked);
+			nbt.putDouble("merchMythicRScrolls", merchMythicRScrolls);
+			nbt.putDouble("lifeSteal", lifeSteal);
+			nbt.putString("fraction", fraction);
 			return nbt;
 		}
 
-		public void readNBT(Tag Tag) {
-			CompoundTag nbt = (CompoundTag) Tag;
+		public void readNBT(Tag tag) {
+			CompoundTag nbt = (CompoundTag) tag;
 			level = nbt.getDouble("level");
 			xp = nbt.getDouble("xp");
 			neededxp = nbt.getDouble("neededxp");
@@ -311,7 +529,6 @@ public class ToamodModVariables {
 			unlockedSkillTree = nbt.getString("unlockedSkillTree");
 			currentRegion = nbt.getDouble("currentRegion");
 			attackDamage = nbt.getDouble("attackDamage");
-			abilityPower = nbt.getDouble("abilityPower");
 			armor = nbt.getDouble("armor");
 			magicResistance = nbt.getDouble("magicResistance");
 			critRate = nbt.getDouble("critRate");
@@ -337,11 +554,38 @@ public class ToamodModVariables {
 			guiBlockX = nbt.getDouble("guiBlockX");
 			guiBlockY = nbt.getDouble("guiBlockY");
 			guiBlockZ = nbt.getDouble("guiBlockZ");
+			maxHealth = nbt.getDouble("maxHealth");
+			currentHealth = nbt.getDouble("currentHealth");
+			magicPower = nbt.getDouble("magicPower");
+			bonusCor = nbt.getDouble("bonusCor");
+			bonusMD = nbt.getDouble("bonusMD");
+			bonusCombatXp = nbt.getDouble("bonusCombatXp");
+			bonusMiningXp = nbt.getDouble("bonusMiningXp");
+			bonusMagicXp = nbt.getDouble("bonusMagicXp");
+			magicFind = nbt.getDouble("magicFind");
+			miningFortune = nbt.getDouble("miningFortune");
+			bonusCookingXp = nbt.getDouble("bonusCookingXp");
+			IllfangRNGXp = nbt.getDouble("IllfangRNGXp");
+			IllfangRNGSelected = nbt.getString("IllfangRNGSelected");
+			artefacts = ItemStack.of(nbt.getCompound("artefacts"));
+			plyRecWeapons = ItemStack.of(nbt.getCompound("plyRecWeapons"));
+			plyRecArmor = ItemStack.of(nbt.getCompound("plyRecArmor"));
+			plyRecArtefacts = ItemStack.of(nbt.getCompound("plyRecArtefacts"));
+			plyRecEnchants = ItemStack.of(nbt.getCompound("plyRecEnchants"));
+			plyRecMaterials = ItemStack.of(nbt.getCompound("plyRecMaterials"));
+			paramItem = ItemStack.of(nbt.getCompound("paramItem"));
+			openRecGui = nbt.getString("openRecGui");
+			Vitality = nbt.getDouble("Vitality");
+			empheiasSoulFound = nbt.getDouble("empheiasSoulFound");
+			merchSlotsUnlocked = nbt.getDouble("merchSlotsUnlocked");
+			merchMythicRScrolls = nbt.getDouble("merchMythicRScrolls");
+			lifeSteal = nbt.getDouble("lifeSteal");
+			fraction = nbt.getString("fraction");
 		}
 	}
 
 	public static class PlayerVariablesSyncMessage {
-		public PlayerVariables data;
+		private final PlayerVariables data;
 
 		public PlayerVariablesSyncMessage(FriendlyByteBuf buffer) {
 			this.data = new PlayerVariables();
@@ -360,8 +604,7 @@ public class ToamodModVariables {
 			NetworkEvent.Context context = contextSupplier.get();
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
-					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new PlayerVariables()));
+					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.level = message.data.level;
 					variables.xp = message.data.xp;
 					variables.neededxp = message.data.neededxp;
@@ -390,7 +633,6 @@ public class ToamodModVariables {
 					variables.unlockedSkillTree = message.data.unlockedSkillTree;
 					variables.currentRegion = message.data.currentRegion;
 					variables.attackDamage = message.data.attackDamage;
-					variables.abilityPower = message.data.abilityPower;
 					variables.armor = message.data.armor;
 					variables.magicResistance = message.data.magicResistance;
 					variables.critRate = message.data.critRate;
@@ -416,6 +658,33 @@ public class ToamodModVariables {
 					variables.guiBlockX = message.data.guiBlockX;
 					variables.guiBlockY = message.data.guiBlockY;
 					variables.guiBlockZ = message.data.guiBlockZ;
+					variables.maxHealth = message.data.maxHealth;
+					variables.currentHealth = message.data.currentHealth;
+					variables.magicPower = message.data.magicPower;
+					variables.bonusCor = message.data.bonusCor;
+					variables.bonusMD = message.data.bonusMD;
+					variables.bonusCombatXp = message.data.bonusCombatXp;
+					variables.bonusMiningXp = message.data.bonusMiningXp;
+					variables.bonusMagicXp = message.data.bonusMagicXp;
+					variables.magicFind = message.data.magicFind;
+					variables.miningFortune = message.data.miningFortune;
+					variables.bonusCookingXp = message.data.bonusCookingXp;
+					variables.IllfangRNGXp = message.data.IllfangRNGXp;
+					variables.IllfangRNGSelected = message.data.IllfangRNGSelected;
+					variables.artefacts = message.data.artefacts;
+					variables.plyRecWeapons = message.data.plyRecWeapons;
+					variables.plyRecArmor = message.data.plyRecArmor;
+					variables.plyRecArtefacts = message.data.plyRecArtefacts;
+					variables.plyRecEnchants = message.data.plyRecEnchants;
+					variables.plyRecMaterials = message.data.plyRecMaterials;
+					variables.paramItem = message.data.paramItem;
+					variables.openRecGui = message.data.openRecGui;
+					variables.Vitality = message.data.Vitality;
+					variables.empheiasSoulFound = message.data.empheiasSoulFound;
+					variables.merchSlotsUnlocked = message.data.merchSlotsUnlocked;
+					variables.merchMythicRScrolls = message.data.merchMythicRScrolls;
+					variables.lifeSteal = message.data.lifeSteal;
+					variables.fraction = message.data.fraction;
 				}
 			});
 			context.setPacketHandled(true);

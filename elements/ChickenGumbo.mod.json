@@ -1,15 +1,19 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "chicken_gumbo",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Chicken Gumbo",
     "rarity": "RARE",
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaModTab"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 32,
@@ -24,14 +28,18 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [
-      "§7Rarity: §bRare§r",
-      "§7Type: §9Food§r"
-    ],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": [
+        "§7Rarity: §bRare§r",
+        "§7Type: §9Food§r"
+      ]
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
     "isFood": true,
     "nutritionalValue": 8,
     "saturation": 0.6,

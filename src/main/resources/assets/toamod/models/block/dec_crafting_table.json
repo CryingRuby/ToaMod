@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "toamod:blocks/oak_log_top",
-    "up": "toamod:blocks/crafting_table_top",
-    "north": "toamod:blocks/crafting_table_front",
-    "east": "toamod:blocks/crafting_table_side",
-    "south": "toamod:blocks/crafting_table_side",
-    "west": "toamod:blocks/crafting_table_side",
-    "particle": "toamod:blocks/oak_log_top"
-  }
+    "down": "toamod:block/oak_log_top",
+    "up": "toamod:block/crafting_table_top",
+    "north": "toamod:block/crafting_table_front",
+    "east": "toamod:block/crafting_table_side",
+    "south": "toamod:block/crafting_table_side",
+    "west": "toamod:block/crafting_table_side",
+    "particle": "toamod:block/oak_log_top"
+  },
+  "render_type": "solid"
 }

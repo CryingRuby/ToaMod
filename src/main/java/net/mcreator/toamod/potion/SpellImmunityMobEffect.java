@@ -13,11 +13,6 @@ public class SpellImmunityMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.toamod.spell_immunity";
-	}
-
-	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
 		SpellImmunityOnTickProcedure.execute(entity);
 	}

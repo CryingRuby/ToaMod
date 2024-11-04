@@ -6,8 +6,8 @@ import net.mcreator.toamod.init.ToamodModEnchantments;
 
 public class FlameSwordItemIsCraftedProcedure {
 	public static void execute(ItemStack itemstack) {
-		(itemstack).enchant(ToamodModEnchantments.IGNITE.get(), 1);
+		itemstack.enchant(ToamodModEnchantments.IGNITE.get(), 1);
 		itemstack.getOrCreateTag().putString("rarity", "epic");
-		itemstack.getOrCreateTag().putBoolean("hasAbility", (false));
+		itemstack.getOrCreateTag().putBoolean("hasAbility", false);
 	}
 }

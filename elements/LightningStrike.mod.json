@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "potioneffect",
   "definition": {
     "effectName": "Lighting Strike",
@@ -9,8 +9,7 @@
       "falpha": 0.0
     },
     "isInstant": true,
-    "isBad": false,
-    "isBenefitical": false,
+    "mobEffectCategory": "NEUTRAL",
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,
     "onStarted": {

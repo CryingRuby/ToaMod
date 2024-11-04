@@ -1,0 +1,10 @@
+{
+  "_fv": 66,
+  "_type": "command",
+  "definition": {
+    "commandName": "utiladdrecitemtomenu",
+    "type": "STANDARD",
+    "permissionLevel": "4",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"64\" y=\"86\"><next><block type=\"literal\"><field name=\"name\">weapons</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">AddRecItemToWeaponsMenu</field></block></statement><next><block type=\"literal\"><field name=\"name\">armors</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">AddRecItemToArmorsMenu</field></block></statement><next><block type=\"literal\"><field name=\"name\">materials</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">AddRecItemToMaterialsMenu</field></block></statement></block></next></block></next></block></next></block></xml>"
+  }
+}

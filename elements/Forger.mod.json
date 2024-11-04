@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "block",
   "definition": {
     "texture": "upgrading_table_texture",
@@ -34,14 +34,18 @@
       }
     ],
     "name": "Forger",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaModTab"
+      }
+    ],
     "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
@@ -98,14 +102,8 @@
     },
     "luminance": 0,
     "unbreakable": false,
-    "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "vanillaToolTier": "STONE",
+    "isBonemealable": false,
     "hasInventory": true,
     "guiBoundTo": "ForgerGui",
     "openGUIOnRightClick": true,
@@ -124,13 +122,22 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": {
-      "name": "OnForgerRightClicked"
+      "name": "OnTableRightClicked"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

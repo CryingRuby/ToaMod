@@ -1,0 +1,10 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "particle": "toamod:block/hard_stone",
+    "bottom": "toamod:block/hard_stone",
+    "top": "toamod:block/hard_stone",
+    "side": "toamod:block/hard_stone"
+  },
+  "render_type": "solid"
+}

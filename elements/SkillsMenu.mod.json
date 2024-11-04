@@ -1,0 +1,115 @@
+{
+  "_fv": 66,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnComSkillButtonClicked"
+          },
+          "onStackTransfer": {
+            "name": "OnComSkillButtonClicked"
+          },
+          "x": 150,
+          "y": 56
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnMinSkillButtonClicked"
+          },
+          "onStackTransfer": {
+            "name": "OnMinSkillButtonClicked"
+          },
+          "x": 186,
+          "y": 56
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 2,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnMagSkillButtonClicked"
+          },
+          "onStackTransfer": {
+            "name": "OnMagSkillButtonClicked"
+          },
+          "x": 222,
+          "y": 56
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 3,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnCookSkillButtonClicked"
+          },
+          "onStackTransfer": {
+            "name": "OnCookSkillButtonClicked"
+          },
+          "x": 258,
+          "y": 56
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 4,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnPlayerProfileBackButtonClicked"
+          },
+          "onStackTransfer": {
+            "name": "OnPlayerProfileBackButtonClicked"
+          },
+          "x": 204,
+          "y": 88
+        }
+      }
+    ],
+    "onTick": {
+      "name": "OnSkillsMenuTick"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

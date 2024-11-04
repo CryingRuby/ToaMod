@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "toamod:cristal_shard",
+          "name": "toamod:deleted_mod_element",
           "weight": 80,
           "functions": [
             {
@@ -20,7 +20,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "toamod:cristal_shard",
+          "name": "toamod:deleted_mod_element",
           "weight": 20,
           "functions": [
             {
@@ -39,7 +39,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "toamod:cristal_shard",
+          "name": "toamod:deleted_mod_element",
           "weight": 60,
           "functions": [
             {
@@ -53,7 +53,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "toamod:cristal",
+          "name": "toamod:deleted_mod_element",
           "weight": 40,
           "functions": [
             {
@@ -72,7 +72,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "toamod:cristal",
+          "name": "toamod:deleted_mod_element",
           "weight": 90,
           "functions": [
             {
@@ -86,7 +86,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "toamod:enrichted_cristal",
+          "name": "toamod:deleted_mod_element",
           "weight": 10,
           "functions": [
             {
@@ -100,5 +100,6 @@
         }
       ]
     }
-  ]
+  ],
+  "random_sequence": "toamod:blocks/loot_cristal_ore"
 }

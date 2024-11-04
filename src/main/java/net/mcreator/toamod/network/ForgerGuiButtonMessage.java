@@ -13,6 +13,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.world.inventory.ForgerGuiMenu;
 import net.mcreator.toamod.procedures.OnForgerGuiRemoveRunePressedProcedure;
+import net.mcreator.toamod.procedures.OnForgerGuiRemoveGemPressedProcedure;
 import net.mcreator.toamod.ToamodMod;
 
 import java.util.function.Supplier;
@@ -57,20 +58,23 @@ public class ForgerGuiButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = ForgerGuiMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+
+			OnForgerGuiRemoveGemPressedProcedure.execute(world, entity);
+		}
 		if (buttonID == 1) {
 
-			OnForgerGuiRemoveRunePressedProcedure.execute(entity);
+			OnForgerGuiRemoveRunePressedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		ToamodMod.addNetworkMessage(ForgerGuiButtonMessage.class, ForgerGuiButtonMessage::buffer, ForgerGuiButtonMessage::new,
-				ForgerGuiButtonMessage::handler);
+		ToamodMod.addNetworkMessage(ForgerGuiButtonMessage.class, ForgerGuiButtonMessage::buffer, ForgerGuiButtonMessage::new, ForgerGuiButtonMessage::handler);
 	}
 }

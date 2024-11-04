@@ -1,0 +1,10 @@
+{
+  "_fv": 66,
+  "_type": "command",
+  "definition": {
+    "commandName": "utiladdnpcmsg",
+    "type": "STANDARD",
+    "permissionLevel": "4",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"entity\"><field name=\"name\">npc</field><field name=\"type\">entity</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">msg</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">AddNPCMsg</field></block></statement></block></statement></block></next></block></xml>"
+  }
+}

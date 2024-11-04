@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "toamod:blocks/control_barrier",
-    "up": "toamod:blocks/control_barrier",
-    "north": "toamod:blocks/control_barrier",
-    "east": "toamod:blocks/control_barrier",
-    "south": "toamod:blocks/control_barrier",
-    "west": "toamod:blocks/control_barrier",
-    "particle": "toamod:blocks/control_barrier"
-  }
+    "down": "toamod:block/control_barrier",
+    "up": "toamod:block/control_barrier",
+    "north": "toamod:block/control_barrier",
+    "east": "toamod:block/control_barrier",
+    "south": "toamod:block/control_barrier",
+    "west": "toamod:block/control_barrier",
+    "particle": "toamod:block/control_barrier"
+  },
+  "render_type": "cutout"
 }

@@ -1,14 +1,10 @@
 
 package net.mcreator.toamod.block;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
@@ -31,32 +27,21 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
-import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.Minecraft;
 
+import net.mcreator.toamod.procedures.OnChestTickProcedure;
 import net.mcreator.toamod.procedures.ChestRightClickedProcedure;
 import net.mcreator.toamod.procedures.ChestPlacedProcedure;
-import net.mcreator.toamod.procedures.ChestParticleConditionProcedure;
-import net.mcreator.toamod.init.ToamodModBlocks;
 import net.mcreator.toamod.block.entity.ChestEpicBlockEntity;
 
-import java.util.Random;
-import java.util.List;
-import java.util.Collections;
-
-public class ChestEpicBlock extends Block
-		implements
-
-			EntityBlock {
+public class ChestEpicBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public ChestEpicBlock() {
-		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(-1, 3600000).noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(-1, 3600000).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 
@@ -71,8 +56,12 @@ public class ChestEpicBlock extends Block
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
 
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return switch (state.getValue(FACING)) {
 			default -> box(-2, -1, -2, 17, 18, 16);
 			case NORTH -> box(-1, -1, 0, 18, 18, 18);
@@ -100,31 +89,19 @@ public class ChestEpicBlock extends Block
 	}
 
 	@Override
-	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
-		if (!dropsOriginal.isEmpty())
-			return dropsOriginal;
-		return Collections.singletonList(new ItemStack(this, 1));
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		world.scheduleTick(pos, this, 10);
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, Random random) {
-		super.animateTick(blockstate, world, pos, random);
-		Player entity = Minecraft.getInstance().player;
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+		super.tick(blockstate, world, pos, random);
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-		if (ChestParticleConditionProcedure.execute(world, x, y, z))
-			for (int l = 0; l < 6; ++l) {
-				double x0 = x + random.nextFloat();
-				double y0 = y + random.nextFloat();
-				double z0 = z + random.nextFloat();
-				double dx = (random.nextFloat() - 0.5D) * 1.25D;
-				double dy = (random.nextFloat() - 0.5D) * 1.25D;
-				double dz = (random.nextFloat() - 0.5D) * 1.25D;
-				world.addParticle(ParticleTypes.GLOW, x0, y0, z0, dx, dy, dz);
-			}
+		OnChestTickProcedure.execute(world, x, y, z);
+		world.scheduleTick(pos, this, 10);
 	}
 
 	@Override
@@ -143,7 +120,6 @@ public class ChestEpicBlock extends Block
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-
 		ChestRightClickedProcedure.execute(world, x, y, z, blockstate, entity);
 		return InteractionResult.SUCCESS;
 	}
@@ -190,10 +166,5 @@ public class ChestEpicBlock extends Block
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
 		else
 			return 0;
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(ToamodModBlocks.CHEST_EPIC.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

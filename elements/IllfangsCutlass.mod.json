@@ -1,0 +1,32 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "hardened_iron_sword",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "§5Illfangs Cutlass§r",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaWeapons"
+      }
+    ],
+    "efficiency": 1.0,
+    "attackSpeed": 1.6,
+    "enchantability": 1,
+    "damageVsEntity": 4.0,
+    "usageCount": 0,
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

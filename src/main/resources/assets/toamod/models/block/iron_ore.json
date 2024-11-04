@@ -1,7 +1,9 @@
 {
-  "parent": "block/cube_all",
+  "parent": "toamod:custom/ironore_up",
   "textures": {
-    "all": "toamod:blocks/iron_ore",
-    "particle": "toamod:blocks/iron_ore"
-  }
+    "all": "toamod:block/iron_ore",
+    "particle": "toamod:block/iron_ore",
+    "1": "toamod:block/iron_ore_texture"
+  },
+  "render_type": "solid"
 }

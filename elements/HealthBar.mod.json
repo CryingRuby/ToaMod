@@ -1,0 +1,38 @@
+{
+  "_fv": 66,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sscvarintegercurrenthealth",
+          "text": {
+            "fixedValue": "",
+            "name": "GetHealthBar"
+          },
+          "color": {
+            "value": -1300480,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CheckHPBarShow"
+          },
+          "anchorPoint": "CENTER",
+          "x": 133,
+          "y": 229
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -11,71 +11,23 @@
     "doesPauseGame": false,
     "components": [
       {
-        "type": "checkbox",
-        "data": {
-          "text": "Bound to Bosses defeated",
-          "isCheckedProcedure": {
-            "name": "ControlBarrierChkBoDef"
-          },
-          "name": "chkBossesDef",
-          "x": 100,
-          "y": 49
-        }
-      },
-      {
         "type": "textfield",
         "data": {
           "placeholder": "1",
-          "width": 30,
-          "height": 20,
           "name": "inputBossesDef",
+          "width": 30,
+          "height": 20,
           "x": 278,
           "y": 49
         }
       },
       {
-        "type": "checkbox",
-        "data": {
-          "text": "Bound to Attack-Skill",
-          "isCheckedProcedure": {
-            "name": "ControlbarrierAtSkill"
-          },
-          "name": "chkAttackSkill",
-          "x": 100,
-          "y": 111
-        }
-      },
-      {
-        "type": "checkbox",
-        "data": {
-          "text": "Bound to Defense-Skill",
-          "isCheckedProcedure": {
-            "name": "ControlBarrierChkDeSkill"
-          },
-          "name": "chkDefenseSkill",
-          "x": 100,
-          "y": 142
-        }
-      },
-      {
-        "type": "checkbox",
-        "data": {
-          "text": "Bound to Magic-Skill",
-          "isCheckedProcedure": {
-            "name": "ControlBarrierChkMaSkill"
-          },
-          "name": "chkMagicSkill",
-          "x": 100,
-          "y": 172
-        }
-      },
-      {
         "type": "textfield",
         "data": {
           "placeholder": "1",
-          "width": 30,
-          "height": 20,
           "name": "inputAttackSLvl",
+          "width": 30,
+          "height": 20,
           "x": 278,
           "y": 111
         }
@@ -84,9 +36,9 @@
         "type": "textfield",
         "data": {
           "placeholder": "1",
+          "name": "inputDefenseSLvl",
           "width": 30,
           "height": 20,
-          "name": "inputDefenseSLvl",
           "x": 278,
           "y": 142
         }
@@ -95,32 +47,20 @@
         "type": "textfield",
         "data": {
           "placeholder": "1",
+          "name": "inputMagicSLvl",
           "width": 30,
           "height": 20,
-          "name": "inputMagicSLvl",
           "x": 278,
           "y": 172
-        }
-      },
-      {
-        "type": "checkbox",
-        "data": {
-          "text": "Bound to Player Level",
-          "isCheckedProcedure": {
-            "name": "ControlBarrierChkPlaLvl"
-          },
-          "name": "chkPlayerLvl",
-          "x": 100,
-          "y": 80
         }
       },
       {
         "type": "textfield",
         "data": {
           "placeholder": "1",
+          "name": "inputPlayerLvl",
           "width": 29,
           "height": 20,
-          "name": "inputPlayerLvl",
           "x": 278,
           "y": 80
         }
@@ -128,15 +68,91 @@
       {
         "type": "button",
         "data": {
+          "name": "button_confirm",
           "text": "Confirm",
+          "isUndecorated": false,
           "onClick": {
             "name": "ControlBarrierClosed"
           },
           "width": 61,
           "height": 20,
-          "name": "Confirm",
           "x": 336,
           "y": 192
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_required_bosses_defeated",
+          "text": {
+            "fixedValue": "Required Bosses Defeated"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_required_player_level",
+          "text": {
+            "fixedValue": "Required Player Level"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 157,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_required_attackskill_level",
+          "text": {
+            "fixedValue": "Required Attack-Skill Level"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 125,
+          "y": 117
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_required_defenseskill_level",
+          "text": {
+            "fixedValue": "Required Defense-Skill Level"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 120,
+          "y": 147
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_required_magicskill_level",
+          "text": {
+            "fixedValue": "Required Magic-Skill Level"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 131,
+          "y": 177
         }
       }
     ],

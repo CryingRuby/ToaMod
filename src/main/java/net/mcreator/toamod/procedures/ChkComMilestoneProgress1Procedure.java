@@ -8,7 +8,6 @@ public class ChkComMilestoneProgress1Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		return (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new ToamodModVariables.PlayerVariables())).combatMilestoneProgress >= 6.25;
+		return (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).combatMilestoneProgress >= 6.25;
 	}
 }

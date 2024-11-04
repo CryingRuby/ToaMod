@@ -14,24 +14,21 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-
-import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public abstract class CristalArmorItem extends ArmorItem {
-	public CristalArmorItem(EquipmentSlot slot, Item.Properties properties) {
+	public CristalArmorItem(ArmorItem.Type type, Item.Properties properties) {
 		super(new ArmorMaterial() {
 			@Override
-			public int getDurabilityForSlot(EquipmentSlot slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 0;
+			public int getDurabilityForType(ArmorItem.Type type) {
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 0;
 			}
 
 			@Override
-			public int getDefenseForSlot(EquipmentSlot slot) {
-				return new int[]{3, 4, 5, 3}[slot.getIndex()];
+			public int getDefenseForType(ArmorItem.Type type) {
+				return new int[]{3, 4, 5, 3}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -46,7 +43,7 @@ public abstract class CristalArmorItem extends ArmorItem {
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.EMPTY;
+				return Ingredient.of();
 			}
 
 			@Override
@@ -63,19 +60,19 @@ public abstract class CristalArmorItem extends ArmorItem {
 			public float getKnockbackResistance() {
 				return 0f;
 			}
-		}, slot, properties);
+		}, type, properties);
 	}
 
 	public static class Helmet extends CristalArmorItem {
 		public Helmet() {
-			super(EquipmentSlot.HEAD, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
+			super(ArmorItem.Type.HELMET, new Item.Properties());
 		}
 
 		@Override
-		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, world, list, flag);
-			list.add(new TextComponent("\u00A77Rarity: \u00A7bRare\u00A7r"));
-			list.add(new TextComponent("\u00A77Type: \u00A79Armor\u00A7r"));
+		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, level, list, flag);
+			list.add(Component.literal("\u00A77Rarity: \u00A7bRare\u00A7r"));
+			list.add(Component.literal("\u00A77Type: \u00A79Armor\u00A7r"));
 		}
 
 		@Override
@@ -86,14 +83,14 @@ public abstract class CristalArmorItem extends ArmorItem {
 
 	public static class Chestplate extends CristalArmorItem {
 		public Chestplate() {
-			super(EquipmentSlot.CHEST, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
+			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
 		}
 
 		@Override
-		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, world, list, flag);
-			list.add(new TextComponent("\u00A77Rarity: \u00A7bRare\u00A7r"));
-			list.add(new TextComponent("\u00A77Type: \u00A79Armor\u00A7r"));
+		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, level, list, flag);
+			list.add(Component.literal("\u00A77Rarity: \u00A7bRare\u00A7r"));
+			list.add(Component.literal("\u00A77Type: \u00A79Armor\u00A7r"));
 		}
 
 		@Override
@@ -104,14 +101,14 @@ public abstract class CristalArmorItem extends ArmorItem {
 
 	public static class Leggings extends CristalArmorItem {
 		public Leggings() {
-			super(EquipmentSlot.LEGS, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
+			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
 		}
 
 		@Override
-		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, world, list, flag);
-			list.add(new TextComponent("\u00A77Rarity: \u00A7bRare\u00A7r"));
-			list.add(new TextComponent("\u00A77Type: \u00A79Armor\u00A7r"));
+		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, level, list, flag);
+			list.add(Component.literal("\u00A77Rarity: \u00A7bRare\u00A7r"));
+			list.add(Component.literal("\u00A77Type: \u00A79Armor\u00A7r"));
 		}
 
 		@Override
@@ -122,14 +119,14 @@ public abstract class CristalArmorItem extends ArmorItem {
 
 	public static class Boots extends CristalArmorItem {
 		public Boots() {
-			super(EquipmentSlot.FEET, new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB));
+			super(ArmorItem.Type.BOOTS, new Item.Properties());
 		}
 
 		@Override
-		public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-			super.appendHoverText(itemstack, world, list, flag);
-			list.add(new TextComponent("\u00A77Rarity: \u00A7bRare\u00A7r"));
-			list.add(new TextComponent("\u00A77Type: \u00A79Armor\u00A7r"));
+		public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+			super.appendHoverText(itemstack, level, list, flag);
+			list.add(Component.literal("\u00A77Rarity: \u00A7bRare\u00A7r"));
+			list.add(Component.literal("\u00A77Type: \u00A79Armor\u00A7r"));
 		}
 
 		@Override

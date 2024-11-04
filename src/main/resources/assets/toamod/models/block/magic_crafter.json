@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "toamod:blocks/ore_respawn_stone",
-    "up": "toamod:blocks/ore_respawn_stone",
-    "north": "toamod:blocks/ore_respawn_stone",
-    "east": "toamod:blocks/ore_respawn_stone",
-    "south": "toamod:blocks/ore_respawn_stone",
-    "west": "toamod:blocks/ore_respawn_stone",
-    "particle": "toamod:blocks/ore_respawn_stone"
-  }
+    "down": "toamod:block/ore_respawn_stone",
+    "up": "toamod:block/ore_respawn_stone",
+    "north": "toamod:block/ore_respawn_stone",
+    "east": "toamod:block/ore_respawn_stone",
+    "south": "toamod:block/ore_respawn_stone",
+    "west": "toamod:block/ore_respawn_stone",
+    "particle": "toamod:block/ore_respawn_stone"
+  },
+  "render_type": "solid"
 }

@@ -1,15 +1,19 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "coal",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Coal",
     "rarity": "COMMON",
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaMaterials"
+      }
+    ],
     "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,
@@ -24,14 +28,19 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [
-      "§7Rarity: §fComman§r",
-      "§7Type: §9Material§r"
-    ],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": [
+        "§r",
+        "§7Type: §9Material§r",
+        "§7Rarity: §fCOMMAN§r"
+      ]
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
     "isFood": false,
     "nutritionalValue": 0,
     "saturation": 0.30000001192092896,

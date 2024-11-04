@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "toamod:plains_forest",
+    "toamod:windy_plains"
+  ],
+  "spawners": {
+    "type": "toamod:goblin_scout",
+    "weight": 20,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

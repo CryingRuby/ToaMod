@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "pesto_goblin_omlette"
+      },
+      "name": "default"
+    }
+  }
+}

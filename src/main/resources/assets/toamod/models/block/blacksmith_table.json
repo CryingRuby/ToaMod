@@ -1,0 +1,9 @@
+{
+  "parent": "toamod:custom/weapon_table_model",
+  "textures": {
+    "all": "toamod:block/weapon_table_texture",
+    "particle": "toamod:block/weapon_table_texture",
+    "0": "toamod:block/weapon_table_texture"
+  },
+  "render_type": "solid"
+}

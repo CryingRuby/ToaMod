@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "toamod:block/player_barrier"
+    }
+  }
+}

@@ -1,15 +1,19 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "rune_comman",
     "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
     "name": "Comman Rune",
     "rarity": "COMMON",
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaSpecials"
+      }
+    ],
     "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,
@@ -24,14 +28,15 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [
-      "§7Rarity: §fComman§r",
-      "§7Type: §9Rune§r"
-    ],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": []
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
     "isFood": false,
     "nutritionalValue": 4,
     "saturation": 0.3,

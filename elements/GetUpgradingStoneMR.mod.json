@@ -1,7 +1,0 @@
-{
-  "_fv": 33,
-  "_type": "procedure",
-  "definition": {
-    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"Number\" id=\"bonusMR\">bonusMR</variable></variables><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"variables_set_number\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" is_player_var=\"false\" has_entity=\"false\"></mutation><field name=\"VAR\">local:bonusMR</field><value name=\"VAL\"><block type=\"math_number\"><field name=\"NUM\">0</field></block></value><next><block type=\"return_number\"><value name=\"return\"><block type=\"variables_get_number\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" is_player_var=\"false\" has_entity=\"false\"></mutation><field name=\"VAR\">local:bonusMR</field></block></value></block></next></block></next></block><block type=\"gui_get_item_inslot\" x=\"362\" y=\"116\"><value name=\"slotid\"><block type=\"math_number\"><field name=\"NUM\">0</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></xml>"
-  }
-}

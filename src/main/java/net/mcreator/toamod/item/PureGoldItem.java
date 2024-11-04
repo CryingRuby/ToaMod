@@ -7,16 +7,13 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
-
-import net.mcreator.toamod.init.ToamodModTabs;
 
 import java.util.List;
 
 public class PureGoldItem extends Item {
 	public PureGoldItem() {
-		super(new Item.Properties().tab(ToamodModTabs.TAB_TOA_MOD_TAB).stacksTo(64).rarity(Rarity.UNCOMMON));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON));
 	}
 
 	@Override
@@ -25,9 +22,10 @@ public class PureGoldItem extends Item {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("\u00A77Rarity: \u00A7aUncomman\u00A7r"));
-		list.add(new TextComponent("\u00A77Type: \u00A79Material\u00A7r"));
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.literal("\u00A7r"));
+		list.add(Component.literal("\u00A77Type: \u00A79Material\u00A7r"));
+		list.add(Component.literal("\u00A77Rarity: \u00A7aUNCOMMAN\u00A7r"));
 	}
 }

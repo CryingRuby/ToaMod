@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "toamod:block/goblin_omlette"
+    },
+    "facing=east": {
+      "model": "toamod:block/goblin_omlette",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "toamod:block/goblin_omlette",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "toamod:block/goblin_omlette",
+      "y": 270
+    }
+  }
+}

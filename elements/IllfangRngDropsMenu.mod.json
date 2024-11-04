@@ -1,0 +1,187 @@
+{
+  "_fv": 66,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnGoblinEggSpicesIllfangDropSelected"
+          },
+          "onStackTransfer": {
+            "name": "OnGoblinEggSpicesIllfangDropSelected"
+          },
+          "x": 168,
+          "y": 45
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnIllfangsCutlassIllfangDropSelected"
+          },
+          "onStackTransfer": {
+            "name": "OnIllfangsCutlassIllfangDropSelected"
+          },
+          "x": 186,
+          "y": 45
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 2,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnRareRuneIllfangDropSelected"
+          },
+          "onStackTransfer": {
+            "name": "OnRareRuneIllfangDropSelected"
+          },
+          "x": 204,
+          "y": 45
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 3,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnUncommanRuneIllfangDropSelected"
+          },
+          "onStackTransfer": {
+            "name": "OnUncommanRuneIllfangDropSelected"
+          },
+          "x": 222,
+          "y": 45
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 4,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnRedGoblinScaleIllfangDropSelected"
+          },
+          "onStackTransfer": {
+            "name": "OnRedGoblinScaleIllfangDropSelected"
+          },
+          "x": 240,
+          "y": 45
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 5,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnBossKeyTier3IllfangDrop"
+          },
+          "onStackTransfer": {
+            "name": "OnBossKeyTier3IllfangDrop"
+          },
+          "x": 186,
+          "y": 63
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 6,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnBossKeyTier2IllfangDropSelected"
+          },
+          "onStackTransfer": {
+            "name": "OnBossKeyTier2IllfangDropSelected"
+          },
+          "x": 204,
+          "y": 63
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 7,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnBossKeyTier1IllfangDropSelected"
+          },
+          "onStackTransfer": {
+            "name": "OnBossKeyTier1IllfangDropSelected"
+          },
+          "x": 222,
+          "y": 63
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 8,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": {
+            "name": "OnBossCollectionBackButtonClicked"
+          },
+          "onStackTransfer": {
+            "name": "OnBossCollectionBackButtonClicked"
+          },
+          "x": 204,
+          "y": 89
+        }
+      }
+    ],
+    "onTick": {
+      "name": "OnIllfangsRngDropsMenuTick"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

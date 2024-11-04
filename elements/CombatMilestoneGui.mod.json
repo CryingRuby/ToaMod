@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Combat Milestone",
+          "name": "label_combat_milestone",
+          "text": {
+            "fixedValue": "Combat Milestone"
+          },
           "color": {
             "value": -3394816,
             "falpha": 0.0
           },
-          "name": "Combat Milestone",
           "x": 169,
           "y": 51
         }
@@ -26,13 +28,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_claim",
           "text": "Claim",
+          "isUndecorated": false,
           "onClick": {
             "name": "ClaimComMilestonRewardsPressed"
           },
           "width": 40,
           "height": 20,
-          "name": "Claim",
           "x": 259,
           "y": 159
         }
@@ -40,7 +43,10 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:integer:comMilNextLvl>",
+          "name": "label_varintegercommilnextlvl",
+          "text": {
+            "fixedValue": "<VAR:integer:comMilNextLvl>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
@@ -48,7 +54,6 @@
           "displayCondition": {
             "name": "CheckComMilestoneNextLvl"
           },
-          "name": "<VAR:integer:comMilNextLvl>",
           "x": 254,
           "y": 79
         }
@@ -56,12 +61,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:combatMilestoneProgress> %",
+          "name": "label_varcombatmilestoneprogress",
+          "text": {
+            "fixedValue": "<VAR:combatMilestoneProgress> %"
+          },
           "color": {
             "value": -16738048,
             "falpha": 0.0
           },
-          "name": "<VAR:combatMilestoneProgress> %",
           "x": 182,
           "y": 92
         }
@@ -69,12 +76,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:integer:combatMilestoneLvl>",
+          "name": "label_varintegercombatmilestonelvl",
+          "text": {
+            "fixedValue": "<VAR:integer:combatMilestoneLvl>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "<VAR:integer:combatMilestoneLvl>",
           "x": 141,
           "y": 79
         }
@@ -87,7 +96,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress1"
           },
-          "name": "progress_finished.png",
           "x": 153,
           "y": 75
         }
@@ -100,7 +108,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress15"
           },
-          "name": "progress_finished.png",
           "x": 237,
           "y": 75
         }
@@ -113,7 +120,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress7"
           },
-          "name": "progress_finished.png",
           "x": 189,
           "y": 75
         }
@@ -126,7 +132,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress13"
           },
-          "name": "progress_finished.png",
           "x": 225,
           "y": 75
         }
@@ -139,7 +144,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress2"
           },
-          "name": "progress_finished.png",
           "x": 159,
           "y": 75
         }
@@ -152,7 +156,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress5"
           },
-          "name": "progress_finished.png",
           "x": 177,
           "y": 75
         }
@@ -165,7 +168,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress10"
           },
-          "name": "progress_finished.png",
           "x": 207,
           "y": 75
         }
@@ -178,7 +180,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress6"
           },
-          "name": "progress_finished.png",
           "x": 183,
           "y": 75
         }
@@ -191,7 +192,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress11"
           },
-          "name": "progress_finished.png",
           "x": 213,
           "y": 75
         }
@@ -204,7 +204,6 @@
           "displayCondition": {
             "name": "ChkMinMilestoneProgress12"
           },
-          "name": "progress_finished.png",
           "x": 219,
           "y": 75
         }
@@ -217,7 +216,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress9"
           },
-          "name": "progress_finished.png",
           "x": 201,
           "y": 75
         }
@@ -230,7 +228,6 @@
           "displayCondition": {
             "name": "ChkMinMilestoneProgress14"
           },
-          "name": "progress_finished.png",
           "x": 231,
           "y": 75
         }
@@ -243,7 +240,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress8"
           },
-          "name": "progress_finished.png",
           "x": 195,
           "y": 75
         }
@@ -256,7 +252,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress3"
           },
-          "name": "progress_finished.png",
           "x": 165,
           "y": 75
         }
@@ -269,7 +264,6 @@
           "displayCondition": {
             "name": "ChkComMilestoneProgress4"
           },
-          "name": "progress_finished.png",
           "x": 171,
           "y": 75
         }
@@ -277,12 +271,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Claim available rewards:",
+          "name": "label_claim_available_rewards",
+          "text": {
+            "fixedValue": "Claim available rewards:"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Claim available rewards:",
           "x": 120,
           "y": 164
         }
@@ -290,7 +286,10 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:integer:comMilNextLvl> (max)",
+          "name": "label_varintegercommilnextlvl_max",
+          "text": {
+            "fixedValue": "<VAR:integer:comMilNextLvl> (max)"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
@@ -298,7 +297,6 @@
           "displayCondition": {
             "name": "CheckComMilestoneMaxLvl"
           },
-          "name": "<VAR:integer:comMilNextLvl> (max)",
           "x": 254,
           "y": 79
         }
@@ -306,12 +304,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Total mobs killed: <VAR:integer:totalMobsKilled> / <VAR:integer:combatMilestoneKillsNeeded>",
+          "name": "label_total_mobs_killed_varinteger",
+          "text": {
+            "fixedValue": "Total mobs killed: <VAR:integer:totalMobsKilled> / <VAR:integer:combatMilestoneKillsNeeded>"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Total mobs killed: <VAR:integer:totalMobsKilled> / <VAR:integer:combatMilestoneKillsNeeded>",
           "x": 119,
           "y": 120
         }

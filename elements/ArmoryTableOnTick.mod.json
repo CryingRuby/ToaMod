@@ -1,7 +1,0 @@
-{
-  "_fv": 33,
-  "_type": "procedure",
-  "definition": {
-    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable id=\"validRecipe\" type=\"Boolean\">validRecipe</variable></variables><block deletable=\"false\" type=\"event_trigger\" x=\"0\" y=\"0\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"variables_set_logic\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" has_entity=\"false\" is_player_var=\"false\"/><field name=\"VAR\">local:validRecipe</field><value name=\"VAL\"><block type=\"logic_boolean\"><field name=\"BOOL\">FALSE</field></block></value><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"logic_negate\"><value name=\"BOOL\"><block type=\"variables_get_logic\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" has_entity=\"false\" is_player_var=\"false\"/><field name=\"VAR\">local:validRecipe</field></block></value></block></value><statement name=\"DO0\"><block type=\"gui_clear_slot\"><value name=\"slotid\"><block type=\"math_number\"><field name=\"NUM\">9</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"/></value></block></statement></block></next></block></next></block></xml>"
-  }
-}

@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "tab",
+  "definition": {
+    "name": "TOA Armors",
+    "icon": {
+      "value": "CUSTOM:IronArmor.body"
+    },
+    "showSearch": false
+  }
+}

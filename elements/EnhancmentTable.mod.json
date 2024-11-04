@@ -1,13 +1,13 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "ore_respawn_stone",
-    "textureTop": "ore_respawn_stone",
+    "texture": "magma",
+    "textureTop": "magma",
     "textureLeft": "ore_respawn_stone",
-    "textureFront": "ore_respawn_stone",
+    "textureFront": "magma",
     "textureRight": "ore_respawn_stone",
-    "textureBack": "ore_respawn_stone",
+    "textureBack": "magma",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -34,14 +34,18 @@
       }
     ],
     "name": "Enhancment Table",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaModTab"
+      }
+    ],
     "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
@@ -98,19 +102,13 @@
     },
     "luminance": 0,
     "unbreakable": false,
-    "breakHarvestLevel": 1,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
-    "hasInventory": false,
-    "guiBoundTo": "<NONE>",
-    "openGUIOnRightClick": false,
+    "vanillaToolTier": "STONE",
+    "isBonemealable": false,
+    "hasInventory": true,
+    "guiBoundTo": "EnhancementTableGui",
+    "openGUIOnRightClick": true,
     "inventorySize": 9,
-    "inventoryStackSize": 64,
+    "inventoryStackSize": 1,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [],
@@ -123,11 +121,23 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "spawnWorldTypes": [],
+    "onRightClicked": {
+      "name": "OnTableRightClicked"
+    },
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#3"
+      },
+      {
+        "value": "Blocks.STONE#5"
       }
     ],
     "generationShape": "UNIFORM",

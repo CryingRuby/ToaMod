@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "respawn_ore_texture"
+      },
+      "name": "default"
+    }
+  }
+}

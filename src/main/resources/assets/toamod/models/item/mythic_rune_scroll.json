@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:items/scroll_red"
+    "layer0": "toamod:item/scroll_red"
   }
 }

@@ -1,12 +1,12 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "gui",
   "definition": {
     "type": 1,
     "width": 213,
-    "height": 191,
+    "height": 193,
     "inventoryOffsetX": 0,
-    "inventoryOffsetY": 9,
+    "inventoryOffsetY": 13,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
@@ -16,10 +16,20 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 0,
-          "disableStackInteraction": false,
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
+          "onTakenFromSlot": {
+            "name": "OnForgerGuiComponentTaken"
+          },
+          "onStackTransfer": {
+            "name": "OnForgerGuiComponentTaken"
+          },
           "x": 136,
           "y": 45
         }
@@ -30,10 +40,20 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 1,
-          "disableStackInteraction": false,
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 2,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #1",
+          "onTakenFromSlot": {
+            "name": "OnForgerGuiComponentTaken"
+          },
+          "onStackTransfer": {
+            "name": "OnForgerGuiComponentTaken"
+          },
           "x": 204,
           "y": 45
         }
@@ -41,10 +61,17 @@
       {
         "type": "outputslot",
         "data": {
-          "id": 2,
-          "disableStackInteraction": false,
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #2",
+          "onTakenFromSlot": {
+            "name": "OnForgerGuiCraftedItemTaken"
+          },
+          "onStackTransfer": {
+            "name": "OnForgerGuiCraftedItemTaken"
+          },
           "x": 272,
           "y": 37
         }
@@ -52,13 +79,17 @@
       {
         "type": "button",
         "data": {
-          "text": "Remove Upg. Stone",
+          "name": "button_ssaremove_gemstonessr",
+          "text": "§aRemove Gemstone§r",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "OnForgerGuiRemoveGemPressed"
+          },
           "displayCondition": {
-            "name": "CheckForgerGuiRemoveUpgStone"
+            "name": "CheckForgerGuiRemoveGemstone"
           },
           "width": 98,
           "height": 20,
-          "name": "Remove Upg. Stone",
           "x": 207,
           "y": 83
         }
@@ -66,7 +97,9 @@
       {
         "type": "button",
         "data": {
-          "text": "Remove Rune",
+          "name": "button_ssaremove_runessr",
+          "text": "§aRemove Rune§r",
+          "isUndecorated": false,
           "onClick": {
             "name": "OnForgerGuiRemoveRunePressed"
           },
@@ -75,7 +108,6 @@
           },
           "width": 72,
           "height": 20,
-          "name": "Remove Rune",
           "x": 122,
           "y": 83
         }
@@ -84,14 +116,91 @@
         "type": "outputslot",
         "data": {
           "id": 3,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
-          "name": "Slot #3",
           "x": 272,
           "y": 61
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_15k_cor",
+          "text": {
+            "fixedValue": "15k Cor"
+          },
+          "color": {
+            "value": -22016,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CheckForgerGuiRemoveGemstone"
+          },
+          "x": 235,
+          "y": 105
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_10k_cor",
+          "text": {
+            "fixedValue": "10k Cor"
+          },
+          "color": {
+            "value": -22016,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "CheckForgerGuiRemoveRune"
+          },
+          "x": 141,
+          "y": 105
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_your_cor_ss6varintegercor",
+          "text": {
+            "fixedValue": "",
+            "name": "GuiYourCorValue"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 152,
+          "y": 119
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_forger",
+          "text": {
+            "fixedValue": "Forger"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 192,
+          "y": 27
+        }
       }
     ],
+    "onOpen": {
+      "name": "OnForgerGuiClosed"
+    },
+    "onTick": {
+      "name": "OnForgerGuiTick"
+    },
+    "onClosed": {
+      "name": "OnForgerGuiClosed"
+    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,

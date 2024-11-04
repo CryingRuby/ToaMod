@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "toamod:item/super_enchantment_book"
+  }
+}

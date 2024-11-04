@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:items/magic_dust"
+    "layer0": "toamod:item/magic_dust"
   }
 }

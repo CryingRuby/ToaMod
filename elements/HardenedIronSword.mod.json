@@ -1,29 +1,31 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "tool",
   "definition": {
+    "toolType": "Sword",
     "renderType": 0,
+    "blockingRenderType": 0,
     "texture": "iron_sword",
     "customModelName": "Normal",
-    "name": "§aHardened Iron Sword§r",
-    "specialInfo": [
-      "§7Rarity: §aUncomman§r",
-      "§7Type: §9Sword§r"
-    ],
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
+    "blockingModelName": "Normal blocking",
+    "name": "§fHardened Iron Sword§r",
+    "specialInformation": {
+      "fixedValue": []
     },
-    "toolType": "Sword",
-    "harvestLevel": 1,
-    "efficiency": 4.0,
-    "attackSpeed": 1.0,
-    "enchantability": 2,
-    "damageVsEntity": 4.0,
-    "usageCount": 100,
-    "blocksAffected": [],
-    "hasGlow": false,
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaWeapons"
+      }
+    ],
+    "efficiency": 0.0,
+    "attackSpeed": 1.6,
+    "enchantability": 0,
+    "damageVsEntity": 0.0,
+    "usageCount": 0,
     "repairItems": [],
     "immuneToFire": false,
+    "blockDropsTier": "WOOD",
+    "blocksAffected": [],
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false
   }

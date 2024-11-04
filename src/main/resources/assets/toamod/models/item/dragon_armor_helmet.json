@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:items/dragon_helmet"
+    "layer0": "toamod:item/dragon_helmet"
   }
 }

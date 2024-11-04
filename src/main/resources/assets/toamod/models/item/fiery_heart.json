@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:items/fiery_heart"
+    "layer0": "toamod:item/fiery_heart"
   }
 }

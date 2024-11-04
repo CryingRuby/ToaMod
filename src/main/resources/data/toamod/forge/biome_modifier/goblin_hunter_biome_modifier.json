@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "toamod:plains_forest",
+  "spawners": {
+    "type": "toamod:goblin_hunter",
+    "weight": 20,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

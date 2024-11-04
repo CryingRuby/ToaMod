@@ -1,0 +1,79 @@
+{
+  "_fv": 66,
+  "_type": "jeirecipetype",
+  "definition": {
+    "textureSelector": "blacksmith_table_jei_gui.png",
+    "width": 155,
+    "height": 80,
+    "icon": {
+      "value": "Blocks.SMITHING_TABLE"
+    },
+    "craftingtable": {
+      "value": "CUSTOM:BlacksmithTable"
+    },
+    "enableCraftingtable": true,
+    "title": "Blacksmith Table Type",
+    "slotList": [
+      {
+        "type": "OUTPUT",
+        "x": 122,
+        "y": 32,
+        "slotid": 0
+      },
+      {
+        "type": "INPUT",
+        "x": 14,
+        "y": 14,
+        "slotid": 1
+      },
+      {
+        "type": "INPUT",
+        "x": 32,
+        "y": 14,
+        "slotid": 2
+      },
+      {
+        "type": "INPUT",
+        "x": 50,
+        "y": 14,
+        "slotid": 3
+      },
+      {
+        "type": "INPUT",
+        "x": 14,
+        "y": 32,
+        "slotid": 4
+      },
+      {
+        "type": "INPUT",
+        "x": 32,
+        "y": 32,
+        "slotid": 5
+      },
+      {
+        "type": "INPUT",
+        "x": 50,
+        "y": 32,
+        "slotid": 6
+      },
+      {
+        "type": "INPUT",
+        "x": 14,
+        "y": 50,
+        "slotid": 7
+      },
+      {
+        "type": "INPUT",
+        "x": 32,
+        "y": 50,
+        "slotid": 8
+      },
+      {
+        "type": "INPUT",
+        "x": 50,
+        "y": 50,
+        "slotid": 9
+      }
+    ]
+  }
+}

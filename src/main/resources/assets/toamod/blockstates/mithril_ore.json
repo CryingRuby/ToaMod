@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "toamod:block/mithril_ore"
+    },
+    "facing=east": {
+      "model": "toamod:block/mithril_ore",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "toamod:block/mithril_ore",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "toamod:block/mithril_ore",
+      "y": 270
+    }
+  }
+}

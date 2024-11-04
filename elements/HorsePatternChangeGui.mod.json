@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,13 +13,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_cancel",
           "text": "Cancel",
+          "isUndecorated": false,
           "onClick": {
             "name": "HorseColorChangeCancelPressed"
           },
           "width": 40,
           "height": 20,
-          "name": "Cancel",
           "x": 254,
           "y": 141
         }
@@ -27,13 +28,14 @@
       {
         "type": "button",
         "data": {
+          "name": "button_apply",
           "text": "Apply",
+          "isUndecorated": false,
           "onClick": {
             "name": "OnHorsePatternApplyPressed"
           },
           "width": 35,
           "height": 20,
-          "name": "Apply",
           "x": 256,
           "y": 84
         }
@@ -41,11 +43,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "white_stonkings",
           "text": "White Stonkings",
           "isCheckedProcedure": {
             "name": "CheckWhiteStonkings"
           },
-          "name": "white_stonkings",
           "x": 111,
           "y": 89
         }
@@ -53,12 +55,14 @@
       {
         "type": "label",
         "data": {
-          "text": "choose a pattern and press apply",
+          "name": "label_choose_a_pattern_and_press_apply",
+          "text": {
+            "fixedValue": "choose a pattern and press apply"
+          },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "name": "choose a pattern and press apply",
           "x": 129,
           "y": 48
         }
@@ -66,11 +70,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "white_field",
           "text": "White Field",
           "isCheckedProcedure": {
             "name": "CheckWhiteField"
           },
-          "name": "white_field",
           "x": 111,
           "y": 116
         }
@@ -78,11 +82,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "white_dots",
           "text": "White Dots",
           "isCheckedProcedure": {
             "name": "CheckWhiteDots"
           },
-          "name": "white_dots",
           "x": 111,
           "y": 142
         }
@@ -90,11 +94,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "black_dots",
           "text": "Black Dots",
           "isCheckedProcedure": {
             "name": "CheckBlackDots"
           },
-          "name": "black_dots",
           "x": 111,
           "y": 168
         }
@@ -102,12 +106,14 @@
       {
         "type": "label",
         "data": {
-          "text": "15k Cor",
+          "name": "label_15k_cor",
+          "text": {
+            "fixedValue": "15k Cor"
+          },
           "color": {
             "value": -10496,
             "falpha": 0.0
           },
-          "name": "15k Cor",
           "x": 256,
           "y": 105
         }
@@ -115,11 +121,11 @@
       {
         "type": "checkbox",
         "data": {
+          "name": "none",
           "text": "None",
           "isCheckedProcedure": {
             "name": "CheckNonePattern"
           },
-          "name": "none",
           "x": 111,
           "y": 62
         }

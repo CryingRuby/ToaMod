@@ -1,8 +1,9 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "command",
   "definition": {
     "commandName": "getcor",
+    "type": "STANDARD",
     "permissionLevel": "No requirement",
     "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"number_default\"><field name=\"name\">amount</field><statement name=\"args\"><block type=\"old_command\"><field name=\"procedure\">CmdGetCorExecuted</field></block></statement></block></next></block></xml>"
   }

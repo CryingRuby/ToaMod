@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:items/steak_and_chips"
+    "layer0": "toamod:item/steak_and_chips"
   }
 }

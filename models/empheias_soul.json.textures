@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "empheias_soul_texture"
+      },
+      "name": "default"
+    }
+  }
+}

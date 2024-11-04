@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "toamod:items/golden_sword"
+    "layer0": "toamod:item/golden_sword"
   }
 }

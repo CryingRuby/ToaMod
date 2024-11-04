@@ -57,7 +57,7 @@ public class MiningMilestoneGuiButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = MiningMilestoneGuiMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -70,7 +70,6 @@ public class MiningMilestoneGuiButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		ToamodMod.addNetworkMessage(MiningMilestoneGuiButtonMessage.class, MiningMilestoneGuiButtonMessage::buffer,
-				MiningMilestoneGuiButtonMessage::new, MiningMilestoneGuiButtonMessage::handler);
+		ToamodMod.addNetworkMessage(MiningMilestoneGuiButtonMessage.class, MiningMilestoneGuiButtonMessage::buffer, MiningMilestoneGuiButtonMessage::new, MiningMilestoneGuiButtonMessage::handler);
 	}
 }

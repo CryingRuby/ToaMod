@@ -13,13 +13,8 @@ public class ColdEmbraceMobEffect extends MobEffect {
 	}
 
 	@Override
-	public String getDescriptionId() {
-		return "effect.toamod.cold_embrace";
-	}
-
-	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		ColdEmbraceOnTickProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
+		ColdEmbraceOnTickProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ());
 	}
 
 	@Override

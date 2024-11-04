@@ -1,20 +1,24 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "dwarfs_hymn",
     "customModelName": "Normal",
-    "name": "§6Dwarfs Hymn§r",
+    "customProperties": {},
+    "states": [],
+    "name": "§6Dwarfs Hymn §7(Active Item)§r",
     "rarity": "COMMON",
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaSpecials"
+      }
+    ],
     "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
-    "damageCount": 0,
+    "damageCount": 100,
     "recipeRemainder": {
       "value": ""
     },
@@ -24,14 +28,26 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [
-      "§7Rarity §6Legendary§r",
-      "§7Type:"
-    ],
-    "hasGlow": false,
+    "specialInformation": {
+      "fixedValue": [
+        "§7Right Click to gain §3HASTE I §7for 15 minutes.§r",
+        "§",
+        "§7Type: §9Special§r",
+        "§7Rarity: §6LEGENDARY§r"
+      ]
+    },
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "DwarfsHymnUsed"
+    },
+    "onItemInInventoryTick": {
+      "name": "DwarfsHymnTick"
+    },
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
     "isFood": false,
     "nutritionalValue": 4,
     "saturation": 0.3,

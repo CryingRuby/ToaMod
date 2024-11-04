@@ -1,7 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "toamod:blocks/cristal_ore",
-    "particle": "toamod:blocks/cristal_ore"
-  }
+    "all": "toamod:block/cristal_ore",
+    "particle": "toamod:block/cristal_ore"
+  },
+  "render_type": "solid"
 }

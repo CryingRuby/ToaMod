@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 66,
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
@@ -10,30 +10,28 @@
     "textureLeggings": "iron_leggings",
     "enableBoots": true,
     "textureBoots": "iron_boots",
-    "creativeTab": {
-      "value": "CUSTOM:ToaModTab"
-    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:ToaArmors"
+      }
+    ],
     "armorTextureFile": "iron_",
     "helmetName": "Iron Helmet",
     "bodyName": "Iron Body",
     "leggingsName": "Iron Leggings",
     "bootsName": "Iron Boots",
-    "helmetSpecialInfo": [
-      "§7Rarity: §fComman§r",
-      "§7Type: §9Armor§r"
-    ],
-    "bodySpecialInfo": [
-      "§7Rarity: §fComman§r",
-      "§7Type: §9Armor§r"
-    ],
-    "leggingsSpecialInfo": [
-      "§7Rarity: §fComman§r",
-      "§7Type: §9Armor§r"
-    ],
-    "bootsSpecialInfo": [
-      "§7Rarity: §fComman§r",
-      "§7Type: §9Armor§r"
-    ],
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
     "helmetModelName": "Default",
     "helmetModelPart": "Helmet",
     "helmetModelTexture": "From armor",
@@ -50,16 +48,24 @@
     "bootsModelPartL": "Boots L",
     "bootsModelPartR": "Boots R",
     "bootsModelTexture": "From armor",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
     "helmetImmuneToFire": false,
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
     "maxDamage": 0,
-    "damageValueHelmet": 2,
-    "damageValueBody": 3,
-    "damageValueLeggings": 2,
-    "damageValueBoots": 1,
-    "enchantability": 1,
+    "damageValueHelmet": 0,
+    "damageValueBody": 0,
+    "damageValueLeggings": 0,
+    "damageValueBoots": 0,
+    "enchantability": 0,
     "toughness": 0.0,
     "knockbackResistance": 0.0,
     "equipSound": {

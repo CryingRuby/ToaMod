@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:items/sweat_roasted_chicken"
+    "layer0": "toamod:item/sweat_roasted_chicken"
   }
 }

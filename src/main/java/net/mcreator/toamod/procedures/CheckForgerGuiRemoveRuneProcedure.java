@@ -1,6 +1,6 @@
 package net.mcreator.toamod.procedures;
 
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
@@ -21,36 +21,39 @@ public class CheckForgerGuiRemoveRuneProcedure {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 				BlockEntity _ent = world.getBlockEntity(pos);
 				if (_ent != null)
-					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-							.ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
+					_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
 				return _retval.get();
 			}
 		}.getItemStack(world,
-				new BlockPos(
-						(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new ToamodModVariables.PlayerVariables())).guiBlockX,
-						(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new ToamodModVariables.PlayerVariables())).guiBlockY,
-						(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new ToamodModVariables.PlayerVariables())).guiBlockZ),
-				0)).getOrCreateTag().getBoolean("forgeable") && !("").equals((new Object() {
+				BlockPos.containing((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockX,
+						(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockY,
+						(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockZ),
+				1)).getOrCreateTag().getBoolean("forgeable") && ("Artefact").equals((new Object() {
 					public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 						BlockEntity _ent = world.getBlockEntity(pos);
 						if (_ent != null)
-							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-									.ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
+							_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
 						return _retval.get();
 					}
 				}.getItemStack(world,
-						new BlockPos(
-								(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new ToamodModVariables.PlayerVariables())).guiBlockX,
-								(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new ToamodModVariables.PlayerVariables())).guiBlockY,
-								(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new ToamodModVariables.PlayerVariables())).guiBlockZ),
-						0)).getOrCreateTag().getString("runeType"))) {
+						BlockPos.containing((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockX,
+								(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockY,
+								(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockZ),
+						1)).getOrCreateTag().getString("type"))
+				&& !("-").equals((new Object() {
+					public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
+						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+						BlockEntity _ent = world.getBlockEntity(pos);
+						if (_ent != null)
+							_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
+						return _retval.get();
+					}
+				}.getItemStack(world,
+						BlockPos.containing((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockX,
+								(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockY,
+								(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockZ),
+						1)).getOrCreateTag().getString("runeType"))) {
 			return true;
 		}
 		return false;

@@ -1,0 +1,9 @@
+{
+  "parent": "toamod:custom/empheias_soul",
+  "textures": {
+    "all": "toamod:block/empheias_soul_texture",
+    "particle": "toamod:block/empheias_soul_texture",
+    "0": "toamod:block/empheias_soul_texture"
+  },
+  "render_type": "solid"
+}

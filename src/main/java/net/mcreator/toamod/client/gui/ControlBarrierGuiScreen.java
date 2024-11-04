@@ -1,29 +1,21 @@
-
 package net.mcreator.toamod.client.gui;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.Checkbox;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.toamod.world.inventory.ControlBarrierGuiMenu;
-import net.mcreator.toamod.procedures.ControlbarrierAtSkillProcedure;
-import net.mcreator.toamod.procedures.ControlBarrierChkPlaLvlProcedure;
-import net.mcreator.toamod.procedures.ControlBarrierChkMaSkillProcedure;
-import net.mcreator.toamod.procedures.ControlBarrierChkDeSkillProcedure;
-import net.mcreator.toamod.procedures.ControlBarrierChkBoDefProcedure;
 import net.mcreator.toamod.network.ControlBarrierGuiButtonMessage;
 import net.mcreator.toamod.ToamodMod;
 
 import java.util.HashMap;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarrierGuiMenu> {
@@ -31,16 +23,12 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	Checkbox chkBossesDef;
 	EditBox inputBossesDef;
-	Checkbox chkAttackSkill;
-	Checkbox chkDefenseSkill;
-	Checkbox chkMagicSkill;
 	EditBox inputAttackSLvl;
 	EditBox inputDefenseSLvl;
 	EditBox inputMagicSLvl;
-	Checkbox chkPlayerLvl;
 	EditBox inputPlayerLvl;
+	Button button_confirm;
 
 	public ControlBarrierGuiScreen(ControlBarrierGuiMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -54,19 +42,19 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 	}
 
 	@Override
-	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(ms);
-		super.render(ms, mouseX, mouseY, partialTicks);
-		this.renderTooltip(ms, mouseX, mouseY);
-		inputBossesDef.render(ms, mouseX, mouseY, partialTicks);
-		inputAttackSLvl.render(ms, mouseX, mouseY, partialTicks);
-		inputDefenseSLvl.render(ms, mouseX, mouseY, partialTicks);
-		inputMagicSLvl.render(ms, mouseX, mouseY, partialTicks);
-		inputPlayerLvl.render(ms, mouseX, mouseY, partialTicks);
+	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics);
+		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+		inputBossesDef.render(guiGraphics, mouseX, mouseY, partialTicks);
+		inputAttackSLvl.render(guiGraphics, mouseX, mouseY, partialTicks);
+		inputDefenseSLvl.render(guiGraphics, mouseX, mouseY, partialTicks);
+		inputMagicSLvl.render(guiGraphics, mouseX, mouseY, partialTicks);
+		inputPlayerLvl.render(guiGraphics, mouseX, mouseY, partialTicks);
+		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
-	protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
+	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
@@ -103,34 +91,38 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 	}
 
 	@Override
-	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
+	public void resize(Minecraft minecraft, int width, int height) {
+		String inputBossesDefValue = inputBossesDef.getValue();
+		String inputAttackSLvlValue = inputAttackSLvl.getValue();
+		String inputDefenseSLvlValue = inputDefenseSLvl.getValue();
+		String inputMagicSLvlValue = inputMagicSLvl.getValue();
+		String inputPlayerLvlValue = inputPlayerLvl.getValue();
+		super.resize(minecraft, width, height);
+		inputBossesDef.setValue(inputBossesDefValue);
+		inputAttackSLvl.setValue(inputAttackSLvlValue);
+		inputDefenseSLvl.setValue(inputDefenseSLvlValue);
+		inputMagicSLvl.setValue(inputMagicSLvlValue);
+		inputPlayerLvl.setValue(inputPlayerLvlValue);
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-		Minecraft.getInstance().keyboardHandler.setSendRepeatsToGui(false);
+	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font, Component.translatable("gui.toamod.control_barrier_gui.label_required_bosses_defeated"), 140, 52, -1, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.toamod.control_barrier_gui.label_required_player_level"), 156, 84, -1, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.toamod.control_barrier_gui.label_required_attackskill_level"), 124, 116, -1, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.toamod.control_barrier_gui.label_required_defenseskill_level"), 119, 146, -1, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.toamod.control_barrier_gui.label_required_magicskill_level"), 130, 176, -1, false);
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		chkBossesDef = new Checkbox(this.leftPos + 99, this.topPos + 48, 20, 20, new TextComponent("Bound to Bosses defeated"),
-
-				ControlBarrierChkBoDefProcedure.execute(world, x, y, z));
-		guistate.put("checkbox:chkBossesDef", chkBossesDef);
-		this.addRenderableWidget(chkBossesDef);
-		inputBossesDef = new EditBox(this.font, this.leftPos + 277, this.topPos + 48, 30, 20, new TextComponent("1")) {
-			{
-				setSuggestion("1");
-			}
-
+		inputBossesDef = new EditBox(this.font, this.leftPos + 278, this.topPos + 49, 28, 18, Component.translatable("gui.toamod.control_barrier_gui.inputBossesDef")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputBossesDef").getString());
 				else
 					setSuggestion(null);
 			}
@@ -139,39 +131,21 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputBossesDef").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		guistate.put("text:inputBossesDef", inputBossesDef);
+		inputBossesDef.setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputBossesDef").getString());
 		inputBossesDef.setMaxLength(32767);
+		guistate.put("text:inputBossesDef", inputBossesDef);
 		this.addWidget(this.inputBossesDef);
-		chkAttackSkill = new Checkbox(this.leftPos + 99, this.topPos + 110, 20, 20, new TextComponent("Bound to Attack-Skill"),
-
-				ControlbarrierAtSkillProcedure.execute(world, x, y, z));
-		guistate.put("checkbox:chkAttackSkill", chkAttackSkill);
-		this.addRenderableWidget(chkAttackSkill);
-		chkDefenseSkill = new Checkbox(this.leftPos + 99, this.topPos + 141, 20, 20, new TextComponent("Bound to Defense-Skill"),
-
-				ControlBarrierChkDeSkillProcedure.execute(world, x, y, z));
-		guistate.put("checkbox:chkDefenseSkill", chkDefenseSkill);
-		this.addRenderableWidget(chkDefenseSkill);
-		chkMagicSkill = new Checkbox(this.leftPos + 99, this.topPos + 171, 20, 20, new TextComponent("Bound to Magic-Skill"),
-
-				ControlBarrierChkMaSkillProcedure.execute(world, x, y, z));
-		guistate.put("checkbox:chkMagicSkill", chkMagicSkill);
-		this.addRenderableWidget(chkMagicSkill);
-		inputAttackSLvl = new EditBox(this.font, this.leftPos + 277, this.topPos + 110, 30, 20, new TextComponent("1")) {
-			{
-				setSuggestion("1");
-			}
-
+		inputAttackSLvl = new EditBox(this.font, this.leftPos + 278, this.topPos + 111, 28, 18, Component.translatable("gui.toamod.control_barrier_gui.inputAttackSLvl")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputAttackSLvl").getString());
 				else
 					setSuggestion(null);
 			}
@@ -180,24 +154,21 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputAttackSLvl").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		guistate.put("text:inputAttackSLvl", inputAttackSLvl);
+		inputAttackSLvl.setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputAttackSLvl").getString());
 		inputAttackSLvl.setMaxLength(32767);
+		guistate.put("text:inputAttackSLvl", inputAttackSLvl);
 		this.addWidget(this.inputAttackSLvl);
-		inputDefenseSLvl = new EditBox(this.font, this.leftPos + 277, this.topPos + 141, 30, 20, new TextComponent("1")) {
-			{
-				setSuggestion("1");
-			}
-
+		inputDefenseSLvl = new EditBox(this.font, this.leftPos + 278, this.topPos + 142, 28, 18, Component.translatable("gui.toamod.control_barrier_gui.inputDefenseSLvl")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputDefenseSLvl").getString());
 				else
 					setSuggestion(null);
 			}
@@ -206,24 +177,21 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputDefenseSLvl").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		guistate.put("text:inputDefenseSLvl", inputDefenseSLvl);
+		inputDefenseSLvl.setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputDefenseSLvl").getString());
 		inputDefenseSLvl.setMaxLength(32767);
+		guistate.put("text:inputDefenseSLvl", inputDefenseSLvl);
 		this.addWidget(this.inputDefenseSLvl);
-		inputMagicSLvl = new EditBox(this.font, this.leftPos + 277, this.topPos + 171, 30, 20, new TextComponent("1")) {
-			{
-				setSuggestion("1");
-			}
-
+		inputMagicSLvl = new EditBox(this.font, this.leftPos + 278, this.topPos + 172, 28, 18, Component.translatable("gui.toamod.control_barrier_gui.inputMagicSLvl")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputMagicSLvl").getString());
 				else
 					setSuggestion(null);
 			}
@@ -232,29 +200,21 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputMagicSLvl").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		guistate.put("text:inputMagicSLvl", inputMagicSLvl);
+		inputMagicSLvl.setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputMagicSLvl").getString());
 		inputMagicSLvl.setMaxLength(32767);
+		guistate.put("text:inputMagicSLvl", inputMagicSLvl);
 		this.addWidget(this.inputMagicSLvl);
-		chkPlayerLvl = new Checkbox(this.leftPos + 99, this.topPos + 79, 20, 20, new TextComponent("Bound to Player Level"),
-
-				ControlBarrierChkPlaLvlProcedure.execute(world, x, y, z));
-		guistate.put("checkbox:chkPlayerLvl", chkPlayerLvl);
-		this.addRenderableWidget(chkPlayerLvl);
-		inputPlayerLvl = new EditBox(this.font, this.leftPos + 277, this.topPos + 79, 29, 20, new TextComponent("1")) {
-			{
-				setSuggestion("1");
-			}
-
+		inputPlayerLvl = new EditBox(this.font, this.leftPos + 278, this.topPos + 80, 27, 18, Component.translatable("gui.toamod.control_barrier_gui.inputPlayerLvl")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputPlayerLvl").getString());
 				else
 					setSuggestion(null);
 			}
@@ -263,19 +223,22 @@ public class ControlBarrierGuiScreen extends AbstractContainerScreen<ControlBarr
 			public void moveCursorTo(int pos) {
 				super.moveCursorTo(pos);
 				if (getValue().isEmpty())
-					setSuggestion("1");
+					setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputPlayerLvl").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		guistate.put("text:inputPlayerLvl", inputPlayerLvl);
+		inputPlayerLvl.setSuggestion(Component.translatable("gui.toamod.control_barrier_gui.inputPlayerLvl").getString());
 		inputPlayerLvl.setMaxLength(32767);
+		guistate.put("text:inputPlayerLvl", inputPlayerLvl);
 		this.addWidget(this.inputPlayerLvl);
-		this.addRenderableWidget(new Button(this.leftPos + 335, this.topPos + 191, 61, 20, new TextComponent("Confirm"), e -> {
+		button_confirm = Button.builder(Component.translatable("gui.toamod.control_barrier_gui.button_confirm"), e -> {
 			if (true) {
 				ToamodMod.PACKET_HANDLER.sendToServer(new ControlBarrierGuiButtonMessage(0, x, y, z));
 				ControlBarrierGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
+		}).bounds(this.leftPos + 335, this.topPos + 191, 61, 20).build();
+		guistate.put("button:button_confirm", button_confirm);
+		this.addRenderableWidget(button_confirm);
 	}
 }

@@ -2,7 +2,7 @@ package net.mcreator.toamod.procedures;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 import net.mcreator.toamod.network.ToamodModVariables;
 
@@ -17,7 +17,7 @@ public class CmdResetCorExecutedProcedure {
 				capability.syncPlayerVariables(entity);
 			});
 		}
-		if (entity instanceof Player _player && !_player.level.isClientSide())
-			_player.displayClientMessage(new TextComponent("\uFFFD6Cor -> 0\uFFFDr"), (false));
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal("\uFFFD6Cor -> 0\uFFFDr"), false);
 	}
 }

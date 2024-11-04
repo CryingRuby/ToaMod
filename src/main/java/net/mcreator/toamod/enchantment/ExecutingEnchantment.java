@@ -12,6 +12,6 @@ public class ExecutingEnchantment extends Enchantment {
 
 	@Override
 	public int getMaxLevel() {
-		return 5;
+		return 6;
 	}
 }

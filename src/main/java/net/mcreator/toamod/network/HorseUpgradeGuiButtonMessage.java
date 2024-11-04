@@ -59,7 +59,7 @@ public class HorseUpgradeGuiButtonMessage {
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
-		Level world = entity.level;
+		Level world = entity.level();
 		HashMap guistate = HorseUpgradeGuiMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
@@ -80,7 +80,6 @@ public class HorseUpgradeGuiButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		ToamodMod.addNetworkMessage(HorseUpgradeGuiButtonMessage.class, HorseUpgradeGuiButtonMessage::buffer, HorseUpgradeGuiButtonMessage::new,
-				HorseUpgradeGuiButtonMessage::handler);
+		ToamodMod.addNetworkMessage(HorseUpgradeGuiButtonMessage.class, HorseUpgradeGuiButtonMessage::buffer, HorseUpgradeGuiButtonMessage::new, HorseUpgradeGuiButtonMessage::handler);
 	}
 }
