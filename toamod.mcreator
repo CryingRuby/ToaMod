@@ -14035,7 +14035,6 @@
     "modName": "TOA-Mod",
     "version": "1.0.0",
     "author": "Ruben, MCreator",
-    "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
     "serverSideOnly": false,
     "requiredMods": [],
@@ -14048,7 +14047,7 @@
       "jei"
     ],
     "currentGenerator": "forge-1.20.1",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "credits": "Created using mod maker MCreator",
     "modElementsPackage": "net.mcreator.toamod"
   },
   "mcreatorVersion": 202400232117
