@@ -1,0 +1,12 @@
+Item Upgrades:
+
+- Reforge (Main stat modification like sb) [-Artefacts]
+- Runes (req rune Slot, like gemstone sb)
+- Enchants (self explainatory)
+- Grindstone (10x increase DMG + str by 5 for each) [Weapons]
+- Refinement (10x, increase mining fortune by 5 for each) [Pickaxes]
+- Hardened Scale (10x, increase ar + mr by 5 for each) [Armor]
+- Mana Orbs (5x, increase int by 5 for each) [Armor]
+- Staring (5x, some 10x, increase ALL item stats by 2% for each) [-Artefacts]
+	- some Upgrades like kuudra sets in sb (->Burning, Fiery, Infernal...)
+- Attributes (idrk rn something like kuudra sets in sb) [-Artefacts]
