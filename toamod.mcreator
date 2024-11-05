@@ -12314,6 +12314,66 @@
         ]
       },
       "path": "~/items/Materials"
+    },
+    {
+      "name": "IToaReforgeable",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_toa_reforgeable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/IToaReforgeable.java"
+        ]
+      }
+    },
+    {
+      "name": "ToaRuneSlot",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_rune_slot",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaRuneSlot.java"
+        ]
+      }
+    },
+    {
+      "name": "RuneType",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rune_type",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/RuneType.java"
+        ]
+      }
+    },
+    {
+      "name": "RuneSlot",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "rune_slot",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/RuneSlot.java"
+        ]
+      }
+    },
+    {
+      "name": "ReforgeType",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "reforge_type",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ReforgeType.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
