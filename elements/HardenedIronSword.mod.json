@@ -1,32 +1,56 @@
 {
   "_fv": 66,
-  "_type": "tool",
+  "_type": "item",
   "definition": {
-    "toolType": "Sword",
     "renderType": 0,
-    "blockingRenderType": 0,
-    "texture": "iron_sword",
+    "texture": "hardened_iron_sword",
     "customModelName": "Normal",
-    "blockingModelName": "Normal blocking",
+    "customProperties": {},
+    "states": [],
     "name": "§fHardened Iron Sword§r",
-    "specialInformation": {
-      "fixedValue": []
-    },
+    "rarity": "COMMON",
     "creativeTabs": [
       {
         "value": "CUSTOM:ToaWeapons"
       }
     ],
-    "efficiency": 0.0,
-    "attackSpeed": 1.6,
+    "stackSize": 64,
     "enchantability": 0,
-    "damageVsEntity": 0.0,
-    "usageCount": 0,
-    "repairItems": [],
+    "useDuration": 0,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
     "immuneToFire": false,
-    "blockDropsTier": "WOOD",
-    "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
+    "isFood": false,
+    "nutritionalValue": 4,
+    "saturation": 0.3,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "none"
   }
 }

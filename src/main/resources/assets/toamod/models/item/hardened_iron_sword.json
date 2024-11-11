@@ -1,6 +1,6 @@
 {
-  "parent": "item/handheld",
+  "parent": "item/generated",
   "textures": {
-    "layer0": "toamod:item/iron_sword"
+    "layer0": "toamod:item/hardened_iron_sword"
   }
 }

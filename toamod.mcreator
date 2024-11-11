@@ -170,97 +170,6 @@
       "path": "~/blocks"
     },
     {
-      "name": "LootMagma",
-      "type": "loottable",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "loot_magma",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/toamod/loot_tables/blocks/magma.json"
-        ]
-      },
-      "path": "~/loottables/blocks"
-    },
-    {
-      "name": "LootCursedObsidian",
-      "type": "loottable",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "loot_cursed_obsidian",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/toamod/loot_tables/blocks/cursed_obsidian.json"
-        ]
-      },
-      "path": "~/loottables/blocks"
-    },
-    {
-      "name": "LootCoalOre",
-      "type": "loottable",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "loot_coal_ore",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/toamod/loot_tables/blocks/coal_ore.json"
-        ]
-      },
-      "path": "~/loottables/blocks"
-    },
-    {
-      "name": "LootIronOre",
-      "type": "loottable",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "loot_iron_ore",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/toamod/loot_tables/blocks/iron_ore.json"
-        ]
-      },
-      "path": "~/loottables/blocks"
-    },
-    {
-      "name": "LootGoldOre",
-      "type": "loottable",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "loot_gold_ore",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/toamod/loot_tables/blocks/gold_ore.json"
-        ]
-      },
-      "path": "~/loottables/blocks"
-    },
-    {
-      "name": "LootJadeOre",
-      "type": "loottable",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "loot_jade_ore",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/toamod/loot_tables/blocks/loot_jade_ore.json"
-        ]
-      },
-      "path": "~/loottables/blocks"
-    },
-    {
-      "name": "LootCristalOre",
-      "type": "loottable",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "loot_cristal_ore",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/toamod/loot_tables/blocks/loot_cristal_ore.json"
-        ]
-      },
-      "path": "~/loottables/blocks"
-    },
-    {
       "name": "CristalOre",
       "type": "block",
       "compiles": true,
@@ -333,7 +242,7 @@
       "name": "CristalSword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "cristal_sword",
       "metadata": {
         "files": [
@@ -341,13 +250,13 @@
           "src/main/resources/assets/toamod/models/item/cristal_sword.json"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "WoodenSword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "wooden_sword",
       "metadata": {
         "files": [
@@ -355,13 +264,13 @@
           "src/main/java/net/mcreator/toamod/item/WoodenSwordItem.java"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "IronSword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "iron_sword",
       "metadata": {
         "files": [
@@ -369,13 +278,13 @@
           "src/main/resources/assets/toamod/models/item/iron_sword.json"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "GoldenSword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "golden_sword",
       "metadata": {
         "files": [
@@ -383,7 +292,7 @@
           "src/main/resources/assets/toamod/models/item/golden_sword.json"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "Ignite",
@@ -2292,7 +2201,7 @@
       "name": "JadeSword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "jade_sword",
       "metadata": {
         "files": [
@@ -2300,13 +2209,13 @@
           "src/main/resources/assets/toamod/models/item/jade_sword.json"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "DeathsDance",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "deaths_dance",
       "metadata": {
         "files": [
@@ -2314,13 +2223,13 @@
           "src/main/java/net/mcreator/toamod/item/DeathsDanceItem.java"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "DragonSlayer",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "dragon_slayer",
       "metadata": {
         "files": [
@@ -2328,13 +2237,13 @@
           "src/main/resources/assets/toamod/models/item/dragon_slayer.json"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "TheDarkBlade",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "the_dark_blade",
       "metadata": {
         "files": [
@@ -2342,13 +2251,13 @@
           "src/main/java/net/mcreator/toamod/item/TheDarkBladeItem.java"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "AncientGuardianWarhammer",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "ancient_guardian_warhammer",
       "metadata": {
         "files": [
@@ -2356,7 +2265,7 @@
           "src/main/java/net/mcreator/toamod/item/AncientGuardianWarhammerItem.java"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "CmdStatsExecuted",
@@ -2432,7 +2341,7 @@
       "name": "FlameSword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "flame_sword",
       "metadata": {
         "files": [
@@ -2440,7 +2349,7 @@
           "src/main/resources/assets/toamod/models/item/flame_sword.json"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "DeathsDanceItemIsCrafted",
@@ -2562,20 +2471,6 @@
         ]
       },
       "path": "~/items/Materials"
-    },
-    {
-      "name": "HardenedIronSword",
-      "type": "tool",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hardened_iron_sword",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/item/HardenedIronSwordItem.java",
-          "src/main/resources/assets/toamod/models/item/hardened_iron_sword.json"
-        ]
-      },
-      "path": "~/tools"
     },
     {
       "name": "WoodArmor",
@@ -7085,7 +6980,7 @@
       "name": "StarfallHyperion",
       "type": "item",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "starfall_hyperion",
       "metadata": {
         "files": [
@@ -7093,13 +6988,13 @@
           "src/main/resources/assets/toamod/models/item/starfall_hyperion.json"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "ScaldrisHyperion",
       "type": "item",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "scaldris_hyperion",
       "metadata": {
         "files": [
@@ -7107,7 +7002,7 @@
           "src/main/resources/assets/toamod/models/item/scaldris_hyperion.json"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "CookingSkillItem",
@@ -9504,7 +9399,7 @@
       "name": "IllfangsCutlass",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "illfangs_cutlass",
       "metadata": {
         "files": [
@@ -9512,7 +9407,7 @@
           "src/main/java/net/mcreator/toamod/item/IllfangsCutlassItem.java"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "OnMagicCrafterGuiTick",
@@ -12045,7 +11940,7 @@
       "name": "MithrilSword",
       "type": "tool",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "mithril_sword",
       "metadata": {
         "files": [
@@ -12053,7 +11948,7 @@
           "src/main/java/net/mcreator/toamod/item/MithrilSwordItem.java"
         ]
       },
-      "path": "~/tools"
+      "path": "~/tools/Weapons"
     },
     {
       "name": "GameStartFractionSelected",
@@ -12191,19 +12086,6 @@
       "path": "~/items/Materials"
     },
     {
-      "name": "ToaWeapon",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "toa_weapon",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/ToaWeapon.java"
-        ]
-      },
-      "path": "~/classes"
-    },
-    {
       "name": "ToaProperties",
       "type": "code",
       "compiles": true,
@@ -12325,7 +12207,8 @@
         "files": [
           "src/main/java/net/mcreator/toamod/IToaReforgeable.java"
         ]
-      }
+      },
+      "path": "~/classes"
     },
     {
       "name": "ToaRuneSlot",
@@ -12337,7 +12220,8 @@
         "files": [
           "src/main/java/net/mcreator/toamod/ToaRuneSlot.java"
         ]
-      }
+      },
+      "path": "~/classes"
     },
     {
       "name": "RuneType",
@@ -12349,7 +12233,8 @@
         "files": [
           "src/main/java/net/mcreator/toamod/RuneType.java"
         ]
-      }
+      },
+      "path": "~/classes"
     },
     {
       "name": "RuneSlot",
@@ -12361,7 +12246,8 @@
         "files": [
           "src/main/java/net/mcreator/toamod/RuneSlot.java"
         ]
-      }
+      },
+      "path": "~/classes"
     },
     {
       "name": "ReforgeType",
@@ -12372,6 +12258,70 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/ReforgeType.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "HardenedIronSword",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "hardened_iron_sword",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/item/HardenedIronSwordItem.java",
+          "src/main/resources/assets/toamod/models/item/hardened_iron_sword.json"
+        ]
+      },
+      "path": "~/tools/Weapons"
+    },
+    {
+      "name": "ToaWeapon",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_weapon",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaWeapon.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "IToaSetBonus",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_toa_set_bonus",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/IToaSetBonus.java"
+        ]
+      }
+    },
+    {
+      "name": "ToaSetBonusType",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_set_bonus_type",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaSetBonusType.java"
+        ]
+      }
+    },
+    {
+      "name": "ToaElement",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_element",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaElement.java"
         ]
       }
     }
@@ -12884,7 +12834,6 @@
     "ITEMS:minecraft:swords": [
       "~CUSTOM:MithrilSword",
       "~CUSTOM:IllfangsCutlass",
-      "~CUSTOM:HardenedIronSword",
       "~CUSTOM:FlameSword",
       "~CUSTOM:AncientGuardianWarhammer",
       "~CUSTOM:TheDarkBlade",
@@ -13678,7 +13627,16 @@
       },
       {
         "name": "tools",
-        "children": []
+        "children": [
+          {
+            "name": "Weapons",
+            "children": []
+          },
+          {
+            "name": "Pickaxes",
+            "children": []
+          }
+        ]
       },
       {
         "name": "commands",

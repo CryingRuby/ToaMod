@@ -1,37 +1,26 @@
 
 package net.mcreator.toamod.item;
 
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.network.chat.Component;
 
-public class GoldenSwordItem extends SwordItem {
+import net.mcreator.toamod.ToaWeapon;
+import net.mcreator.toamod.ToaRarity;
+import net.mcreator.toamod.ToaProperties;
+
+import java.util.List;
+
+public class GoldenSwordItem extends ToaWeapon {
 	public GoldenSwordItem() {
-		super(new Tier() {
-			public int getUses() {
-				return 0;
-			}
+		this.toaProperties = new ToaProperties("Sword", ToaRarity.UNCOMMAN).str(30).cd(10);
+	}
 
-			public float getSpeed() {
-				return 1f;
-			}
-
-			public float getAttackDamageBonus() {
-				return -3.9f;
-			}
-
-			public int getLevel() {
-				return 1;
-			}
-
-			public int getEnchantmentValue() {
-				return 2;
-			}
-
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
-			}
-		}, 3, -2.45f, new Item.Properties());
+	@Override
+	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.literal("\u00A77Type: \u00A79Sword\u00A7r"));
+		list.add(Component.literal("\u00A77Rarity: \u00A7aUNCOMMAN\u00A7r"));
 	}
 }

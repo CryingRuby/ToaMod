@@ -235,7 +235,6 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> LOG = block(ToamodModBlocks.LOG);
 	public static final RegistryObject<Item> PURE_GOLD = REGISTRY.register("pure_gold", () -> new PureGoldItem());
 	public static final RegistryObject<Item> PURE_IRON = REGISTRY.register("pure_iron", () -> new PureIronItem());
-	public static final RegistryObject<Item> HARDENED_IRON_SWORD = REGISTRY.register("hardened_iron_sword", () -> new HardenedIronSwordItem());
 	public static final RegistryObject<Item> WOOD_ARMOR_HELMET = REGISTRY.register("wood_armor_helmet", () -> new WoodArmorItem.Helmet());
 	public static final RegistryObject<Item> WOOD_ARMOR_CHESTPLATE = REGISTRY.register("wood_armor_chestplate", () -> new WoodArmorItem.Chestplate());
 	public static final RegistryObject<Item> WOOD_ARMOR_LEGGINGS = REGISTRY.register("wood_armor_leggings", () -> new WoodArmorItem.Leggings());
@@ -456,6 +455,7 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> BOSS_KEY_TIER_4 = REGISTRY.register("boss_key_tier_4", () -> new BossKeyTier4Item());
 	public static final RegistryObject<Item> BOSS_KEY_TIER_5 = REGISTRY.register("boss_key_tier_5", () -> new BossKeyTier5Item());
 	public static final RegistryObject<Item> CONDENSED_IRON_BLOCK = block(ToamodModBlocks.CONDENSED_IRON_BLOCK);
+	public static final RegistryObject<Item> HARDENED_IRON_SWORD = REGISTRY.register("hardened_iron_sword", () -> new HardenedIronSwordItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

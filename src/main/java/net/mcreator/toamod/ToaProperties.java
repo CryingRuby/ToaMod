@@ -12,17 +12,17 @@ public class ToaProperties {
 	public float[] WIS;
 	public float CR;
 	public float CD;
-	public String ELEMENT;
+	public ToaElement ELEMENT;
 	public float[] ELEMENTAL_DAMAGE;
 	public float LIFESTEAL;
 	public float[] HP;
 
-	ToaProperties(String type, ToaRarity rarity){
+	public ToaProperties(String type, ToaRarity rarity){
 		this.type = type;
 		this.rarity = rarity;
 	}
 
-	ToaProperties(String type, ToaRarity rarity, String subType, float[] _str, float[] _dex,float[] _con,float[] _int,float[] _wis, float _cr, float _cd, String element, float[] elemental_damage, float lifesteal, float[] _hp){
+	public ToaProperties(String type, ToaRarity rarity, String subType, float[] _str, float[] _dex,float[] _con,float[] _int,float[] _wis, float _cr, float _cd, String element, float[] elemental_damage, float lifesteal, float[] _hp){
 		this.type = type;
 		this.rarity = rarity;
 		this.subType = subType;
@@ -38,89 +38,89 @@ public class ToaProperties {
 		this.LIFESTEAL = lifesteal;
 		this.HP = _hp;
 	}
-
-	public ToaProperties withSubType(String subType){
+	
+	public ToaProperties subType(String subType){
 		this.subType = subType;
 		return this;
 	}
 
-	public ToaProperties withStr(float[] _str){
+	public ToaProperties str(float[] _str){
 		this.STR = _str;
 		return this;
 	}
 
-	public ToaProperties withStr(float _str){
+	public ToaProperties str(float _str){
 		this.STR = new float[] {_str, 0};
 		return this;
 	}
 
-	public ToaProperties withDex(float[] _dex){
+	public ToaProperties dex(float[] _dex){
 		this.DEX = _dex;
 		return this;
 	}
 
-	public ToaProperties withDex(float _dex){
+	public ToaProperties dex(float _dex){
 		this.DEX = new float[] {_dex, 0};
 		return this;
 	}
 	
-	public ToaProperties withCon(float[] _con){
+	public ToaProperties con(float[] _con){
 		this.CON = _con;
 		return this;
 	}
 
-	public ToaProperties withCon(float _con){
+	public ToaProperties con(float _con){
 		this.CON = new float[] {_con, 0};
 		return this;
 	}
 
-	public ToaProperties withInt(float[] _int){
+	public ToaProperties _int(float[] _int){
 		this.INT = _int;
 		return this;
 	}
 
-	public ToaProperties withInt(float _int){
+	public ToaProperties _int(float _int){
 		this.INT = new float[] {_int, 0};
 		return this;
 	}
 
-	public ToaProperties withWis(float[] _wis){
+	public ToaProperties wis(float[] _wis){
 		this.WIS = _wis;
 		return this;
 	}
 
-	public ToaProperties withWisdom(float _wis){
+	public ToaProperties wis(float _wis){
 		this.WIS = new float[] {_wis, 0};;
 		return this;
 	}
 
-	public ToaProperties withCr(float cr){
+	public ToaProperties cr(float cr){
 		this.CR = cr;
 		return this;
 	}
 
-	public ToaProperties withCd(float cd){
+	public ToaProperties cd(float cd){
 		this.CD = cd;
 		return this;
 	}
 
-	public ToaProperties withElement(String element, float[] elemental_damage){
+	public ToaProperties element(ToaElement element, float[] elemental_damage){
 		this.ELEMENT = element;
 		this.ELEMENTAL_DAMAGE = elemental_damage;
 		return this;
 	}
 
-	public ToaProperties withLifesteal(float lifesteal){
+	public ToaProperties lifesteal(float lifesteal){
 		this.LIFESTEAL = lifesteal;
 		return this;
 	}
 
-	public ToaProperties withHP(float[] hp){
+	public ToaProperties hp(float[] hp){
 		this.HP = hp;
 		return this;
 	}
 
-	public ToaProperties withHP(float hp){
+	public ToaProperties hp(float hp){
 		this.HP = new float[] {hp, 0};
 		return this;
 	}

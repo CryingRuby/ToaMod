@@ -318,10 +318,10 @@ public class ToamodModTabs {
 				tabData.accept(ToamodModItems.THE_DARK_BLADE.get());
 				tabData.accept(ToamodModItems.ANCIENT_GUARDIAN_WARHAMMER.get());
 				tabData.accept(ToamodModItems.FLAME_SWORD.get());
-				tabData.accept(ToamodModItems.HARDENED_IRON_SWORD.get());
 				tabData.accept(ToamodModItems.STARFALL_HYPERION.get());
 				tabData.accept(ToamodModItems.SCALDRIS_HYPERION.get());
 				tabData.accept(ToamodModItems.ILLFANGS_CUTLASS.get());
+				tabData.accept(ToamodModItems.HARDENED_IRON_SWORD.get());
 			})
 
 					.build());
