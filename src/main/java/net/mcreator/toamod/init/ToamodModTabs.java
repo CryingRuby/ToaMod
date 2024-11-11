@@ -322,6 +322,7 @@ public class ToamodModTabs {
 				tabData.accept(ToamodModItems.SCALDRIS_HYPERION.get());
 				tabData.accept(ToamodModItems.ILLFANGS_CUTLASS.get());
 				tabData.accept(ToamodModItems.HARDENED_IRON_SWORD.get());
+				tabData.accept(ToamodModItems.INFERNAL_HYPERION.get());
 			})
 
 					.build());

@@ -17,31 +17,7 @@ import java.util.List;
 
 public class JadeSwordItem extends SwordItem {
 	public JadeSwordItem() {
-		super(new Tier() {
-			public int getUses() {
-				return 0;
-			}
-
-			public float getSpeed() {
-				return 4f;
-			}
-
-			public float getAttackDamageBonus() {
-				return 0f;
-			}
-
-			public int getLevel() {
-				return 1;
-			}
-
-			public int getEnchantmentValue() {
-				return 2;
-			}
-
-			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
-			}
-		}, 3, -2.4f, new Item.Properties());
+		toaProperties = new ToaProperties("Sword", ToaRarity.RARE).str(1);
 	}
 
 	@Override
@@ -49,11 +25,5 @@ public class JadeSwordItem extends SwordItem {
 		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.literal("\u00A77Rarity: \u00A7bRare\u00A7r"));
 		list.add(Component.literal("\u00A77Type: \u00A79Sword\u00A7r"));
-	}
-
-	@Override
-	public void onCraftedBy(ItemStack itemstack, Level world, Player entity) {
-		super.onCraftedBy(itemstack, world, entity);
-		JadeSwordItemCraftedProcedure.execute(itemstack);
 	}
 }

@@ -12323,7 +12323,22 @@
         "files": [
           "src/main/java/net/mcreator/toamod/ToaElement.java"
         ]
-      }
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "InfernalHyperion",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "infernal_hyperion",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/toamod/models/item/infernal_hyperion.json",
+          "src/main/java/net/mcreator/toamod/item/InfernalHyperionItem.java"
+        ]
+      },
+      "path": "~/tools/Weapons"
     }
   ],
   "variable_elements": [
@@ -12872,6 +12887,7 @@
       "stat.cr.description": "\u0027{\"text\":\"§7Increases your chance hitting critically.§r\"}\u0027",
       "item.toamod.cristal_armor_helmet": "§bCristal Helmet§r",
       "skill.magic.rewards.21": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
+      "item.toamod.infernal_hyperion": "§dInfernal Hyperion§r",
       "skill.magic.rewards.20": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
       "skill.magic.rewards.25": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
       "skill.magic.rewards.24": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",

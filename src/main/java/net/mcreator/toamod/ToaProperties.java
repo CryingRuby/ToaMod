@@ -16,6 +16,8 @@ public class ToaProperties {
 	public float[] ELEMENTAL_DAMAGE;
 	public float LIFESTEAL;
 	public float[] HP;
+	public float[] MF;
+	public float[] MINF;
 
 	public ToaProperties(String type, ToaRarity rarity){
 		this.type = type;
@@ -122,6 +124,26 @@ public class ToaProperties {
 
 	public ToaProperties hp(float hp){
 		this.HP = new float[] {hp, 0};
+		return this;
+	}
+
+	public ToaProperties mf(float[] mf){
+		this.MF = mf;
+		return this;
+	}
+
+	public ToaProperties mf(float mf){
+		this.MF = new float[] {mf, 0};
+		return this;
+	}
+
+	public ToaProperties minf(float[] minf){
+		this.MINF = minf;
+		return this;
+	}
+
+	public ToaProperties minf(float minf){
+		this.MINF = new float[] {minf, 0};
 		return this;
 	}
 }

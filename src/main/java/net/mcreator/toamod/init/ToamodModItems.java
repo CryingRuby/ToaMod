@@ -91,6 +91,7 @@ import net.mcreator.toamod.item.JadeArmorItem;
 import net.mcreator.toamod.item.IronSwordItem;
 import net.mcreator.toamod.item.IronBarItem;
 import net.mcreator.toamod.item.IronArmorItem;
+import net.mcreator.toamod.item.InfernalHyperionItem;
 import net.mcreator.toamod.item.IllfangsCutlassItem;
 import net.mcreator.toamod.item.HardenedIronSwordItem;
 import net.mcreator.toamod.item.HardenedIronArmorItem;
@@ -456,6 +457,7 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> BOSS_KEY_TIER_5 = REGISTRY.register("boss_key_tier_5", () -> new BossKeyTier5Item());
 	public static final RegistryObject<Item> CONDENSED_IRON_BLOCK = block(ToamodModBlocks.CONDENSED_IRON_BLOCK);
 	public static final RegistryObject<Item> HARDENED_IRON_SWORD = REGISTRY.register("hardened_iron_sword", () -> new HardenedIronSwordItem());
+	public static final RegistryObject<Item> INFERNAL_HYPERION = REGISTRY.register("infernal_hyperion", () -> new InfernalHyperionItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items
