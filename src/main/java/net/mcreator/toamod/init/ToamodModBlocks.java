@@ -83,7 +83,6 @@ public class ToamodModBlocks {
 	public static final RegistryObject<Block> ENHANCMENT_TABLE = REGISTRY.register("enhancment_table", () -> new EnhancmentTableBlock());
 	public static final RegistryObject<Block> MAGIC_CRAFTER = REGISTRY.register("magic_crafter", () -> new MagicCrafterBlock());
 	public static final RegistryObject<Block> FORGER = REGISTRY.register("forger", () -> new ForgerBlock());
-	public static final RegistryObject<Block> BLACKSMITH_TABLE = REGISTRY.register("blacksmith_table", () -> new BlacksmithTableBlock());
 	public static final RegistryObject<Block> HARD_STONE = REGISTRY.register("hard_stone", () -> new HardStoneBlock());
 	public static final RegistryObject<Block> HARD_STONE_SLAB = REGISTRY.register("hard_stone_slab", () -> new HardStoneSlabBlock());
 	public static final RegistryObject<Block> GOBLIN_OMLETTE = REGISTRY.register("goblin_omlette", () -> new GoblinOmletteBlock());
@@ -102,6 +101,7 @@ public class ToamodModBlocks {
 	public static final RegistryObject<Block> RESPAWN_ORE = REGISTRY.register("respawn_ore", () -> new RespawnOreBlock());
 	public static final RegistryObject<Block> MITHRIL_ORE = REGISTRY.register("mithril_ore", () -> new MithrilOreBlock());
 	public static final RegistryObject<Block> CONDENSED_IRON_BLOCK = REGISTRY.register("condensed_iron_block", () -> new CondensedIronBlockBlock());
+	public static final RegistryObject<Block> BLACKSMITH_TABLE = REGISTRY.register("blacksmith_table", () -> new BlacksmithTableBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

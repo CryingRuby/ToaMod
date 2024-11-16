@@ -6015,24 +6015,6 @@
       "path": "~/guis"
     },
     {
-      "name": "BlacksmithTable",
-      "type": "block",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "blacksmith_table",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/toamod/blockstates/blacksmith_table.json",
-          "src/main/resources/data/toamod/loot_tables/blocks/blacksmith_table.json",
-          "src/main/resources/assets/toamod/models/block/blacksmith_table.json",
-          "src/main/resources/assets/toamod/models/item/blacksmith_table.json",
-          "src/main/java/net/mcreator/toamod/block/BlacksmithTableBlock.java",
-          "src/main/java/net/mcreator/toamod/block/entity/BlacksmithTableBlockEntity.java"
-        ]
-      },
-      "path": "~/blocks"
-    },
-    {
       "name": "CopyNBTToItem",
       "type": "procedure",
       "compiles": true,
@@ -12339,6 +12321,24 @@
         ]
       },
       "path": "~/tools/Weapons"
+    },
+    {
+      "name": "BlacksmithTable",
+      "type": "block",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "blacksmith_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/toamod/blockstates/blacksmith_table.json",
+          "src/main/resources/data/toamod/loot_tables/blocks/blacksmith_table.json",
+          "src/main/resources/assets/toamod/models/block/blacksmith_table.json",
+          "src/main/resources/assets/toamod/models/item/blacksmith_table.json",
+          "src/main/java/net/mcreator/toamod/block/BlacksmithTableBlock.java",
+          "src/main/java/net/mcreator/toamod/block/entity/BlacksmithTableBlockEntity.java"
+        ]
+      },
+      "path": "~/blocks"
     }
   ],
   "variable_elements": [
@@ -12845,20 +12845,6 @@
   "tag_elements": {
     "BLOCKS:minecraft:slabs": [
       "~CUSTOM:HardStoneSlab"
-    ],
-    "ITEMS:minecraft:swords": [
-      "~CUSTOM:MithrilSword",
-      "~CUSTOM:IllfangsCutlass",
-      "~CUSTOM:FlameSword",
-      "~CUSTOM:AncientGuardianWarhammer",
-      "~CUSTOM:TheDarkBlade",
-      "~CUSTOM:DragonSlayer",
-      "~CUSTOM:DeathsDance",
-      "~CUSTOM:JadeSword",
-      "~CUSTOM:GoldenSword",
-      "~CUSTOM:IronSword",
-      "~CUSTOM:WoodenSword",
-      "~CUSTOM:CristalSword"
     ]
   },
   "tab_element_order": {},
@@ -12940,7 +12926,7 @@
       "enchant.powerful.description": "\u0027{\"text\":\"§7Increases the items §5Magic Power§7.§r\"}\u0027",
       "item.toamod.hardened_iron_armor_helmet": "§fHardened Iron Helmet§r",
       "biome.toamod.overgrown_cliffs": "Overgrown Cliffs",
-      "block.toamod.blacksmith_table": "Weapon Table",
+      "block.toamod.blacksmith_table": "Blacksmith Table",
       "msg.enemy_immune": "§cThis entity is immune to any damage right now!§r",
       "stat.cd.description": "\u0027{\"text\":\"§7Bonus damage percent upon hitting critically.§r\"}\u0027",
       "item.toamod.milestones_mining_item.description": "\u0027{\"text\":\"§7Mine any ore to progress towards§r\"}\u0027,\u0027{\"text\":\"§7your §bDwarfs Way§7 milestone§r\"}\u0027",

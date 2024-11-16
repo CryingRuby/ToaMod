@@ -1,5 +1,7 @@
 package net.mcreator.toamod;
 
+import org.checkerframework.checker.units.qual.cd;
+
 public class ToaProperties {
 	public ToaRarity rarity;
 	public String type;
@@ -19,12 +21,12 @@ public class ToaProperties {
 	public float[] MF;
 	public float[] MINF;
 
-	public ToaProperties(String type, ToaRarity rarity){
+	public ToaProperties(String type, ToaRarity rarity) {
 		this.type = type;
 		this.rarity = rarity;
 	}
 
-	public ToaProperties(String type, ToaRarity rarity, String subType, float[] _str, float[] _dex,float[] _con,float[] _int,float[] _wis, float _cr, float _cd, String element, float[] elemental_damage, float lifesteal, float[] _hp){
+	public ToaProperties(String type, ToaRarity rarity, String subType, float[] _str, float[] _dex, float[] _con, float[] _int, float[] _wis, float _cr, float _cd, ToaElement element, float[] elemental_damage, float lifesteal, float[] _hp) {
 		this.type = type;
 		this.rarity = rarity;
 		this.subType = subType;
@@ -40,111 +42,116 @@ public class ToaProperties {
 		this.LIFESTEAL = lifesteal;
 		this.HP = _hp;
 	}
-	
-	public ToaProperties subType(String subType){
+
+	public ToaProperties subType(String subType) {
 		this.subType = subType;
 		return this;
 	}
 
-	public ToaProperties str(float[] _str){
+	public ToaProperties str(float[] _str) {
 		this.STR = _str;
 		return this;
 	}
 
-	public ToaProperties str(float _str){
-		this.STR = new float[] {_str, 0};
+	public ToaProperties str(float _str) {
+		this.STR = new float[]{_str, 0};
 		return this;
 	}
 
-	public ToaProperties dex(float[] _dex){
+	public ToaProperties dex(float[] _dex) {
 		this.DEX = _dex;
 		return this;
 	}
 
-	public ToaProperties dex(float _dex){
-		this.DEX = new float[] {_dex, 0};
+	public ToaProperties dex(float _dex) {
+		this.DEX = new float[]{_dex, 0};
 		return this;
 	}
-	
-	public ToaProperties con(float[] _con){
+
+	public ToaProperties con(float[] _con) {
 		this.CON = _con;
 		return this;
 	}
 
-	public ToaProperties con(float _con){
-		this.CON = new float[] {_con, 0};
+	public ToaProperties con(float _con) {
+		this.CON = new float[]{_con, 0};
 		return this;
 	}
 
-	public ToaProperties _int(float[] _int){
+	public ToaProperties _int(float[] _int) {
 		this.INT = _int;
 		return this;
 	}
 
-	public ToaProperties _int(float _int){
-		this.INT = new float[] {_int, 0};
+	public ToaProperties _int(float _int) {
+		this.INT = new float[]{_int, 0};
 		return this;
 	}
 
-	public ToaProperties wis(float[] _wis){
+	public ToaProperties wis(float[] _wis) {
 		this.WIS = _wis;
 		return this;
 	}
 
-	public ToaProperties wis(float _wis){
-		this.WIS = new float[] {_wis, 0};;
+	public ToaProperties wis(float _wis) {
+		this.WIS = new float[]{_wis, 0};;
 		return this;
 	}
 
-	public ToaProperties cr(float cr){
+	public ToaProperties cr(float cr) {
 		this.CR = cr;
 		return this;
 	}
 
-	public ToaProperties cd(float cd){
+	public ToaProperties cd(float cd) {
 		this.CD = cd;
 		return this;
 	}
 
-	public ToaProperties element(ToaElement element, float[] elemental_damage){
+	public ToaProperties element(ToaElement element, float[] elemental_damage) {
 		this.ELEMENT = element;
 		this.ELEMENTAL_DAMAGE = elemental_damage;
 		return this;
 	}
 
-	public ToaProperties lifesteal(float lifesteal){
+	public ToaProperties element(ToaElement element, float elemental_damage) {
+		this.ELEMENT = element;
+		this.ELEMENTAL_DAMAGE = new float[]{elemental_damage, 0};
+		return this;
+	}
+
+	public ToaProperties lifesteal(float lifesteal) {
 		this.LIFESTEAL = lifesteal;
 		return this;
 	}
 
-	public ToaProperties hp(float[] hp){
+	public ToaProperties hp(float[] hp) {
 		this.HP = hp;
 		return this;
 	}
 
-	public ToaProperties hp(float hp){
-		this.HP = new float[] {hp, 0};
+	public ToaProperties hp(float hp) {
+		this.HP = new float[]{hp, 0};
 		return this;
 	}
 
-	public ToaProperties mf(float[] mf){
+	public ToaProperties mf(float[] mf) {
 		this.MF = mf;
 		return this;
 	}
 
-	public ToaProperties mf(float mf){
-		this.MF = new float[] {mf, 0};
+	public ToaProperties mf(float mf) {
+		this.MF = new float[]{mf, 0};
 		return this;
 	}
 
-	public ToaProperties minf(float[] minf){
+	public ToaProperties minf(float[] minf) {
 		this.MINF = minf;
 		return this;
 	}
 
-	public ToaProperties minf(float minf){
-		this.MINF = new float[] {minf, 0};
+	public ToaProperties minf(float minf) {
+		this.MINF = new float[]{minf, 0};
 		return this;
 	}
 }
-

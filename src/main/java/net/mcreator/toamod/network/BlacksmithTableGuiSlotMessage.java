@@ -74,7 +74,7 @@ public class BlacksmithTableGuiSlotMessage {
 		if(slot == 0){
 			if(changeType == 1 || changeType == 2){
 				//OnBlacksmithTableCompletedTakenProcedure.execute(world, entity);
-				boundBlockEntity.extractItemsFromCrafting();
+				//boundBlockEntity.extractItemsFromCrafting();
 			}
 		}
 		else{

@@ -4,6 +4,7 @@ package net.mcreator.toamod.item;
 import net.mcreator.toamod.ToaWeapon;
 import net.mcreator.toamod.ToaRarity;
 import net.mcreator.toamod.ToaProperties;
+import net.mcreator.toamod.ToaElement;
 
 public class InfernalHyperionItem extends ToaWeapon {
 	public InfernalHyperionItem() {

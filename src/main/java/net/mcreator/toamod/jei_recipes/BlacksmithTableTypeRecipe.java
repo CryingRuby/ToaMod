@@ -81,6 +81,10 @@ public class BlacksmithTableTypeRecipe implements Recipe<SimpleContainer> {
 		return output.copy();
 	}
 
+	public ItemStack getResultItem(){
+		return output.copy();
+	}
+
 	@Override
 	public ResourceLocation getId() {
 		return id;

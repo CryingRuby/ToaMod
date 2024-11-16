@@ -304,7 +304,6 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> GEMSTONE_DIAMOND = REGISTRY.register("gemstone_diamond", () -> new GemstoneDiamondItem());
 	public static final RegistryObject<Item> GEMSTONE_SAPHIRE = REGISTRY.register("gemstone_saphire", () -> new GemstoneSaphireItem());
 	public static final RegistryObject<Item> ENCH_BOOK = REGISTRY.register("ench_book", () -> new EnchBookItem());
-	public static final RegistryObject<Item> BLACKSMITH_TABLE = block(ToamodModBlocks.BLACKSMITH_TABLE);
 	public static final RegistryObject<Item> EMPTY_BOOK = REGISTRY.register("empty_book", () -> new EmptyBookItem());
 	public static final RegistryObject<Item> HARD_STONE = block(ToamodModBlocks.HARD_STONE);
 	public static final RegistryObject<Item> HARD_STONE_SLAB = block(ToamodModBlocks.HARD_STONE_SLAB);
@@ -458,6 +457,7 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> CONDENSED_IRON_BLOCK = block(ToamodModBlocks.CONDENSED_IRON_BLOCK);
 	public static final RegistryObject<Item> HARDENED_IRON_SWORD = REGISTRY.register("hardened_iron_sword", () -> new HardenedIronSwordItem());
 	public static final RegistryObject<Item> INFERNAL_HYPERION = REGISTRY.register("infernal_hyperion", () -> new InfernalHyperionItem());
+	public static final RegistryObject<Item> BLACKSMITH_TABLE = block(ToamodModBlocks.BLACKSMITH_TABLE);
 
 	// Start of user code block custom items
 	// End of user code block custom items

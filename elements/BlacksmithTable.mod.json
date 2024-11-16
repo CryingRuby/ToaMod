@@ -2,15 +2,15 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "weapon_table_texture",
-    "textureTop": "",
-    "textureLeft": "",
-    "textureFront": "",
-    "textureRight": "",
-    "textureBack": "",
+    "texture": "armory_table_texture",
+    "textureTop": "armory_table_texture",
+    "textureLeft": "armory_table_texture",
+    "textureFront": "armory_table_texture",
+    "textureRight": "armory_table_texture",
+    "textureBack": "armory_table_texture",
     "renderType": 2,
     "customModelName": "weapon_table_model:default",
-    "rotationMode": 1,
+    "rotationMode": 0,
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
@@ -33,7 +33,7 @@
         "subtract": false
       }
     ],
-    "name": "Weapon Table",
+    "name": "Blacksmith Table",
     "specialInformation": {
       "fixedValue": []
     },
@@ -41,11 +41,7 @@
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:ToaModTab"
-      }
-    ],
+    "creativeTabs": [],
     "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
@@ -83,7 +79,7 @@
     "isNotColidable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
-      "value": "NETHERITE"
+      "value": "ANCIENT_DEBRIS"
     },
     "breakSound": {
       "value": ""
@@ -101,18 +97,30 @@
       "value": ""
     },
     "luminance": 0,
-    "unbreakable": true,
-    "vanillaToolTier": "STONE",
+    "unbreakable": false,
+    "vanillaToolTier": "NONE",
     "isBonemealable": false,
     "hasInventory": true,
     "guiBoundTo": "BlacksmithTableGui",
     "openGUIOnRightClick": true,
-    "inventorySize": 11,
+    "inventorySize": 10,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
-    "inventoryOutSlotIDs": [],
-    "inventoryInSlotIDs": [],
+    "inventoryOutSlotIDs": [
+      0
+    ],
+    "inventoryInSlotIDs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
     "hasEnergyStorage": false,
     "energyInitial": 0,
     "energyCapacity": 400000,
@@ -121,23 +129,14 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onRightClicked": {
-      "name": "OnTableRightClicked"
+    "onTickUpdate": {
+      "name": "BlacksmithTableOnTickUpdate"
     },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE#0"
-      },
-      {
-        "value": "Blocks.STONE#1"
-      },
-      {
-        "value": "Blocks.STONE#3"
-      },
-      {
-        "value": "Blocks.STONE#5"
+        "value": "TAG:stone_ore_replaceables"
       }
     ],
     "generationShape": "UNIFORM",

@@ -7,6 +7,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
@@ -21,8 +22,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.toamod.procedures.OnBlacksmithTableTickProcedure;
 import net.mcreator.toamod.procedures.OnBlacksmithTableClosedProcedure;
-import net.mcreator.toamod.network.ToamodModVariables;
 import net.mcreator.toamod.network.BlacksmithTableGuiSlotMessage;
 import net.mcreator.toamod.init.ToamodModMenus;
 import net.mcreator.toamod.block.entity.BlacksmithTableBlockEntity;
@@ -44,19 +45,55 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 	private boolean bound = false;
 	private Supplier<Boolean> boundItemMatcher = null;
 	private Entity boundEntity = null;
-	public final BlacksmithTableBlockEntity boundBlockEntity;
+	private BlockEntity boundBlockEntity = null;
 
 	public BlacksmithTableGuiMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		this(id, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()));
-	}
-
-	public BlacksmithTableGuiMenu(int id, Inventory inv, BlockEntity bEntity) {
 		super(ToamodModMenus.BLACKSMITH_TABLE_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(10);
 		BlockPos pos = null;
-		boundBlockEntity = (BlacksmithTableBlockEntity) bEntity;
+		if (extraData != null) {
+			pos = extraData.readBlockPos();
+			this.x = pos.getX();
+			this.y = pos.getY();
+			this.z = pos.getZ();
+			access = ContainerLevelAccess.create(world, pos);
+		}
+		if (pos != null) {
+			boundBlockEntity = this.world.getBlockEntity(pos);
+			if (boundBlockEntity != null)
+				boundBlockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					this.internal = capability;
+					this.bound = true;
+				});
+			/* ALTERNATIV STATT DEM BLOCK OBEN
+			if (extraData.readableBytes() == 1) { // bound to item
+				byte hand = extraData.readByte();
+				ItemStack itemstack = hand == 0 ? this.entity.getMainHandItem() : this.entity.getOffhandItem();
+				this.boundItemMatcher = () -> itemstack == (hand == 0 ? this.entity.getMainHandItem() : this.entity.getOffhandItem());
+				itemstack.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+					this.internal = capability;
+					this.bound = true;
+				});
+			} else if (extraData.readableBytes() > 1) { // bound to entity
+				extraData.readByte(); // drop padding
+				boundEntity = world.getEntity(extraData.readVarInt());
+				if (boundEntity != null)
+					boundEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+						this.internal = capability;
+						this.bound = true;
+					});
+			} else { // might be bound to block
+				boundBlockEntity = this.world.getBlockEntity(pos);
+				if (boundBlockEntity != null)
+					boundBlockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+						this.internal = capability;
+						this.bound = true;
+					});
+			}
+			*/
+		}
 		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 138, 36) {
 			private final int slot = 0;
 
@@ -77,33 +114,36 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 				return false;
 			}
 		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 30, 18) {
-			private final int slot = 1;
-		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 48, 18) {
-			private final int slot = 2;
-		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 66, 18) {
-			private final int slot = 3;
-		}));
-		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 30, 36) {
-			private final int slot = 4;
-		}));
-		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 48, 36) {
-			private final int slot = 5;
-		}));
-		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 66, 36) {
-			private final int slot = 6;
-		}));
-		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 30, 54) {
-			private final int slot = 7;
-		}));
-		this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 48, 54) {
-			private final int slot = 8;
-		}));
-		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 66, 54) {
-			private final int slot = 9;
-		}));
+
+		//Adds all 9 input slots
+		for(int i = 0; i < 3; i++){
+			for(int j = 0; j < 3; j++){
+				final int slotID = i*3+j+1;
+				this.customSlots.put(slotID, this.addSlot(new SlotItemHandler(internal, slotID, 30 + 18 * j , 18 + 18 * i) {
+					private final int slot = slotID;
+
+					@Override
+					public void setChanged() {
+						super.setChanged();
+						slotChanged(slot, 0, 0);
+					}
+
+					/*@Override
+					public void onTake(Player entity, ItemStack stack) {
+						super.onTake(entity, stack);
+						slotChanged(slot, 1, 0);
+					}
+		
+					@Override
+					public void onQuickCraft(ItemStack a, ItemStack b) {
+						super.onQuickCraft(a, b);
+						slotChanged(slot, 2, b.getCount() - a.getCount());
+					}*/
+				}));
+			}
+		}
+		
+		
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 5 + 8 + sj * 18, 1 + 84 + si * 18));
@@ -235,8 +275,7 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 	@Override
 	public void removed(Player playerIn) {
 		super.removed(playerIn);
-		//OnBlacksmithTableClosedProcedure.execute(world, entity);
-		/*
+		OnBlacksmithTableClosedProcedure.execute(world, entity);
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
 				for (int j = 0; j < internal.getSlots(); ++j) {
@@ -251,13 +290,16 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
 				}
 			}
-		}*/
+		}
 	}
 
 	private void slotChanged(int slotid, int ctype, int meta) {
+		System.out.println("BlacksmithTableGUIMenu - slotChanged -> refreshRecipe called");
 		if (this.world != null && this.world.isClientSide()) {
 			ToamodMod.PACKET_HANDLER.sendToServer(new BlacksmithTableGuiSlotMessage(slotid, x, y, z, ctype, meta));
 			BlacksmithTableGuiSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
+			if(boundBlockEntity instanceof BlacksmithTableBlockEntity bT) 
+				bT.refreshRecipe(); 
 		}
 	}
 
@@ -273,13 +315,7 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			//OnBlacksmithTableTickProcedure.execute(world, x, y, z, entity);
-			int tempX = (int) entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables()).guiBlockX;
-			int tempY = (int) entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables()).guiBlockY;
-			int tempZ = (int) entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables()).guiBlockZ;
-			if (world.getBlockEntity(new BlockPos(tempX, tempY, tempZ)) instanceof BlacksmithTableBlockEntity bT)
-				bT.tick();
-
+			OnBlacksmithTableTickProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

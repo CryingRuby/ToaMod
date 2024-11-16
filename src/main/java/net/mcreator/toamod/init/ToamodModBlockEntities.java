@@ -41,12 +41,12 @@ public class ToamodModBlockEntities {
 	public static final RegistryObject<BlockEntityType<?>> ENHANCMENT_TABLE = register("enhancment_table", ToamodModBlocks.ENHANCMENT_TABLE, EnhancmentTableBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> MAGIC_CRAFTER = register("magic_crafter", ToamodModBlocks.MAGIC_CRAFTER, MagicCrafterBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> FORGER = register("forger", ToamodModBlocks.FORGER, ForgerBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> BLACKSMITH_TABLE = register("blacksmith_table", ToamodModBlocks.BLACKSMITH_TABLE, BlacksmithTableBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> GOBLIN_OMLETTE = register("goblin_omlette", ToamodModBlocks.GOBLIN_OMLETTE, GoblinOmletteBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> PLAYER_BARRIER = register("player_barrier", ToamodModBlocks.PLAYER_BARRIER, PlayerBarrierBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> PESTO_GOBLIN_OMLETTE = register("pesto_goblin_omlette", ToamodModBlocks.PESTO_GOBLIN_OMLETTE, PestoGoblinOmletteBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> INV_CONTROL_BARRIER = register("inv_control_barrier", ToamodModBlocks.INV_CONTROL_BARRIER, InvControlBarrierBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> RESPAWN_ORE = register("respawn_ore", ToamodModBlocks.RESPAWN_ORE, RespawnOreBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> BLACKSMITH_TABLE = register("blacksmith_table", ToamodModBlocks.BLACKSMITH_TABLE, BlacksmithTableBlockEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));

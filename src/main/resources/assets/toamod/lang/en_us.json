@@ -75,7 +75,7 @@
   "enchant.powerful.description": "\u0027{\"text\":\"§7Increases the items §5Magic Power§7.§r\"}\u0027",
   "item.toamod.hardened_iron_armor_helmet": "§fHardened Iron Helmet§r",
   "biome.toamod.overgrown_cliffs": "Overgrown Cliffs",
-  "block.toamod.blacksmith_table": "Weapon Table",
+  "block.toamod.blacksmith_table": "Blacksmith Table",
   "msg.enemy_immune": "§cThis entity is immune to any damage right now!§r",
   "stat.cd.description": "\u0027{\"text\":\"§7Bonus damage percent upon hitting critically.§r\"}\u0027",
   "item.toamod.milestones_mining_item.description": "\u0027{\"text\":\"§7Mine any ore to progress towards§r\"}\u0027,\u0027{\"text\":\"§7your §bDwarfs Way§7 milestone§r\"}\u0027",

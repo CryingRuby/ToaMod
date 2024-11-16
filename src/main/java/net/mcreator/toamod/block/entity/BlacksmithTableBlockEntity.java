@@ -1,7 +1,6 @@
 package net.mcreator.toamod.block.entity;
 
-import org.jetbrains.annotations.NotNull;
-
+import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -11,14 +10,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.Containers;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
@@ -33,63 +32,31 @@ import javax.annotation.Nullable;
 import java.util.stream.IntStream;
 import java.util.Optional;
 
+import io.netty.buffer.Unpooled;
+
 public class BlacksmithTableBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(10, ItemStack.EMPTY);
-	//private ItemStackHandler itemHandler = new ItemStackHandler(10);
-	private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-	private byte tickCount = 0;
+	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public BlacksmithTableBlockEntity(BlockPos position, BlockState state) {
 		super(ToamodModBlockEntities.BLACKSMITH_TABLE.get(), position, state);
 	}
 
 	@Override
-	public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-		if (cap == ForgeCapabilities.ITEM_HANDLER)
-			return lazyItemHandler.cast();
-		return super.getCapability(cap, side);
+	public void load(CompoundTag compound) {
+		super.load(compound);
+		if (!this.tryLoadLootTable(compound))
+			this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+		ContainerHelper.loadAllItems(compound, this.stacks);
 	}
 
 	@Override
-	public void invalidateCaps() {
-		super.invalidateCaps();
-		lazyItemHandler.invalidate();
-	}
-
-	public void drops() {
-		SimpleContainer inventory = new SimpleContainer(stacks.size());
-		for (int i = 1; i < stacks.size(); i++) {
-			inventory.setItem(i, stacks.get(i));
+	public void saveAdditional(CompoundTag compound) {
+		super.saveAdditional(compound);
+		if (!this.trySaveLootTable(compound)) {
+			ContainerHelper.saveAllItems(compound, this.stacks);
 		}
-		Containers.dropContents(this.level, this.worldPosition, inventory);
 	}
-
-	@Override
-	public Component getDisplayName() {
-		return Component.literal("Blacksmith Table");
-	}
-
-	@Override
-	public Component getDefaultName() {
-		return Component.literal("Blacksmith Table");
-	}
-
-
-	@Override
-	protected void saveAdditional(CompoundTag pTag) {
-		System.out.println("Save additional - try saving stacks");
-		ContainerHelper.saveAllItems(pTag, this.stacks);
-		
-		super.saveAdditional(pTag);
-	}
-
-	@Override
-	public void load(CompoundTag pTag) {
-		super.load(pTag);
-		this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(pTag, this.stacks);
-	}
-
 
 	@Override
 	public ClientboundBlockEntityDataPacket getUpdatePacket() {
@@ -115,8 +82,23 @@ public class BlacksmithTableBlockEntity extends RandomizableContainerBlockEntity
 	}
 
 	@Override
+	public Component getDefaultName() {
+		return Component.literal("blacksmith_table");
+	}
+
+	@Override
 	public int getMaxStackSize() {
 		return 64;
+	}
+
+	@Override
+	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
+		return new BlacksmithTableGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+	}
+
+	@Override
+	public Component getDisplayName() {
+		return Component.literal("Blacksmith Table");
 	}
 
 	@Override
@@ -148,31 +130,47 @@ public class BlacksmithTableBlockEntity extends RandomizableContainerBlockEntity
 
 	@Override
 	public boolean canTakeItemThroughFace(int index, ItemStack stack, Direction direction) {
+		if (index == 1)
+			return false;
+		if (index == 2)
+			return false;
+		if (index == 3)
+			return false;
+		if (index == 4)
+			return false;
+		if (index == 5)
+			return false;
+		if (index == 6)
+			return false;
+		if (index == 7)
+			return false;
+		if (index == 8)
+			return false;
+		if (index == 9)
+			return false;
 		return true;
 	}
 
-	@Nullable
 	@Override
-	public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory) {
-		return new BlacksmithTableGuiMenu(pContainerId, pPlayerInventory, this);
+	public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
+		if (!this.remove && facing != null && capability == ForgeCapabilities.ITEM_HANDLER)
+			return handlers[facing.ordinal()].cast();
+		return super.getCapability(capability, facing);
 	}
 
-	public void tick() {
-		tickCount++;
-		System.out.println("tick");
-		if (tickCount == 2) {
-			Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
-			System.out.println("test for has recipe");
-			if (hasRecipe(recipe)) {
-				if (stacks.get(0) == ItemStack.EMPTY) {
-					ItemStack result = recipe.get().getResultItem(null);
-					System.out.print("set result in output");
-					this.stacks.set(0, new ItemStack(result.getItem(), result.getCount()));
-				}
-			} else
-				this.stacks.set(0, ItemStack.EMPTY);
-			tickCount = 0;
-		}
+	@Override
+	public void setRemoved() {
+		super.setRemoved();
+		for (LazyOptional<? extends IItemHandler> handler : handlers)
+			handler.invalidate();
+	}
+
+	public void refreshRecipe() {
+		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
+		if (!hasRecipe(recipe))
+			return;
+		System.out.println("Valid recipe found -> set Item in output slot");
+		this.stacks.set(0, recipe.get().getResultItem());
 	}
 
 	public boolean hasRecipe() {

@@ -81,7 +81,6 @@ public class ToamodModTabs {
 				tabData.accept(ToamodModBlocks.ENHANCMENT_TABLE.get().asItem());
 				tabData.accept(ToamodModBlocks.MAGIC_CRAFTER.get().asItem());
 				tabData.accept(ToamodModBlocks.FORGER.get().asItem());
-				tabData.accept(ToamodModBlocks.BLACKSMITH_TABLE.get().asItem());
 				tabData.accept(ToamodModBlocks.HARD_STONE.get().asItem());
 				tabData.accept(ToamodModBlocks.HARD_STONE_SLAB.get().asItem());
 				tabData.accept(ToamodModBlocks.GOBLIN_OMLETTE.get().asItem());
