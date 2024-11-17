@@ -10,6 +10,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.EntityBlock;
@@ -32,6 +34,8 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.world.inventory.BlacksmithTableGuiMenu;
 import net.mcreator.toamod.block.entity.BlacksmithTableBlockEntity;
+
+import javax.annotation.Nullable;
 
 import io.netty.buffer.Unpooled;
 
@@ -67,7 +71,7 @@ public class BlacksmithTableBlock extends Block implements EntityBlock {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-		//((BlacksmithTableBlockEntity) world.getBlockEntity(pos)).tick(world);
+		//((BlacksmithTableBlockEntity) world.getBlockEntity(pos)).refreshRecipe();
 		world.scheduleTick(pos, this, 10);
 	}
 

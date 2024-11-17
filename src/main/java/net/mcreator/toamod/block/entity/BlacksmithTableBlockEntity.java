@@ -166,16 +166,23 @@ public class BlacksmithTableBlockEntity extends RandomizableContainerBlockEntity
 	}
 
 	public void refreshRecipe() {
-		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
-		if (!hasRecipe(recipe))
+		if(this.level.isClientSide())
 			return;
+		System.out.println("BT-BlockEntity - refreshRecipe called");
+		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
+		if (!hasRecipe(recipe)){
+			System.out.println("BT-BlockEntity - has no valid recipe");
+			if(!this.stacks.get(0).isEmpty())
+				this.stacks.set(0, ItemStack.EMPTY);
+			return;
+		}
 		System.out.println("Valid recipe found -> set Item in output slot");
 		this.stacks.set(0, recipe.get().getResultItem());
 	}
 
 	public boolean hasRecipe() {
 		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
-		return recipe.isEmpty();
+		return !recipe.isEmpty();
 	}
 
 	public boolean hasRecipe(Optional<BlacksmithTableTypeRecipe> recipe) {

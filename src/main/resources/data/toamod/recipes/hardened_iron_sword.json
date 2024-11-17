@@ -1,18 +1,18 @@
 {
   "type": "toamod:blacksmith_table_type",
   "has_nbt": true,
+  "nbt_copy": 4,
   "pattern": [
   	" # ",
   	" # ",
-  	" # "
+  	"   "
   ],
   "ingredients": [
-  		{"item":"toamod:iron_bar"},
-  		{"item":"toamod:iron_bar"},
-  		{"item":"toamod:log"}
+  		{"item":"toamod:condensed_iron_block"},
+  		{"item":"toamod:iron_sword"}
   ],
   "output": {
-    "item": "toamod:iron_sword",
+    "item": "toamod:hardened_iron_sword",
     "count": 1
   }
 }

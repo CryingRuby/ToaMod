@@ -22,7 +22,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.toamod.procedures.OnBlacksmithTableTickProcedure;
 import net.mcreator.toamod.procedures.OnBlacksmithTableClosedProcedure;
 import net.mcreator.toamod.network.BlacksmithTableGuiSlotMessage;
 import net.mcreator.toamod.init.ToamodModMenus;
@@ -114,12 +113,11 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 				return false;
 			}
 		}));
-
 		//Adds all 9 input slots
-		for(int i = 0; i < 3; i++){
-			for(int j = 0; j < 3; j++){
-				final int slotID = i*3+j+1;
-				this.customSlots.put(slotID, this.addSlot(new SlotItemHandler(internal, slotID, 30 + 18 * j , 18 + 18 * i) {
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				final int slotID = i * 3 + j + 1;
+				this.customSlots.put(slotID, this.addSlot(new SlotItemHandler(internal, slotID, 30 + 18 * j, 18 + 18 * i) {
 					private final int slot = slotID;
 
 					@Override
@@ -127,13 +125,12 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 						super.setChanged();
 						slotChanged(slot, 0, 0);
 					}
-
 					/*@Override
 					public void onTake(Player entity, ItemStack stack) {
 						super.onTake(entity, stack);
 						slotChanged(slot, 1, 0);
 					}
-		
+					
 					@Override
 					public void onQuickCraft(ItemStack a, ItemStack b) {
 						super.onQuickCraft(a, b);
@@ -142,8 +139,6 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 				}));
 			}
 		}
-		
-		
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 5 + 8 + sj * 18, 1 + 84 + si * 18));
@@ -294,12 +289,19 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 	}
 
 	private void slotChanged(int slotid, int ctype, int meta) {
-		System.out.println("BlacksmithTableGUIMenu - slotChanged -> refreshRecipe called");
-		if (this.world != null && this.world.isClientSide()) {
-			ToamodMod.PACKET_HANDLER.sendToServer(new BlacksmithTableGuiSlotMessage(slotid, x, y, z, ctype, meta));
-			BlacksmithTableGuiSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
-			if(boundBlockEntity instanceof BlacksmithTableBlockEntity bT) 
-				bT.refreshRecipe(); 
+		System.out.println("BlacksmithTableGUIMenu - slotChanged -> try call refreshRecipe");
+		if (this.world != null) {
+			if (this.world.isClientSide()) {
+				ToamodMod.PACKET_HANDLER.sendToServer(new BlacksmithTableGuiSlotMessage(slotid, x, y, z, ctype, meta));
+			} else {
+				if (boundBlockEntity instanceof BlacksmithTableBlockEntity bT) {
+					System.out.println("block at x=" + x + ", y=" + y + ", z=" + z + " has BlacksmithTableBlockEntity - call refreshRecipe in bT");
+					if (slotid == 0 && ctype == 1 || ctype == 2)
+						bT.extractItemsFromCrafting();
+					bT.refreshRecipe();
+				}
+			}
+			//BlacksmithTableGuiSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
 		}
 	}
 
@@ -315,7 +317,6 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			OnBlacksmithTableTickProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

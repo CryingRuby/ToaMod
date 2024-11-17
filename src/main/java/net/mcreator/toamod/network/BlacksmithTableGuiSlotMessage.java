@@ -71,15 +71,6 @@ public class BlacksmithTableGuiSlotMessage {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)) || boundBlockEntity == null)
 			return;
-		if(slot == 0){
-			if(changeType == 1 || changeType == 2){
-				//OnBlacksmithTableCompletedTakenProcedure.execute(world, entity);
-				//boundBlockEntity.extractItemsFromCrafting();
-			}
-		}
-		else{
-			
-		}
 	}
 
 	@SubscribeEvent

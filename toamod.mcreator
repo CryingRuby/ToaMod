@@ -5919,87 +5919,6 @@
       "path": "~/procedures/Other"
     },
     {
-      "name": "OnBlacksmithTableTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_blacksmith_table_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnBlacksmithTableTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/BlacksmithTable"
-    },
-    {
-      "name": "OnBlacksmithTableCompletedTaken",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_blacksmith_table_completed_taken",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnBlacksmithTableCompletedTakenProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/BlacksmithTable"
-    },
-    {
-      "name": "OnBlacksmithComponentTaken",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_blacksmith_component_taken",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnBlacksmithComponentTakenProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/BlacksmithTable"
-    },
-    {
       "name": "BlacksmithTableGui",
       "type": "gui",
       "compiles": true,
@@ -14038,15 +13957,6 @@
       {
         "name": "jei",
         "children": []
-      },
-      {
-        "name": "recipes",
-        "children": [
-          {
-            "name": "BlacksmithTable",
-            "children": []
-          }
-        ]
       }
     ]
   },

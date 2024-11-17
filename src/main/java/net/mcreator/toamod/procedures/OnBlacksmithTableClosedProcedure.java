@@ -21,18 +21,6 @@ public class OnBlacksmithTableClosedProcedure {
 		if (entity == null)
 			return;
 		double i = 0;
-		{
-			BlockEntity _ent = world.getBlockEntity(BlockPos.containing((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockX,
-					(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockY,
-					(entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).guiBlockZ));
-			if (_ent != null) {
-				final int _slotid = 0;
-				_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-					if (capability instanceof IItemHandlerModifiable)
-						((IItemHandlerModifiable) capability).setStackInSlot(_slotid, ItemStack.EMPTY);
-				});
-			}
-		}
 		i = 1;
 		for (int index0 = 0; index0 < 9; index0++) {
 			if (entity instanceof Player _player) {

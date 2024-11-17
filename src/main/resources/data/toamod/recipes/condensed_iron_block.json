@@ -2,7 +2,7 @@
   "type": "toamod:blacksmith_table_type",
   "pattern": [
   	"###",
-  	"# #",
+  	"###",
   	"###"
   ],
   "ingredients": [
@@ -12,6 +12,7 @@
   		{"item":"toamod:iron_bar"},
   		{"item":"toamod:iron_bar"},
   		{"item":"toamod:iron_bar"},
+		{"item":"toamod:iron_bar"},
 		{"item":"toamod:iron_bar"},
 		{"item":"toamod:iron_bar"}
   ],
