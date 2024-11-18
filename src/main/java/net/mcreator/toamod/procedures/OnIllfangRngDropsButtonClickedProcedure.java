@@ -14,7 +14,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.world.inventory.IllfangRngDropsMenuMenu;
-import net.mcreator.toamod.network.ToamodModVariables;
 
 import io.netty.buffer.Unpooled;
 
@@ -22,21 +21,21 @@ public class OnIllfangRngDropsButtonClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).bossesDefeated >= 1) {
-			if (entity instanceof ServerPlayer _ent) {
-				BlockPos _bpos = BlockPos.containing(x, y, z);
-				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
-					@Override
-					public Component getDisplayName() {
-						return Component.literal("IllfangRngDropsMenu");
-					}
+		if (entity instanceof Player _player)
+			_player.closeContainer();
+		if (entity instanceof ServerPlayer _ent) {
+			BlockPos _bpos = BlockPos.containing(x, y, z);
+			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.literal("IllfangRngDropsMenu");
+				}
 
-					@Override
-					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new IllfangRngDropsMenuMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
-					}
-				}, _bpos);
-			}
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					return new IllfangRngDropsMenuMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+				}
+			}, _bpos);
 		}
 	}
 }

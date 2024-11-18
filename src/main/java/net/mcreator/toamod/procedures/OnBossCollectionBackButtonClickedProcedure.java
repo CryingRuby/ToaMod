@@ -13,7 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.toamod.world.inventory.CollectionMenuMenu;
+import net.mcreator.toamod.world.inventory.PlayerProfileMenu;
 
 import io.netty.buffer.Unpooled;
 
@@ -26,12 +26,12 @@ public class OnBossCollectionBackButtonClickedProcedure {
 			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("CollectionMenu");
+					return Component.literal("PlayerProfile");
 				}
 
 				@Override
 				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new CollectionMenuMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+					return new PlayerProfileMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 				}
 			}, _bpos);
 		}

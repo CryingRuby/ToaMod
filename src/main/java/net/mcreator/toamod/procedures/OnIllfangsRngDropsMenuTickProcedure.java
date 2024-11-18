@@ -31,6 +31,7 @@ public class OnIllfangsRngDropsMenuTickProcedure {
 		String selectTxt = "";
 		double i = 0;
 		double trueOddsPerc = 0;
+		System.out.println("BossIllfangDrop tick called");
 		for (int index0 = 0; index0 < 9; index0++) {
 			if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get((int) i)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
 				emptySlots = true;
