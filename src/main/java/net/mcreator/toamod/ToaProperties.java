@@ -1,7 +1,11 @@
 package net.mcreator.toamod;
 
 import org.checkerframework.checker.units.qual.cd;
+
 import net.minecraft.nbt.CompoundTag;
+
+import java.util.function.Function;
+import java.util.Map;
 
 public class ToaProperties {
 	public ToaRarity rarity;
@@ -23,6 +27,12 @@ public class ToaProperties {
 	public float[] MINF;
 	public float[] AR;
 	public float[] MR;
+
+	/**
+	 * ONLY use for ToaReforgeType
+	 */
+	public ToaProperties() {
+	}
 
 	public ToaProperties(String type, ToaRarity rarity) {
 		this.type = type;
@@ -50,10 +60,10 @@ public class ToaProperties {
 	 * Adds ALL general information about the ToaProperty like rarity and type to the CompoundTag.
 	 * @param The CompoundTag of the item the general information will be added to
 	 */
-	public void addBaseInfoToNbt(CompoundTag nbt){
+	public void addBaseInfoToNbt(CompoundTag nbt) {
 		nbt.putInt("rarity", rarity.ID);
 		nbt.putString("type", type);
-		if(!subType.trim().isEmpty())
+		if (!subType.trim().isEmpty())
 			nbt.putString("subtype", subType);
 	}
 
@@ -61,86 +71,84 @@ public class ToaProperties {
 	 * Collects all actual stats and combines them into an CompoundTag
 	 * @return CompoundTag with ALL ACTUAL stats of the ToaProperty
 	 */
-	public CompoundTag statsToNbt(){
+	public CompoundTag statsToNbt() {
 		CompoundTag nbt = new CompoundTag();
-		
-		if(STR != null){
-			if(STR[0] != 0)
+		if (STR != null) {
+			if (STR[0] != 0)
 				nbt.putFloat("str_f", STR[0]);
-			if(STR[1] != 0)
+			if (STR[1] != 0)
 				nbt.putFloat("str_p", STR[1]);
 		}
-		if(DEX != null){
-			if(DEX[0] != 0)
+		if (DEX != null) {
+			if (DEX[0] != 0)
 				nbt.putFloat("dex_f", DEX[0]);
-			if(DEX[1] != 0)
+			if (DEX[1] != 0)
 				nbt.putFloat("dex_p", DEX[1]);
 		}
-		if(CON != null){
-			if(CON[0] != 0)
+		if (CON != null) {
+			if (CON[0] != 0)
 				nbt.putFloat("con_f", CON[0]);
-			if(CON[1] != 0)
+			if (CON[1] != 0)
 				nbt.putFloat("con_p", CON[1]);
 		}
-		if(INT != null){
-			if(STR[0] != 0)
+		if (INT != null) {
+			if (STR[0] != 0)
 				nbt.putFloat("int_f", INT[0]);
-			if(STR[1] != 0)
+			if (STR[1] != 0)
 				nbt.putFloat("int_p", INT[1]);
 		}
-		if(WIS != null){
-			if(WIS[0] != 0)
+		if (WIS != null) {
+			if (WIS[0] != 0)
 				nbt.putFloat("wis_f", WIS[0]);
-			if(WIS[1] != 0)
+			if (WIS[1] != 0)
 				nbt.putFloat("wis_p", WIS[1]);
 		}
-		if(ELEMENT != null){
+		if (ELEMENT != null) {
 			nbt.putString("element", ELEMENT.name);
-			if(ELEMENTAL_DAMAGE[0] != 0)
+			if (ELEMENTAL_DAMAGE[0] != 0)
 				nbt.putFloat("elem_dmg_f", ELEMENTAL_DAMAGE[0]);
-			if(ELEMENTAL_DAMAGE[1] != 0)
+			if (ELEMENTAL_DAMAGE[1] != 0)
 				nbt.putFloat("elem_dmg_p", ELEMENTAL_DAMAGE[1]);
 		}
-		if(HP != null){
-			if(HP[0] != 0)
+		if (HP != null) {
+			if (HP[0] != 0)
 				nbt.putFloat("hp_f", HP[0]);
-			if(HP[1] != 0)
+			if (HP[1] != 0)
 				nbt.putFloat("hp_p", HP[1]);
 		}
-		if(AR != null){
-			if(AR[0] != 0)
+		if (AR != null) {
+			if (AR[0] != 0)
 				nbt.putFloat("ar_f", AR[0]);
-			if(AR[1] != 0)
+			if (AR[1] != 0)
 				nbt.putFloat("ar_p", AR[1]);
 		}
-		if(MR != null){
-			if(MR[0] != 0)
+		if (MR != null) {
+			if (MR[0] != 0)
 				nbt.putFloat("mr_f", MR[0]);
-			if(MR[1] != 0)
+			if (MR[1] != 0)
 				nbt.putFloat("mr_p", MR[1]);
 		}
-		if(MF != null){
-			if(MF[0] != 0)
+		if (MF != null) {
+			if (MF[0] != 0)
 				nbt.putFloat("mf_f", MF[0]);
-			if(MF[1] != 0)
+			if (MF[1] != 0)
 				nbt.putFloat("mf_p", MF[1]);
 		}
-		if(MINF != null){
-			if(MINF[0] != 0)
+		if (MINF != null) {
+			if (MINF[0] != 0)
 				nbt.putFloat("minf_f", MINF[0]);
-			if(MINF[1] != 0)
+			if (MINF[1] != 0)
 				nbt.putFloat("minf_p", MINF[1]);
 		}
-		if(LIFESTEAL != 0){
+		if (LIFESTEAL != 0) {
 			nbt.putFloat("lifesteal", LIFESTEAL);
 		}
-		if(CR != 0){
+		if (CR != 0) {
 			nbt.putFloat("cr", CR);
 		}
-		if(CD != 0){
+		if (CD != 0) {
 			nbt.putFloat("cd", CD);
 		}
-
 		return nbt;
 	}
 
@@ -255,6 +263,7 @@ public class ToaProperties {
 		this.MINF = new float[]{minf, 0};
 		return this;
 	}
+
 	public ToaProperties ar(float[] ar) {
 		this.AR = ar;
 		return this;
@@ -274,5 +283,4 @@ public class ToaProperties {
 		this.MR = new float[]{mr, 0};
 		return this;
 	}
-
 }

@@ -14,10 +14,28 @@ public class CustomNbtHandler {
 	 * @param item the upgrades get copied to
 	 */
 	public static void copyUpgrades(ItemStack copyFrom, ItemStack copyTo) {
-		if (!(copyFrom.getItem() instanceof IToaReforgeable) || !(copyTo.getItem() instanceof IToaReforgeable))
+		if (!(copyFrom.getItem() instanceof IToaReforgeable) || !(copyTo.getItem() instanceof IToaReforgeable) || !copyFrom.getOrCreateTag().has("Upgrades") || copyFrom.getOrCreateTag().get("Upgrades").isEmpty())
 			return;
 
+		CompoundTag nbtTo = new CompoundTag();
+		CompoundTag nbtFrom = copyFrom.getOrCreateTag().get("Upgrades");
+		if(nbtFrom.has("stars"))
+			nbtTo.putInt("stars", nbtFrom.getInt("stars"));
+		if(nbtFrom.has("reforge")){
+			nbtTo.putString"reforge", (nbtFrom.get("reforge"));
+			ToaReforgeHandler.applyReforgeToItem(copyTo, ReforgeType.getByName(nbtTo.getString("reforge")));
+		}
+		if(nbtFrom.has("stackable")){
+			nbtTo.putInt("stackable", nbtFrom.get("stackable"));
+			//apply stackable to item
+		}
+		if(nbtFrom.has("prestige")){
+			nbtTo.putString("prestige", nbtFrom.getString("prestige"));
+			//apply prestige to item
+		}
 		
+			
+		copyTo.getOrCreateTag().put("Upgrades", nbtTo);
 	}
 
 	/**
