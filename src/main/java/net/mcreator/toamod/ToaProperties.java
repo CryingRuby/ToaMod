@@ -9,37 +9,20 @@ import java.util.Map;
 
 public class ToaProperties {
 	public ToaRarity rarity;
-	public String type;
-	public String subType;
-	//stats for the weapon in format {flat, percentage}
-	public float[] STR;
-	public float[] DEX;
-	public float[] CON;
-	public float[] INT;
-	public float[] WIS;
-	public float CR;
-	public float CD;
+	public String type, subType;
+	
+	/*stats for the weapon in format {flat, percentage}         ReforgyType uses {rarity=0, rarity=1, ...., rarity=6}*/
+	public float[] STR, DEX, CON, INT, WIS, CR, CD, LIFESTEAL, HP, AR, MR, MF, MINF;
 	public ToaElement ELEMENT;
 	public float[] ELEMENTAL_DAMAGE;
-	public float LIFESTEAL;
-	public float[] HP;
-	public float[] MF;
-	public float[] MINF;
-	public float[] AR;
-	public float[] MR;
-
-	/**
-	 * ONLY use for ToaReforgeType
-	 */
-	public ToaProperties() {
-	}
 
 	public ToaProperties(String type, ToaRarity rarity) {
 		this.type = type;
 		this.rarity = rarity;
 	}
 
-	public ToaProperties(String type, ToaRarity rarity, String subType, float[] _str, float[] _dex, float[] _con, float[] _int, float[] _wis, float _cr, float _cd, ToaElement element, float[] elemental_damage, float lifesteal, float[] _hp) {
+/*
+	public ToaProperties(String type, ToaRarity rarity, String subType, float[] _str, float[] _dex, float[] _con, float[] _int, float[] _wis, float[] _cr, float[] _cd, ToaElement element, float[] elemental_damage, float lifesteal, float[] _hp) {
 		this.type = type;
 		this.rarity = rarity;
 		this.subType = subType;
@@ -54,7 +37,7 @@ public class ToaProperties {
 		this.ELEMENTAL_DAMAGE = elemental_damage;
 		this.LIFESTEAL = lifesteal;
 		this.HP = _hp;
-	}
+	}*/
 
 	/**
 	 * Adds ALL general information about the ToaProperty like rarity and type to the CompoundTag.
@@ -140,14 +123,14 @@ public class ToaProperties {
 			if (MINF[1] != 0)
 				nbt.putFloat("minf_p", MINF[1]);
 		}
-		if (LIFESTEAL != 0) {
-			nbt.putFloat("lifesteal", LIFESTEAL);
+		if (LIFESTEAL != null && LIFESTEAL[0] != 0) {
+			nbt.putFloat("lifesteal", LIFESTEAL[0]);
 		}
-		if (CR != 0) {
-			nbt.putFloat("cr", CR);
+		if (CR != null && CR[0] != 0) {
+			nbt.putFloat("cr", CR[0]);
 		}
-		if (CD != 0) {
-			nbt.putFloat("cd", CD);
+		if (CD != null && CD[0] != 0) {
+			nbt.putFloat("cd", CD[0]);
 		}
 		return nbt;
 	}
@@ -208,11 +191,28 @@ public class ToaProperties {
 	}
 
 	public ToaProperties cr(float cr) {
+		this.CR = new float[]{cr};
+		return this;
+	}
+
+	/**
+	 * ONLY used by ReforgeType-class
+	 */
+	public ToaProperties cr(float[] cr) {
 		this.CR = cr;
 		return this;
 	}
 
+
 	public ToaProperties cd(float cd) {
+		this.CD = new float[]{cd};
+		return this;
+	}
+
+	/**
+	 * ONLY used by ReforgeType-class
+	 */
+	public ToaProperties cd(float[] cd) {
 		this.CD = cd;
 		return this;
 	}
@@ -230,6 +230,14 @@ public class ToaProperties {
 	}
 
 	public ToaProperties lifesteal(float lifesteal) {
+		this.LIFESTEAL = new float[]{lifesteal};
+		return this;
+	}
+
+	/**
+	 * ONLY used by ReforgeType-class
+	 */
+	public ToaProperties lifesteal(float[] lifesteal) {
 		this.LIFESTEAL = lifesteal;
 		return this;
 	}

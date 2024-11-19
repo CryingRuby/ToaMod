@@ -14,27 +14,27 @@ public class CustomNbtHandler {
 	 * @param item the upgrades get copied to
 	 */
 	public static void copyUpgrades(ItemStack copyFrom, ItemStack copyTo) {
-		if (!(copyFrom.getItem() instanceof IToaReforgeable) || !(copyTo.getItem() instanceof IToaReforgeable) || !copyFrom.getOrCreateTag().has("Upgrades") || copyFrom.getOrCreateTag().get("Upgrades").isEmpty())
+		if (!(copyFrom.getItem() instanceof IToaReforgeable) || !(copyTo.getItem() instanceof IToaReforgeable) || copyFrom.getOrCreateTag().getCompound("Upgrades").isEmpty())
 			return;
 
-		CompoundTag nbtTo = new CompoundTag();
-		CompoundTag nbtFrom = copyFrom.getOrCreateTag().get("Upgrades");
-		if(nbtFrom.has("stars"))
+		CompoundTag nbtTo = new CompoundTag();
+		CompoundTag nbtFrom = copyFrom.getOrCreateTag().getCompound("Upgrades");
+		if (nbtFrom.getInt("stars") != 0)
 			nbtTo.putInt("stars", nbtFrom.getInt("stars"));
-		if(nbtFrom.has("reforge")){
-			nbtTo.putString"reforge", (nbtFrom.get("reforge"));
-			ToaReforgeHandler.applyReforgeToItem(copyTo, ReforgeType.getByName(nbtTo.getString("reforge")));
+		if (!nbtFrom.getString("reforge").isEmpty()) {
+			nbtTo.putString("reforge", nbtFrom.getString("reforge"));
+			ReforgeType.getByName(nbtTo.getString("reforge")).applyReforgeToItem(copyTo);
 		}
-		if(nbtFrom.has("stackable")){
+		/*
+		if (nbtFrom.getInt("stackable") > 0) {
 			nbtTo.putInt("stackable", nbtFrom.get("stackable"));
 			//apply stackable to item
 		}
-		if(nbtFrom.has("prestige")){
+		if (nbtFrom.gteString("prestige").isEmpty()) {
 			nbtTo.putString("prestige", nbtFrom.getString("prestige"));
 			//apply prestige to item
-		}
-		
-			
+		}*/
+
 		copyTo.getOrCreateTag().put("Upgrades", nbtTo);
 	}
 

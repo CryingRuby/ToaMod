@@ -12335,18 +12335,6 @@
           "src/main/java/net/mcreator/toamod/CustomNbtHandler.java"
         ]
       }
-    },
-    {
-      "name": "ToaReforgeHandler",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "toa_reforge_handler",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/ToaReforgeHandler.java"
-        ]
-      }
     }
   ],
   "variable_elements": [
