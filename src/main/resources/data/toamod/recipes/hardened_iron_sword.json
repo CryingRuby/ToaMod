@@ -1,7 +1,7 @@
 {
   "type": "toamod:blacksmith_table_type",
   "has_nbt": true,
-  "nbt_copy": 4,
+  "nbt_copy": 5,
   "pattern": [
   	" # ",
   	" # ",

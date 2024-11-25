@@ -19,8 +19,7 @@ import net.mcreator.toamod.enchantment.ScavengerEnchantment;
 import net.mcreator.toamod.enchantment.ProtectionEnchantment;
 import net.mcreator.toamod.enchantment.PowerfulEnchantment;
 import net.mcreator.toamod.enchantment.ManaflowEnchantment;
-import net.mcreator.toamod.enchantment.MagicshieldEnchantment;
-import net.mcreator.toamod.enchantment.LifestealEnchantment;
+import net.mcreator.toamod.enchantment.MagicProtectionEnchantment;
 import net.mcreator.toamod.enchantment.IgniteEnchantment;
 import net.mcreator.toamod.enchantment.GrowthEnchantment;
 import net.mcreator.toamod.enchantment.FortuneEnchantment;
@@ -28,6 +27,7 @@ import net.mcreator.toamod.enchantment.FocusEnchantment;
 import net.mcreator.toamod.enchantment.ExecutingEnchantment;
 import net.mcreator.toamod.enchantment.DivineGiftEnchantment;
 import net.mcreator.toamod.enchantment.CriticalEnchantment;
+import net.mcreator.toamod.enchantment.ChimeraEnchantment;
 import net.mcreator.toamod.ToamodMod;
 
 public class ToamodModEnchantments {
@@ -41,13 +41,13 @@ public class ToamodModEnchantments {
 	public static final RegistryObject<Enchantment> FORTUNE = REGISTRY.register("fortune", () -> new FortuneEnchantment());
 	public static final RegistryObject<Enchantment> CRITICAL = REGISTRY.register("critical", () -> new CriticalEnchantment());
 	public static final RegistryObject<Enchantment> SCAVENGER = REGISTRY.register("scavenger", () -> new ScavengerEnchantment());
-	public static final RegistryObject<Enchantment> LIFESTEAL = REGISTRY.register("lifesteal", () -> new LifestealEnchantment());
 	public static final RegistryObject<Enchantment> STICKYFEET = REGISTRY.register("stickyfeet", () -> new StickyfeetEnchantment());
 	public static final RegistryObject<Enchantment> MANAFLOW = REGISTRY.register("manaflow", () -> new ManaflowEnchantment());
-	public static final RegistryObject<Enchantment> MAGICSHIELD = REGISTRY.register("magicshield", () -> new MagicshieldEnchantment());
 	public static final RegistryObject<Enchantment> FOCUS = REGISTRY.register("focus", () -> new FocusEnchantment());
 	public static final RegistryObject<Enchantment> DIVINE_GIFT = REGISTRY.register("divine_gift", () -> new DivineGiftEnchantment());
 	public static final RegistryObject<Enchantment> GROWTH = REGISTRY.register("growth", () -> new GrowthEnchantment());
 	public static final RegistryObject<Enchantment> SHINY = REGISTRY.register("shiny", () -> new ShinyEnchantment());
 	public static final RegistryObject<Enchantment> VAMPIRISM = REGISTRY.register("vampirism", () -> new VampirismEnchantment());
+	public static final RegistryObject<Enchantment> MAGIC_PROTECTION = REGISTRY.register("magic_protection", () -> new MagicProtectionEnchantment());
+	public static final RegistryObject<Enchantment> CHIMERA = REGISTRY.register("chimera", () -> new ChimeraEnchantment());
 }

@@ -190,7 +190,7 @@
       "name": "Executing",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "executing",
       "metadata": {
         "files": [
@@ -203,7 +203,7 @@
       "name": "Sharpness",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "sharpness",
       "metadata": {
         "files": [
@@ -216,7 +216,7 @@
       "name": "Protection",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "protection",
       "metadata": {
         "files": [
@@ -229,7 +229,7 @@
       "name": "Spikes",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "spikes",
       "metadata": {
         "files": [
@@ -298,7 +298,7 @@
       "name": "Ignite",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "ignite",
       "metadata": {
         "files": [
@@ -1317,7 +1317,7 @@
     {
       "name": "OnEntityAttacked",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "on_entity_attacked",
       "metadata": {
@@ -2987,7 +2987,7 @@
       "name": "Powerful",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "powerful",
       "metadata": {
         "files": [
@@ -3000,7 +3000,7 @@
       "name": "Fortune",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "fortune",
       "metadata": {
         "files": [
@@ -5484,7 +5484,7 @@
       "name": "Critical",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "critical",
       "metadata": {
         "files": [
@@ -5497,7 +5497,7 @@
       "name": "Scavenger",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "scavenger",
       "metadata": {
         "files": [
@@ -5523,7 +5523,7 @@
     {
       "name": "OnEnhancementTableGuiTick",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "on_enhancement_table_gui_tick",
       "metadata": {
@@ -5650,7 +5650,7 @@
     {
       "name": "GetEnchantsToLoreTxtOutput",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "get_enchants_to_lore_txt_output",
       "metadata": {
@@ -5936,7 +5936,7 @@
     {
       "name": "CopyNBTToItem",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "copy_nbt_to_item",
       "metadata": {
@@ -9245,23 +9245,10 @@
       "path": "~/procedures/Other/GetEnchMaxLvlUnlocked"
     },
     {
-      "name": "Lifesteal",
-      "type": "enchantment",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "lifesteal",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/enchantment/LifestealEnchantment.java"
-        ]
-      },
-      "path": "~/enchantments"
-    },
-    {
       "name": "Stickyfeet",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "stickyfeet",
       "metadata": {
         "files": [
@@ -9273,25 +9260,12 @@
     {
       "name": "Manaflow",
       "type": "enchantment",
-      "compiles": true,
-      "locked_code": false,
+      "compiles": false,
+      "locked_code": true,
       "registry_name": "manaflow",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/enchantment/ManaflowEnchantment.java"
-        ]
-      },
-      "path": "~/enchantments"
-    },
-    {
-      "name": "Magicshield",
-      "type": "enchantment",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magicshield",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/enchantment/MagicshieldEnchantment.java"
         ]
       },
       "path": "~/enchantments"
@@ -12099,19 +12073,6 @@
       "path": "~/items/Materials"
     },
     {
-      "name": "IToaReforgeable",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "i_toa_reforgeable",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/IToaReforgeable.java"
-        ]
-      },
-      "path": "~/classes"
-    },
-    {
       "name": "ToaRuneSlot",
       "type": "code",
       "compiles": true,
@@ -12263,7 +12224,7 @@
       "name": "Focus",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "focus",
       "metadata": {
         "files": [
@@ -12275,8 +12236,8 @@
     {
       "name": "DivineGift",
       "type": "enchantment",
-      "compiles": true,
-      "locked_code": false,
+      "compiles": false,
+      "locked_code": true,
       "registry_name": "divine_gift",
       "metadata": {
         "files": [
@@ -12289,7 +12250,7 @@
       "name": "Growth",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "growth",
       "metadata": {
         "files": [
@@ -12301,8 +12262,8 @@
     {
       "name": "Shiny",
       "type": "enchantment",
-      "compiles": true,
-      "locked_code": false,
+      "compiles": false,
+      "locked_code": true,
       "registry_name": "shiny",
       "metadata": {
         "files": [
@@ -12315,7 +12276,7 @@
       "name": "Vampirism",
       "type": "enchantment",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "vampirism",
       "metadata": {
         "files": [
@@ -12327,14 +12288,106 @@
     {
       "name": "CustomNbtHandler",
       "type": "code",
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "custom_nbt_handler",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/CustomNbtHandler.java"
         ]
-      }
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "ToaRune",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_rune",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaRune.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "ToaReforgeable",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_reforgeable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaReforgeable.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "ToaEnchantment",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_enchantment",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaEnchantment.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "MagicProtection",
+      "type": "enchantment",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "magic_protection",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/enchantment/MagicProtectionEnchantment.java"
+        ]
+      },
+      "path": "~/enchantments"
+    },
+    {
+      "name": "Chimera",
+      "type": "enchantment",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "chimera",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/enchantment/ChimeraEnchantment.java"
+        ]
+      },
+      "path": "~/enchantments/SuperiorEnchants"
+    },
+    {
+      "name": "ISuperiorEnchantment",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "i_superior_enchantment",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ISuperiorEnchantment.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "ToaFormats",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_formats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaFormats.java"
+        ]
+      },
+      "path": "~/classes"
     }
   ],
   "variable_elements": [
@@ -13064,6 +13117,7 @@
       "skill.cooking.rewards.23": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
       "skill.cooking.rewards.24": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
       "item.toamod.cristal_armor_chestplate": "§bCristal Body§r",
+      "enchantment.toamod.magic_protection": "Magic Protection",
       "itemGroup.tabtoa_armors": "TOA Armors",
       "enchantment.toamod.stickyfeet": "Sticky Feet",
       "skill.cooking.rewards.10": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
@@ -13094,6 +13148,7 @@
       "milestone.fighter.rewards.16": "\u0027{\"text\":\"§8- §680000 Cor§r\"}\u0027,\u0027{\"text\":\"§8- §7+0.5% §4Critical Rate§r\"}\u0027,\u0027{\"text\":\"§8- §7+2.5% §4Critical Damage§r\"}\u0027",
       "milestone.fighter.rewards.17": "\u0027{\"text\":\"§8- §685000 Cor§r\"}\u0027,\u0027{\"text\":\"§8- §7+5 §cAttack Damage §7/ §5Magic Power§r\"}\u0027",
       "milestone.fighter.rewards.14": "\u0027{\"text\":\"§8- §670000 Cor§r\"}\u0027,\u0027{\"text\":\"§8- §7+0.5% §4Critical Rate§r\"}\u0027,\u0027{\"text\":\"§8- §7+2.5% §4Critical Damage§r\"}\u0027",
+      "enchantment.toamod.chimera": "Chimera",
       "milestone.fighter.rewards.15": "\u0027{\"text\":\"§8- §675000 Cor§r\"}\u0027,\u0027{\"text\":\"§8- §7+5 §cAttack Damage §7/ §5Magic Power§r\"}\u0027",
       "item.toamod.rough_rune_fragment": "Rune Fragments",
       "milestone.fighter.rewards.12": "\u0027{\"text\":\"§8- §660000 Cor§r\"}\u0027,\u0027{\"text\":\"§8- §7+0.5% §4Critical Rate§r\"}\u0027,\u0027{\"text\":\"§8- §7+2.5% §4Critical Damage§r\"}\u0027",
@@ -13331,7 +13386,6 @@
       "stat.ar": "Armor",
       "block.toamod.smooth_birch_planks": "Smooth Birch Planks",
       "item.toamod.cooking_skill_item": "Cooking Skill Item",
-      "enchantment.toamod.magicshield": "Magic Shield",
       "artefact.magic_pearl.description": "\u0027{\"text\":\"§7Increases the amount of §bMagic Dust§7 u gain from any source.§r\"}\u0027",
       "entity.toamod.npc_phantom": "§4§kPhantom§r",
       "item.toamod.gemstone_aquamarine": "Aquamarine Gemstone (\"§7§oMystic§r\")",
@@ -13484,7 +13538,6 @@
       "stat.mr.description": "\u0027{\"text\":\"§7Reduces magical damage.§r\"}\u0027",
       "item.toamod.npc_warden_knight_spawn_egg": "§4§kDMG§r§3 Warden Knight §r§4§kDMG§r Spawn Egg",
       "block.toamod.cursed_obsidian": "Cursed Obsidian",
-      "enchantment.toamod.lifesteal": "Life Steal",
       "entity.toamod.npc_dwarf_1": "NPC Dwarf 1",
       "enchant.sticky_feet.description": "\u0027{\"text\":\"§7Grants a chance of not taking knockback.§r\"}\u0027",
       "item.toamod.npc_male_1_spawn_egg": "NPC Male 1 Spawn Egg",

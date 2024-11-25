@@ -55,39 +55,9 @@ public enum ReforgeType {
 		};
 	}
 
-	public void applyReforgeToItem(ItemStack item) {
-		if (!(item.getItem() instanceof IToaReforgeable))
-			return;
-		CompoundTag nbt = item.getOrCreateTag();
-		int rarity = nbt.getInt("rarity");
-		CompoundTag itemStats = (nbt.getCompound("Stats").isEmpty()) ? new CompoundTag() : nbt.getCompound("Stats");
-		if (stats.STR != null && stats.STR[rarity] != 0)
-			itemStats.putFloat("str_f", itemStats.getFloat("str_f") + stats.STR[rarity]);
-		if (stats.DEX != null && stats.DEX[rarity] != 0)
-			itemStats.putFloat("dex_f", itemStats.getFloat("dex_f") + stats.DEX[rarity]);
-		if (stats.CON != null && stats.CON[rarity] != 0)
-			itemStats.putFloat("con_f", itemStats.getFloat("con_f") + stats.CON[rarity]);
-		if (stats.INT != null && stats.INT[rarity] != 0)
-			itemStats.putFloat("int_f", itemStats.getFloat("int_f") + stats.INT[rarity]);
-		if (stats.WIS != null && stats.WIS[rarity] != 0)
-			itemStats.putFloat("wis_f", itemStats.getFloat("wis_f") + stats.WIS[rarity]);
-		if (stats.CR != null && stats.CR[rarity] != 0)
-			itemStats.putFloat("cr", itemStats.getFloat("cr") + stats.CR[rarity]);
-		if (stats.CD != null && stats.CD[rarity] != 0)
-			itemStats.putFloat("cd", itemStats.getFloat("cd") + stats.CD[rarity]);
-		if (stats.LIFESTEAL != null && stats.LIFESTEAL[rarity] != 0)
-			itemStats.putFloat("lifesteal", itemStats.getFloat("lifesteal") + stats.LIFESTEAL[rarity]);
-		if (stats.HP != null && stats.HP[rarity] != 0)
-			itemStats.putFloat("hp_f", itemStats.getFloat("hp_f") + stats.HP[rarity]);
-		if (stats.AR != null && stats.AR[rarity] != 0)
-			itemStats.putFloat("ar_f", itemStats.getFloat("ar_f") + stats.AR[rarity]);
-		if (stats.MR != null && stats.MR[rarity] != 0)
-			itemStats.putFloat("mr_f", itemStats.getFloat("mr_f") + stats.MR[rarity]);
-		if (stats.MF != null && stats.MF[rarity] != 0)
-			itemStats.putFloat("mf_f", itemStats.getFloat("mf_f") + stats.MF[rarity]);
-		if (stats.MINF != null && stats.MINF[rarity] != 0)
-			itemStats.putFloat("minf_f", itemStats.getFloat("minf_f") + stats.MINF[rarity]);
-
-		nbt.put("Stats", itemStats);
+	public ToaProperties getProperties(){
+		return this.stats;
 	}
+	
+	//APPLY Methods are in ToaProperties combined
 }

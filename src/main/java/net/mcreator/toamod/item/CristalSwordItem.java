@@ -23,4 +23,5 @@ public class CristalSwordItem extends ToaWeapon {
 		list.add(Component.literal("\u00A77Rarity: \u00A7bRare\u00A7r"));
 		list.add(Component.literal("\u00A77Type: \u00A79Sword\u00A7r"));
 	}
+	
 }

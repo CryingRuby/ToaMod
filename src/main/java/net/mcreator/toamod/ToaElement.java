@@ -8,4 +8,16 @@ public enum ToaElement {
 	}
 
 	public final String name;
+
+	public static ToaElement getByName(String name){
+		return switch(name){
+			case "Holy" -> HOLY;
+			case "Unholy" -> UNHOLY;
+			case "Fire" -> FIRE;
+			case "Ice" -> ICE;
+			case "Thunder" -> THUNDER;
+			case "Void" -> VOID;
+			default -> null;
+		};
+	}
 }

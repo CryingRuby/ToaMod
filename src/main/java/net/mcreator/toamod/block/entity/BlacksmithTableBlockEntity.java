@@ -14,7 +14,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.ContainerHelper;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
@@ -26,6 +25,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.toamod.world.inventory.BlacksmithTableGuiMenu;
 import net.mcreator.toamod.jei_recipes.BlacksmithTableTypeRecipe;
 import net.mcreator.toamod.init.ToamodModBlockEntities;
+import net.mcreator.toamod.CustomNbtHandler;
 
 import javax.annotation.Nullable;
 
@@ -170,14 +170,25 @@ public class BlacksmithTableBlockEntity extends RandomizableContainerBlockEntity
 			return;
 		System.out.println("BT-BlockEntity - refreshRecipe called");
 		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
-		if (!hasRecipe(recipe)){
+		if (!hasRecipe(recipe))
+{
 			System.out.println("BT-BlockEntity - has no valid recipe");
 			if(!this.stacks.get(0).isEmpty())
 				this.stacks.set(0, ItemStack.EMPTY);
 			return;
 		}
 		System.out.println("Valid recipe found -> set Item in output slot");
-		this.stacks.set(0, recipe.get().getResultItem());
+		ItemStack result = recipe.get().getResultItem();
+		if(recipe.get().getHasNbt()){
+			System.out.println("Recipe has Nbt -> call methods");
+			CustomNbtHandler.applyItemBaseStats(result);
+			if(recipe.get().getCopyNbtFromSlot() > 0){
+				System.out.println("Recipe has NbtCopy -> call copyUpgrades");
+				CustomNbtHandler.copyUpgrades(this.stacks.get(recipe.get().getCopyNbtFromSlot()), result);
+			}
+			CustomNbtHandler.setLoreOfItem(result);
+		}
+		this.stacks.set(0, result);
 	}
 
 	public boolean hasRecipe() {

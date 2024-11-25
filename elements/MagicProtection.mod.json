@@ -2,13 +2,17 @@
   "_fv": 66,
   "_type": "enchantment",
   "definition": {
-    "name": "Magic Shield",
-    "type": "BREAKABLE",
+    "name": "Magic Protection",
+    "type": "ARMOR",
     "rarity": "COMMON",
     "maxLevel": 6,
     "damageModifier": 0,
-    "compatibleEnchantments": [],
-    "excludeEnchantments": false,
+    "compatibleEnchantments": [
+      {
+        "value": "CUSTOM:Protection"
+      }
+    ],
+    "excludeEnchantments": true,
     "compatibleItems": [],
     "excludeItems": false,
     "isTreasureEnchantment": false,
