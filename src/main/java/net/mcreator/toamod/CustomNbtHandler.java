@@ -144,7 +144,7 @@ public class CustomNbtHandler {
 			else{
 				prefix = '9';
 			}
-			enchants += "§" + prefix + CurrEnch.getString("id") + ToaFormats.RomanNumbers[level-1]) + ((i == enchantsTag.size()-1)? "§r" : "§7, "); 
+			enchants += "§" + prefix +""+ CurrEnch.getString("id") +""+ ToaFormats.RomanNumbers[level-1] +"" + ((i == enchantsTag.size()-1)? "§r" : "§7, "); 
 			if(enchants.length() >= 18){
 				result.add(enchants);
 				enchants = "";
@@ -176,8 +176,10 @@ public class CustomNbtHandler {
 
 	private static ToaEnchantment getEnchantByName(String name){
 		return switch(name){
-			case "sharpness" -> ToamodModEnchantments.POWERFUL.get();
+			case "sharpness" -> ToamodModEnchantments.SHARPNESS.get();
+			case "executing" -> ToamodModEnchantments.EXECUTING.get();
+			case "protection" -> ToamodModEnchantments.PROTECTION.get()
 			default -> null;
-		}
+		};
 	}
 }
