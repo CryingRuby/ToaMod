@@ -1,6 +1,7 @@
 
 package net.mcreator.toamod;
 
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.ListTag;
@@ -88,9 +89,8 @@ public class CustomNbtHandler {
 	public static void setLoreOfItem(ItemStack item) {
 		CompoundTag lore = new CompoundTag();
 		ListTag loreLines = new ListTag();
-
 		//Reihenfolge:
-		
+
 		//Rune Slots
 		//Stats
 		//Enchantments
@@ -124,33 +124,36 @@ public class CustomNbtHandler {
 
 	/**
 	 * @param the "Enchantments" ListTag from an item's nbt
-	 */ 
-	private static ArrayList<String> enchantsToLoreString(ListTag enchantsTag){
-		if(enchatnsTag.size() == 0)
-			return new String[0];
+	 */
+	private static ArrayList<String> enchantsToLoreString(ListTag enchantsTag) {
+		if (enchantsTag.size() == 0)
+			return new ArrayList<String>();
 		String enchants = "";
 		ArrayList<String> result = new ArrayList<>();
-		for(int i = 0; i < enchantsTag.size(); i++){
+		for (int i = 0; i < enchantsTag.size(); i++) {
 			CompoundTag currEnch = enchantsTag.getCompound(i);
 			int level = currEnch.getInt("lvl");
 			ToaEnchantment toaEnch = getEnchantByName(currEnch.getString("id"));
 			char prefix;
-			if(level == toaEnch.getMaxLevel()){
+			if (level == toaEnch.getMaxLevel()) {
 				prefix = '6';
-			}
-			else if(level >= toaEnch.getRarePrefixLevel()){
+			} else if (level >= toaEnch.getRarePrefixLevel()) {
 				prefix = '5';
-			}
-			else{
+			} else {
 				prefix = '9';
 			}
-			enchants += "§" + prefix +""+ CurrEnch.getString("id") +""+ ToaFormats.RomanNumbers[level-1] +"" + ((i == enchantsTag.size()-1)? "§r" : "§7, "); 
-			if(enchants.length() >= 18){
+			String[] temp = currEnch.getString("id").split("_");
+			String enchName = (""+temp[0].charAt(0)).toUpperCase() + temp[0].substring(1);
+			for (int j = 1; j < temp.length; j++) {
+				enchName += (" " + temp[j].charAt(0)).toUpperCase() + temp[j].substring(1);
+			}
+			enchants += "§" + prefix + enchName + ToaFormats.RomanNumbers[level - 1] + ((i == enchantsTag.size() - 1) ? "§r" : "§7, ");
+			if (enchants.length() >= 18) {
 				result.add(enchants);
 				enchants = "";
 			}
 		}
-		return enchants.split("\n");
+		return result;
 	}
 
 	/**
@@ -171,15 +174,31 @@ public class CustomNbtHandler {
 		 * 
 		 *
 		 */
-
+		 return new ArrayList<String>();
 	}
 
-	private static ToaEnchantment getEnchantByName(String name){
-		return switch(name){
+	private static ToaEnchantment getEnchantByName(String name) {
+		Enchantment ench = switch (name) {
 			case "sharpness" -> ToamodModEnchantments.SHARPNESS.get();
 			case "executing" -> ToamodModEnchantments.EXECUTING.get();
-			case "protection" -> ToamodModEnchantments.PROTECTION.get()
+			case "protection" -> ToamodModEnchantments.PROTECTION.get();
+			case "spikes" -> ToamodModEnchantments.SPIKES.get();
+			case "ignite" -> ToamodModEnchantments.IGNITE.get();
+			case "powerful" -> ToamodModEnchantments.POWERFUL.get();
+			case "fortune" -> ToamodModEnchantments.FORTUNE.get();
+			case "critical" -> ToamodModEnchantments.CRITICAL.get();
+			case "scavengar" -> ToamodModEnchantments.SCAVENGER.get();
+			case "stickyfeet" -> ToamodModEnchantments.STICKYFEET.get();
+			case "manaflow" -> ToamodModEnchantments.MANAFLOW.get();
+			case "focus" -> ToamodModEnchantments.FOCUS.get();
+			case "divine_gift" -> ToamodModEnchantments.DIVINE_GIFT.get();
+			case "growth" -> ToamodModEnchantments.GROWTH.get();
+			case "shiny" -> ToamodModEnchantments.SHINY.get();
+			case "vampirism" -> ToamodModEnchantments.VAMPIRISM.get();
+			case "magic_protection" -> ToamodModEnchantments.MAGIC_PROTECTION.get();
+			case "chimera" -> ToamodModEnchantments.CHIMERA.get();
 			default -> null;
-		};
+		};
+		return (ToaEnchantment) ench;
 	}
 }

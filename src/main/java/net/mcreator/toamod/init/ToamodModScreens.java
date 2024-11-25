@@ -24,7 +24,6 @@ import net.mcreator.toamod.client.gui.IllfangRngDropsMenuScreen;
 import net.mcreator.toamod.client.gui.HorseUpgradeGuiScreen;
 import net.mcreator.toamod.client.gui.HorsePatternChangeGuiScreen;
 import net.mcreator.toamod.client.gui.HorseColorChangeGuiScreen;
-import net.mcreator.toamod.client.gui.ForgerGuiScreen;
 import net.mcreator.toamod.client.gui.FighterMilestoneRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.EnhancementTableGuiScreen;
 import net.mcreator.toamod.client.gui.DwarvesWayMilestoneRewardsMenuScreen;
@@ -56,7 +55,6 @@ public class ToamodModScreens {
 			MenuScreens.register(ToamodModMenus.HORSE_PATTERN_CHANGE_GUI.get(), HorsePatternChangeGuiScreen::new);
 			MenuScreens.register(ToamodModMenus.MINING_MILESTONE_GUI.get(), MiningMilestoneGuiScreen::new);
 			MenuScreens.register(ToamodModMenus.COMBAT_MILESTONE_GUI.get(), CombatMilestoneGuiScreen::new);
-			MenuScreens.register(ToamodModMenus.FORGER_GUI.get(), ForgerGuiScreen::new);
 			MenuScreens.register(ToamodModMenus.BLACKSMITH_TABLE_GUI.get(), BlacksmithTableGuiScreen::new);
 			MenuScreens.register(ToamodModMenus.MAGIC_CRAFTER_GUI.get(), MagicCrafterGuiScreen::new);
 			MenuScreens.register(ToamodModMenus.PLAYER_PROFILE.get(), PlayerProfileScreen::new);

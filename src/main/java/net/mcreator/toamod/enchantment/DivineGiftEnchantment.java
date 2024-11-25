@@ -11,7 +11,7 @@ import net.mcreator.toamod.ToaEnchantment;
 public class DivineGiftEnchantment extends ToaEnchantment {
 	public DivineGiftEnchantment(EquipmentSlot... slots) {
 		super(Enchantment.Rarity.COMMON, EnchantmentCategory.WEAPON, slots);
-		stats(new ToaProperties()).mf(new float[]{2, 4, 6, 10});
+		stats = (new ToaProperties()).mf(new float[]{2, 4, 6, 10});
 		prefixByLevel = 3;
 	}
 

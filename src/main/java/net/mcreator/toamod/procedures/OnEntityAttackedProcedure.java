@@ -136,18 +136,18 @@ public class OnEntityAttackedProcedure {
 				}
 				resetDmgCooldown = true;
 			}
-			if (EnchantmentHelper.getItemEnchantmentLevel(ToamodModEnchantments.LIFESTEAL.get(), damageItem) != 0) {
+			if (EnchantmentHelper.getItemEnchantmentLevel(ToamodModEnchantments.VAMPIRISM.get(), damageItem) != 0) {
 				if (sourceentity instanceof Player) {
 					{
 						double _setval = Math.round((sourceentity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).currentHealth
-								+ damage * 0.1 * damageItem.getEnchantmentLevel(ToamodModEnchantments.LIFESTEAL.get()));
+								+ damage * 0.1 * damageItem.getEnchantmentLevel(ToamodModEnchantments.VAMPIRISM.get()));
 						sourceentity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.currentHealth = _setval;
 							capability.syncPlayerVariables(sourceentity);
 						});
 					}
 				} else {
-					sourceentity.getPersistentData().putDouble("currentHealth", Math.round(sourceentity.getPersistentData().getDouble("currentHealth") + damage * 0.1 * damageItem.getEnchantmentLevel(ToamodModEnchantments.LIFESTEAL.get())));
+					sourceentity.getPersistentData().putDouble("currentHealth", Math.round(sourceentity.getPersistentData().getDouble("currentHealth") + damage * 0.1 * damageItem.getEnchantmentLevel(ToamodModEnchantments.VAMPIRISM.get())));
 					ReloadEntityHealthDisplaySourceProcedure.execute(sourceentity);
 				}
 			}

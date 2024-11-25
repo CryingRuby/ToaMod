@@ -95,9 +95,6 @@
     "onOpen": {
       "name": "OnEnhancementTableGuiClosed"
     },
-    "onTick": {
-      "name": "OnEnhancementTableGuiTick"
-    },
     "onClosed": {
       "name": "OnEnhancementTableGuiClosed"
     },

@@ -1,7 +1,7 @@
 package net.mcreator.toamod;
 
-public class ToamodFormats {
-	private ToamodFormats() { //static class
+public class ToaFormats {
+	private ToaFormats() { 
 	}
 
 	//Dedicated to get different String-Formats from static methods => bsp Time: 56s; 2min

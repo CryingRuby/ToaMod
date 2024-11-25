@@ -105,7 +105,7 @@
     "vanillaToolTier": "STONE",
     "isBonemealable": false,
     "hasInventory": true,
-    "guiBoundTo": "ForgerGui",
+    "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,

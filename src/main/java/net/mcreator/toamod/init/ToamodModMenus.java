@@ -24,7 +24,6 @@ import net.mcreator.toamod.world.inventory.IllfangRngDropsMenuMenu;
 import net.mcreator.toamod.world.inventory.HorseUpgradeGuiMenu;
 import net.mcreator.toamod.world.inventory.HorsePatternChangeGuiMenu;
 import net.mcreator.toamod.world.inventory.HorseColorChangeGuiMenu;
-import net.mcreator.toamod.world.inventory.ForgerGuiMenu;
 import net.mcreator.toamod.world.inventory.FighterMilestoneRewardsMenuMenu;
 import net.mcreator.toamod.world.inventory.EnhancementTableGuiMenu;
 import net.mcreator.toamod.world.inventory.DwarvesWayMilestoneRewardsMenuMenu;
@@ -54,7 +53,6 @@ public class ToamodModMenus {
 	public static final RegistryObject<MenuType<HorsePatternChangeGuiMenu>> HORSE_PATTERN_CHANGE_GUI = REGISTRY.register("horse_pattern_change_gui", () -> IForgeMenuType.create(HorsePatternChangeGuiMenu::new));
 	public static final RegistryObject<MenuType<MiningMilestoneGuiMenu>> MINING_MILESTONE_GUI = REGISTRY.register("mining_milestone_gui", () -> IForgeMenuType.create(MiningMilestoneGuiMenu::new));
 	public static final RegistryObject<MenuType<CombatMilestoneGuiMenu>> COMBAT_MILESTONE_GUI = REGISTRY.register("combat_milestone_gui", () -> IForgeMenuType.create(CombatMilestoneGuiMenu::new));
-	public static final RegistryObject<MenuType<ForgerGuiMenu>> FORGER_GUI = REGISTRY.register("forger_gui", () -> IForgeMenuType.create(ForgerGuiMenu::new));
 	public static final RegistryObject<MenuType<BlacksmithTableGuiMenu>> BLACKSMITH_TABLE_GUI = REGISTRY.register("blacksmith_table_gui", () -> IForgeMenuType.create(BlacksmithTableGuiMenu::new));
 	public static final RegistryObject<MenuType<MagicCrafterGuiMenu>> MAGIC_CRAFTER_GUI = REGISTRY.register("magic_crafter_gui", () -> IForgeMenuType.create(MagicCrafterGuiMenu::new));
 	public static final RegistryObject<MenuType<PlayerProfileMenu>> PLAYER_PROFILE = REGISTRY.register("player_profile", () -> IForgeMenuType.create(PlayerProfileMenu::new));
