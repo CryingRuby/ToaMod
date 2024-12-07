@@ -17,11 +17,4 @@ public class WoodenSwordItem extends ToaWeapon {
 		this.toaProperties = new ToaProperties("Sword", ToaRarity.COMMAN).str(5);
 	}
 
-	@Override
-	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Type: \u00A79Sword\u00A7r"));
-		list.add(Component.literal("\u00A77Rarity: \u00A7fCOMMAN\u00A7r"));
-	}
-
 }

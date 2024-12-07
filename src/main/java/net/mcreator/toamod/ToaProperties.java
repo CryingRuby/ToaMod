@@ -5,6 +5,8 @@ import org.checkerframework.checker.units.qual.cd;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 
+import java.util.ArrayList;
+
 public class ToaProperties {
 	public ToaRarity rarity;
 	public String type, subType;
@@ -13,6 +15,9 @@ public class ToaProperties {
 	public float[] STR, DEX, CON, INT, WIS, CR, CD, LIFESTEAL, HP, AR, MR, MF, MINF;
 	public ToaElement ELEMENT;
 	public float[] ELEMENTAL_DAMAGE;
+	//these are the id's of the stats that are != 0 => this is just for code-efficiency (mostly in Lore-Setting) and is not a game feature (Elemental dmg is extra since is it only given to actual items and NOT upgrades)
+	//ID's str = 0, dex = 1, con = 2, int = 3, wis = 4, cr = 5, cd = 6, lifesteal = 7, hp = 8, ar = 9, mr = 10, mf = 11, minf = 12
+	private ArrayList<Byte> presentStats = new ArrayList<Byte>();
 
 	public ToaProperties() {
 	}
@@ -44,6 +49,7 @@ public class ToaProperties {
 		this.MINF = _minf;
 	}
 	*/
+	
 	/**
 	 * Adds ALL general information about the ToaProperty like rarity and type to the CompoundTag.
 	 * @param The CompoundTag of the item the general information will be added to
@@ -142,6 +148,7 @@ public class ToaProperties {
 
 	/**
 	 * Multiplies all Stats by f
+	 * @return a new ToaProperties object with the multiplied flat-stats
 	 */
 	public ToaProperties multiplyAllFlat(float f) {
 		ToaProperties newStats = (new ToaProperties(type, rarity)).subType(subType);
@@ -241,6 +248,13 @@ public class ToaProperties {
 	/**
 	 * Used ONLY to apply the stats of a reforge to an item
 	 */
+	public static void applyEnchantToItem(ToaEnchantment ench, ItemStack item, int level){
+		ench.stats.applyV2PropertiesToItem(item, level);
+	}
+
+	/**
+	 * Used ONLY to apply the stats of a reforge to an item
+	 */
 	public static void applyReforgeToItem(ReforgeType reforge, ItemStack item) {
 		//V2 Properties are the ToaProperties of Reforges or Runes which have longer float[] for the stat they grant based on a rarity
 		reforge.getProperties().applyV2PropertiesToItem(item, item.getOrCreateTag().getInt("rarity"));
@@ -254,44 +268,66 @@ public class ToaProperties {
 	 */
 	public static void applyRuneToItem(RuneType rune, ItemStack item, int rarity) {
 		//V2 Properties are the ToaProperties of Reforges or Runes which have longer float[] for the stat they grant based on a rarity
-		rune.getProperties().applyV2PropertiesToItem(item, item.getOrCreateTag().getInt("rarity"));
+		rune.getProperties().applyV2PropertiesToItem(item, rarity);
 	}
 
 	/**
-	 * V2 Properties are the ToaProperties of Reforges or Runes which have longer float[] for the stat they grant based on a rarity
+	 * V2 Properties are the ToaProperties of Reforges, Runes or Enchants which have longer float[] for the stat they grant based on a rarity
 	 */
-	private void applyV2PropertiesToItem(ItemStack item, int rarity) {
+	private void applyV2PropertiesToItem(ItemStack item, int index) {
 		if (!(item.getItem() instanceof ToaReforgeable))
 			return;
-		CompoundTag nbt = item.getOrCreateTag();
-		CompoundTag itemStats = nbt.getCompound("Stats");
+		CompoundTag itemStats = item.getOrCreateTag().getCompound("Stats");
 		if (STR != null)
-			itemStats.putFloat("str_f", itemStats.getFloat("str_f") + STR[rarity]);
+			itemStats.putFloat("str_f", itemStats.getFloat("str_f") + STR[index]);
 		if (DEX != null)
-			itemStats.putFloat("dex_f", itemStats.getFloat("dex_f") + DEX[rarity]);
+			itemStats.putFloat("dex_f", itemStats.getFloat("dex_f") + DEX[index]);
 		if (CON != null)
-			itemStats.putFloat("con_f", itemStats.getFloat("con_f") + CON[rarity]);
+			itemStats.putFloat("con_f", itemStats.getFloat("con_f") + CON[index]);
 		if (INT != null)
-			itemStats.putFloat("int_f", itemStats.getFloat("int_f") + INT[rarity]);
+			itemStats.putFloat("int_f", itemStats.getFloat("int_f") + INT[index]);
 		if (WIS != null)
-			itemStats.putFloat("wis_f", itemStats.getFloat("wis_f") + WIS[rarity]);
+			itemStats.putFloat("wis_f", itemStats.getFloat("wis_f") + WIS[index]);
 		if (CR != null)
-			itemStats.putFloat("cr", itemStats.getFloat("cr") + CR[rarity]);
+			itemStats.putFloat("cr", itemStats.getFloat("cr") + CR[index]);
 		if (CD != null)
-			itemStats.putFloat("cd", itemStats.getFloat("cd") + CD[rarity]);
+			itemStats.putFloat("cd", itemStats.getFloat("cd") + CD[index]);
 		if (LIFESTEAL != null)
-			itemStats.putFloat("lifesteal", itemStats.getFloat("lifesteal") + LIFESTEAL[rarity]);
+			itemStats.putFloat("lifesteal", itemStats.getFloat("lifesteal") + LIFESTEAL[index]);
 		if (HP != null)
-			itemStats.putFloat("hp_f", itemStats.getFloat("hp_f") + HP[rarity]);
+			itemStats.putFloat("hp_f", itemStats.getFloat("hp_f") + HP[index]);
 		if (AR != null)
-			itemStats.putFloat("ar_f", itemStats.getFloat("ar_f") + AR[rarity]);
+			itemStats.putFloat("ar_f", itemStats.getFloat("ar_f") + AR[index]);
 		if (MR != null)
-			itemStats.putFloat("mr_f", itemStats.getFloat("mr_f") + MR[rarity]);
+			itemStats.putFloat("mr_f", itemStats.getFloat("mr_f") + MR[index]);
 		if (MF != null)
-			itemStats.putFloat("mf_f", itemStats.getFloat("mf_f") + MF[rarity]);
+			itemStats.putFloat("mf_f", itemStats.getFloat("mf_f") + MF[index]);
 		if (MINF != null)
-			itemStats.putFloat("minf_f", itemStats.getFloat("minf_f") + MINF[rarity]);
-		nbt.put("Stats", itemStats);
+			itemStats.putFloat("minf_f", itemStats.getFloat("minf_f") + MINF[index]);
+		item.getOrCreateTag().put("Stats", itemStats);
+	}
+
+	public ArrayList<Byte> getPresentIDs(){
+		return this.presentStats;
+	}
+
+	public float[] getValueByID(byte id){
+		return switch(id){
+			case 0 -> this.STR;
+			case 1 -> this.DEX;
+			case 2 -> this.CON;
+			case 3 -> this.INT;
+			case 4 -> this.WIS;
+			case 5 -> this.CR;
+			case 6 -> this.CD;
+			case 7 -> this.LIFESTEAL;
+			case 8 -> this.HP;
+			case 9 -> this.AR;
+			case 10 -> this.MR;
+			case 11 -> this.MF;
+			case 12 -> this.MINF;
+			default -> null;
+		};
 	}
 
 	public ToaProperties subType(String subType) {
@@ -301,57 +337,56 @@ public class ToaProperties {
 
 	public ToaProperties str(float[] _str) {
 		this.STR = _str;
+		this.presentStats.add((byte) 0);
 		return this;
 	}
 
 	public ToaProperties str(float _str) {
-		this.STR = new float[]{_str, 0};
-		return this;
+		return str(new float[]{_str, 0});
 	}
 
 	public ToaProperties dex(float[] _dex) {
 		this.DEX = _dex;
+		this.presentStats.add((byte) 1);
 		return this;
 	}
 
 	public ToaProperties dex(float _dex) {
-		this.DEX = new float[]{_dex, 0};
-		return this;
+		return dex(new float[]{_dex, 0});
 	}
 
 	public ToaProperties con(float[] _con) {
 		this.CON = _con;
+		this.presentStats.add((byte) 2);
 		return this;
 	}
 
 	public ToaProperties con(float _con) {
-		this.CON = new float[]{_con, 0};
-		return this;
+		return con(new float[]{_con, 0});
 	}
 
 	public ToaProperties _int(float[] _int) {
 		this.INT = _int;
+		this.presentStats.add((byte) 3);
 		return this;
 	}
 
 	public ToaProperties _int(float _int) {
-		this.INT = new float[]{_int, 0};
-		return this;
+		return _int(new float[]{_int, 0});
 	}
 
 	public ToaProperties wis(float[] _wis) {
 		this.WIS = _wis;
+		this.presentStats.add((byte) 4);
 		return this;
 	}
 
 	public ToaProperties wis(float _wis) {
-		this.WIS = new float[]{_wis, 0};;
-		return this;
+		return wis(new float[]{_wis, 0});
 	}
 
 	public ToaProperties cr(float cr) {
-		this.CR = new float[]{cr};
-		return this;
+		return cr(new float[]{cr});
 	}
 
 	/**
@@ -359,12 +394,12 @@ public class ToaProperties {
 	 */
 	public ToaProperties cr(float[] cr) {
 		this.CR = cr;
+		this.presentStats.add((byte) 5);
 		return this;
 	}
 
 	public ToaProperties cd(float cd) {
-		this.CD = new float[]{cd};
-		return this;
+		return cd(new float[]{cd});
 	}
 
 	/**
@@ -372,6 +407,7 @@ public class ToaProperties {
 	 */
 	public ToaProperties cd(float[] cd) {
 		this.CD = cd;
+		this.presentStats.add((byte) 6);
 		return this;
 	}
 
@@ -388,8 +424,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties lifesteal(float lifesteal) {
-		this.LIFESTEAL = new float[]{lifesteal};
-		return this;
+		return lifesteal(new float[]{lifesteal});
 	}
 
 	/**
@@ -397,56 +432,59 @@ public class ToaProperties {
 	 */
 	public ToaProperties lifesteal(float[] lifesteal) {
 		this.LIFESTEAL = lifesteal;
+		this.presentStats.add((byte) 7);
 		return this;
 	}
 
 	public ToaProperties hp(float[] hp) {
 		this.HP = hp;
+		this.presentStats.add((byte) 8);
 		return this;
 	}
 
 	public ToaProperties hp(float hp) {
-		this.HP = new float[]{hp, 0};
-		return this;
-	}
-
-	public ToaProperties mf(float[] mf) {
-		this.MF = mf;
-		return this;
-	}
-
-	public ToaProperties mf(float mf) {
-		this.MF = new float[]{mf, 0};
-		return this;
-	}
-
-	public ToaProperties minf(float[] minf) {
-		this.MINF = minf;
-		return this;
-	}
-
-	public ToaProperties minf(float minf) {
-		this.MINF = new float[]{minf, 0};
-		return this;
+		return hp(new float[]{hp, 0});
 	}
 
 	public ToaProperties ar(float[] ar) {
 		this.AR = ar;
+		this.presentStats.add((byte) 9);
 		return this;
 	}
 
 	public ToaProperties ar(float ar) {
-		this.AR = new float[]{ar, 0};
-		return this;
+		return ar(new float[]{ar, 0});
 	}
 
 	public ToaProperties mr(float[] mr) {
 		this.MR = mr;
+		this.presentStats.add((byte) 10);
 		return this;
 	}
 
 	public ToaProperties mr(float mr) {
-		this.MR = new float[]{mr, 0};
+		return mr(new float[]{mr, 0});
+	}
+
+
+	public ToaProperties mf(float[] mf) {
+		this.MF = mf;
+		this.presentStats.add((byte) 11);
 		return this;
 	}
+
+	public ToaProperties mf(float mf) {
+		return mf(new float[]{mf, 0});
+	}
+
+	public ToaProperties minf(float[] minf) {
+		this.MINF = minf;
+		this.presentStats.add((byte) 12);
+		return this;
+	}
+
+	public ToaProperties minf(float minf) {
+		return minf(new float[]{minf, 0});
+	}
+
 }
