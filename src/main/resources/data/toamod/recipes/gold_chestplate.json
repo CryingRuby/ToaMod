@@ -1,0 +1,22 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "has_nbt": true,
+  "pattern": [
+  	"# #",
+  	"###",
+  	"###"
+  ],
+  "ingredients": [
+  		{"item":"toamod:coal_ingot"},
+  		{"item":"toamod:coal_ingot"},
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:coal_ingot"},
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:gold_ingot"}
+  ],
+  "output": {
+    "item": "toamod:gold_chestplate",
+    "count": 1
+  }

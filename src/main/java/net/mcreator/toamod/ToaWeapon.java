@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public abstract class ToaWeapon extends ToaReforgeable {
 	public ToaWeapon() {
-		super(new Item.Properties().stacksTo(1).rarity(Rarity.COMMON));
+		super(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.COMMON));
 	}
 }

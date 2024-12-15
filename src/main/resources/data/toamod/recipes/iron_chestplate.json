@@ -1,0 +1,24 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "has_nbt": true,
+  "pattern": [
+  	"# #",
+  	"###",
+  	"###"
+  ],
+  "ingredients": [
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"}
+  		
+  ],
+  "output": {
+    "item": "toamod:iron_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "has_nbt": true,
+  "nbt_copy": 5,
+  "pattern": [
+  	"###",
+  	"###",
+  	"###"
+  ],
+  "ingredients": [
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_leggings"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"}
+  ],
+  "output": {
+    "item": "toamod:hardened_iron_leggings",
+    "count": 1
+  }
+}

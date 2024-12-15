@@ -14,7 +14,7 @@ import java.util.List;
 
 public class WoodenSwordItem extends ToaWeapon {
 	public WoodenSwordItem() {
-		this.toaProperties = new ToaProperties("Sword", ToaRarity.COMMAN).str(5);
+		this.toaProperties = new ToaProperties("Sword", ToaRarity.COMMON).str(5);
 	}
 
 }

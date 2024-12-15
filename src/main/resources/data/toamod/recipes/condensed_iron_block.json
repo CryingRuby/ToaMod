@@ -6,15 +6,15 @@
   	"###"
   ],
   "ingredients": [
-  		{"item":"toamod:iron_bar"},
-  		{"item":"toamod:iron_bar"},
-  		{"item":"toamod:iron_bar"},
-  		{"item":"toamod:iron_bar"},
-  		{"item":"toamod:iron_bar"},
-  		{"item":"toamod:iron_bar"},
-		{"item":"toamod:iron_bar"},
-		{"item":"toamod:iron_bar"},
-		{"item":"toamod:iron_bar"}
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+		{"item":"toamod:iron_ingot"},
+		{"item":"toamod:iron_ingot"},
+		{"item":"toamod:iron_ingot"}
   ],
   "output": {
     "item": "toamod:condensed_iron_block",

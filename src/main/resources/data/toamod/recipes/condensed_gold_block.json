@@ -1,0 +1,23 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "pattern": [
+  	"###",
+  	"###",
+  	"###"
+  ],
+  "ingredients": [
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:gold_ingot"},
+  		{"item":"toamod:gold_ingot"},
+		{"item":"toamod:gold_ingot"},
+		{"item":"toamod:gold_ingot"},
+		{"item":"toamod:gold_ingot"}
+  ],
+  "output": {
+    "item": "toamod:condensed_gold_block",
+    "count": 1
+  }
+}

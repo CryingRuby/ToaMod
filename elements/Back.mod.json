@@ -1,0 +1,9 @@
+{
+  "_fv": 66,
+  "_type": "curiosslot",
+  "definition": {
+    "texture": "back.png",
+    "name": "Back",
+    "amount": 1
+  }
+}

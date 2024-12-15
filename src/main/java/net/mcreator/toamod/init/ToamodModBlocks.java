@@ -49,6 +49,8 @@ import net.mcreator.toamod.block.CreatureBarrierBlock;
 import net.mcreator.toamod.block.CookingTableBlock;
 import net.mcreator.toamod.block.ControlBarrierBlock;
 import net.mcreator.toamod.block.CondensedIronBlockBlock;
+import net.mcreator.toamod.block.CondensedGoldBlockBlock;
+import net.mcreator.toamod.block.CondensedCoalBlockBlock;
 import net.mcreator.toamod.block.CoalOreBlock;
 import net.mcreator.toamod.block.ChestNormalBlock;
 import net.mcreator.toamod.block.ChestLegendaryBlock;
@@ -102,6 +104,8 @@ public class ToamodModBlocks {
 	public static final RegistryObject<Block> MITHRIL_ORE = REGISTRY.register("mithril_ore", () -> new MithrilOreBlock());
 	public static final RegistryObject<Block> CONDENSED_IRON_BLOCK = REGISTRY.register("condensed_iron_block", () -> new CondensedIronBlockBlock());
 	public static final RegistryObject<Block> BLACKSMITH_TABLE = REGISTRY.register("blacksmith_table", () -> new BlacksmithTableBlock());
+	public static final RegistryObject<Block> CONDENSED_GOLD_BLOCK = REGISTRY.register("condensed_gold_block", () -> new CondensedGoldBlockBlock());
+	public static final RegistryObject<Block> CONDENSED_COAL_BLOCK = REGISTRY.register("condensed_coal_block", () -> new CondensedCoalBlockBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

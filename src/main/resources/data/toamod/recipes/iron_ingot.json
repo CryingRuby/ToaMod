@@ -1,0 +1,23 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "pattern": [
+  	"###",
+  	"###",
+  	"###"
+  ],
+  "ingredients": [
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+  		{"item":"toamod:pure_iron"},
+		{"item":"toamod:pure_iron"},
+		{"item":"toamod:pure_iron"},
+		{"item":"toamod:pure_iron"}
+  ],
+  "output": {
+    "item": "toamod:iron_ingot",
+    "count": 1
+  }
+}

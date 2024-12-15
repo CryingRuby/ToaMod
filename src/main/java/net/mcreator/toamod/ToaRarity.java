@@ -23,21 +23,22 @@ public enum ToaRarity {
 
 	public static ToaRarity getByID(int id) {
 		return switch(id) {
-			case 0 -> COMMAN;
-			case 1 -> RARE;
-			case 2 -> EPIC;
-			case 3 -> LEGENDARY;
-			case 4 -> MYTHIC;
-			case 5 -> DIVINE;
-			case 6 -> ANCIENT;
-			default -> COMMAN;
+			case 0 -> COMMON;
+			case 1 -> UNCOMMON;
+			case 2 -> RARE;
+			case 3 -> EPIC;
+			case 4 -> LEGENDARY;
+			case 5 -> MYTHIC;
+			case 6 -> DIVINE;
+			case 7 -> ANCIENT;
+			default -> COMMON;
 		};
 	}
 
 	public static ToaRarity getByName(String name) {
 		return switch(name) {
 			case "Common", "\u00A7fCOMMON\u00A7r" -> COMMON;
-			case "Uncommon", "\u00A7aUNCOMMON\u00A7r" -> UNCOMMON
+			case "Uncommon", "\u00A7aUNCOMMON\u00A7r" -> UNCOMMON;
 			case "Rare", "\u00A73RARE\u00A7r" -> RARE;
 			case "Epic", "\u00A75EPIC\u00A7r" -> EPIC;
 			case "Legendary", "\u00A76LEGENDARY\u00A7r" -> LEGENDARY;

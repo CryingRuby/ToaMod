@@ -1,0 +1,9 @@
+{
+  "_fv": 66,
+  "_type": "curiosslot",
+  "definition": {
+    "texture": "feet.png",
+    "name": "Feet",
+    "amount": 1
+  }
+}

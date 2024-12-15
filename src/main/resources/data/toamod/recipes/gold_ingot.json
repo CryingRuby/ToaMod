@@ -1,0 +1,23 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "pattern": [
+  	"###",
+  	"###",
+  	"###"
+  ],
+  "ingredients": [
+  		{"item":"toamod:pure_gold"},
+  		{"item":"toamod:pure_gold"},
+  		{"item":"toamod:pure_gold"},
+  		{"item":"toamod:pure_gold"},
+  		{"item":"toamod:pure_gold"},
+  		{"item":"toamod:pure_gold"},
+		{"item":"toamod:pure_gold"},
+		{"item":"toamod:pure_gold"},
+		{"item":"toamod:pure_gold"}
+  ],
+  "output": {
+    "item": "toamod:gold_ingot",
+    "count": 1
+  }
+}

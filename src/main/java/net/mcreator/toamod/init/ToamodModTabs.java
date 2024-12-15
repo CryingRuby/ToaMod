@@ -121,6 +121,12 @@ public class ToamodModTabs {
 			})
 
 					.build());
+	public static final RegistryObject<CreativeModeTab> EQUIPMENT = REGISTRY.register("equipment",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.toamod.equipment")).icon(() -> new ItemStack(ToamodModItems.GOLDEN_NECKLACE.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(ToamodModItems.GOLDEN_NECKLACE.get());
+			})
+
+					.build());
 	public static final RegistryObject<CreativeModeTab> TOA_ARMORS = REGISTRY.register("toa_armors",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.toamod.toa_armors")).icon(() -> new ItemStack(ToamodModItems.IRON_ARMOR_CHESTPLATE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(ToamodModItems.WOOD_ARMOR_HELMET.get());
@@ -210,27 +216,27 @@ public class ToamodModTabs {
 				tabData.accept(ToamodModItems.PURE_IRON.get());
 				tabData.accept(ToamodModItems.RED_GOBLIN_SCALE.get());
 				tabData.accept(ToamodModItems.PURE_CRYSTAL.get());
-				tabData.accept(ToamodModItems.GOLD_BAR.get());
-				tabData.accept(ToamodModItems.IRON_BAR.get());
-				tabData.accept(ToamodModItems.JADE_BAR.get());
-				tabData.accept(ToamodModItems.COAL_BAR.get());
 				tabData.accept(ToamodModItems.CRYSTAL_SHARD.get());
 				tabData.accept(ToamodModItems.CRYSTAL.get());
 				tabData.accept(ToamodModItems.CRYSTAL_CLUSTER.get());
 				tabData.accept(ToamodModItems.RED_CRYSTAL.get());
 				tabData.accept(ToamodModItems.RED_CRYSTAL_CLUSTER.get());
 				tabData.accept(ToamodModItems.MITHRIL.get());
-				tabData.accept(ToamodModItems.MITHRIL_BAR.get());
 				tabData.accept(ToamodModItems.RED_COPPER.get());
-				tabData.accept(ToamodModItems.RED_COPPER_BAR.get());
 				tabData.accept(ToamodModItems.BLUE_COPPER.get());
-				tabData.accept(ToamodModItems.BLUE_COPPER_BAR.get());
 				tabData.accept(ToamodModItems.TUSK.get());
 				tabData.accept(ToamodModItems.REFINED_TUSK.get());
 				tabData.accept(ToamodModItems.DROP_OF_BLOOD.get());
 				tabData.accept(ToamodModItems.BURNING_SOUL.get());
 				tabData.accept(ToamodModItems.MANA_STONE.get());
 				tabData.accept(ToamodModBlocks.CONDENSED_IRON_BLOCK.get().asItem());
+				tabData.accept(ToamodModItems.GOLD_INGOT.get());
+				tabData.accept(ToamodModItems.IRON_INGOT.get());
+				tabData.accept(ToamodModItems.JADE_INGOT.get());
+				tabData.accept(ToamodModItems.COAL_INGOT.get());
+				tabData.accept(ToamodModItems.MITHRIL_INGOT.get());
+				tabData.accept(ToamodModItems.RED_COPPER_INGOT.get());
+				tabData.accept(ToamodModItems.BLUE_COPPER_INGOT.get());
 			})
 
 					.build());

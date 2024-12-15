@@ -1,5 +1,6 @@
 {
   "type": "toamod:blacksmith_table_type",
+  "has_nbt": true,
   "pattern": [
   	"###",
   	"# #",
@@ -13,7 +14,7 @@
   		{"item":"toamod:pure_iron"}
   ],
   "output": {
-    "item": "toamod:iron_bar",
+    "item": "toamod:iron_helmet",
     "count": 1
   }
 }

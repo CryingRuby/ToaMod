@@ -1,0 +1,18 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "has_nbt": true,
+  "pattern": [
+  	" # ",
+  	" # ",
+  	" # "
+  ],
+  "ingredients": [
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:iron_ingot"},
+  		{"item":"toamod:log"}
+  ],
+  "output": {
+    "item": "toamod:iron_sword",
+    "count": 1
+  }
+}

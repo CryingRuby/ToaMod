@@ -1,0 +1,9 @@
+{
+  "_fv": 66,
+  "_type": "curiosslot",
+  "definition": {
+    "texture": "necklace.png",
+    "name": "Necklace",
+    "amount": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "toamod:blacksmith_table_type",
+  "pattern": [
+  	"###",
+  	"###",
+  	"###"
+  ],
+  "ingredients": [
+  		{"item":"toamod:coal"},
+  		{"item":"toamod:coal"},
+  		{"item":"toamod:coal"},
+  		{"item":"toamod:coal"},
+  		{"item":"toamod:coal"},
+  		{"item":"toamod:coal"},
+		{"item":"toamod:coal"},
+		{"item":"toamod:coal"},
+		{"item":"toamod:coal"}
+  ],
+  "output": {
+    "item": "toamod:coal_ingot",
+    "count": 1
+  }
+}

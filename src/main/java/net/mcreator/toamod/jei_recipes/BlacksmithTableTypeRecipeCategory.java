@@ -49,10 +49,10 @@ public class BlacksmithTableTypeRecipeCategory implements IRecipeCategory<Blacks
 
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, BlacksmithTableTypeRecipe recipe, IFocusGroup focuses) {
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 122, 32).addItemStack(recipe.getResultItem(null));
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 123, 33).addItemStack(recipe.getResultItem(null));
 		for(int i = 0; i < 3; i++){
 			for(int u = 0; u < 3; u++){
-				builder.addSlot(RecipeIngredientRole.INPUT, 14 + 18 * u, 14 + 18 * i).addIngredients(recipe.getIngredients().get(3*i+u));
+				builder.addSlot(RecipeIngredientRole.INPUT, 15 + 18 * u, 15 + 18 * i).addIngredients(recipe.getIngredients().get(3*i+u));
 
 			}
 		}

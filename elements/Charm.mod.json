@@ -1,0 +1,9 @@
+{
+  "_fv": 66,
+  "_type": "curiosslot",
+  "definition": {
+    "texture": "charm.png",
+    "name": "Charm",
+    "amount": 1
+  }
+}

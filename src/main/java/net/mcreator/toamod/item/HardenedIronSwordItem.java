@@ -15,7 +15,7 @@ import java.util.List;
 
 public class HardenedIronSwordItem extends ToaWeapon {
 	public HardenedIronSwordItem() {
-		this.toaProperties = new ToaProperties("Sword", ToaRarity.COMMAN).str(25);
+		this.toaProperties = new ToaProperties("Sword", ToaRarity.COMMON).str(25);
 		runeSlots = new RuneSlot[2];
 	}
 }
