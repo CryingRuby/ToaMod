@@ -43,54 +43,24 @@ public final class StatHandler {
 		
 		//collect all final stats given in idList parameter
 		for (int i = 0; i < idList.length; i++) {
-			String stat = "";
-			byte hasPercentage = 1;
-			switch (idList[i]) {
-				case 0 :
-					stat = "str";
-					break;
-				case 1 :
-					stat = "dex";
-					break;
-				case 2 :
-					stat = "con";
-					break;
-				case 3 :
-					stat = "int";
-					break;
-				case 4 :
-					stat = "wis";
-					break;
-				case 5 :
-					stat = "cr";
-					hasPercentage = 0;
-					break;
-				case 6 :
-					stat = "cd";
-					hasPercentage = 0;
-					break;
-				case 7 :
-					stat = "lifesteal";
-					hasPercentage = 0;
-					break;
-				case 8 :
-					stat = "hp";
-					break;
-				case 9 :
-					stat = "ar";
-					break;
-				case 10 :
-					stat = "mr";
-					break;
-				case 11 :
-					stat = "mf";
-					break;
-				case 12 :
-					stat = "minf";
-					break;
-				default :
-					break;
-			}
+			
+			byte hasPercentage = (idList[i] >= 5 && idList[i] <= 7)? 0 : 1; //cr, cd, lifesteal do NOT have percentages
+			String stat = switch (idList[i]) {
+				case 0 -> "str";
+				case 1 -> "dex";
+				case 2 -> "con";
+				case 3 -> "int";
+				case 4 -> "wis";
+				case 5 -> "cr";
+				case 6 -> "cd";
+				case 7 -> "lifesteal";
+				case 8 -> "hp";
+				case 9 -> "ar";
+				case 10 -> "mr";
+				case 11 -> "mf";
+				case 12 -> "minf";
+				default -> "";
+			};
 			if (stat.equals("")) {
 				stats[i] = 0;
 				continue;

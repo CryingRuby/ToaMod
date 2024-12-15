@@ -12065,7 +12065,7 @@
     {
       "name": "StatHandler",
       "type": "code",
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "registry_name": "stat_handler",
       "metadata": {
