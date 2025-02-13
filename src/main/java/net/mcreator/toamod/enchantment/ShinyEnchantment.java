@@ -14,7 +14,7 @@ public class ShinyEnchantment extends ToaEnchantment {
 	}
 
 	//chance increase to find pure materials -> for balancing here combined
-	public static float[] values = {2.5f, 5, 10};
+	public static final float[] values = {2.5f, 5, 10};
 
 	@Override
 	public int getMaxLevel() {

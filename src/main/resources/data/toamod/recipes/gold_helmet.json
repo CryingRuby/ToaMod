@@ -14,6 +14,7 @@
   		{"item":"toamod:coal_ingot"}
   ],
   "output": {
-    "item": "toamod:gold_helmet",
+    "item": "toamod:gold_armor_helmet",
     "count": 1
   }
+}

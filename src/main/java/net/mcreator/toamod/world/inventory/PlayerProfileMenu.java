@@ -4,9 +4,6 @@ package net.mcreator.toamod.world.inventory;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -22,7 +19,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.toamod.procedures.OnPlayerProfileTickProcedure;
 import net.mcreator.toamod.network.PlayerProfileSlotMessage;
 import net.mcreator.toamod.init.ToamodModMenus;
 import net.mcreator.toamod.ToamodMod;
@@ -31,7 +27,6 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-@Mod.EventBusSubscriber
 public class PlayerProfileMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
@@ -381,17 +376,5 @@ public class PlayerProfileMenu extends AbstractContainerMenu implements Supplier
 
 	public Map<Integer, Slot> get() {
 		return customSlots;
-	}
-
-	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		Player entity = event.player;
-		if (event.phase == TickEvent.Phase.END && entity.containerMenu instanceof PlayerProfileMenu) {
-			Level world = entity.level();
-			double x = entity.getX();
-			double y = entity.getY();
-			double z = entity.getZ();
-			OnPlayerProfileTickProcedure.execute(world, x, y, z, entity);
-		}
 	}
 }

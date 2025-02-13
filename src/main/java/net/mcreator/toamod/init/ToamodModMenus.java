@@ -24,6 +24,12 @@ import net.mcreator.toamod.world.inventory.IllfangRngDropsMenuMenu;
 import net.mcreator.toamod.world.inventory.HorseUpgradeGuiMenu;
 import net.mcreator.toamod.world.inventory.HorsePatternChangeGuiMenu;
 import net.mcreator.toamod.world.inventory.HorseColorChangeGuiMenu;
+import net.mcreator.toamod.world.inventory.ForgerStarsMenu;
+import net.mcreator.toamod.world.inventory.ForgerStackableMenu;
+import net.mcreator.toamod.world.inventory.ForgerRunesMenu;
+import net.mcreator.toamod.world.inventory.ForgerReforgeMenu;
+import net.mcreator.toamod.world.inventory.ForgerPrestigeMenu;
+import net.mcreator.toamod.world.inventory.ForgerGuiMenu;
 import net.mcreator.toamod.world.inventory.FighterMilestoneRewardsMenuMenu;
 import net.mcreator.toamod.world.inventory.EnhancementTableGuiMenu;
 import net.mcreator.toamod.world.inventory.DwarvesWayMilestoneRewardsMenuMenu;
@@ -69,4 +75,10 @@ public class ToamodModMenus {
 	public static final RegistryObject<MenuType<PlayerStatsMenuMenu>> PLAYER_STATS_MENU = REGISTRY.register("player_stats_menu", () -> IForgeMenuType.create(PlayerStatsMenuMenu::new));
 	public static final RegistryObject<MenuType<IllfangRngDropsMenuMenu>> ILLFANG_RNG_DROPS_MENU = REGISTRY.register("illfang_rng_drops_menu", () -> IForgeMenuType.create(IllfangRngDropsMenuMenu::new));
 	public static final RegistryObject<MenuType<PlayerRecipesItemInventoryMenu>> PLAYER_RECIPES_ITEM_INVENTORY = REGISTRY.register("player_recipes_item_inventory", () -> IForgeMenuType.create(PlayerRecipesItemInventoryMenu::new));
+	public static final RegistryObject<MenuType<ForgerGuiMenu>> FORGER_GUI = REGISTRY.register("forger_gui", () -> IForgeMenuType.create(ForgerGuiMenu::new));
+	public static final RegistryObject<MenuType<ForgerReforgeMenu>> FORGER_REFORGE = REGISTRY.register("forger_reforge", () -> IForgeMenuType.create(ForgerReforgeMenu::new));
+	public static final RegistryObject<MenuType<ForgerRunesMenu>> FORGER_RUNES = REGISTRY.register("forger_runes", () -> IForgeMenuType.create(ForgerRunesMenu::new));
+	public static final RegistryObject<MenuType<ForgerStarsMenu>> FORGER_STARS = REGISTRY.register("forger_stars", () -> IForgeMenuType.create(ForgerStarsMenu::new));
+	public static final RegistryObject<MenuType<ForgerStackableMenu>> FORGER_STACKABLE = REGISTRY.register("forger_stackable", () -> IForgeMenuType.create(ForgerStackableMenu::new));
+	public static final RegistryObject<MenuType<ForgerPrestigeMenu>> FORGER_PRESTIGE = REGISTRY.register("forger_prestige", () -> IForgeMenuType.create(ForgerPrestigeMenu::new));
 }

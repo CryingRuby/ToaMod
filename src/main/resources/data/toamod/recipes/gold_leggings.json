@@ -16,6 +16,7 @@
   		{"item":"toamod:gold_ingot"}
   ],
   "output": {
-    "item": "toamod:gold_leggings",
+    "item": "toamod:gold_armor_leggings",
     "count": 1
   }
+}

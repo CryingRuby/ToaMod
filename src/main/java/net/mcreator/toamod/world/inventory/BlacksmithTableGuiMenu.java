@@ -296,8 +296,10 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 			} else {
 				if (boundBlockEntity instanceof BlacksmithTableBlockEntity bT) {
 					System.out.println("block at x=" + x + ", y=" + y + ", z=" + z + " has BlacksmithTableBlockEntity - call refreshRecipe in bT");
-					if (slotid == 0 && ctype == 1 || ctype == 2)
+					if (slotid == 0 && ctype == 1 || ctype == 2) {
+						System.out.println("extract Input-item due to crafting");
 						bT.extractItemsFromCrafting();
+					}
 					bT.refreshRecipe();
 				}
 			}

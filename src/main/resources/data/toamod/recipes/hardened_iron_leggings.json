@@ -12,14 +12,14 @@
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"},
-  		{"item":"toamod:iron_leggings"},
+  		{"item":"toamod:iron_armor_leggings"},
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"}
   ],
   "output": {
-    "item": "toamod:hardened_iron_leggings",
+    "item": "toamod:hardened_iron_armor_leggings",
     "count": 1
   }
 }

@@ -14,7 +14,7 @@ public class FocusEnchantment extends ToaEnchantment {
 	}
 
 	//elemental dmg increase -> for balancing here combined
-	public static float[] values = {3, 6, 9, 15};
+	public static final float[] values = {3, 6, 9, 15};
 
 	@Override
 	public int getMaxLevel() {

@@ -14,7 +14,7 @@ public class SpikesEnchantment extends ToaEnchantment {
 	}
 
 	//values for dmg deflection -> For balancing here combined
-	public static float[] values = {0.5f, 1, 1.5f, 2, 2.5f, 3};
+	public static final float[] values = {0.5f, 1, 1.5f, 2, 2.5f, 3};
 
 	@Override
 	public int getMaxLevel() {

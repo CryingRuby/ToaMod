@@ -100,9 +100,7 @@ public class ToaProperties {
 		if (ELEMENT != null) {
 			nbt.putString("element", ELEMENT.name);
 			if (ELEMENTAL_DAMAGE[0] != 0)
-				nbt.putFloat("elem_dmg_f", ELEMENTAL_DAMAGE[0]);
-			if (ELEMENTAL_DAMAGE[1] != 0)
-				nbt.putFloat("elem_dmg_p", ELEMENTAL_DAMAGE[1]);
+				nbt.putFloat("elem_dmg", ELEMENTAL_DAMAGE[0]);
 		}
 		if (HP != null) {
 			if (HP[0] != 0)
@@ -216,8 +214,7 @@ public class ToaProperties {
 			nbt.putFloat("cd", nbt.getFloat("cd") + CD[0]);
 		}
 		if (ELEMENT != null && ELEMENT == ToaElement.getByName(nbt.getString("element"))) {
-			nbt.putFloat("elem_dmg_f", nbt.getFloat("elem_dmg_f") + ELEMENTAL_DAMAGE[0]);
-			nbt.putFloat("elem_dmg_p", nbt.getFloat("elem_dmg_p") + ELEMENTAL_DAMAGE[1]);
+			nbt.putFloat("elem_dmg", nbt.getFloat("elem_dmg") + ELEMENTAL_DAMAGE[0]);
 		}
 		if (LIFESTEAL != null) {
 			nbt.putFloat("lifesteal", nbt.getFloat("lifesteal") + LIFESTEAL[0]);
@@ -248,16 +245,16 @@ public class ToaProperties {
 	/**
 	 * Used ONLY to apply the stats of a reforge to an item
 	 */
-	public static void applyEnchantToItem(ToaEnchantment ench, ItemStack item, int level){
-		ench.stats.applyV2PropertiesToItem(item, level);
+	public static void applyEnchantToItem(ToaEnchantment ench, ItemStack item, int level, int f){
+		ench.stats.applyV2PropertiesToItem(item, level, f);
 	}
 
 	/**
 	 * Used ONLY to apply the stats of a reforge to an item
 	 */
-	public static void applyReforgeToItem(ReforgeType reforge, ItemStack item) {
+	public static void applyReforgeToItem(ReforgeType reforge, ItemStack item, int f) {
 		//V2 Properties are the ToaProperties of Reforges or Runes which have longer float[] for the stat they grant based on a rarity
-		reforge.getProperties().applyV2PropertiesToItem(item, item.getOrCreateTag().getInt("rarity"));
+		reforge.getProperties().applyV2PropertiesToItem(item, item.getOrCreateTag().getInt("rarity"), f);
 	}
 
 	/**
@@ -265,45 +262,49 @@ public class ToaProperties {
 	 * @param runeType of rune
 	 * @param item to which the stats of the rune will be applied
 	 * @param rarity of the rune
+	 * @param 1: add ; -1 subtract
 	 */
-	public static void applyRuneToItem(RuneType rune, ItemStack item, int rarity) {
+	public static void applyRuneToItem(RuneType rune, ItemStack item, int rarity, int f) {
 		//V2 Properties are the ToaProperties of Reforges or Runes which have longer float[] for the stat they grant based on a rarity
-		rune.getProperties().applyV2PropertiesToItem(item, rarity);
+		rune.getProperties().applyV2PropertiesToItem(item, rarity, f);
 	}
 
 	/**
 	 * V2 Properties are the ToaProperties of Reforges, Runes or Enchants which have longer float[] for the stat they grant based on a rarity
+	 * @param item the stats get applied to
+	 * @param index of stat array of the stats
+	 * @param factor applied stats get multiplied with -> 1: add ; -1: substract
 	 */
-	private void applyV2PropertiesToItem(ItemStack item, int index) {
+	private void applyV2PropertiesToItem(ItemStack item, int index, int f) {
 		if (!(item.getItem() instanceof ToaReforgeable))
 			return;
 		CompoundTag itemStats = item.getOrCreateTag().getCompound("Stats");
 		if (STR != null)
-			itemStats.putFloat("str_f", itemStats.getFloat("str_f") + STR[index]);
+			itemStats.putFloat("str_f", itemStats.getFloat("str_f") + STR[index] * f);
 		if (DEX != null)
-			itemStats.putFloat("dex_f", itemStats.getFloat("dex_f") + DEX[index]);
+			itemStats.putFloat("dex_f", itemStats.getFloat("dex_f") + DEX[index] * f);
 		if (CON != null)
-			itemStats.putFloat("con_f", itemStats.getFloat("con_f") + CON[index]);
+			itemStats.putFloat("con_f", itemStats.getFloat("con_f") + CON[index] * f);
 		if (INT != null)
-			itemStats.putFloat("int_f", itemStats.getFloat("int_f") + INT[index]);
+			itemStats.putFloat("int_f", itemStats.getFloat("int_f") + INT[index] * f);
 		if (WIS != null)
-			itemStats.putFloat("wis_f", itemStats.getFloat("wis_f") + WIS[index]);
+			itemStats.putFloat("wis_f", itemStats.getFloat("wis_f") + WIS[index] * f);
 		if (CR != null)
-			itemStats.putFloat("cr", itemStats.getFloat("cr") + CR[index]);
+			itemStats.putFloat("cr", itemStats.getFloat("cr") + CR[index] * f);
 		if (CD != null)
-			itemStats.putFloat("cd", itemStats.getFloat("cd") + CD[index]);
+			itemStats.putFloat("cd", itemStats.getFloat("cd") + CD[index] * f);
 		if (LIFESTEAL != null)
-			itemStats.putFloat("lifesteal", itemStats.getFloat("lifesteal") + LIFESTEAL[index]);
+			itemStats.putFloat("lifesteal", itemStats.getFloat("lifesteal") + LIFESTEAL[index] * f);
 		if (HP != null)
-			itemStats.putFloat("hp_f", itemStats.getFloat("hp_f") + HP[index]);
+			itemStats.putFloat("hp_f", itemStats.getFloat("hp_f") + HP[index] * f);
 		if (AR != null)
-			itemStats.putFloat("ar_f", itemStats.getFloat("ar_f") + AR[index]);
+			itemStats.putFloat("ar_f", itemStats.getFloat("ar_f") + AR[index] * f);
 		if (MR != null)
-			itemStats.putFloat("mr_f", itemStats.getFloat("mr_f") + MR[index]);
+			itemStats.putFloat("mr_f", itemStats.getFloat("mr_f") + MR[index] * f);
 		if (MF != null)
-			itemStats.putFloat("mf_f", itemStats.getFloat("mf_f") + MF[index]);
+			itemStats.putFloat("mf_f", itemStats.getFloat("mf_f") + MF[index] * f);
 		if (MINF != null)
-			itemStats.putFloat("minf_f", itemStats.getFloat("minf_f") + MINF[index]);
+			itemStats.putFloat("minf_f", itemStats.getFloat("minf_f") + MINF[index] * f);
 		item.getOrCreateTag().put("Stats", itemStats);
 	}
 
@@ -326,6 +327,25 @@ public class ToaProperties {
 			case 10 -> this.MR;
 			case 11 -> this.MF;
 			case 12 -> this.MINF;
+			default -> null;
+		};
+	}
+
+	public String getStatNameByID(byte id){
+		return switch(id){
+			case 0 -> "Strength";
+			case 1 -> "Dexterity";
+			case 2 -> "Consitution";
+			case 3 -> "Intelligence";
+			case 4 -> "Wisdom";
+			case 5 -> "Crit Rate";
+			case 6 -> "Crit Dmg";
+			case 7 -> "Lifesteal";
+			case 8 -> "Health";
+			case 9 -> "Armor";
+			case 10 -> "Magic Res";
+			case 11 -> "Magic Find";
+			case 12 -> "Mining Fortune";
 			default -> null;
 		};
 	}

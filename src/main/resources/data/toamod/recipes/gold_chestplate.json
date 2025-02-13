@@ -17,6 +17,7 @@
   		{"item":"toamod:gold_ingot"}
   ],
   "output": {
-    "item": "toamod:gold_chestplate",
+    "item": "toamod:gold_armor_chestplate",
     "count": 1
   }
+}

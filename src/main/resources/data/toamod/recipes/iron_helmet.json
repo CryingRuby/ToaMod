@@ -14,7 +14,7 @@
   		{"item":"toamod:pure_iron"}
   ],
   "output": {
-    "item": "toamod:iron_helmet",
+    "item": "toamod:iron_armor_helmet",
     "count": 1
   }
 }

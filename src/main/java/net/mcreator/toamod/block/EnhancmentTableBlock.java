@@ -65,7 +65,7 @@ public class EnhancmentTableBlock extends Block implements EntityBlock {
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-		OnTableRightClickedProcedure.execute(world, x, y, z, entity);
+		OnTableRightClickedProcedure.execute(x, y, z, entity);
 		return InteractionResult.SUCCESS;
 	}
 

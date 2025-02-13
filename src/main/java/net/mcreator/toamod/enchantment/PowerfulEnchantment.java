@@ -19,7 +19,7 @@ public class PowerfulEnchantment extends ToaEnchantment {
 	}
 
 	//values for the percentage elemental dmg increase -> fpr balancing here combined
-	public static float[] values = {0.02f, 0.04f, 0.06f, 0.08f, 0.1f, 0.12f, 0.14f, 0.16f, 0.18f, 0.2f};
+	public static final float[] values = {0.02f, 0.04f, 0.06f, 0.08f, 0.1f, 0.12f, 0.14f, 0.16f, 0.18f, 0.2f};
 
 	@Override
 	public int getMaxLevel() {

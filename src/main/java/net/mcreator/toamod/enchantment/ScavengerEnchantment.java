@@ -14,7 +14,7 @@ public class ScavengerEnchantment extends ToaEnchantment {
 	}
 
 	//values for cor per kill per level of mob -> for balancing here combined
-	public static float[] values = {0.25f, 0.5f, 1, 1.5f};
+	public static final float[] values = {0.25f, 0.5f, 1, 1.5f};
 
 	@Override
 	public int getMaxLevel() {

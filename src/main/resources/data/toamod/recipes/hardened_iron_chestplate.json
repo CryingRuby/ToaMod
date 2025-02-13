@@ -12,14 +12,14 @@
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"},
-  		{"item":"toamod:iron_chestplate"},
+  		{"item":"toamod:iron_armor_chestplate"},
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"},
   		{"item":"toamod:iron_ingot"}
   ],
   "output": {
-    "item": "toamod:hardened_iron_chestplate",
+    "item": "toamod:hardened_iron_armor_chestplate",
     "count": 1
   }
 }

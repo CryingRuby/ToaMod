@@ -13,7 +13,7 @@
   		{"item":"toamod:iron_ingot"}
   ],
   "output": {
-    "item": "toamod:iron_boots",
+    "item": "toamod:iron_armor_boots",
     "count": 1
   }
 }

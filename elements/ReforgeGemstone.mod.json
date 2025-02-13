@@ -1,0 +1,345 @@
+{
+  "_fv": 66,
+  "_type": "item",
+  "definition": {
+    "renderType": 0,
+    "texture": "gemstone_amber",
+    "customModelName": "Normal",
+    "customProperties": {
+      "reforge": {
+        "name": "ReforgeGemstonePropertyValueProvider"
+      }
+    },
+    "states": [
+      {
+        "renderType": 0,
+        "texture": "gemstone_amber",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 0.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "magma_shard",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 1.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_saphire",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 2.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_pearl",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 3.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_tobaz",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 4.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_aquamarine",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 5.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_diamond",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 6.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_opal",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 7.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_tanzanite",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 8.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_emerald",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 9.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_ruby",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 10.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "gemstone_amethyst",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 11.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "drop_of_blood",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 12.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "refinedtusk",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 13.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "cor",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 14.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "fiery_soul",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 15.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "minecraft:echo_shard",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 16.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "magic_dust",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:reforge",
+              "type": "number"
+            },
+            "value": 17.0
+          }
+        ]
+      }
+    ],
+    "name": "Gemstone §7(§8Reforge§7)§r ",
+    "rarity": "COMMON",
+    "creativeTabs": [],
+    "stackSize": 64,
+    "enchantability": 0,
+    "useDuration": 0,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
+    "isFood": false,
+    "nutritionalValue": 4,
+    "saturation": 0.3,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "none"
+  }
+}

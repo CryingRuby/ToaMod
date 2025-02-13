@@ -34,7 +34,7 @@ public class OnIllfangPlayerCollisionProcedure {
 				world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("Ability3 Collision"), false);
 			{
 				double _setval = (sourceentity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).currentHealth
-						- Math.ceil((entity.getPersistentData().getDouble("AD") * 2.25) / (1 + GetPlayerARProcedure.execute(sourceentity) / 500));
+						- Math.ceil((entity.getPersistentData().getDouble("AD") * 2.25) / (1 + 0 / 500));
 				sourceentity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.currentHealth = _setval;
 					capability.syncPlayerVariables(sourceentity);

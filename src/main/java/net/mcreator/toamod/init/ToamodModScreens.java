@@ -24,6 +24,12 @@ import net.mcreator.toamod.client.gui.IllfangRngDropsMenuScreen;
 import net.mcreator.toamod.client.gui.HorseUpgradeGuiScreen;
 import net.mcreator.toamod.client.gui.HorsePatternChangeGuiScreen;
 import net.mcreator.toamod.client.gui.HorseColorChangeGuiScreen;
+import net.mcreator.toamod.client.gui.ForgerStarsScreen;
+import net.mcreator.toamod.client.gui.ForgerStackableScreen;
+import net.mcreator.toamod.client.gui.ForgerRunesScreen;
+import net.mcreator.toamod.client.gui.ForgerReforgeScreen;
+import net.mcreator.toamod.client.gui.ForgerPrestigeScreen;
+import net.mcreator.toamod.client.gui.ForgerGuiScreen;
 import net.mcreator.toamod.client.gui.FighterMilestoneRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.EnhancementTableGuiScreen;
 import net.mcreator.toamod.client.gui.DwarvesWayMilestoneRewardsMenuScreen;
@@ -71,6 +77,12 @@ public class ToamodModScreens {
 			MenuScreens.register(ToamodModMenus.PLAYER_STATS_MENU.get(), PlayerStatsMenuScreen::new);
 			MenuScreens.register(ToamodModMenus.ILLFANG_RNG_DROPS_MENU.get(), IllfangRngDropsMenuScreen::new);
 			MenuScreens.register(ToamodModMenus.PLAYER_RECIPES_ITEM_INVENTORY.get(), PlayerRecipesItemInventoryScreen::new);
+			MenuScreens.register(ToamodModMenus.FORGER_GUI.get(), ForgerGuiScreen::new);
+			MenuScreens.register(ToamodModMenus.FORGER_REFORGE.get(), ForgerReforgeScreen::new);
+			MenuScreens.register(ToamodModMenus.FORGER_RUNES.get(), ForgerRunesScreen::new);
+			MenuScreens.register(ToamodModMenus.FORGER_STARS.get(), ForgerStarsScreen::new);
+			MenuScreens.register(ToamodModMenus.FORGER_STACKABLE.get(), ForgerStackableScreen::new);
+			MenuScreens.register(ToamodModMenus.FORGER_PRESTIGE.get(), ForgerPrestigeScreen::new);
 		});
 	}
 }

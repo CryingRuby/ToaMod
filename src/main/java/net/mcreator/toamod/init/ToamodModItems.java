@@ -7,12 +7,20 @@ package net.mcreator.toamod.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.item.ItemProperties;
 
+import net.mcreator.toamod.procedures.RunePropertyValueProviderProcedure;
+import net.mcreator.toamod.procedures.ReforgeGemstonePropertyValueProviderProcedure;
 import net.mcreator.toamod.item.WoodenSwordItem;
 import net.mcreator.toamod.item.WoodArmorItem;
 import net.mcreator.toamod.item.WarmBreakfastItem;
@@ -39,14 +47,10 @@ import net.mcreator.toamod.item.StarfallHyperionItem;
 import net.mcreator.toamod.item.SpicySpicedChilliItem;
 import net.mcreator.toamod.item.SilverKeyItem;
 import net.mcreator.toamod.item.ScaldrisHyperionItem;
-import net.mcreator.toamod.item.RuneUncommanItem;
-import net.mcreator.toamod.item.RuneRareItem;
-import net.mcreator.toamod.item.RuneMythicItem;
-import net.mcreator.toamod.item.RuneLegendaryItem;
+import net.mcreator.toamod.item.RuneItem;
 import net.mcreator.toamod.item.RuneFragmentsItem;
-import net.mcreator.toamod.item.RuneEpicItem;
-import net.mcreator.toamod.item.RuneCommanItem;
 import net.mcreator.toamod.item.RoughRuneFragmentItem;
+import net.mcreator.toamod.item.ReforgeGemstoneItem;
 import net.mcreator.toamod.item.RefinedTuskItem;
 import net.mcreator.toamod.item.RedGoblinScaleItem;
 import net.mcreator.toamod.item.RedCrystalItem;
@@ -105,17 +109,6 @@ import net.mcreator.toamod.item.GoldIngotItem;
 import net.mcreator.toamod.item.GoldArmorItem;
 import net.mcreator.toamod.item.GoblinEggSpicesItem;
 import net.mcreator.toamod.item.GoblinEggItem;
-import net.mcreator.toamod.item.GemstoneTopazItem;
-import net.mcreator.toamod.item.GemstoneTanzaniteItem;
-import net.mcreator.toamod.item.GemstoneSaphireItem;
-import net.mcreator.toamod.item.GemstoneRubyItem;
-import net.mcreator.toamod.item.GemstonePearlItem;
-import net.mcreator.toamod.item.GemstoneOpalItem;
-import net.mcreator.toamod.item.GemstoneEmeraldItem;
-import net.mcreator.toamod.item.GemstoneDiamondItem;
-import net.mcreator.toamod.item.GemstoneAquamarineItem;
-import net.mcreator.toamod.item.GemstoneAmethystItem;
-import net.mcreator.toamod.item.GemstoneAmberItem;
 import net.mcreator.toamod.item.FriedGoblinEggItem;
 import net.mcreator.toamod.item.FootlongItem;
 import net.mcreator.toamod.item.FlawlessRuneFragmentItem;
@@ -169,6 +162,7 @@ import net.mcreator.toamod.item.ArtefactsItemItem;
 import net.mcreator.toamod.item.AncientGuardianWarhammerItem;
 import net.mcreator.toamod.ToamodMod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ToamodModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, ToamodMod.MODID);
 	public static final RegistryObject<Item> OBSIDIAN = REGISTRY.register("obsidian", () -> new ObsidianItem());
@@ -272,12 +266,6 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> DEC_GRINDSTONE = block(ToamodModBlocks.DEC_GRINDSTONE);
 	public static final RegistryObject<Item> DEC_GRINDSTONE_DOWN = block(ToamodModBlocks.DEC_GRINDSTONE_DOWN);
 	public static final RegistryObject<Item> DEC_GRINDSTONE_SIDE = block(ToamodModBlocks.DEC_GRINDSTONE_SIDE);
-	public static final RegistryObject<Item> RUNE_COMMAN = REGISTRY.register("rune_comman", () -> new RuneCommanItem());
-	public static final RegistryObject<Item> RUNE_UNCOMMAN = REGISTRY.register("rune_uncomman", () -> new RuneUncommanItem());
-	public static final RegistryObject<Item> RUNE_RARE = REGISTRY.register("rune_rare", () -> new RuneRareItem());
-	public static final RegistryObject<Item> RUNE_EPIC = REGISTRY.register("rune_epic", () -> new RuneEpicItem());
-	public static final RegistryObject<Item> RUNE_LEGENDARY = REGISTRY.register("rune_legendary", () -> new RuneLegendaryItem());
-	public static final RegistryObject<Item> RUNE_MYTHIC = REGISTRY.register("rune_mythic", () -> new RuneMythicItem());
 	public static final RegistryObject<Item> HORSE_CARE_TAKER_SPAWN_EGG = REGISTRY.register("horse_care_taker_spawn_egg", () -> new ForgeSpawnEggItem(ToamodModEntities.HORSE_CARE_TAKER, -1, -10140895, new Item.Properties()));
 	public static final RegistryObject<Item> RUNE_FRAGMENTS = REGISTRY.register("rune_fragments", () -> new RuneFragmentsItem());
 	public static final RegistryObject<Item> FOOTLONG = REGISTRY.register("footlong", () -> new FootlongItem());
@@ -293,17 +281,6 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> ENHANCMENT_TABLE = block(ToamodModBlocks.ENHANCMENT_TABLE);
 	public static final RegistryObject<Item> MAGIC_CRAFTER = block(ToamodModBlocks.MAGIC_CRAFTER);
 	public static final RegistryObject<Item> FORGER = block(ToamodModBlocks.FORGER);
-	public static final RegistryObject<Item> GEMSTONE_RUBY = REGISTRY.register("gemstone_ruby", () -> new GemstoneRubyItem());
-	public static final RegistryObject<Item> GEMSTONE_AMETHYST = REGISTRY.register("gemstone_amethyst", () -> new GemstoneAmethystItem());
-	public static final RegistryObject<Item> GEMSTONE_TOPAZ = REGISTRY.register("gemstone_topaz", () -> new GemstoneTopazItem());
-	public static final RegistryObject<Item> GEMSTONE_AQUAMARINE = REGISTRY.register("gemstone_aquamarine", () -> new GemstoneAquamarineItem());
-	public static final RegistryObject<Item> GEMSTONE_AMBER = REGISTRY.register("gemstone_amber", () -> new GemstoneAmberItem());
-	public static final RegistryObject<Item> GEMSTONE_TANZANITE = REGISTRY.register("gemstone_tanzanite", () -> new GemstoneTanzaniteItem());
-	public static final RegistryObject<Item> GEMSTONE_EMERALD = REGISTRY.register("gemstone_emerald", () -> new GemstoneEmeraldItem());
-	public static final RegistryObject<Item> GEMSTONE_PEARL = REGISTRY.register("gemstone_pearl", () -> new GemstonePearlItem());
-	public static final RegistryObject<Item> GEMSTONE_OPAL = REGISTRY.register("gemstone_opal", () -> new GemstoneOpalItem());
-	public static final RegistryObject<Item> GEMSTONE_DIAMOND = REGISTRY.register("gemstone_diamond", () -> new GemstoneDiamondItem());
-	public static final RegistryObject<Item> GEMSTONE_SAPHIRE = REGISTRY.register("gemstone_saphire", () -> new GemstoneSaphireItem());
 	public static final RegistryObject<Item> ENCH_BOOK = REGISTRY.register("ench_book", () -> new EnchBookItem());
 	public static final RegistryObject<Item> EMPTY_BOOK = REGISTRY.register("empty_book", () -> new EmptyBookItem());
 	public static final RegistryObject<Item> HARD_STONE = block(ToamodModBlocks.HARD_STONE);
@@ -462,10 +439,21 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> CONDENSED_GOLD_BLOCK = block(ToamodModBlocks.CONDENSED_GOLD_BLOCK);
 	public static final RegistryObject<Item> CONDENSED_COAL_BLOCK = block(ToamodModBlocks.CONDENSED_COAL_BLOCK);
 	public static final RegistryObject<Item> GOLDEN_NECKLACE = REGISTRY.register("golden_necklace", () -> new GoldenNecklaceItem());
+	public static final RegistryObject<Item> RUNE = REGISTRY.register("rune", () -> new RuneItem());
+	public static final RegistryObject<Item> REFORGE_GEMSTONE = REGISTRY.register("reforge_gemstone", () -> new ReforgeGemstoneItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+	}
+
+	@SubscribeEvent
+	public static void clientLoad(FMLClientSetupEvent event) {
+		event.enqueueWork(() -> {
+			ItemProperties.register(RUNE.get(), new ResourceLocation("toamod:rune_rarity"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) RunePropertyValueProviderProcedure.execute(itemStackToRender));
+			ItemProperties.register(REFORGE_GEMSTONE.get(), new ResourceLocation("toamod:reforge_gemstone_reforge"),
+					(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) ReforgeGemstonePropertyValueProviderProcedure.execute(itemStackToRender));
+		});
 	}
 }

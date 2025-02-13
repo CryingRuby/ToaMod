@@ -22,7 +22,7 @@ public class OnBlacksmithTableClosedProcedure {
 			return;
 		double i = 0;
 		i = 1;
-		for (int index0 = 0; index0 < 9; index0++) {
+		for (int index0 = 0; index0 < 8; index0++) {
 			if (entity instanceof Player _player) {
 				ItemStack _setstack = (new Object() {
 					public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {

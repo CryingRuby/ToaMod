@@ -1,0 +1,44 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "toamod:item/rune_comman"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "toamod:rune_rarity": 5
+      },
+      "model": "toamod:item/rune_0"
+    },
+    {
+      "predicate": {
+        "toamod:rune_rarity": 4
+      },
+      "model": "toamod:item/rune_1"
+    },
+    {
+      "predicate": {
+        "toamod:rune_rarity": 3
+      },
+      "model": "toamod:item/rune_2"
+    },
+    {
+      "predicate": {
+        "toamod:rune_rarity": 2
+      },
+      "model": "toamod:item/rune_3"
+    },
+    {
+      "predicate": {
+        "toamod:rune_rarity": 1
+      },
+      "model": "toamod:item/rune_4"
+    },
+    {
+      "predicate": {
+        "toamod:rune_rarity": 0
+      },
+      "model": "toamod:item/rune_5"
+    }
+  ]
+}
