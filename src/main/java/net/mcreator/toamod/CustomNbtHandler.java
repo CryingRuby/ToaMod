@@ -34,12 +34,12 @@ public final class CustomNbtHandler {
 		nbtTo.put("Enchantments", nbtFrom.getList("Enchantments", 10));
 		CompoundTag nbtUpgradesFrom = nbtFrom.getCompound("Upgrades");
 		//Apply Enchant-Stats to item
-		for(int i = 0; i < nbtFrom.getList("Enchantments", 10).size(); i++){
+		for (int i = 0; i < nbtFrom.getList("Enchantments", 10).size(); i++) {
 			CompoundTag tempEnch = (CompoundTag) nbtFrom.getList("Enchantments", 10).get(i);
 			ToaEnchantment ench = getEnchantByName(tempEnch.getString("id").replace("toamod:", ""));
 			applyEnchantToStats(ench, tempEnch.getInt("lvl"), copyTo);
 		}
-		
+
 		//Reforge
 		if (!nbtUpgradesFrom.getString("reforge").isEmpty()) {
 			ToaProperties.applyReforgeToItem(ReforgeType.getByName(nbtUpgradesFrom.getString("reforge")), copyTo, 1);
@@ -56,17 +56,17 @@ public final class CustomNbtHandler {
 		*/
 		if (!nbtUpgradesFrom.getList("Runes", 10).isEmpty()) {
 			ListTag runes = nbtUpgradesFrom.getList("Runes", 10);
-			for(int i = 0; i < runes.size(); i++){
-				RuneType rune = RuneType.getByID(((CompoundTag) runes.get(i)).getString("type"));
-				if(rune == null)
+			for (int i = 0; i < runes.size(); i++) {
+				RuneType rune = RuneType.getByID(runes.getCompound(i).getString("type"));
+				if (rune == null)
 					continue;
-				ToaProperties.applyRuneToItem(rune, copyTo, ((CompoundTag) runes.get(i)).getInt("rarity"), 1);
+				ToaProperties.applyRuneToItem(rune, copyTo, runes.getCompound(i).getInt("rarity"), 1);
 			}
 			for (int i = runes.size(); i < ((ToaReforgeable) copyTo.getItem()).runeSlots.length; i++) {
 				runes.add(new CompoundTag());
 			}
 			nbtUpgradesFrom.put("Runes", runes);
-			
+
 		}
 		if (nbtUpgradesFrom.getInt("stars") > 0) {
 			applyStarsToItem(copyTo, nbtUpgradesFrom.getInt("stars"));
@@ -89,9 +89,9 @@ public final class CustomNbtHandler {
 	}
 
 	public static void applyEnchantToStats(ToaEnchantment enchant, int level, ItemStack item) {
-		if (enchant.stats == null || enchant.stats.getPresentIDs().isEmpty())
+		if (enchant.getProperties() == null || enchant.getProperties().getPresentIDs().isEmpty())
 			return;
-		ToaProperties.applyEnchantToItem(enchant, item, level-1, 1);
+		ToaProperties.applyEnchantToItem(enchant, item, level - 1, 1);
 	}
 
 	/**
@@ -121,8 +121,9 @@ public final class CustomNbtHandler {
 			System.out.println("lore reforge-string: " + reforge);
 			//get the display of the item without any reforge -> otherwise the reforge prefixes will stack indefinetly
 			String baseItemDisplay = (new ItemStack(item.getItem())).getDisplayName().getString().replace("[", "").replace("]", "");
+			System.out.println("base item: " + item.getItem() + ", display: " + baseItemDisplay);
 			System.out.println("final ItemName: " + (rarity.Prefix + ("" + reforge.charAt(0)).toUpperCase() + reforge.substring(1) + " " + baseItemDisplay));
-			String finalName = rarity.Prefix + ("" + reforge.charAt(0)).toUpperCase() + reforge.substring(1) + " " + item.getDisplayName().getString().replace("[", "").replace("]", "");
+			String finalName = rarity.Prefix + ("" + reforge.charAt(0)).toUpperCase() + reforge.substring(1) + " " + baseItemDisplay;
 			lore.putString("Name", StringTag.quoteAndEscape(finalName));
 			//item.setHoverName(Component.literal(finalName));
 		}
@@ -131,10 +132,9 @@ public final class CustomNbtHandler {
 			loreLines.add(StringTag.valueOf(StringTag.quoteAndEscape(runesToLoreString(upgrades.getList("Runes", 10)))));
 			loreLines.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
 		}
-
 		//Stats
 		{
-			ArrayList<String> lines = statsToLoreString(item.getOrCreateTag());
+			ArrayList<String> lines = statsToLoreString(item);
 			for (int i = 0; i < lines.size(); i++) {
 				loreLines.add(StringTag.valueOf(StringTag.quoteAndEscape(lines.get(i))));
 			}
@@ -191,13 +191,11 @@ public final class CustomNbtHandler {
 
 	/**
 	 * @param the full Nbt of an item since it needs "Stats", "Upgrades" and "Enchantments" Tags of the item
-	 * 
 	 */
-	private static ArrayList<String> statsToLoreString(CompoundTag itemTag) {
+	private static ArrayList<String> statsToLoreString(ItemStack item) {
 		ArrayList<String> result = new ArrayList<>();
-		CompoundTag upgrades = itemTag.getCompound("Upgrades");
-		CompoundTag stats = itemTag.getCompound("Stats");
-
+		CompoundTag upgrades = item.getOrCreateTag().getCompound("Upgrades");
+		CompoundTag stats = item.getOrCreateTag().getCompound("Stats");
 		//Grob struktur
 		/*  
 		 * Jedem Stat in toaProperties eine id zuweisen -> Array machen oder so idk. ID dann nur für interne code effizent, nichts für game features
@@ -213,99 +211,107 @@ public final class CustomNbtHandler {
 		 * 
 		 */
 		ArrayList<String> statLines = new ArrayList<String>();
-		ArrayList<Byte> statIdList = new ArrayList<Byte>();
+		ArrayList<Byte> statIdList = getAllUpgradedStats(item);
+		removeAllNonUpgradedStats(item, statIdList);
+
+		for(int i = 0; i < statIdList.size(); i++){
+			//form: §7<Stat-Name> §c(+/-)<Stat-Value>
+			statLines.add("\u00A77"+ToaProperties.getStatNameByID(statIdList.get(i)) + " \u00A7c" + ((stats.getFloat(ToaProperties.getStatTagNameByID(statIdList.get(i))) >= 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat(ToaProperties.getStatTagNameByID(statIdList.get(i)))));
+		}
+
 		//baseic Stat-Lines
+		/*
 		{
-			if (stats.getFloat("str_f") != 0) {
-				statLines.add("\u00A77Strength \u00A7c"+ ((stats.getFloat("str_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("str_f")));
+			if (stats.contains("str")) {
+				statLines.add("\u00A77Strength \u00A7c" + ((stats.getFloat("str") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("str")));
 				statIdList.add((byte) 0);
 			}
-			if (stats.getFloat("dex_f") != 0) {
-				statLines.add("\u00A77Dexterity \u00A7c"+ ((stats.getFloat("dex_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("dex_f")));
+			if (stats.contains("dex")) {
+				statLines.add("\u00A77Dexterity \u00A7c" + ((stats.getFloat("dex") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("dex")));
 				statIdList.add((byte) 1);
 			}
-			if (stats.getFloat("con_f") != 0) {
-				statLines.add("\u00A77Constitution \u00A7c"+ ((stats.getFloat("con_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("con_f")));
+			if (stats.contains("con")) {
+				statLines.add("\u00A77Constitution \u00A7c" + ((stats.getFloat("con") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("con")));
 				statIdList.add((byte) 2);
 			}
-			if (stats.getFloat("int_f") != 0) {
-				statLines.add("\u00A77Intelligence \u00A7c"+ ((stats.getFloat("int_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("int_f")));
+			if (stats.contains("int")) {
+				statLines.add("\u00A77Intelligence \u00A7c" + ((stats.getFloat("int") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("int")));
 				statIdList.add((byte) 3);
 			}
-			if (stats.getFloat("wis_f") != 0) {
-				statLines.add("\u00A77Wisdom \u00A7c"+ ((stats.getFloat("wis_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("wis_f")));
+			if (stats.contains("wis")) {
+				statLines.add("\u00A77Wisdom \u00A7c" + ((stats.getFloat("wis") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("wis")));
 				statIdList.add((byte) 4);
 			}
-			if (stats.getFloat("cr") != 0) {
-				statLines.add("\u00A77Crit Rate \u00A7c"+ ((stats.getFloat("cr") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("cr")) + "%");
+			if (stats.contains("cr")) {
+				statLines.add("\u00A77Crit Rate \u00A7c" + ((stats.getFloat("cr") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("cr")) + "%");
 				statIdList.add((byte) 5);
 			}
-			if (stats.getFloat("cd") != 0) {
-				statLines.add("\u00A77Crit Dmg \u00A7c"+ ((stats.getFloat("cd") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("cd")) + "%");
+			if (stats.contains("cd")) {
+				statLines.add("\u00A77Crit Dmg \u00A7c" + ((stats.getFloat("cd") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("cd")) + "%");
 				statIdList.add((byte) 6);
 			}
-			if (stats.getFloat("lifesteal") != 0) {
-				statLines.add("\u00A77Lifesteal \u00A7c"+ ((stats.getFloat("lifesteal") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("lifesteal")) + "%");
+			if (stats.contains("lifesteal")) {
+				statLines.add("\u00A77Lifesteal \u00A7c" + ((stats.getFloat("lifesteal") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("lifesteal")) + "%");
 				statIdList.add((byte) 7);
 			}
-			if (stats.getFloat("hp_f") != 0) {
-				statLines.add("\u00A77Health \u00A7c"+ ((stats.getFloat("hp_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("hp_f")));
+			if (stats.contains("hp")) {
+				statLines.add("\u00A77Health \u00A7c" + ((stats.getFloat("hp") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("hp")));
 				statIdList.add((byte) 8);
 			}
-			if (stats.getFloat("ar_f") != 0) {
-				statLines.add("\u00A77Armor \u00A7c"+ ((stats.getFloat("ar_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("ar_f")));
+			if (stats.contains("ar")) {
+				statLines.add("\u00A77Armor \u00A7c" + ((stats.getFloat("ar") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("ar")));
 				statIdList.add((byte) 9);
 			}
-			if (stats.getFloat("mr_f") != 0) {
-				statLines.add("\u00A77Magic Res \u00A7c"+ ((stats.getFloat("mr_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("mr_f")));
+			if (stats.contains("mr")) {
+				statLines.add("\u00A77Magic Res \u00A7c" + ((stats.getFloat("mr") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("mr")));
 				statIdList.add((byte) 10);
 			}
-			if (stats.getFloat("mf_f") != 0) {
-				statLines.add("\u00A77Magic Find \u00A7c"+ ((stats.getFloat("mf_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("mf_f")));
+			if (stats.contains("mf")) {
+				statLines.add("\u00A77Magic Find \u00A7c" + ((stats.getFloat("mf") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("mf")));
 				statIdList.add((byte) 11);
 			}
-			if (stats.getFloat("minf_f") != 0) {
-				statLines.add("\u00A77Mining Fortune \u00A7c"+ ((stats.getFloat("minf_f") > 0)? "+":"") + ToaFormats.floatToString(stats.getFloat("minf_f")));
+			if (stats.contains("minf")) {
+				statLines.add("\u00A77Mining Fortune \u00A7c" + ((stats.getFloat("minf") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("minf")));
 				statIdList.add((byte) 12);
 			}
 		}
-		System.out.println("statIDList: "+statIdList);
-		System.out.println("stats: "+ stats.toString());
+		*/
+		System.out.println("statIDList: " + statIdList);
+		System.out.println("stats: " + stats.toString());
 		//Reforge
 		ReforgeType reforge = ReforgeType.getByName(upgrades.getString("reforge"));
-		System.out.println("reforge: "+reforge);
-		if(reforge != null){
-			int itemRarity = itemTag.getInt("rarity");
+		System.out.println("reforge: " + reforge);
+		if (reforge != null) {
+			int itemRarity = item.getOrCreateTag().getInt("rarity");
 			System.out.println("	rarity:" + itemRarity);
 			ArrayList<Byte> reforgeStatIds = reforge.getProperties().getPresentIDs();
 			for (int i = 0; i < reforgeStatIds.size(); i++) {
 				System.out.println("SearchIndexOfList: Reforge");
 				byte index = getIndexOfListByStatID(reforgeStatIds.get(i), statIdList);
 				//if the currentStat is CR, CD, Lifesteal add "%" to the end of the stat
-				String extraPostfix = (reforgeStatIds.get(i) >= 5 && reforgeStatIds.get(i) <= 7)? "%" : "";
+				String extraPostfix = (reforgeStatIds.get(i) >= 5 && reforgeStatIds.get(i) <= 7) ? "%" : "";
 				//Adds the value of the specific stat of the reforge based on the itemRarity to the corresponding statLine. In From: (+34)
 				float statValue = reforge.getProperties().getValueByID(reforgeStatIds.get(i))[itemRarity];
-				if(statValue == 0)
+				if (statValue == 0)
 					continue;
-				String numberPrefix = ((statValue > 0)? "+" : "");
-				statLines.set(index, statLines.get(index) + " \u00A79(" + numberPrefix + ToaFormats.floatToString(statValue) + extraPostfix+")");
+				String numberPrefix = ((statValue > 0) ? "+" : "");
+				statLines.set(index, statLines.get(index) + " \u00A79(" + numberPrefix + ToaFormats.floatToString(statValue) + extraPostfix + ")");
 			}
 		}
-				
 
 		//Enchants
 		{
-			ListTag enchants = itemTag.getList("Enchantments", 10);
+			ListTag enchants = item.getOrCreateTag().getList("Enchantments", 10);
 			for (int i = 0; i < enchants.size(); i++) {
-				ToaEnchantment ench = getEnchantByName(((CompoundTag) enchants.get(i)).getString("id").replace("toamod:", ""));
-				if (ench.stats == null || ench.stats.getPresentIDs().isEmpty())
+				ToaEnchantment ench = getEnchantByName(enchants.getCompound(i).getString("id").replace("toamod:", ""));
+				if (ench.getProperties() == null || ench.getProperties().getPresentIDs().isEmpty())
 					continue;
 				//Enchantments only have ONE or less stat
-				byte id = ench.stats.getPresentIDs().get(0);
+				byte id = ench.getProperties().getPresentIDs().get(0);
 				byte index = getIndexOfListByStatID(id, statIdList);
 				//if the currentStat is CR, CD, Lifesteal add "%" to the end of the stat
-				String extraPostfix = (id >= 5 && id <= 7)? "%" : "";
-				statLines.set(index, statLines.get(index) + " \u00A79[+" + ToaFormats.floatToString(ench.stats.getValueByID(id)[((CompoundTag) enchants.get(i)).getInt("lvl") - 1]) + extraPostfix + "]");
+				String extraPostfix = (id >= 5 && id <= 7) ? "%" : "";
+				statLines.set(index, statLines.get(index) + " \u00A79[+" + ToaFormats.floatToString(ench.getProperties().getValueByID(id)[((CompoundTag) enchants.get(i)).getInt("lvl") - 1]) + extraPostfix + "]");
 			}
 		}
 		//Runes
@@ -314,14 +320,14 @@ public final class CustomNbtHandler {
 			System.out.println("SearchIndexOfList: Runes");
 			for (int i = 0; i < runes.length; i++) {
 				runes[i] = RuneType.getByID(((CompoundTag) upgrades.getList("Runes", 10).get(i)).getString("type"));
-				if(runes[i] == null)
+				if (runes[i] == null)
 					continue;
 				//Runes only have one stat => presentIds.size() == 1 -> id
 				byte id = runes[i].getProperties().getPresentIDs().get(0);
 				byte index = getIndexOfListByStatID(id, statIdList);
 				int runeRarity = upgrades.getList("Runes", 10).getCompound(i).getInt("rarity");
 				//if the currentStat is CR, CD, Lifesteal add "%" to the end of the stat
-				String extraPostfix = (id >= 5 && id <= 7)? "%" : "";
+				String extraPostfix = (id >= 5 && id <= 7) ? "%" : "";
 				statLines.set(index, statLines.get(index) + " \u00A7d[+" + ToaFormats.floatToString(runes[i].getProperties().getValueByID(id)[runeRarity]) + extraPostfix + "]");
 			}
 		}
@@ -388,10 +394,13 @@ public final class CustomNbtHandler {
 	}
 
 	/**
-	 * Searches a stat-id in an array of existing stat-ids.
-	 * Used in statsToLoreString to apply Reforge, Enchantments, Runes, etc stats to the fitting statLine of the stats-ArrayList.
+	 * Searches a stat-id in an array of existing stat-ids
+	.
+	 * Used in statsToLoreString to apply Reforge, Enchantments, Runes, etc stats to the fitting statLine of the stats-ArrayList
+	.
 	 * 
-	 * Since the given idList from the statsToLoreString-method is ascending this search algorithmen halves the list to search -> Runtime O(log(n)).
+	 * Since the given idList from the statsToLoreString-method is ascending this search algorithmen halves the list to search -> Runtime O(log(n))
+	.
 	 * 
 	 * @param id: the stat-id that will be searched in the list
 	 * @param idList: the list the given stat-id will be searched in (ascending)
@@ -416,5 +425,69 @@ public final class CustomNbtHandler {
 			}
 		}
 		return (byte) -1;
+	}
+
+	/**
+	 * Collects all statIds of stats that are part of an items base stats OR modified by any upgrade (reforge, runes, etc...)
+	 */
+	public static ArrayList<Byte> getAllUpgradedStats(ItemStack item){
+		CompoundTag stats = item.getOrCreateTag().getCompound("Stats");
+		CompoundTag upgrades = item.getOrCreateTag().getCompound("Upgrades");
+		//add Base stats to id-list
+		ArrayList<Byte> statIds = ((ToaReforgeable) item.copy().getItem()).getProperties().getPresentIDs();
+		//END if there are no upgrades
+		if(item.getOrCreateTag().contains("Upgrades") || upgrades.isEmpty())
+			return statIds;
+
+			
+		//Reforge
+		{
+			ReforgeType reforge = ReforgeType.getByName(upgrades.getString("reforge"));
+			if(reforge != null){
+				for(int i = 0; i < reforge.getProperties().getPresentIDs().size(); i++){
+					if(statIds.contains(reforge.getProperties().getPresentIDs().get(i))){
+						continue;
+					}
+					statIds.add(reforge.getProperties().getPresentIDs().get(i));
+				}
+			}
+		}
+		//Runes
+		{
+			ListTag runes = upgrades.getList("Runes", 10);
+			for(int i = 0; i < runes.size(); i++){
+				RuneType rune = RuneType.getByID(runes.getCompound(i).getString("type"));
+				if(statIds.contains(rune.getProperties().getPresentIDs().get(0)))
+					continue;
+				statIds.add(rune.getProperties().getPresentIDs().get(0));
+			}
+		}
+		//Enchants
+		{
+			ListTag enchants = item.getOrCreateTag().getList("Enchantments", 10);
+			for (int i = 0; i < enchants.size(); i++) {
+				ToaEnchantment ench = getEnchantByName(enchants.getCompound(i).getString("id").replace("toamod:", ""));
+				if (ench.getProperties() == null || ench.getProperties().getPresentIDs().isEmpty())
+					continue;
+				//Enchantments only have ONE or less stat
+				byte id = ench.getProperties().getPresentIDs().get(0);
+				if(statIds.contains(id))
+					continue;
+				statIds.add(id);
+			}
+
+		}
+			
+		return statIds;
+	}
+
+	public static void removeAllNonUpgradedStats(ItemStack item, ArrayList<Byte> statIds){
+		CompoundTag stats = item.getOrCreateTag().getCompound("Stats");
+		for(byte i = 0; i < ToaProperties.statCount; i++){
+			float statValue = stats.getFloat(ToaProperties.getStatTagNameByID(i));
+			if(!statIds.contains(i) && statValue < 10e-5 && statValue > -10e-5){
+				stats.remove(ToaProperties.getStatTagNameByID(i));
+			}
+		}
 	}
 }

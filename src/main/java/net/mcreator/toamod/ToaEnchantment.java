@@ -8,7 +8,7 @@ public abstract class ToaEnchantment extends Enchantment {
 	public ToaEnchantment(Enchantment.Rarity rarity, EnchantmentCategory category, EquipmentSlot... slots) {
 		super(rarity, category, slots);
 	}
-	public ToaProperties stats;
+	protected ToaProperties stats;
 
 	//Level by which the epic color prefix is aplied to to enchantment name;   max Level is always golden color
 	//Superior-enchantments NOT affected
@@ -16,5 +16,9 @@ public abstract class ToaEnchantment extends Enchantment {
 
 	public int getRarePrefixLevel(){
 		return prefixByLevel;
+	}
+
+	public ToaProperties getProperties(){
+		return this.stats;
 	}
 }

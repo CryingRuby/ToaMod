@@ -3,7 +3,7 @@ package net.mcreator.toamod;
 import net.minecraft.world.item.Item;
 
 public abstract class ToaReforgeable extends Item {
-	public ToaProperties toaProperties;
+	protected ToaProperties toaProperties;
 	public RuneSlot[] runeSlots;
 	public ReforgeType reforge;
 	public String stackableType;
@@ -19,5 +19,9 @@ public abstract class ToaReforgeable extends Item {
 	@Override
 	public int getEnchantmentValue() {
 		return 1;
+	}
+
+	public ToaProperties getProperties(){
+		return this.toaProperties;
 	}
 }

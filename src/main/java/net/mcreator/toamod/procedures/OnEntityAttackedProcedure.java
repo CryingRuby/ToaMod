@@ -151,7 +151,7 @@ public class OnEntityAttackedProcedure {
 		//################################################
 		//Vampirism Enchant - heal by dmg
 		int vampEnchLvl = (handItem == null) ? 0 : handItem.getEnchantmentLevel(ToamodModEnchantments.VAMPIRISM.get());
-		double regenFac = offStats[4] + ((vampEnchLvl == 0) ? 0 : ((VampirismEnchantment) ToamodModEnchantments.VAMPIRISM.get()).stats.LIFESTEAL[vampEnchLvl - 1]);
+		double regenFac = offStats[4] + ((vampEnchLvl == 0) ? 0 : ((VampirismEnchantment) ToamodModEnchantments.VAMPIRISM.get()).getProperties().LIFESTEAL[vampEnchLvl - 1]);
 		if (regenFac > 10e-13) {
 			if (source instanceof Player) {
 				{

@@ -8,6 +8,6 @@ import net.mcreator.toamod.RuneSlot;
 
 public class IronSwordItem extends ToaWeapon {
 	public IronSwordItem() {
-		this.toaProperties = new ToaProperties("Sword", ToaRarity.COMMON).str(15);
+		this.toaProperties = new ToaProperties("Sword", ToaRarity.COMMON).str(15).wis(-20);
 	}
 }

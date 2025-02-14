@@ -48,7 +48,6 @@ public class ForgerReforgeScreen extends AbstractContainerScreen<ForgerReforgeMe
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
-		System.out.println("	Screen - sizeReforges: "+sizeReforges);
 		outer : 
 		for(int i = 0; i < 3; i++){
 			for(int j = 0; j < 4; j++){

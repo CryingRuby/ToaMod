@@ -8,6 +8,8 @@ import net.minecraft.nbt.CompoundTag;
 import java.util.ArrayList;
 
 public class ToaProperties {
+	public static final int statCount = 13; //Amount of different modifiable stats
+
 	public ToaRarity rarity;
 	public String type, subType;
 	/*stats for the weapon in format {flat, percentage}
@@ -69,33 +71,23 @@ public class ToaProperties {
 		CompoundTag nbt = new CompoundTag();
 		if (STR != null) {
 			if (STR[0] != 0)
-				nbt.putFloat("str_f", STR[0]);
-			if (STR[1] != 0)
-				nbt.putFloat("str_p", STR[1]);
+				nbt.putFloat("str", STR[0]);
 		}
 		if (DEX != null) {
 			if (DEX[0] != 0)
-				nbt.putFloat("dex_f", DEX[0]);
-			if (DEX[1] != 0)
-				nbt.putFloat("dex_p", DEX[1]);
+				nbt.putFloat("dex", DEX[0]);
 		}
 		if (CON != null) {
 			if (CON[0] != 0)
-				nbt.putFloat("con_f", CON[0]);
-			if (CON[1] != 0)
-				nbt.putFloat("con_p", CON[1]);
+				nbt.putFloat("con", CON[0]);
 		}
 		if (INT != null) {
 			if (STR[0] != 0)
-				nbt.putFloat("int_f", INT[0]);
-			if (STR[1] != 0)
-				nbt.putFloat("int_p", INT[1]);
+				nbt.putFloat("int", INT[0]);
 		}
 		if (WIS != null) {
 			if (WIS[0] != 0)
-				nbt.putFloat("wis_f", WIS[0]);
-			if (WIS[1] != 0)
-				nbt.putFloat("wis_p", WIS[1]);
+				nbt.putFloat("wis", WIS[0]);
 		}
 		if (ELEMENT != null) {
 			nbt.putString("element", ELEMENT.name);
@@ -104,33 +96,23 @@ public class ToaProperties {
 		}
 		if (HP != null) {
 			if (HP[0] != 0)
-				nbt.putFloat("hp_f", HP[0]);
-			if (HP[1] != 0)
-				nbt.putFloat("hp_p", HP[1]);
+				nbt.putFloat("hp", HP[0]);
 		}
 		if (AR != null) {
 			if (AR[0] != 0)
-				nbt.putFloat("ar_f", AR[0]);
-			if (AR[1] != 0)
-				nbt.putFloat("ar_p", AR[1]);
+				nbt.putFloat("ar", AR[0]);
 		}
 		if (MR != null) {
 			if (MR[0] != 0)
-				nbt.putFloat("mr_f", MR[0]);
-			if (MR[1] != 0)
-				nbt.putFloat("mr_p", MR[1]);
+				nbt.putFloat("mr", MR[0]);
 		}
 		if (MF != null) {
 			if (MF[0] != 0)
-				nbt.putFloat("mf_f", MF[0]);
-			if (MF[1] != 0)
-				nbt.putFloat("mf_p", MF[1]);
+				nbt.putFloat("mf", MF[0]);
 		}
 		if (MINF != null) {
 			if (MINF[0] != 0)
-				nbt.putFloat("minf_f", MINF[0]);
-			if (MINF[1] != 0)
-				nbt.putFloat("minf_p", MINF[1]);
+				nbt.putFloat("minf", MINF[0]);
 		}
 		if (LIFESTEAL != null && LIFESTEAL[0] != 0) {
 			nbt.putFloat("lifesteal", LIFESTEAL[0]);
@@ -145,39 +127,39 @@ public class ToaProperties {
 	}
 
 	/**
-	 * Multiplies all Stats by f
-	 * @return a new ToaProperties object with the multiplied flat-stats
+	 * Multiplies all Stats by f. The Properties should only have 1 array-entry per stat
+	 * @return a new ToaProperties object with the multiplied flat-stats 
 	 */
 	public ToaProperties multiplyAllFlat(float f) {
 		ToaProperties newStats = (new ToaProperties(type, rarity)).subType(subType);
 		if (STR != null)
-			newStats.str(new float[]{STR[0] * f, STR[1]});
+			newStats.str(new float[]{STR[0] * f});
 		if (DEX != null)
-			newStats.dex(new float[]{DEX[0] * f, DEX[1]});
+			newStats.dex(new float[]{DEX[0] * f});
 		if (CON != null)
-			newStats.con(new float[]{CON[0] * f, CON[1]});
+			newStats.con(new float[]{CON[0] * f});
 		if (INT != null)
-			newStats._int(new float[]{INT[0] * f, INT[1]});
+			newStats._int(new float[]{INT[0] * f});
 		if (WIS != null)
-			newStats.wis(new float[]{WIS[0] * f, WIS[1]});
+			newStats.wis(new float[]{WIS[0] * f});
 		if (CR != null)
-			newStats.cr(new float[]{CR[0] * f, CR[1]});
+			newStats.cr(new float[]{CR[0] * f});
 		if (CD != null)
-			newStats.cd(new float[]{CD[0] * f, CD[1]});
+			newStats.cd(new float[]{CD[0] * f});
 		if (ELEMENT != null)
-			newStats.element(ELEMENT, new float[]{ELEMENTAL_DAMAGE[0] * f, ELEMENTAL_DAMAGE[1]});
+			newStats.element(ELEMENT, new float[]{ELEMENTAL_DAMAGE[0] * f});
 		if (LIFESTEAL != null)
-			newStats.lifesteal(new float[]{LIFESTEAL[0] * f, LIFESTEAL[1]});
+			newStats.lifesteal(new float[]{LIFESTEAL[0] * f});
 		if (HP != null)
-			newStats.hp(new float[]{HP[0] * f, HP[1]});
+			newStats.hp(new float[]{HP[0] * f});
 		if (AR != null)
-			newStats.ar(new float[]{AR[0] * f, AR[1]});
+			newStats.ar(new float[]{AR[0] * f});
 		if (MR != null)
-			newStats.mr(new float[]{MR[0] * f, MR[1]});
+			newStats.mr(new float[]{MR[0] * f});
 		if (MF != null)
-			newStats.mf(new float[]{MF[0] * f, MF[1]});
+			newStats.mf(new float[]{MF[0] * f});
 		if (MINF != null)
-			newStats.minf(new float[]{MINF[0] * f, MINF[1]});
+			newStats.minf(new float[]{MINF[0] * f});
 		return newStats;
 	}
 
@@ -188,24 +170,19 @@ public class ToaProperties {
 	public void addStatsToItem(ItemStack item) {
 		CompoundTag nbt = item.getOrCreateTag().getCompound("Stats");
 		if (STR != null) {
-			nbt.putFloat("str_f", nbt.getFloat("str_f") + STR[0]);
-			nbt.putFloat("str_p", nbt.getFloat("str_p") + STR[1]);
+			nbt.putFloat("str", nbt.getFloat("str") + STR[0]);
 		}
 		if (DEX != null) {
-			nbt.putFloat("dex_f", nbt.getFloat("dex_f") + DEX[0]);
-			nbt.putFloat("dex_p", nbt.getFloat("dex_p") + DEX[1]);
+			nbt.putFloat("dex", nbt.getFloat("dex") + DEX[0]);
 		}
 		if (CON != null) {
-			nbt.putFloat("con_f", nbt.getFloat("str_f") + CON[0]);
-			nbt.putFloat("con_p", nbt.getFloat("con_p") + CON[1]);
+			nbt.putFloat("con", nbt.getFloat("str") + CON[0]);
 		}
 		if (INT != null) {
-			nbt.putFloat("int_f", nbt.getFloat("int_f") + INT[0]);
-			nbt.putFloat("int_p", nbt.getFloat("int_p") + INT[1]);
+			nbt.putFloat("int", nbt.getFloat("int") + INT[0]);
 		}
 		if (WIS != null) {
-			nbt.putFloat("wis_f", nbt.getFloat("wis_f") + WIS[0]);
-			nbt.putFloat("wis_p", nbt.getFloat("wis_p") + WIS[1]);
+			nbt.putFloat("wis", nbt.getFloat("wis") + WIS[0]);
 		}
 		if (CR != null) {
 			nbt.putFloat("cr", nbt.getFloat("cr") + CR[0]);
@@ -220,24 +197,19 @@ public class ToaProperties {
 			nbt.putFloat("lifesteal", nbt.getFloat("lifesteal") + LIFESTEAL[0]);
 		}
 		if (HP != null) {
-			nbt.putFloat("hp_f", nbt.getFloat("hp_f") + HP[0]);
-			nbt.putFloat("hp_p", nbt.getFloat("hp_p") + HP[1]);
+			nbt.putFloat("hp", nbt.getFloat("hp") + HP[0]);
 		}
 		if (AR != null) {
-			nbt.putFloat("ar_f", nbt.getFloat("ar_f") + AR[0]);
-			nbt.putFloat("ar_p", nbt.getFloat("ar_p") + AR[1]);
+			nbt.putFloat("ar", nbt.getFloat("ar") + AR[0]);
 		}
 		if (MR != null) {
-			nbt.putFloat("mr_f", nbt.getFloat("mr_f") + MR[0]);
-			nbt.putFloat("mr_p", nbt.getFloat("mr_p") + MR[1]);
+			nbt.putFloat("mr", nbt.getFloat("mr") + MR[0]);
 		}
 		if (MF != null) {
-			nbt.putFloat("mf_f", nbt.getFloat("mf_f") + MF[0]);
-			nbt.putFloat("mf_p", nbt.getFloat("mf_p") + MF[1]);
+			nbt.putFloat("mf", nbt.getFloat("mf") + MF[0]);
 		}
 		if (MINF != null) {
-			nbt.putFloat("minf_f", nbt.getFloat("minf_f") + MINF[0]);
-			nbt.putFloat("minf_p", nbt.getFloat("minf_p") + MINF[1]);
+			nbt.putFloat("minf", nbt.getFloat("minf") + MINF[0]);
 		}
 		item.getOrCreateTag().put("Stats", nbt);
 	}
@@ -280,15 +252,15 @@ public class ToaProperties {
 			return;
 		CompoundTag itemStats = item.getOrCreateTag().getCompound("Stats");
 		if (STR != null)
-			itemStats.putFloat("str_f", itemStats.getFloat("str_f") + STR[index] * f);
+			itemStats.putFloat("str", itemStats.getFloat("str") + STR[index] * f);
 		if (DEX != null)
-			itemStats.putFloat("dex_f", itemStats.getFloat("dex_f") + DEX[index] * f);
+			itemStats.putFloat("dex", itemStats.getFloat("dex") + DEX[index] * f);
 		if (CON != null)
-			itemStats.putFloat("con_f", itemStats.getFloat("con_f") + CON[index] * f);
+			itemStats.putFloat("con", itemStats.getFloat("con") + CON[index] * f);
 		if (INT != null)
-			itemStats.putFloat("int_f", itemStats.getFloat("int_f") + INT[index] * f);
+			itemStats.putFloat("int", itemStats.getFloat("int") + INT[index] * f);
 		if (WIS != null)
-			itemStats.putFloat("wis_f", itemStats.getFloat("wis_f") + WIS[index] * f);
+			itemStats.putFloat("wis", itemStats.getFloat("wis") + WIS[index] * f);
 		if (CR != null)
 			itemStats.putFloat("cr", itemStats.getFloat("cr") + CR[index] * f);
 		if (CD != null)
@@ -296,15 +268,15 @@ public class ToaProperties {
 		if (LIFESTEAL != null)
 			itemStats.putFloat("lifesteal", itemStats.getFloat("lifesteal") + LIFESTEAL[index] * f);
 		if (HP != null)
-			itemStats.putFloat("hp_f", itemStats.getFloat("hp_f") + HP[index] * f);
+			itemStats.putFloat("hp", itemStats.getFloat("hp") + HP[index] * f);
 		if (AR != null)
-			itemStats.putFloat("ar_f", itemStats.getFloat("ar_f") + AR[index] * f);
+			itemStats.putFloat("ar", itemStats.getFloat("ar") + AR[index] * f);
 		if (MR != null)
-			itemStats.putFloat("mr_f", itemStats.getFloat("mr_f") + MR[index] * f);
+			itemStats.putFloat("mr", itemStats.getFloat("mr") + MR[index] * f);
 		if (MF != null)
-			itemStats.putFloat("mf_f", itemStats.getFloat("mf_f") + MF[index] * f);
+			itemStats.putFloat("mf", itemStats.getFloat("mf") + MF[index] * f);
 		if (MINF != null)
-			itemStats.putFloat("minf_f", itemStats.getFloat("minf_f") + MINF[index] * f);
+			itemStats.putFloat("minf", itemStats.getFloat("minf") + MINF[index] * f);
 		item.getOrCreateTag().put("Stats", itemStats);
 	}
 
@@ -331,7 +303,7 @@ public class ToaProperties {
 		};
 	}
 
-	public String getStatNameByID(byte id){
+	public static String getStatNameByID(byte id){
 		return switch(id){
 			case 0 -> "Strength";
 			case 1 -> "Dexterity";
@@ -350,6 +322,25 @@ public class ToaProperties {
 		};
 	}
 
+	public static String getStatTagNameByID(byte id){
+		return switch(id){
+			case 0 -> "str";
+			case 1 -> "dex";
+			case 2 -> "con";
+			case 3 -> "int";
+			case 4 -> "wis";
+			case 5 -> "cr";
+			case 6 -> "cd";
+			case 7 -> "lifesteal";
+			case 8 -> "hp";
+			case 9 -> "ar";
+			case 10 -> "mr";
+			case 11 -> "mf";
+			case 12 -> "minf";
+			default -> null;
+		};
+	}
+
 	public ToaProperties subType(String subType) {
 		this.subType = subType;
 		return this;
@@ -362,7 +353,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties str(float _str) {
-		return str(new float[]{_str, 0});
+		return str(new float[]{_str});
 	}
 
 	public ToaProperties dex(float[] _dex) {
@@ -372,7 +363,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties dex(float _dex) {
-		return dex(new float[]{_dex, 0});
+		return dex(new float[]{_dex});
 	}
 
 	public ToaProperties con(float[] _con) {
@@ -382,7 +373,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties con(float _con) {
-		return con(new float[]{_con, 0});
+		return con(new float[]{_con});
 	}
 
 	public ToaProperties _int(float[] _int) {
@@ -392,7 +383,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties _int(float _int) {
-		return _int(new float[]{_int, 0});
+		return _int(new float[]{_int});
 	}
 
 	public ToaProperties wis(float[] _wis) {
@@ -402,7 +393,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties wis(float _wis) {
-		return wis(new float[]{_wis, 0});
+		return wis(new float[]{_wis});
 	}
 
 	public ToaProperties cr(float cr) {
@@ -439,7 +430,7 @@ public class ToaProperties {
 
 	public ToaProperties element(ToaElement element, float elemental_damage) {
 		this.ELEMENT = element;
-		this.ELEMENTAL_DAMAGE = new float[]{elemental_damage, 0};
+		this.ELEMENTAL_DAMAGE = new float[]{elemental_damage};
 		return this;
 	}
 
@@ -463,7 +454,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties hp(float hp) {
-		return hp(new float[]{hp, 0});
+		return hp(new float[]{hp});
 	}
 
 	public ToaProperties ar(float[] ar) {
@@ -473,7 +464,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties ar(float ar) {
-		return ar(new float[]{ar, 0});
+		return ar(new float[]{ar});
 	}
 
 	public ToaProperties mr(float[] mr) {
@@ -483,7 +474,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties mr(float mr) {
-		return mr(new float[]{mr, 0});
+		return mr(new float[]{mr});
 	}
 
 
@@ -494,7 +485,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties mf(float mf) {
-		return mf(new float[]{mf, 0});
+		return mf(new float[]{mf});
 	}
 
 	public ToaProperties minf(float[] minf) {
@@ -504,7 +495,7 @@ public class ToaProperties {
 	}
 
 	public ToaProperties minf(float minf) {
-		return minf(new float[]{minf, 0});
+		return minf(new float[]{minf});
 	}
 
 }

@@ -330,6 +330,7 @@ public class ForgerReforgeMenu extends AbstractContainerMenu implements Supplier
 
 		CompoundTag upgr = boundItem.getOrCreateTag().getCompound("Upgrades");
 		upgr.putString("reforge", possibleReforges[slotid-1].name);
+		boundItem.getOrCreateTag().put("Upgrades", upgr);
 		
 		//Refresh Item lore to display changes
 		CustomNbtHandler.setLoreOfItem(boundItem);
