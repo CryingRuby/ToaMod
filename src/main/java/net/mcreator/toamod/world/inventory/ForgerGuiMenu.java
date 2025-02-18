@@ -152,6 +152,9 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
+
+		refreshVisualItems();
+		this.modifyItem = ((Slot) customSlots.get(0)).getItem();
 	}
 
 	@Override
@@ -387,7 +390,7 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 	 * 
 	 */
 	private void refreshVisualItems() {
-		ItemStack inputItem = internal.getStackInSlot(0);
+		ItemStack inputItem = ((Slot) customSlots.get(0)).getItem();
 		CompoundTag upgrades = inputItem.getOrCreateTag().getCompound("Upgrades");
 		if (inputItem.getItem() == Items.AIR || upgrades == null)
 			return;
@@ -401,11 +404,12 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 			setItem.setHoverName(Component.literal("§r§9Reforge§r"));
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
 			ReforgeType reforge = ReforgeType.getByName(inputItem.getOrCreateTag().getCompound("Upgrades").getString("reforge"));
-			String reforgeString = (reforge == null) ? "§8None§r" : reforge.getProperties().rarity.Prefix + reforge.name.substring(0, 1).toUpperCase() + reforge.name.substring(1);
+			String reforgeString = (reforge == null) ? "§8None§r" : reforge.getProperties().rarity.Prefix + reforge.getName().substring(0, 1).toUpperCase() + reforge.getName().substring(1);
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Current: " + reforgeString)));
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§eClick to modify§r")));
 			setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
+			setItem.getOrCreateTag().putBoolean("delete", true);
 			((Slot) customSlots.get(1)).set(setItem);
 		}
 		//Enchantments
@@ -425,6 +429,7 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§eClick to modify§r")));
 			setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
+			setItem.getOrCreateTag().putBoolean("delete", true);
 			((Slot) customSlots.get(2)).set(setItem);
 		}
 		//inputItem has Rune-Slots
@@ -439,6 +444,7 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§eClick to modify§r")));
 			setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
 			((Slot) customSlots.get(setSlot)).set(setItem);
+			setItem.getOrCreateTag().putBoolean("delete", true);
 			setSlot++;
 			visualItemIds.add(0);
 		}

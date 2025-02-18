@@ -219,63 +219,6 @@ public final class CustomNbtHandler {
 			statLines.add("\u00A77"+ToaProperties.getStatNameByID(statIdList.get(i)) + " \u00A7c" + ((stats.getFloat(ToaProperties.getStatTagNameByID(statIdList.get(i))) >= 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat(ToaProperties.getStatTagNameByID(statIdList.get(i)))));
 		}
 
-		//baseic Stat-Lines
-		/*
-		{
-			if (stats.contains("str")) {
-				statLines.add("\u00A77Strength \u00A7c" + ((stats.getFloat("str") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("str")));
-				statIdList.add((byte) 0);
-			}
-			if (stats.contains("dex")) {
-				statLines.add("\u00A77Dexterity \u00A7c" + ((stats.getFloat("dex") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("dex")));
-				statIdList.add((byte) 1);
-			}
-			if (stats.contains("con")) {
-				statLines.add("\u00A77Constitution \u00A7c" + ((stats.getFloat("con") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("con")));
-				statIdList.add((byte) 2);
-			}
-			if (stats.contains("int")) {
-				statLines.add("\u00A77Intelligence \u00A7c" + ((stats.getFloat("int") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("int")));
-				statIdList.add((byte) 3);
-			}
-			if (stats.contains("wis")) {
-				statLines.add("\u00A77Wisdom \u00A7c" + ((stats.getFloat("wis") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("wis")));
-				statIdList.add((byte) 4);
-			}
-			if (stats.contains("cr")) {
-				statLines.add("\u00A77Crit Rate \u00A7c" + ((stats.getFloat("cr") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("cr")) + "%");
-				statIdList.add((byte) 5);
-			}
-			if (stats.contains("cd")) {
-				statLines.add("\u00A77Crit Dmg \u00A7c" + ((stats.getFloat("cd") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("cd")) + "%");
-				statIdList.add((byte) 6);
-			}
-			if (stats.contains("lifesteal")) {
-				statLines.add("\u00A77Lifesteal \u00A7c" + ((stats.getFloat("lifesteal") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("lifesteal")) + "%");
-				statIdList.add((byte) 7);
-			}
-			if (stats.contains("hp")) {
-				statLines.add("\u00A77Health \u00A7c" + ((stats.getFloat("hp") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("hp")));
-				statIdList.add((byte) 8);
-			}
-			if (stats.contains("ar")) {
-				statLines.add("\u00A77Armor \u00A7c" + ((stats.getFloat("ar") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("ar")));
-				statIdList.add((byte) 9);
-			}
-			if (stats.contains("mr")) {
-				statLines.add("\u00A77Magic Res \u00A7c" + ((stats.getFloat("mr") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("mr")));
-				statIdList.add((byte) 10);
-			}
-			if (stats.contains("mf")) {
-				statLines.add("\u00A77Magic Find \u00A7c" + ((stats.getFloat("mf") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("mf")));
-				statIdList.add((byte) 11);
-			}
-			if (stats.contains("minf")) {
-				statLines.add("\u00A77Mining Fortune \u00A7c" + ((stats.getFloat("minf") > 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat("minf")));
-				statIdList.add((byte) 12);
-			}
-		}
-		*/
 		System.out.println("statIDList: " + statIdList);
 		System.out.println("stats: " + stats.toString());
 		//Reforge

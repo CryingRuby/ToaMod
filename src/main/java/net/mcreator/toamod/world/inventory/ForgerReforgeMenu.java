@@ -11,6 +11,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.ContainerLevelAccess;
@@ -124,46 +125,9 @@ public class ForgerReforgeMenu extends AbstractContainerMenu implements Supplier
 
 	public ForgerReforgeMenu(int id, Inventory inv, FriendlyByteBuf extraData, ItemStack boundItem) {
 		this(id, inv, extraData);
-		System.out.println("Constructor of ForgerReforgeMenu call");
 		//transfer mofifying item from prior gui   -> throws NullPointerException if called without the ItemStack Gui interface
 		((Slot) customSlots.get(0)).set(boundItem);
-		//set reforge items in slot
-		ReforgeType appliedReforge = ReforgeType.getByName(boundItem.getOrCreateTag().getCompound("Upgrades").getString("reforge"));
-		System.out.println("item in slot 0: " + boundItem.getItem() + ", type:  " + ToaItemType.getByName(boundItem.getOrCreateTag().getString("type")));
-		ReforgeType[] possibleReforges = ReforgeType.getByType(ToaItemType.getByName(boundItem.getOrCreateTag().getString("type")));
-		System.out.println("possible reforges length: " + possibleReforges.length);
-		int rarity = boundItem.getOrCreateTag().getInt("rarity");
-		this.sizeReforges = possibleReforges.length;
-		//Set items in Slots
-		for (int i = 0; i < possibleReforges.length; i++) {
-			ItemStack setItem = new ItemStack(ToamodModItems.REFORGE_GEMSTONE.get());
-			System.out.println("	put String: \"reforge\", \"" + possibleReforges[i].name + "\" , id: " + possibleReforges[i].getID());
-			setItem.getOrCreateTag().putString("reforge", possibleReforges[i].name);
-			//Add lore with stats for the specific item-rarity
-			ToaProperties reforgeProps = possibleReforges[i].getProperties();
-			ListTag lore = new ListTag();
-			//Go through each present stat and collect Stat-Name and the value of that stat with the items rarity
-			for (int s = 0; s < reforgeProps.getPresentIDs().size(); s++) {
-				byte currId = reforgeProps.getPresentIDs().get(s);
-				float statValue = reforgeProps.getValueByID(currId)[rarity];
-				if (statValue == 0) {
-					continue;
-				}
-				String loreString = "§7" + reforgeProps.getStatNameByID(currId) + ": §c" + ((statValue > 0) ? "+" : "") + ToaFormats.floatToString(statValue); //"-" comes from negative number
-				if (currId >= 5 && currId <= 7)
-					loreString += "%";
-				lore.add(StringTag.valueOf(StringTag.quoteAndEscape(loreString)));
-			}
-			CompoundTag display = new CompoundTag();
-			display.put("Lore", lore);
-			setItem.getOrCreateTag().put("display", display);
-			setItem.setHoverName(Component.literal("§r§fGemstone (§7" + ToaFormats.firstCharToUpper(possibleReforges[i].name) + "§r§f)"));
-			//if item has reforge mark applied reforge with enchantment texture + text
-			if (appliedReforge != null && appliedReforge == possibleReforges[i]) {
-				setItem.enchant(null, 0);
-			}
-			((Slot) customSlots.get(i + 1)).set(setItem.copy());
-		}
+		refreshVisualItems();
 	}
 
 	@Override
@@ -316,25 +280,23 @@ public class ForgerReforgeMenu extends AbstractContainerMenu implements Supplier
 			return;
 		//remove stats from current reforge
 		if (appliedReforge != null) {
-			if (appliedReforge == possibleReforges[slotid-1])
+			if (appliedReforge == possibleReforges[slotid - 1])
 				return;
 			System.out.println("substract current reforge: " + appliedReforge);
 			ToaProperties.applyReforgeToItem(appliedReforge, boundItem, -1);
 		}
 		//apply selected reforge
-		System.out.println("add selected reforge: " + possibleReforges[slotid-1]);
-		ToaProperties.applyReforgeToItem(possibleReforges[slotid-1], boundItem, 1);
+		System.out.println("add selected reforge: " + possibleReforges[slotid - 1]);
+		ToaProperties.applyReforgeToItem(possibleReforges[slotid - 1], boundItem, 1);
 		for (int i = 1; i < customSlots.size(); i++) {
 			((Slot) customSlots.get(i)).set(ItemStack.EMPTY);
 		}
-
 		CompoundTag upgr = boundItem.getOrCreateTag().getCompound("Upgrades");
-		upgr.putString("reforge", possibleReforges[slotid-1].name);
+		upgr.putString("reforge", possibleReforges[slotid - 1].getName());
 		boundItem.getOrCreateTag().put("Upgrades", upgr);
-		
+
 		//Refresh Item lore to display changes
 		CustomNbtHandler.setLoreOfItem(boundItem);
-
 		BlockPos _bpos = BlockPos.containing(x, y, z);
 		System.out.println("try open forgerGuiMenu");
 		NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
@@ -360,6 +322,57 @@ public class ForgerReforgeMenu extends AbstractContainerMenu implements Supplier
 		return customSlots;
 	}
 
-	private void selectReforge(int slotid) {
+	private void refreshVisualItems() {
+		ItemStack boundItem = ((Slot) customSlots.get(0)).getItem();
+		//boundItem should be never null/non-existing
+		if (boundItem == null || boundItem.getItem() == Items.AIR)
+			return;
+		//set reforge items in slot
+		ReforgeType appliedReforge = ReforgeType.getByName(boundItem.getOrCreateTag().getCompound("Upgrades").getString("reforge"));
+		System.out.println("item in slot 0: " + boundItem.getItem() + ", type:  " + ToaItemType.getByName(boundItem.getOrCreateTag().getString("type")));
+		ReforgeType[] possibleReforges = ReforgeType.getByType(ToaItemType.getByName(boundItem.getOrCreateTag().getString("type")));
+		System.out.println("possible reforges length: " + possibleReforges.length);
+		int rarity = boundItem.getOrCreateTag().getInt("rarity");
+		this.sizeReforges = possibleReforges.length;
+		//Set items in Slots
+		for (int i = 0; i < possibleReforges.length; i++) {
+			ItemStack setItem = new ItemStack(ToamodModItems.REFORGE_GEMSTONE.get());
+			System.out.println("	put String: \"reforge\", \"" + possibleReforges[i].getName() + "\" , id: " + possibleReforges[i].getID());
+			setItem.getOrCreateTag().putString("reforge", possibleReforges[i].getName());
+			//Add lore with stats for the specific item-rarity
+			ToaProperties reforgeProps = possibleReforges[i].getProperties();
+			ListTag lore = new ListTag();
+			//Go through each present stat and collect Stat-Name and the value of that stat with the items rarity
+			for (int s = 0; s < reforgeProps.getPresentIDs().size(); s++) {
+				byte currId = reforgeProps.getPresentIDs().get(s);
+				float statValue = reforgeProps.getValueByID(currId)[rarity];
+				if (statValue == 0) {
+					continue;
+				}
+				String loreString = "§7" + reforgeProps.getStatNameByID(currId) + ": §c" + ((statValue > 0) ? "+" : "") + ToaFormats.floatToString(statValue); //"-" comes from negative number
+				if (currId >= 5 && currId <= 7)
+					loreString += "%";
+				lore.add(StringTag.valueOf(StringTag.quoteAndEscape(loreString)));
+			}
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
+			boolean isAlreadyApplied = appliedReforge != null && appliedReforge == possibleReforges[i];
+			//if item has reforge mark applied reforge with enchantment texture + text
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape(((isAlreadyApplied)? "§aAlready applied" : "§eCost to apply:"))));
+			if (isAlreadyApplied) {
+				setItem.enchant(null, 0);
+			}
+			else{
+				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§8- §6"+possibleReforges[i].getApplyCost(rarity)+" Cor")));
+				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§8- §71x §fGemstone(§7"+ToaFormats.firstCharToUpper(possibleReforges[i].getName())+"§f)")));
+			}
+			
+			CompoundTag display = new CompoundTag();
+			display.put("Lore", lore);
+			setItem.getOrCreateTag().put("display", display);
+			setItem.setHoverName(Component.literal("§r§fGemstone (§7" + ToaFormats.firstCharToUpper(possibleReforges[i].getName()) + "§r§f)"));
+			
+			setItem.getOrCreateTag().putBoolean("delete", true);
+			((Slot) customSlots.get(i + 1)).set(setItem.copy());
+		}
 	}
 }
