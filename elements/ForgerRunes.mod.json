@@ -24,6 +24,9 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": true,
+          "onStackTransfer": {
+            "name": "Test"
+          },
           "x": 160,
           "y": 73
         }
@@ -36,6 +39,9 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": true,
+          "onStackTransfer": {
+            "name": "Test"
+          },
           "x": 205,
           "y": 73
         }

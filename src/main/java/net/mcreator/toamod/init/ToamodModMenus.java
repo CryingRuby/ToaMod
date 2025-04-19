@@ -30,6 +30,8 @@ import net.mcreator.toamod.world.inventory.ForgerRunesMenu;
 import net.mcreator.toamod.world.inventory.ForgerReforgeMenu;
 import net.mcreator.toamod.world.inventory.ForgerPrestigeMenu;
 import net.mcreator.toamod.world.inventory.ForgerGuiMenu;
+import net.mcreator.toamod.world.inventory.ForgerEnchantsMenu;
+import net.mcreator.toamod.world.inventory.ForgerEnchantsApplyMenu;
 import net.mcreator.toamod.world.inventory.FighterMilestoneRewardsMenuMenu;
 import net.mcreator.toamod.world.inventory.EnhancementTableGuiMenu;
 import net.mcreator.toamod.world.inventory.DwarvesWayMilestoneRewardsMenuMenu;
@@ -81,4 +83,6 @@ public class ToamodModMenus {
 	public static final RegistryObject<MenuType<ForgerStarsMenu>> FORGER_STARS = REGISTRY.register("forger_stars", () -> IForgeMenuType.create(ForgerStarsMenu::new));
 	public static final RegistryObject<MenuType<ForgerStackableMenu>> FORGER_STACKABLE = REGISTRY.register("forger_stackable", () -> IForgeMenuType.create(ForgerStackableMenu::new));
 	public static final RegistryObject<MenuType<ForgerPrestigeMenu>> FORGER_PRESTIGE = REGISTRY.register("forger_prestige", () -> IForgeMenuType.create(ForgerPrestigeMenu::new));
+	public static final RegistryObject<MenuType<ForgerEnchantsMenu>> FORGER_ENCHANTS = REGISTRY.register("forger_enchants", () -> IForgeMenuType.create(ForgerEnchantsMenu::new));
+	public static final RegistryObject<MenuType<ForgerEnchantsApplyMenu>> FORGER_ENCHANTS_APPLY = REGISTRY.register("forger_enchants_apply", () -> IForgeMenuType.create(ForgerEnchantsApplyMenu::new));
 }

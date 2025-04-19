@@ -30,6 +30,8 @@ import net.mcreator.toamod.client.gui.ForgerRunesScreen;
 import net.mcreator.toamod.client.gui.ForgerReforgeScreen;
 import net.mcreator.toamod.client.gui.ForgerPrestigeScreen;
 import net.mcreator.toamod.client.gui.ForgerGuiScreen;
+import net.mcreator.toamod.client.gui.ForgerEnchantsScreen;
+import net.mcreator.toamod.client.gui.ForgerEnchantsApplyScreen;
 import net.mcreator.toamod.client.gui.FighterMilestoneRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.EnhancementTableGuiScreen;
 import net.mcreator.toamod.client.gui.DwarvesWayMilestoneRewardsMenuScreen;
@@ -83,6 +85,8 @@ public class ToamodModScreens {
 			MenuScreens.register(ToamodModMenus.FORGER_STARS.get(), ForgerStarsScreen::new);
 			MenuScreens.register(ToamodModMenus.FORGER_STACKABLE.get(), ForgerStackableScreen::new);
 			MenuScreens.register(ToamodModMenus.FORGER_PRESTIGE.get(), ForgerPrestigeScreen::new);
+			MenuScreens.register(ToamodModMenus.FORGER_ENCHANTS.get(), ForgerEnchantsScreen::new);
+			MenuScreens.register(ToamodModMenus.FORGER_ENCHANTS_APPLY.get(), ForgerEnchantsApplyScreen::new);
 		});
 	}
 }

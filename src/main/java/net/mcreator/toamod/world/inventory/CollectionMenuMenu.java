@@ -319,7 +319,7 @@ public class CollectionMenuMenu extends AbstractContainerMenu implements Supplie
 	@Override
 	public void removed(Player playerIn) {
 		super.removed(playerIn);
-		OnBossCollectionMenuTickProcedure.execute(world, x, y, z, entity);
+		OnBossCollectionMenuTickProcedure.execute(entity);
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
 				for (int j = 0; j < internal.getSlots(); ++j) {
@@ -392,7 +392,7 @@ public class CollectionMenuMenu extends AbstractContainerMenu implements Supplie
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			OnBossCollectionMenuTickProcedure.execute(world, x, y, z, entity);
+			OnBossCollectionMenuTickProcedure.execute(entity);
 		}
 	}
 }

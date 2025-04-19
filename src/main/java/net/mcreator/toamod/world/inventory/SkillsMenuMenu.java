@@ -367,7 +367,7 @@ public class SkillsMenuMenu extends AbstractContainerMenu implements Supplier<Ma
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			OnSkillsMenuTickProcedure.execute(world, x, y, z, entity);
+			OnSkillsMenuTickProcedure.execute(entity);
 		}
 	}
 }

@@ -10,6 +10,8 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.toamod.network.ToamodModVariables;
+
 import java.util.Optional;
 import java.util.ArrayList;
 
@@ -40,7 +42,6 @@ public final class StatHandler {
 					equipStats.add(equipmentInv.get().getEquippedCurios().getStackInSlot(i).getOrCreateTag().getCompound("Stats"));
 			}
 		}
-
 		//collect all final stats given in idList parameter
 		for (int i = 0; i < idList.length; i++) {
 			stats[i] = getPlayerStatValue(player, statNbtIds[idList[i]], weaponStats, armorStats, equipStats);
@@ -49,29 +50,38 @@ public final class StatHandler {
 	}
 
 	private static float getPlayerStatValue(Player player, String stat, CompoundTag weaponStats, ArrayList<CompoundTag> armorStats, ArrayList<CompoundTag> equipStats) {
-		float value = 0; 
+		float value = 0;
 		//weapon
 		value += weaponStats.getFloat(stat);
-
 		//armor
 		for (int i = 0; i < armorStats.size(); i++) {
 			value += armorStats.get(i).getFloat(stat);
 		}
-
 		//artefacts
 		//equipment
 		for (int i = 0; i < equipStats.size(); i++) {
 			value += equipStats.get(i).getFloat(stat);
 		}
-		
 		return value;
 	}
 
 	public static float[] getEntityStats(LivingEntity entity, byte[] idList) {
-		float[] stats = new float[idList.length];
-		for(int i = 0; i < idList.length; i++){
+		float[] stats = new float[idList.length];
+		for (int i = 0; i < idList.length; i++) {
 			stats[i] = entity.getPersistentData().getFloat(statNbtIds[idList[i]]);
 		}
 		return stats;
+	}
+
+	public static int getPlayerCor(Player entity) {
+		return (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).cor;
+	}
+
+	public static void addPlayerCor(Player entity, int value) {
+		int setCor = getPlayerCor(entity) + value;
+		entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+			capability.cor = setCor;
+			capability.syncPlayerVariables(entity);
+		});
 	}
 }

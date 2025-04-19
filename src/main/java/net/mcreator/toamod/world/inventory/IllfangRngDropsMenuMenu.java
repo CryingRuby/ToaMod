@@ -463,7 +463,7 @@ public class IllfangRngDropsMenuMenu extends AbstractContainerMenu implements Su
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			OnIllfangsRngDropsMenuTickProcedure.execute(world, x, y, z, entity);
+			OnIllfangsRngDropsMenuTickProcedure.execute();
 		}
 	}
 }

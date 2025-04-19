@@ -14,7 +14,7 @@ public enum ToaItemType {
 	}
 
 	public static ToaItemType getByName(String name) {
-	System.out.println("return ToaItemType with name:"+name);
+	System.out.println("return ToaItemType with name:"+ name);
 		return switch (name) {
 			case "Sword" -> SWORD;
 			case "Armnor" -> ARMOR;

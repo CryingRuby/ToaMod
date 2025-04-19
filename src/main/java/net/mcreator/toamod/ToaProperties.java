@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 public class ToaProperties {
 	public static final int statCount = 13; //Amount of different modifiable stats
-
 	public ToaRarity rarity;
 	public String type, subType;
 	/*stats for the weapon in format {flat, percentage}
@@ -28,7 +27,6 @@ public class ToaProperties {
 		this.type = type;
 		this.rarity = rarity;
 	}
-
 	/*public ToaProperties(String type, ToaRarity rarity, String subType, float[] _str, float[] _dex, float[] _con, float[] _int, float[] _wis, float[] _cr, float[] _cd, ToaElement element, float[] elemental_damage, float lifesteal, float[] _hp,
 			float[] _ar, float[] _mr, float[] mf, float[] minf) {
 		this.type = type;
@@ -51,7 +49,7 @@ public class ToaProperties {
 		this.MINF = _minf;
 	}
 	*/
-	
+
 	/**
 	 * Adds ALL general information about the ToaProperty like rarity and type to the CompoundTag.
 	 * @param The CompoundTag of the item the general information will be added to
@@ -62,6 +60,44 @@ public class ToaProperties {
 		if (subType != null && subType.trim().isEmpty())
 			nbt.putString("subtype", subType);
 	}
+
+	/**
+	 * Sets all stats to the difference of the values at to different indexes as followed:  [firstIndex] - [secIndex]
+	 * Mostly used to calc the stat increase of enchantments with levels, reforges with rarity or runes with rarity, etc...
+	 * 
+	 * @return Collects the difference and puts them into index 0. Now to add stats to an item just use addStatsToItem().
+	 */
+	/*public ToaProperties difference(int firstIndex, int secIndex){
+		ToaProperties props = new ToaProperties();
+		if(STR != null)
+			props.STR[0] = STR[firstIndex] - STR[secIndex]; 
+		if(DEX != null)
+			props.DEX[0] = DEX[firstIndex] - DEX[secIndex]; 
+		if(CON != null)
+			props.CON[0] = CON[firstIndex] - CON[secIndex]; 
+		if(INT != null)
+			props.INT[0] = INT[firstIndex] - INT[secIndex]; 
+		if(WIS != null)
+			props.WIS[0] = WIS[firstIndex] - WIS[secIndex]; 
+		if(ELEMENT != null)
+			props.ELEMENTAL_DAMAGE[0] = ELEMENTAL_DAMAGE[firstIndex] - ELEMENTAL_DAMAGE[secIndex]; 
+		if(HP != null)
+			props.HP[0] = HP[firstIndex] - HP[secIndex]; 
+		if(AR != null)
+			props.AR[0] = AR[firstIndex] - AR[secIndex]; 
+		if(MR != null)
+			props.MR[0] = MR[firstIndex] - MR[secIndex]; 
+		if(MF != null)
+			props.MF[0] = MF[firstIndex] - MF[secIndex]; 
+		if(MINF != null)
+			props.MINF[0] = MINF[firstIndex] - MINF[secIndex]; 
+		if(LIFESTEAL != null)
+			props.LIFESTEAL[0] = LIFESTEAL[firstIndex] - LIFESTEAL[secIndex]; 
+		if(CR != null)
+			props.CR[0] = CR[firstIndex] - CR[secIndex]; 
+		if(CD != null)
+			props.CD[0] = CD[firstIndex] - CD[secIndex]; 
+	}*/
 
 	/**
 	 * Collects all actual stats and combines them into an CompoundTag
@@ -127,8 +163,10 @@ public class ToaProperties {
 	}
 
 	/**
-	 * Multiplies all Stats by f. The Properties should only have 1 array-entry per stat
-	 * @return a new ToaProperties object with the multiplied flat-stats 
+	 * Multiplies all Stats by f
+	. The Properties should only have 1 array-entry per stat
+	 * @return a new ToaProperties object with the multiplied flat-stats
+	
 	 */
 	public ToaProperties multiplyAllFlat(float f) {
 		ToaProperties newStats = (new ToaProperties(type, rarity)).subType(subType);
@@ -170,7 +208,7 @@ public class ToaProperties {
 	public void addStatsToItem(ItemStack item) {
 		CompoundTag nbt = item.getOrCreateTag().getCompound("Stats");
 		if (STR != null) {
-			nbt.putFloat("str", nbt.getFloat("str") + STR[0]);
+			nbt.putFloat("str", nbt.getFloat("str") + STR[0]);
 		}
 		if (DEX != null) {
 			nbt.putFloat("dex", nbt.getFloat("dex") + DEX[0]);
@@ -217,7 +255,7 @@ public class ToaProperties {
 	/**
 	 * Used ONLY to apply the stats of a reforge to an item
 	 */
-	public static void applyEnchantToItem(ToaEnchantment ench, ItemStack item, int level, int f){
+	public static void applyEnchantToItem(ToaEnchantment ench, ItemStack item, int level, int f) {
 		ench.stats.applyV2PropertiesToItem(item, level, f);
 	}
 
@@ -280,12 +318,19 @@ public class ToaProperties {
 		item.getOrCreateTag().put("Stats", itemStats);
 	}
 
-	public ArrayList<Byte> getPresentIDs(){
-		return this.presentStats;
+	/**
+	 * Makes copy of the present Ids so that an item's base stats won't get modified
+	 */
+	public ArrayList<Byte> getPresentIDs() {
+		ArrayList<Byte> ids = new ArrayList<>();
+		for (Byte b : this.presentStats) {
+			ids.add(b);
+		}
+		return ids;
 	}
 
-	public float[] getValueByID(byte id){
-		return switch(id){
+	public float[] getValueByID(byte id) {
+		return switch (id) {
 			case 0 -> this.STR;
 			case 1 -> this.DEX;
 			case 2 -> this.CON;
@@ -303,8 +348,8 @@ public class ToaProperties {
 		};
 	}
 
-	public static String getStatNameByID(byte id){
-		return switch(id){
+	public static String getStatNameByID(byte id) {
+		return switch (id) {
 			case 0 -> "Strength";
 			case 1 -> "Dexterity";
 			case 2 -> "Consitution";
@@ -322,8 +367,8 @@ public class ToaProperties {
 		};
 	}
 
-	public static String getStatTagNameByID(byte id){
-		return switch(id){
+	public static String getStatTagNameByID(byte id) {
+		return switch (id) {
 			case 0 -> "str";
 			case 1 -> "dex";
 			case 2 -> "con";
@@ -477,7 +522,6 @@ public class ToaProperties {
 		return mr(new float[]{mr});
 	}
 
-
 	public ToaProperties mf(float[] mf) {
 		this.MF = mf;
 		this.presentStats.add((byte) 11);
@@ -497,5 +541,4 @@ public class ToaProperties {
 	public ToaProperties minf(float minf) {
 		return minf(new float[]{minf});
 	}
-
 }

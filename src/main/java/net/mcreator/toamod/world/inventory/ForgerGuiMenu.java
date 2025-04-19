@@ -26,11 +26,14 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.toamod.network.ForgerGuiSlotMessage;
 import net.mcreator.toamod.init.ToamodModMenus;
 import net.mcreator.toamod.init.ToamodModItems;
-import net.mcreator.toamod.ToamodMod;
+import net.mcreator.toamod.init.ToamodModEnchantments;
 import net.mcreator.toamod.ToaReforgeable;
+import net.mcreator.toamod.ToaItemType;
+import net.mcreator.toamod.ToaEnchantmentHandler;
+import net.mcreator.toamod.ToaEnchantment;
+import net.mcreator.toamod.ToaAbstractContainerRemovable;
 import net.mcreator.toamod.ReforgeType;
 import net.mcreator.toamod.CustomNbtHandler;
 
@@ -41,7 +44,7 @@ import java.util.ArrayList;
 
 import io.netty.buffer.Unpooled;
 
-public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
+public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
 	public final Player entity;
@@ -57,10 +60,10 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 	private ItemStack modifyItem = null;
 
 	public ForgerGuiMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(ToamodModMenus.FORGER_GUI.get(), id);
+		super(ToamodModMenus.FORGER_GUI.get(), id, 13, 0);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(13);
+		this.internal = new ItemStackHandler(slotCount);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -109,6 +112,7 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 				super.setChanged();
 				slotChanged(0, 0, 0);
 			}
+
 			@Override
 			public void onTake(Player entity, ItemStack stack) {
 				super.onTake(entity, stack);
@@ -120,7 +124,6 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 				super.onQuickCraft(a, b);
 				slotChanged(slot, 2, b.getCount() - a.getCount());
 			}
-
 		}));
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 4; j++) {
@@ -152,9 +155,18 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
-
+		//Clear vItem slots before refreshing to delete possible wrong items when disconnecting / force quiting in any sub-gui
+		for (int i = 1; i < slotCount; i++) {
+			((Slot) customSlots.get(i)).set(ItemStack.EMPTY);
+		}
 		refreshVisualItems();
 		this.modifyItem = ((Slot) customSlots.get(0)).getItem();
+
+	}
+
+	public ForgerGuiMenu(int id, Inventory inv, FriendlyByteBuf extraData, ItemStack boundItem) {
+		this(id, inv, extraData);
+		internal.insertItem(0, boundItem, false);
 	}
 
 	@Override
@@ -168,38 +180,6 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 				return this.boundEntity.isAlive();
 		}
 		return true;
-	}
-
-	@Override
-	public ItemStack quickMoveStack(Player playerIn, int index) {
-		ItemStack itemstack = ItemStack.EMPTY;
-		Slot slot = (Slot) this.slots.get(index);
-		if (slot != null && slot.hasItem()) {
-			ItemStack itemstack1 = slot.getItem();
-			itemstack = itemstack1.copy();
-			if (index < 13) {
-				if (!this.moveItemStackTo(itemstack1, 13, this.slots.size(), true))
-					return ItemStack.EMPTY;
-				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 13, false)) {
-				if (index < 13 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 13 + 27, this.slots.size(), true))
-						return ItemStack.EMPTY;
-				} else {
-					if (!this.moveItemStackTo(itemstack1, 13, 13 + 27, false))
-						return ItemStack.EMPTY;
-				}
-				return ItemStack.EMPTY;
-			}
-			if (itemstack1.getCount() == 0)
-				slot.set(ItemStack.EMPTY);
-			else
-				slot.setChanged();
-			if (itemstack1.getCount() == itemstack.getCount())
-				return ItemStack.EMPTY;
-			slot.onTake(playerIn, itemstack1);
-		}
-		return itemstack;
 	}
 
 	@Override
@@ -278,109 +258,94 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 		return flag;
 	}
 
-	/*
-	*
-	 * Only drops input item, other items are just visual-items
-	 */
-	@Override
-	public void removed(Player playerIn) {
-		super.removed(playerIn);
-		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
-			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
-				playerIn.drop(internal.extractItem(0, internal.getStackInSlot(0).getCount(), false), false);
-			} else {
-				playerIn.getInventory().placeItemBackInInventory(internal.extractItem(0, internal.getStackInSlot(0).getCount(), false));
-			}
-		}
-	}
-
 	private void slotChanged(int slotid, int ctype, int meta) {
+		if (this.world.isClientSide()) {
+			return;
+		}
 		System.out.println("slotid:" + slotid + ", ctype:" + ctype + ", meta=" + meta);
-		if (this.world != null) {
-			if (this.world.isClientSide()) {
-				ToamodMod.PACKET_HANDLER.sendToServer(new ForgerGuiSlotMessage(slotid, x, y, z, ctype, meta));
-				ForgerGuiSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
+		//Serverside -> onButtonItem clicked
+		clearIllegalVItems(entity);
+		if (slotid == 0) {
+			if (ctype == 0) {
+				refreshVisualItems();
+				System.out.println("Item in Slot 0 on place-event: " + internal.getStackInSlot(0).getItem() + " | " + ((Slot) customSlots.get(0)).getItem() + "   <- Please one of them don't be air :praying:");
+				this.modifyItem = internal.getStackInSlot(0).copy(); //idk whether i sould add an .copy() or not
 			} else {
-				//Serverside -> onButtonItem clicked
-				if (entity instanceof ServerPlayer ply) {
-					System.out.println("ServerPlayer it is!");
-					if (slotid == 0) {
-						if(ctype == 0){
-							refreshVisualItems();
-							System.out.println("Item in Slot 0 on place-event: "+internal.getStackInSlot(0).getItem()+" | "+((Slot) customSlots.get(0)).getItem()+"   <- Please one of them don't be air :praying:");
-							this.modifyItem = internal.getStackInSlot(0).copy(); //idk whether i sould add an .copy() or not
-							
-						}
-						else{
-							for(int i = 0; i < customSlots.size(); i++){;
-								((Slot) customSlots.get(i)).set(ItemStack.EMPTY);
-							}
-							this.modifyItem = null;
-							entity.containerMenu.broadcastChanges();
-						}
-						return;
-					}
-					System.out.println("After refresh VItems");
-					System.out.println("Open sub-GUI with bound-item: "+this.modifyItem.getItem());
-					final ItemStack transferItem = this.modifyItem;
-					
-					//here a new gui is definetly opened so remove all vItems
-					for(int i = 0; i < customSlots.size(); i++){;
-						((Slot) customSlots.get(i)).set(ItemStack.EMPTY);
-					}
-					entity.containerMenu.broadcastChanges();
-
-					BlockPos _bpos = BlockPos.containing(x, y, z);
-					if (slotid == 1) {
-						NetworkHooks.openScreen((ServerPlayer) ply, new MenuProvider() {
-							@Override
-							public Component getDisplayName() {
-								return Component.literal("ForgerReforge");
-							}
-
-							@Override
-							public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-								return new ForgerReforgeMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
-							}
-						}, _bpos);
-						return;
-					}
-					if(slotid == 2){
-						/*NetworkHooks.openScreen((ServerPlayer) ply, new MenuProvider() {
-							@Override
-							public Component getDisplayName() {
-								return Component.literal("ForgerEnchants");
-							}
-
-							@Override
-							public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-								return new ForgerEnchantsMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), internal.getStackInSlot(0));
-							}
-						}, _bpos);*/
-						return;
-					}
-					//Else if any slot with index 3 or higher is clicked
-					int vItemId = visualItemIds.get(slotid - 3);
-					switch(vItemId){
-						case 0: 
-							NetworkHooks.openScreen((ServerPlayer) ply, new MenuProvider() {
-								@Override
-								public Component getDisplayName() {
-									return Component.literal("ForgerRunes");
-								}
-	
-								@Override
-								public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-									return new ForgerRunesMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
-								}
-							}, _bpos);
-							break;
-						case 1:
-							break;
-						default: return;
-					}
+				for (int i = 0; i < customSlots.size(); i++) {
+					((Slot) customSlots.get(i)).set(ItemStack.EMPTY);
 				}
+				this.modifyItem = null;
+				entity.containerMenu.broadcastChanges();
 			}
+			return;
+		}
+		System.out.println("After refresh VItems");
+		System.out.println("Open sub-GUI with bound-item: " + this.modifyItem.getItem());
+		final ItemStack transferItem = this.modifyItem;
+		setExitedByESC(false);
+		entity.containerMenu.broadcastChanges();
+		BlockPos _bpos = BlockPos.containing(x, y, z);
+		if (slotid == 1) {
+			NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.literal("ForgerReforge");
+				}
+
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					return new ForgerReforgeMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
+				}
+			}, _bpos);
+			return;
+		}
+		if (slotid == 2) {
+			NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.literal("ForgerEnchants");
+				}
+
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					return new ForgerEnchantsMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
+				}
+			}, _bpos);
+			return;
+		}
+		//Else if any slot with index 3 or higher is clicked
+		int vItemId = visualItemIds.get(slotid - 3);
+		switch (vItemId) {
+			case 0 :
+				/*NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
+					@Override
+					public Component getDisplayName() {
+						return Component.literal("ForgerSuperiorEnchants");
+					}
+					@Override
+					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+						return new ForgerSuperiorEnchantsMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
+					}
+				}, _bpos);*/
+				refreshVisualItems(); //for now until gui exists(and works)
+				return;
+			case 1 :
+				/*NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
+					@Override
+					public Component getDisplayName() {
+						return Component.literal("ForgerRunes");
+					}
+					@Override
+					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+						return new ForgerRunesMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
+					}
+				}, _bpos);
+				*/
+				refreshVisualItems(); //for now until gui exists(and works)
+				return;
+			default :
+				break;
+
 		}
 	}
 
@@ -394,7 +359,8 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 		CompoundTag upgrades = inputItem.getOrCreateTag().getCompound("Upgrades");
 		if (inputItem.getItem() == Items.AIR || upgrades == null)
 			return;
-		int setSlot = 3; //Reforge and Enchantments are on all items so index is only required at 3 and after
+		int setSlot = 3;
+		//Reforge and Enchantments are on all items so index is only required at 3 and after
 		ItemStack setItem = null;
 		ListTag lore = new ListTag();
 		//Reforge
@@ -420,8 +386,9 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
 			ArrayList<String> enchs = CustomNbtHandler.enchantsToLoreString(inputItem.getOrCreateTag().getList("Enchantments", 10));
 			if (enchs == null || enchs.isEmpty()) {
-				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§8None§r")));
+				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Current: §8None§r")));
 			} else {
+				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Current:§r")));
 				for (int i = 0; i < enchs.size(); i++) {
 					lore.add(StringTag.valueOf(StringTag.quoteAndEscape(enchs.get(i))));
 				}
@@ -432,28 +399,61 @@ public class ForgerGuiMenu extends AbstractContainerMenu implements Supplier<Map
 			setItem.getOrCreateTag().putBoolean("delete", true);
 			((Slot) customSlots.get(2)).set(setItem);
 		}
+		//Superior Enchantments
+		{
+			ToaEnchantment[] supEnchs = ToaEnchantmentHandler.getSuperiorEnchants(ToaItemType.getByName(inputItem.getOrCreateTag().getString("type")));
+			if (supEnchs != null && supEnchs.length > 0) {
+				setItem = new ItemStack(ToamodModItems.SUPER_ENCHANTMENT_BOOK.get());
+				lore = new ListTag();
+				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
+				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§cCOOMING SOON§r")));
+				setItem.setHoverName(Component.literal("§dSuperior Enchantments"));
+				setItem.getOrCreateTag().putBoolean("delete", true);
+				setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
+				((Slot) customSlots.get(setSlot)).set(setItem);
+				setSlot++;
+				visualItemIds.add(0);
+			}
+		}
 		//inputItem has Rune-Slots
-		if (inputItem.getOrCreateTag().getCompound("display").getList("Lore", 8) != null) {
+		if (upgrades.contains("Runes") && !upgrades.getList("Runes", 10).isEmpty()) {
 			setItem = new ItemStack(ToamodModItems.RUNE.get());
 			lore = new ListTag();
 			setItem.setHoverName(Component.literal("§r§9Runes§r"));
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
-			String runeString = inputItem.getOrCreateTag().getCompound("display").getList("Lore", 8).get(0).toString().substring(2).replace("\"'","");
+			String runeString = inputItem.getOrCreateTag().getCompound("display").getList("Lore", 8).get(0).toString().substring(2).replace("\"'", "");
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape(runeString)));
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
 			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§eClick to modify§r")));
 			setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
-			((Slot) customSlots.get(setSlot)).set(setItem);
 			setItem.getOrCreateTag().putBoolean("delete", true);
+			((Slot) customSlots.get(setSlot)).set(setItem);
 			setSlot++;
-			visualItemIds.add(0);
+			visualItemIds.add(1);
 		}
 		//setItem = new ItemStack(ToamodModItems.MODIFIERS_ICON.get());
 		//setItem = new ItemStack(ToamodModItems.STAR.get());
 		//setItem = new ItemStack(ToamodModItems.PRESTIGE_ITEM.get());
 		//setItem = new ItemStack(ToamodModItems.AUGMENTATIONS_ICON.get());
-
 		entity.containerMenu.broadcastChanges();
+	}
+
+	@Override
+	public void removed(Player playerIn) {
+		if (world.isClientSide())
+			return;
+		super.removed(playerIn);
+		if (playerIn instanceof ServerPlayer serverPlayer && serverPlayer.hasDisconnected()) {
+			playerIn.drop(internal.extractItem(0, internal.getStackInSlot(0).getCount(), false), false);
+		}
+
+		if (isExitedByESC()) {
+			playerIn.getInventory().placeItemBackInInventory(internal.extractItem(0, internal.getStackInSlot(nonVItemSlot).getCount(), false));
+			((Slot) customSlots.get(0)).set(ItemStack.EMPTY);
+		}
+		for (int i = 1; i < slotCount; i++) {
+			((Slot) customSlots.get(i)).set(ItemStack.EMPTY);
+		}
 	}
 
 	public Map<Integer, Slot> get() {

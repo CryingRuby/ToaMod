@@ -60,7 +60,7 @@ public class ForgerGuiScreen extends AbstractContainerScreen<ForgerGuiMenu> {
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.toamod.forger_gui.label_forger"), 73, 4, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.toamod.forger_gui.label_forger"), 6, 6, -12829636, false);
 	}
 
 	@Override

@@ -1,13 +1,10 @@
 
 package net.mcreator.toamod;
 
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.CompoundTag;
-
-import net.mcreator.toamod.init.ToamodModEnchantments;
 
 import java.util.ArrayList;
 
@@ -36,10 +33,9 @@ public final class CustomNbtHandler {
 		//Apply Enchant-Stats to item
 		for (int i = 0; i < nbtFrom.getList("Enchantments", 10).size(); i++) {
 			CompoundTag tempEnch = (CompoundTag) nbtFrom.getList("Enchantments", 10).get(i);
-			ToaEnchantment ench = getEnchantByName(tempEnch.getString("id").replace("toamod:", ""));
+			ToaEnchantment ench = ToaEnchantmentHandler.getEnchantByName(tempEnch.getString("id").replace("toamod:", ""));
 			applyEnchantToStats(ench, tempEnch.getInt("lvl"), copyTo);
 		}
-
 		//Reforge
 		if (!nbtUpgradesFrom.getString("reforge").isEmpty()) {
 			ToaProperties.applyReforgeToItem(ReforgeType.getByName(nbtUpgradesFrom.getString("reforge")), copyTo, 1);
@@ -66,7 +62,6 @@ public final class CustomNbtHandler {
 				runes.add(new CompoundTag());
 			}
 			nbtUpgradesFrom.put("Runes", runes);
-
 		}
 		if (nbtUpgradesFrom.getInt("stars") > 0) {
 			applyStarsToItem(copyTo, nbtUpgradesFrom.getInt("stars"));
@@ -109,6 +104,9 @@ public final class CustomNbtHandler {
 	 * Sets Lore with all Stats, Upgrades, basic Information (rarity, item, etc...)
 	 */
 	public static void setLoreOfItem(ItemStack item) {
+		System.out.println("-----------------Call SetLoreOfItem------------------");
+		System.out.println("ItemTag:	"+item.getOrCreateTag());
+		System.out.println("-----------------------------------------------------");
 		CompoundTag lore = new CompoundTag();
 		ListTag loreLines = new ListTag();
 		ToaRarity rarity = ToaRarity.getByID(item.getOrCreateTag().getInt("rarity"));
@@ -143,15 +141,17 @@ public final class CustomNbtHandler {
 		}
 		//Enchantments
 		if (!item.getOrCreateTag().getList("Enchantments", 10).isEmpty()) {
+			System.out.println("item has Enchantments -> apply to lore");
 			ArrayList<String> lines = enchantsToLoreString(item.getOrCreateTag().getList("Enchantments", 10));
 			for (int i = 0; i < lines.size(); i++) {
 				loreLines.add(StringTag.valueOf(StringTag.quoteAndEscape(lines.get(i))));
 			}
+			if (!lines.isEmpty())
+				loreLines.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
 		}
 		//Description (Optional)
 		//loreLines.addAll(((ToaItem)item.getItem()).getDescription())   //Oder sowas ähnliches, falls überhaupt
 		//Type / Rarity
-		loreLines.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
 		loreLines.add(StringTag.valueOf(StringTag.quoteAndEscape("\u00A77Type: \u00A79" + item.getOrCreateTag().getString("type"))));
 		loreLines.add(StringTag.valueOf(StringTag.quoteAndEscape("\u00A77Rarity: " + rarity.Prefix + rarity.Name.toUpperCase())));
 		lore.put("Lore", loreLines);
@@ -213,12 +213,13 @@ public final class CustomNbtHandler {
 		ArrayList<String> statLines = new ArrayList<String>();
 		ArrayList<Byte> statIdList = getAllUpgradedStats(item);
 		removeAllNonUpgradedStats(item, statIdList);
-
-		for(int i = 0; i < statIdList.size(); i++){
-			//form: §7<Stat-Name> §c(+/-)<Stat-Value>
-			statLines.add("\u00A77"+ToaProperties.getStatNameByID(statIdList.get(i)) + " \u00A7c" + ((stats.getFloat(ToaProperties.getStatTagNameByID(statIdList.get(i))) >= 0) ? "+" : "") + ToaFormats.floatToString(stats.getFloat(ToaProperties.getStatTagNameByID(statIdList.get(i)))));
+		for (int i = 0; i < statIdList.size(); i++) {
+			//form: §7<Stat-Name> §c(+/-)<Stat-Value>(%/)
+			String statValue = ToaFormats.floatToString(stats.getFloat(ToaProperties.getStatTagNameByID(statIdList.get(i))));
+			String statPrefix = ((stats.getFloat(ToaProperties.getStatTagNameByID(statIdList.get(i))) >= 0) ? "+" : "");
+			String statPostfix = ((statIdList.get(i) >= 5 && statIdList.get(i) <= 7) ? "%" : "");
+			statLines.add("\u00A77" + ToaProperties.getStatNameByID(statIdList.get(i)) + " \u00A7c" + statPrefix + statValue + statPostfix);
 		}
-
 		System.out.println("statIDList: " + statIdList);
 		System.out.println("stats: " + stats.toString());
 		//Reforge
@@ -241,12 +242,12 @@ public final class CustomNbtHandler {
 				statLines.set(index, statLines.get(index) + " \u00A79(" + numberPrefix + ToaFormats.floatToString(statValue) + extraPostfix + ")");
 			}
 		}
-
 		//Enchants
 		{
 			ListTag enchants = item.getOrCreateTag().getList("Enchantments", 10);
+			System.out.println("enchantments.size()="+enchants.size()+"   with: "+enchants);
 			for (int i = 0; i < enchants.size(); i++) {
-				ToaEnchantment ench = getEnchantByName(enchants.getCompound(i).getString("id").replace("toamod:", ""));
+				ToaEnchantment ench = ToaEnchantmentHandler.getEnchantByName(enchants.getCompound(i).getString("id").replace("toamod:", ""));
 				if (ench.getProperties() == null || ench.getProperties().getPresentIDs().isEmpty())
 					continue;
 				//Enchantments only have ONE or less stat
@@ -288,7 +289,7 @@ public final class CustomNbtHandler {
 		for (int i = 0; i < enchantsTag.size(); i++) {
 			CompoundTag currEnch = enchantsTag.getCompound(i);
 			int level = currEnch.getInt("lvl");
-			ToaEnchantment toaEnch = getEnchantByName(currEnch.getString("id").replace("toamod:", ""));
+			ToaEnchantment toaEnch = ToaEnchantmentHandler.getEnchantByName(currEnch.getString("id").replace("toamod:", ""));
 			char prefix;
 			if (level == toaEnch.getMaxLevel()) {
 				prefix = '6';
@@ -311,31 +312,6 @@ public final class CustomNbtHandler {
 		return result;
 	}
 
-	public static ToaEnchantment getEnchantByName(String name) {
-		Enchantment ench = switch (name) {
-			case "sharpness" -> ToamodModEnchantments.SHARPNESS.get();
-			case "executing" -> ToamodModEnchantments.EXECUTING.get();
-			case "protection" -> ToamodModEnchantments.PROTECTION.get();
-			case "spikes" -> ToamodModEnchantments.SPIKES.get();
-			case "ignite" -> ToamodModEnchantments.IGNITE.get();
-			case "powerful" -> ToamodModEnchantments.POWERFUL.get();
-			case "fortune" -> ToamodModEnchantments.FORTUNE.get();
-			case "critical" -> ToamodModEnchantments.CRITICAL.get();
-			case "scavengar" -> ToamodModEnchantments.SCAVENGER.get();
-			case "stickyfeet" -> ToamodModEnchantments.STICKYFEET.get();
-			case "manaflow" -> ToamodModEnchantments.MANAFLOW.get();
-			case "focus" -> ToamodModEnchantments.FOCUS.get();
-			case "divine_gift" -> ToamodModEnchantments.DIVINE_GIFT.get();
-			case "growth" -> ToamodModEnchantments.GROWTH.get();
-			case "shiny" -> ToamodModEnchantments.SHINY.get();
-			case "vampirism" -> ToamodModEnchantments.VAMPIRISM.get();
-			case "magic_protection" -> ToamodModEnchantments.MAGIC_PROTECTION.get();
-			case "chimera" -> ToamodModEnchantments.CHIMERA.get();
-			default -> null;
-		};
-		return (ToaEnchantment) ench;
-	}
-
 	/**
 	 * Searches a stat-id in an array of existing stat-ids
 	.
@@ -351,6 +327,7 @@ public final class CustomNbtHandler {
 	 * @return gives the index at which the given stat-id is in the given idList OR -1 if it's not included (the -1 shouldn't really happen)
 	 */
 	private static byte getIndexOfListByStatID(byte id, ArrayList<Byte> idList) {
+		System.out.println("	search for id:" + id);
 		for (int i = 0; i < idList.size(); i++) {
 			System.out.print(idList.get(i) + " ");
 		}
@@ -373,34 +350,40 @@ public final class CustomNbtHandler {
 	/**
 	 * Collects all statIds of stats that are part of an items base stats OR modified by any upgrade (reforge, runes, etc...)
 	 */
-	public static ArrayList<Byte> getAllUpgradedStats(ItemStack item){
+	private static ArrayList<Byte> getAllUpgradedStats(ItemStack item) {
+		System.out.println("------getAllUpgradesStats -> statIdList----------");
 		CompoundTag stats = item.getOrCreateTag().getCompound("Stats");
 		CompoundTag upgrades = item.getOrCreateTag().getCompound("Upgrades");
+		System.out.println("stat-nbt-string: " + stats);
+		System.out.println("upgrades-nbt-string: " + upgrades);
 		//add Base stats to id-list
-		ArrayList<Byte> statIds = ((ToaReforgeable) item.copy().getItem()).getProperties().getPresentIDs();
-		//END if there are no upgrades
-		if(item.getOrCreateTag().contains("Upgrades") || upgrades.isEmpty())
-			return statIds;
-
-			
+		ArrayList<Byte> statIds = ((ToaReforgeable) item.getItem()).getProperties().getPresentIDs();
+		System.out.print("base stat id list: [");
+		for (Byte b : statIds) {
+			System.out.print(b + ", ");
+		}
+		System.out.println("]");
 		//Reforge
 		{
 			ReforgeType reforge = ReforgeType.getByName(upgrades.getString("reforge"));
-			if(reforge != null){
-				for(int i = 0; i < reforge.getProperties().getPresentIDs().size(); i++){
-					if(statIds.contains(reforge.getProperties().getPresentIDs().get(i))){
+			if (reforge != null) {
+				System.out.println("item has reforge: " + reforge.getName());
+				for (int i = 0; i < reforge.getProperties().getPresentIDs().size(); i++) {
+					if (statIds.contains(reforge.getProperties().getPresentIDs().get(i))) {
+						System.out.println("	statId: " + reforge.getProperties().getPresentIDs().get(i) + " already in idList. Is it?");
 						continue;
 					}
 					statIds.add(reforge.getProperties().getPresentIDs().get(i));
+					System.out.println("	stat: " + reforge.getProperties().getPresentIDs().get(i) + " added to statId list");
 				}
 			}
 		}
 		//Runes
 		{
-			ListTag runes = upgrades.getList("Runes", 10);
-			for(int i = 0; i < runes.size(); i++){
+			ListTag runes = upgrades == null? new ListTag() : upgrades.getList("Runes", 10);
+			for (int i = 0; i < runes.size(); i++) {
 				RuneType rune = RuneType.getByID(runes.getCompound(i).getString("type"));
-				if(statIds.contains(rune.getProperties().getPresentIDs().get(0)))
+				if (statIds.contains(rune.getProperties().getPresentIDs().get(0)))
 					continue;
 				statIds.add(rune.getProperties().getPresentIDs().get(0));
 			}
@@ -409,26 +392,26 @@ public final class CustomNbtHandler {
 		{
 			ListTag enchants = item.getOrCreateTag().getList("Enchantments", 10);
 			for (int i = 0; i < enchants.size(); i++) {
-				ToaEnchantment ench = getEnchantByName(enchants.getCompound(i).getString("id").replace("toamod:", ""));
+				ToaEnchantment ench = ToaEnchantmentHandler.getEnchantByName(enchants.getCompound(i).getString("id").replace("toamod:", ""));
 				if (ench.getProperties() == null || ench.getProperties().getPresentIDs().isEmpty())
 					continue;
 				//Enchantments only have ONE or less stat
 				byte id = ench.getProperties().getPresentIDs().get(0);
-				if(statIds.contains(id))
+				if (statIds.contains(id))
 					continue;
 				statIds.add(id);
 			}
-
 		}
-			
+		System.out.println("------finished (before return)----------");
+		statIds.sort(null);
 		return statIds;
 	}
 
-	public static void removeAllNonUpgradedStats(ItemStack item, ArrayList<Byte> statIds){
+	private static void removeAllNonUpgradedStats(ItemStack item, ArrayList<Byte> statIds) {
 		CompoundTag stats = item.getOrCreateTag().getCompound("Stats");
-		for(byte i = 0; i < ToaProperties.statCount; i++){
+		for (byte i = 0; i < ToaProperties.statCount; i++) {
 			float statValue = stats.getFloat(ToaProperties.getStatTagNameByID(i));
-			if(!statIds.contains(i) && statValue < 10e-5 && statValue > -10e-5){
+			if (!statIds.contains(i) && statValue < 10e-5 && statValue > -10e-5) {
 				stats.remove(ToaProperties.getStatTagNameByID(i));
 			}
 		}

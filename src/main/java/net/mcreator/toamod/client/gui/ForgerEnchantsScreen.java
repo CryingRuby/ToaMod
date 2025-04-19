@@ -8,20 +8,20 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 
-import net.mcreator.toamod.world.inventory.ForgerReforgeMenu;
+import net.mcreator.toamod.world.inventory.ForgerEnchantsMenu;
 
 import java.util.HashMap;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
-public class ForgerReforgeScreen extends AbstractContainerScreen<ForgerReforgeMenu> {
-	private final static HashMap<String, Object> guistate = ForgerReforgeMenu.guistate;
+public class ForgerEnchantsScreen extends AbstractContainerScreen<ForgerEnchantsMenu> {
+	private final static HashMap<String, Object> guistate = ForgerEnchantsMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	private final int sizeReforges;
+	private final int sizeEnchants;
 
-	public ForgerReforgeScreen(ForgerReforgeMenu container, Inventory inventory, Component text) {
+	public ForgerEnchantsScreen(ForgerEnchantsMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -30,10 +30,10 @@ public class ForgerReforgeScreen extends AbstractContainerScreen<ForgerReforgeMe
 		this.entity = container.entity;
 		this.imageWidth = 176;
 		this.imageHeight = 166;
-		this.sizeReforges = container.getSizeReforges();
+		this.sizeEnchants = container.getSizeEnchants();
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/screens/forger_reforge.png");
+	private static final ResourceLocation texture = new ResourceLocation("toamod:textures/screens/forger_enchants.png");
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
@@ -50,12 +50,13 @@ public class ForgerReforgeScreen extends AbstractContainerScreen<ForgerReforgeMe
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 		outer : for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 4; j++) {
-				if (i * 4 + j + 1 > sizeReforges) {
+				if (i * 4 + j + 1 > sizeEnchants) {
 					break outer;
 				}
 				guiGraphics.blit(new ResourceLocation("toamod:textures/screens/slot.png"), this.leftPos + 79 + 18 * j, this.topPos + 20 + 18 * i, 0, 0, 18, 18, 18, 18);
 			}
 		}
+
 		RenderSystem.disableBlend();
 	}
 

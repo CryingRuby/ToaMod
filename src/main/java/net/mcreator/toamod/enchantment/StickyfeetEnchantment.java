@@ -5,11 +5,12 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.entity.EquipmentSlot;
 
+import net.mcreator.toamod.ToaItemType;
 import net.mcreator.toamod.ToaEnchantment;
 
 public class StickyfeetEnchantment extends ToaEnchantment {
 	public StickyfeetEnchantment(EquipmentSlot... slots) {
-		super(Enchantment.Rarity.COMMON, EnchantmentCategory.BREAKABLE, slots);
+		super(Enchantment.Rarity.COMMON, EnchantmentCategory.ARMOR_FEET, ToaItemType.ARMOR, new int[]{15, 30, 50, 75, 125}, 40, slots);
 		prefixByLevel = 4;
 	}
 
@@ -19,5 +20,10 @@ public class StickyfeetEnchantment extends ToaEnchantment {
 	@Override
 	public int getMaxLevel() {
 		return 5;
+	}
+
+	@Override
+	public String getDescription(int level) {
+		return "";
 	}
 }

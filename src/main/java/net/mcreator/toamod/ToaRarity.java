@@ -7,8 +7,8 @@ public enum ToaRarity {
 	EPIC(3, "Epic","\u00A75"), 
 	LEGENDARY(4, "Legendary","\u00A76"),
 	MYTHIC(5, "Mythic","\u00A7c"),
-	DIVINE(6, "Divine","\u00A7b"), 
-	ANCIENT(7, "Ancient","\u00A7d");
+	ANCIENT(6, "Ancient","\u00A7d"),
+	DIVINE(7, "Divine","\u00A7b");
 
 	public final int ID;
 	public final String Name;
@@ -29,8 +29,8 @@ public enum ToaRarity {
 			case 3 -> EPIC;
 			case 4 -> LEGENDARY;
 			case 5 -> MYTHIC;
-			case 6 -> DIVINE;
-			case 7 -> ANCIENT;
+			case 6 -> ANCIENT;
+			case 7 -> DIVINE;
 			default -> COMMON;
 		};
 	}
@@ -43,8 +43,8 @@ public enum ToaRarity {
 			case "Epic", "\u00A75EPIC\u00A7r" -> EPIC;
 			case "Legendary", "\u00A76LEGENDARY\u00A7r" -> LEGENDARY;
 			case "Mythic", "\u00A7cMYTHIC\u00A7r" -> MYTHIC;
-			case "Divine", "\u00A7bDIVINE\u00A7r" -> DIVINE;
 			case "Ancient", "\u00A7dANCIENT\u00A7r" -> ANCIENT;
+			case "Divine", "\u00A7bDIVINE\u00A7r" -> DIVINE;
 			default -> COMMON;
 		};
 	}

@@ -338,7 +338,7 @@ public class MilestonesMenuMenu extends AbstractContainerMenu implements Supplie
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			OnMilestonesMenuTickProcedure.execute(world, x, y, z, entity);
+			OnMilestonesMenuTickProcedure.execute(entity);
 		}
 	}
 }

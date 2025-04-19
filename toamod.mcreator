@@ -5559,22 +5559,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -5836,22 +5820,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -6401,22 +6369,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -6566,28 +6518,7 @@
         "files": [
           "src/main/java/net/mcreator/toamod/procedures/OnIllfangsRngDropsMenuTickProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/procedures/PlayerProfile/BossCollectionMenu/Illfang"
     },
@@ -11217,6 +11148,7 @@
       "registry_name": "forger_runes",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/toamod/network/ForgerRunesSlotMessage.java",
           "src/main/java/net/mcreator/toamod/world/inventory/ForgerRunesMenu.java",
           "src/main/java/net/mcreator/toamod/client/gui/ForgerRunesScreen.java"
         ]
@@ -11382,6 +11314,73 @@
         ]
       },
       "path": "~/classes"
+    },
+    {
+      "name": "ToaAbstractContainerRemovable",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_abstract_container_removable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaAbstractContainerRemovable.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "ToaEnchantmentHandler",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_enchantment_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaEnchantmentHandler.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "ToaAbstractContainerScreen",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_abstract_container_screen",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaAbstractContainerScreen.java"
+        ]
+      },
+      "path": "~/classes"
+    },
+    {
+      "name": "ForgerEnchants",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "forger_enchants",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/client/gui/ForgerEnchantsScreen.java",
+          "src/main/java/net/mcreator/toamod/world/inventory/ForgerEnchantsMenu.java"
+        ]
+      },
+      "path": "~/guis/Forger"
+    },
+    {
+      "name": "ForgerEnchantsApply",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "forger_enchants_apply",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/world/inventory/ForgerEnchantsApplyMenu.java",
+          "src/main/java/net/mcreator/toamod/client/gui/ForgerEnchantsApplyScreen.java"
+        ]
+      },
+      "path": "~/guis/Forger"
     }
   ],
   "variable_elements": [
@@ -12720,10 +12719,6 @@
             ]
           },
           {
-            "name": "PlayerSkillTree",
-            "children": []
-          },
-          {
             "name": "ControlBarrier",
             "children": []
           },
@@ -12747,19 +12742,6 @@
           {
             "name": "BlacksmithTable",
             "children": []
-          },
-          {
-            "name": "GetPlayerData",
-            "children": [
-              {
-                "name": "AsSource",
-                "children": []
-              },
-              {
-                "name": "AsEntity",
-                "children": []
-              }
-            ]
           },
           {
             "name": "HorseSystem",

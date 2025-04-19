@@ -2,6 +2,7 @@ package net.mcreator.toamod;
 
 
 public interface ToaSellable {
+
 	/**
 	 * @return the sell value of the item in "Cor" (in-game currency)
 	 */

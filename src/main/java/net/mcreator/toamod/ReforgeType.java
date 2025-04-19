@@ -85,7 +85,7 @@ public enum ReforgeType {
 		return this.applyCost * rarity * rarity;
 	}
 
-	public static ReforgeType[] getByType(ToaItemType type){
+	public static ReforgeType[] getAllByType(ToaItemType type){
 		return switch(type){
 			case SWORD -> new ReforgeType[]{FORCEFUL,STRONG,WISE,MAGICAL,BALANCED,SUPERIOR,VAMPIRIC,PRECISE};
 			case ARMOR -> new ReforgeType[]{FLEXIBLE,BULLETPROOF,MYSTIC,EMPOWERED,GIANT,MIRACULOUS,SHINY};

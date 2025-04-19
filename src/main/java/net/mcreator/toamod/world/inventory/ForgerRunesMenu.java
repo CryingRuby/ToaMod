@@ -38,11 +38,7 @@ public class ForgerRunesMenu extends AbstractContainerMenu implements Supplier<M
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
 
-	public ForgerRunesMenu(int id, Inventory inv, FriendlyByteBuf extraData){
-		this(id, inv, extraData, ItemStack.EMPTY);
-	}
-
-	public ForgerRunesMenu(int id, Inventory inv, FriendlyByteBuf extraData, ItemStack item) {
+	public ForgerRunesMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
 		super(ToamodModMenus.FORGER_RUNES.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
@@ -83,9 +79,21 @@ public class ForgerRunesMenu extends AbstractContainerMenu implements Supplier<M
 		}
 		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 35, 37) {
 			private final int slot = 0;
+
+			@Override
+			public void onQuickCraft(ItemStack a, ItemStack b) {
+				super.onQuickCraft(a, b);
+				slotChanged(0, 2, b.getCount() - a.getCount());
+			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 80, 37) {
 			private final int slot = 1;
+
+			@Override
+			public void onQuickCraft(ItemStack a, ItemStack b) {
+				super.onQuickCraft(a, b);
+				slotChanged(1, 2, b.getCount() - a.getCount());
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -258,6 +266,10 @@ public class ForgerRunesMenu extends AbstractContainerMenu implements Supplier<M
 				}
 			}
 		}
+	}
+
+	private void slotChanged(int slotid, int ctype, int meta) {
+
 	}
 
 	public Map<Integer, Slot> get() {
