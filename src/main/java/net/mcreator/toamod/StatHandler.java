@@ -22,6 +22,10 @@ public final class StatHandler {
 	private StatHandler() {
 	}
 
+	public static float[] getPlayerStats(Player player){
+		return getPlayerStats(player, new byte[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12});
+	}
+
 	public static float[] getPlayerStats(Player player, byte[] idList) {
 		float[] stats = new float[idList.length];
 		//Gather different stat sources

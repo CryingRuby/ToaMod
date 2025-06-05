@@ -1,6 +1,7 @@
 
 package net.mcreator.toamod.world.inventory;
 
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -8,6 +9,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.ContainerLevelAccess;
@@ -15,19 +17,30 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.toamod.network.PlayerProfileSlotMessage;
+import net.mcreator.toamod.network.ToamodModVariables;
 import net.mcreator.toamod.init.ToamodModMenus;
-import net.mcreator.toamod.ToamodMod;
+import net.mcreator.toamod.init.ToamodModItems;
+import net.mcreator.toamod.ToaFormats;
+import net.mcreator.toamod.ToaAbstractContainerRemovable;
+import net.mcreator.toamod.StatHandler;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-public class PlayerProfileMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
+import java.lang.reflect.Constructor;
+
+import io.netty.buffer.Unpooled;
+
+public class PlayerProfileMenu extends ToaAbstractContainerRemovable implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
 	public final Player entity;
@@ -41,10 +54,10 @@ public class PlayerProfileMenu extends AbstractContainerMenu implements Supplier
 	private BlockEntity boundBlockEntity = null;
 
 	public PlayerProfileMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(ToamodModMenus.PLAYER_PROFILE.get(), id);
+		super(ToamodModMenus.PLAYER_PROFILE.get(), id, 7, -1);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(7);
+		this.internal = new ItemStackHandler(slotCount);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -79,127 +92,29 @@ public class PlayerProfileMenu extends AbstractContainerMenu implements Supplier
 					});
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 13, 33) {
-			private final int slot = 0;
+		for (int i = 0; i < 7; i++) {
+			final int slotid = i;
+			this.customSlots.put(i, this.addSlot(new SlotItemHandler(internal, i, 13 + 22 * i, 33) {
+				private final int slot = slotid;
 
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(0, 1, 0);
-			}
+				@Override
+				public boolean mayPlace(ItemStack stack) {
+					return false;
+				}
 
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(0, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 35, 33) {
-			private final int slot = 1;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(1, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(1, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 57, 33) {
-			private final int slot = 2;
-
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 79, 33) {
-			private final int slot = 3;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(3, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(3, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
-		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 101, 33) {
-			private final int slot = 4;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(4, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(4, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
-		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 123, 33) {
-			private final int slot = 5;
-
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
-		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 145, 33) {
-			private final int slot = 6;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(6, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(6, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
+				@Override
+				public void onTake(Player entity, ItemStack stack) {
+					super.onTake(entity, stack);
+					slotChanged(slot, 1, 0);
+				}
+			}));
+		}
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
+		refreshVisualItems();
 	}
 
 	@Override
@@ -213,38 +128,6 @@ public class PlayerProfileMenu extends AbstractContainerMenu implements Supplier
 				return this.boundEntity.isAlive();
 		}
 		return true;
-	}
-
-	@Override
-	public ItemStack quickMoveStack(Player playerIn, int index) {
-		ItemStack itemstack = ItemStack.EMPTY;
-		Slot slot = (Slot) this.slots.get(index);
-		if (slot != null && slot.hasItem()) {
-			ItemStack itemstack1 = slot.getItem();
-			itemstack = itemstack1.copy();
-			if (index < 7) {
-				if (!this.moveItemStackTo(itemstack1, 7, this.slots.size(), true))
-					return ItemStack.EMPTY;
-				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 7, false)) {
-				if (index < 7 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 7 + 27, this.slots.size(), true))
-						return ItemStack.EMPTY;
-				} else {
-					if (!this.moveItemStackTo(itemstack1, 7, 7 + 27, false))
-						return ItemStack.EMPTY;
-				}
-				return ItemStack.EMPTY;
-			}
-			if (itemstack1.getCount() == 0)
-				slot.set(ItemStack.EMPTY);
-			else
-				slot.setChanged();
-			if (itemstack1.getCount() == itemstack.getCount())
-				return ItemStack.EMPTY;
-			slot.onTake(playerIn, itemstack1);
-		}
-		return itemstack;
 	}
 
 	@Override
@@ -323,55 +206,137 @@ public class PlayerProfileMenu extends AbstractContainerMenu implements Supplier
 		return flag;
 	}
 
-	@Override
-	public void removed(Player playerIn) {
-		super.removed(playerIn);
-		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
-			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
-				for (int j = 0; j < internal.getSlots(); ++j) {
-					if (j == 0)
-						continue;
-					if (j == 1)
-						continue;
-					if (j == 2)
-						continue;
-					if (j == 3)
-						continue;
-					if (j == 4)
-						continue;
-					if (j == 5)
-						continue;
-					if (j == 6)
-						continue;
-					playerIn.drop(internal.extractItem(j, internal.getStackInSlot(j).getCount(), false), false);
-				}
-			} else {
-				for (int i = 0; i < internal.getSlots(); ++i) {
-					if (i == 0)
-						continue;
-					if (i == 1)
-						continue;
-					if (i == 2)
-						continue;
-					if (i == 3)
-						continue;
-					if (i == 4)
-						continue;
-					if (i == 5)
-						continue;
-					if (i == 6)
-						continue;
-					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
-				}
-			}
+	private void slotChanged(int slotid, int ctype, int meta) {
+		if(world.isClientSide())
+			return;
+			
+		BlockPos _bpos = BlockPos.containing(x, y, z);
+		MenuProvider menu = null;
+		
+		switch(slotid){
+			case 0:
+				menu = createMenuToOpen("SkillsMenu", _bpos, SkillsMenuMenu.class);
+				break;		
+			case 1:
+				menu = createMenuToOpen("MilestonesMenu", _bpos, MilestonesMenuMenu.class);
+				break;
+			case 2:
+				//menu = createMenuToOpen("PetsMenu", _bpos, PetsMenuMenu.class);
+				break;
+			case 3:
+				menu = createMenuToOpen("PlayerStatsMenu", _bpos, PlayerStatsMenuMenu.class);
+				break;
+			case 4:
+				//TO-DO: menu = createMenuToOpen("GuidesMenu", _bpos, GuidesMenuMenu.class);
+				break;
+			case 5:
+				menu = createMenuToOpen("CollectionMenu", _bpos, CollectionMenuMenu.class);
+				break;
+			case 6:
+				menu = createMenuToOpen("ArtefactsMenu", _bpos, ArtefactsMenuMenu.class);
+				break;
+			default: return;
 		}
+		NetworkHooks.openScreen((ServerPlayer) entity, menu, _bpos);
 	}
 
-	private void slotChanged(int slotid, int ctype, int meta) {
-		if (this.world != null && this.world.isClientSide()) {
-			ToamodMod.PACKET_HANDLER.sendToServer(new PlayerProfileSlotMessage(slotid, x, y, z, ctype, meta));
-			PlayerProfileSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
+	private void refreshVisualItems() {
+		System.out.println("refreshVisual items called");
+		ItemStack setItem = null;
+		ListTag lore = new ListTag();
+		//Skills
+		{
+			setItem = new ItemStack(Items.DIAMOND_SWORD);
+			setItem.setHoverName(Component.literal("§r§9Skills§r"));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
+			int combatLevel = (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).skillAttackLvl;
+			int miningLevel = (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).skillDefenseLvl;
+			int magicLevel = (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).skillMagicLvl;
+			//int cookingLevel = entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).skillCookingLvl;
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Combat Level: §9" + combatLevel)));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Mining Level: §9" + miningLevel)));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Magic Level: §9" + magicLevel)));
+			//lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§Cooking Level: "+ cookingLevel)));
+			setItem.getOrCreateTag().putInt("HideFlags", 2);
+			finalizeVItem(setItem, 0, lore);
+			System.out.println("Item to put in slot 0: " + setItem.getItem() + " (" + setItem.getDisplayName().getString() + ")");
+			System.out.println("item in slot 0: " + (((Slot) customSlots.get(0)).getItem().getItem()));
 		}
+		//Milestones
+		{
+			setItem = new ItemStack(Items.NETHERITE_PICKAXE);
+			lore = new ListTag();
+			setItem.setHoverName(Component.literal("§r§9Milestones§r"));
+			int minMileLvl = (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).miningMilestoneLvl;
+			int comMileLvl = (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).combatMilestoneLvl;
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Combat Lvl: §9" + comMileLvl)));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Mining Lvl: §9" + minMileLvl)));
+			setItem.getOrCreateTag().putInt("HideFlags", 2);
+			finalizeVItem(setItem, 1, lore);
+
+		}
+		//Pets
+		setItem = new ItemStack(Items.LIGHT_GRAY_STAINED_GLASS_PANE);
+		lore = new ListTag();
+		setItem.setHoverName(Component.literal("§r§4COOMING SOON§r"));
+		//finalizeVItem(setItem, 2, lore);
+		//FOR NOW remove following and use above when implemented
+			setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
+			setItem.getOrCreateTag().putBoolean("delete", true);
+			((Slot) customSlots.get(2)).set(setItem);
+		//Stats
+		{
+			setItem = new ItemStack(Items.PLAYER_HEAD);
+			lore = new ListTag();
+			setItem.setHoverName(Component.literal("§r§9" + entity.getName().getString()));
+			System.out.println("player name for stats: " + entity.getName().getString());
+			float[] stats = StatHandler.getPlayerStats(entity);
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Health: §c" + ToaFormats.floatToString(stats[8]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Strength: §c" + ToaFormats.floatToString(stats[0]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Dexterity: §c" + ToaFormats.floatToString(stats[1]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Intelligence: §c" + ToaFormats.floatToString(stats[2]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Wisdom: §c" + ToaFormats.floatToString(stats[3]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Crit Rate: §c" + ToaFormats.floatToString(stats[4]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Crit Dmg: §c" + ToaFormats.floatToString(stats[5]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Lifesteal: §c" + ToaFormats.floatToString(stats[6]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Armor: §c" + ToaFormats.floatToString(stats[7]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Magic Res: §c" + ToaFormats.floatToString(stats[9]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Magic Find: §c" + ToaFormats.floatToString(stats[10]))));
+			lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Mining Fortune: §c" + ToaFormats.floatToString(stats[11]))));
+			finalizeVItem(setItem, 3, lore);
+		}
+		//Guide
+		setItem = new ItemStack(Items.BOOK);
+		lore = new ListTag();
+		setItem.setHoverName(Component.literal("§r§9Guides§r"));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Tipps and tricks for many areas of the game.")));
+		finalizeVItem(setItem, 4, lore);
+		//RNG-Pittysystem
+		setItem = new ItemStack(Items.NETHER_STAR);
+		lore = new ListTag();
+		setItem.setHoverName(Component.literal("§r§9RNG Meter§r"));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Luck based item drop pitty-system.")));
+		finalizeVItem(setItem, 5, lore);
+		//Artefacts
+		setItem = new ItemStack(ToamodModItems.ARTEFACTS_ITEM.get());
+		lore = new ListTag();
+		setItem.setHoverName(Component.literal("§r§9Artefacts§r"));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Artefacts grant stats and other effects.")));
+		finalizeVItem(setItem, 6, lore);
+		entity.containerMenu.broadcastChanges();
+	}
+
+	private void finalizeVItem(ItemStack setItem, int setSlot, ListTag lore) {
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§eClick to view")));
+		setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
+		setItem.getOrCreateTag().putBoolean("delete", true);
+		((Slot) customSlots.get(setSlot)).set(setItem);
 	}
 
 	public Map<Integer, Slot> get() {

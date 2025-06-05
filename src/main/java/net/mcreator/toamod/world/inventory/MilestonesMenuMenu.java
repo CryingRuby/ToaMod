@@ -23,9 +23,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.procedures.OnMilestonesMenuTickProcedure;
-import net.mcreator.toamod.network.MilestonesMenuSlotMessage;
 import net.mcreator.toamod.init.ToamodModMenus;
-import net.mcreator.toamod.ToamodMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -88,36 +86,12 @@ public class MilestonesMenuMenu extends AbstractContainerMenu implements Supplie
 			private final int slot = 0;
 
 			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(0, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(0, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 64, 16) {
 			private final int slot = 1;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(1, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(1, 2, b.getCount() - a.getCount());
-			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -137,18 +111,6 @@ public class MilestonesMenuMenu extends AbstractContainerMenu implements Supplie
 		}));
 		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 79, 51) {
 			private final int slot = 4;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(4, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(4, 2, b.getCount() - a.getCount());
-			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -316,13 +278,6 @@ public class MilestonesMenuMenu extends AbstractContainerMenu implements Supplie
 					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
 				}
 			}
-		}
-	}
-
-	private void slotChanged(int slotid, int ctype, int meta) {
-		if (this.world != null && this.world.isClientSide()) {
-			ToamodMod.PACKET_HANDLER.sendToServer(new MilestonesMenuSlotMessage(slotid, x, y, z, ctype, meta));
-			MilestonesMenuSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
 		}
 	}
 

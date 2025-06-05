@@ -18,12 +18,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnIllfangRngDropsButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnIllfangRngDropsButtonClicked"
-          },
           "x": 132,
           "y": 50
         }
@@ -132,12 +126,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnPlayerProfileBackButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnPlayerProfileBackButtonClicked"
-          },
           "x": 204,
           "y": 84
         }

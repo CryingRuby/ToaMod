@@ -285,8 +285,13 @@ public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supp
 		setExitedByESC(false);
 		entity.containerMenu.broadcastChanges();
 		BlockPos _bpos = BlockPos.containing(x, y, z);
+
+		//To-Do übersichtlicher machen -> look in PlayerProfileMenu/ superclass with createMenuToOpen(...)
+		MenuProvider menu = null;
+		
 		if (slotid == 1) {
-			NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
+			menu = createMenuWithItem("ForgerReforge", _bpos, ForgerReforgeMenu.class, transferItem);
+		/*	NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
 					return Component.literal("ForgerReforge");
@@ -297,10 +302,11 @@ public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supp
 					return new ForgerReforgeMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
 				}
 			}, _bpos);
-			return;
+			return;*/
 		}
-		if (slotid == 2) {
-			NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
+		else if (slotid == 2) {
+			menu = createMenuWithItem("ForgerEnchants", _bpos, ForgerEnchantsMenu.class, transferItem);
+			/*NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
 					return Component.literal("ForgerEnchants");
@@ -311,42 +317,47 @@ public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supp
 					return new ForgerEnchantsMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
 				}
 			}, _bpos);
-			return;
+			return;*/
 		}
 		//Else if any slot with index 3 or higher is clicked
-		int vItemId = visualItemIds.get(slotid - 3);
-		switch (vItemId) {
-			case 0 :
-				/*NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
-					@Override
-					public Component getDisplayName() {
-						return Component.literal("ForgerSuperiorEnchants");
-					}
-					@Override
-					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new ForgerSuperiorEnchantsMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
-					}
-				}, _bpos);*/
-				refreshVisualItems(); //for now until gui exists(and works)
-				return;
-			case 1 :
-				/*NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
-					@Override
-					public Component getDisplayName() {
-						return Component.literal("ForgerRunes");
-					}
-					@Override
-					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new ForgerRunesMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
-					}
-				}, _bpos);
-				*/
-				refreshVisualItems(); //for now until gui exists(and works)
-				return;
-			default :
-				break;
+		else{
+			switch (visualItemIds.get(slotid - 3)) {
+				case 0 :
+					//menu = createMenuWithItem("ForgerSuperiorEnchants", _bpos, ForgerSuperiorEnchantsMenu.class, transferItem);
+					
+					/*NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
+						@Override
+						public Component getDisplayName() {
+							return Component.literal("ForgerSuperiorEnchants");
+						}
+						@Override
+						public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+							return new ForgerSuperiorEnchantsMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
+						}
+					}, _bpos);*/
+					refreshVisualItems(); //for now until gui exists(and works)
+					break;
+				case 1 :
+					//menu = createMenuWithItem("ForgerRunes", _bpos, ForgerRunesMenu.class, transferItem);
 
+					/*NetworkHooks.openScreen((ServerPlayer) entity, new MenuProvider() {
+						@Override
+						public Component getDisplayName() {
+							return Component.literal("ForgerRunes");
+						}
+						@Override
+						public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+							return new ForgerRunesMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos), transferItem);
+						}
+					}, _bpos);
+					*/
+					refreshVisualItems(); //for now until gui exists(and works)
+					break;
+				default :
+					break;
+			}
 		}
+		NetworkHooks.openScreen((ServerPlayer) entity, menu, _bpos);
 	}
 
 	/**

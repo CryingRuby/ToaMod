@@ -4448,20 +4448,6 @@
       "path": "~/enchantments"
     },
     {
-      "name": "EnchBook",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ench_book",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/item/EnchBookItem.java",
-          "src/main/resources/assets/toamod/models/item/ench_book.json"
-        ]
-      },
-      "path": "~/items/Special"
-    },
-    {
       "name": "EnhancementTableGuiComponentTaken",
       "type": "procedure",
       "compiles": true,
@@ -4738,95 +4724,11 @@
       "registry_name": "magic_crafter_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/toamod/network/MagicCrafterGuiSlotMessage.java",
           "src/main/java/net/mcreator/toamod/client/gui/MagicCrafterGuiScreen.java",
           "src/main/java/net/mcreator/toamod/world/inventory/MagicCrafterGuiMenu.java"
         ]
       },
       "path": "~/guis"
-    },
-    {
-      "name": "OnMagicCrafterClosed",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_magic_crafter_closed",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMagicCrafterClosedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/MagicCrafter"
-    },
-    {
-      "name": "OnMagicCrafterComponentTaken",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_magic_crafter_component_taken",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMagicCrafterComponentTakenProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/MagicCrafter"
-    },
-    {
-      "name": "OnMagicCrafterCompletedTaken",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_magic_crafter_completed_taken",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMagicCrafterCompletedTakenProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/MagicCrafter"
-    },
-    {
-      "name": "EmptyBook",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "empty_book",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/item/EmptyBookItem.java",
-          "src/main/resources/assets/toamod/models/item/empty_book.json"
-        ]
-      },
-      "path": "~/items/Special"
     },
     {
       "name": "DwarfsHymnUsed",
@@ -5249,16 +5151,15 @@
       "name": "PlayerProfile",
       "type": "gui",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "player_profile",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/client/gui/PlayerProfileScreen.java",
-          "src/main/java/net/mcreator/toamod/world/inventory/PlayerProfileMenu.java",
-          "src/main/java/net/mcreator/toamod/network/PlayerProfileSlotMessage.java"
+          "src/main/java/net/mcreator/toamod/world/inventory/PlayerProfileMenu.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "ArtefactsMenu",
@@ -5273,22 +5174,21 @@
           "src/main/java/net/mcreator/toamod/world/inventory/ArtefactsMenuMenu.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "SkillsMenu",
       "type": "gui",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "skills_menu",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/client/gui/SkillsMenuScreen.java",
-          "src/main/java/net/mcreator/toamod/world/inventory/SkillsMenuMenu.java",
-          "src/main/java/net/mcreator/toamod/network/SkillsMenuSlotMessage.java"
+          "src/main/java/net/mcreator/toamod/world/inventory/SkillsMenuMenu.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "MilestonesMenu",
@@ -5299,11 +5199,10 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/world/inventory/MilestonesMenuMenu.java",
-          "src/main/java/net/mcreator/toamod/client/gui/MilestonesMenuScreen.java",
-          "src/main/java/net/mcreator/toamod/network/MilestonesMenuSlotMessage.java"
+          "src/main/java/net/mcreator/toamod/client/gui/MilestonesMenuScreen.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "CollectionMenu",
@@ -5314,11 +5213,10 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/client/gui/CollectionMenuScreen.java",
-          "src/main/java/net/mcreator/toamod/world/inventory/CollectionMenuMenu.java",
-          "src/main/java/net/mcreator/toamod/network/CollectionMenuSlotMessage.java"
+          "src/main/java/net/mcreator/toamod/world/inventory/CollectionMenuMenu.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "OnKeyProfilePressed",
@@ -5619,7 +5517,7 @@
           "src/main/java/net/mcreator/toamod/world/inventory/ComSkillRewardsMenuMenu.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "MagSkillRewardsMenu",
@@ -5634,7 +5532,7 @@
           "src/main/java/net/mcreator/toamod/client/gui/MagSkillRewardsMenuScreen.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "CookSkillRewardsMenu",
@@ -5649,7 +5547,7 @@
           "src/main/java/net/mcreator/toamod/client/gui/CookSkillRewardsMenuScreen.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "OnComSkillButtonClicked",
@@ -5804,7 +5702,7 @@
           "src/main/resources/assets/toamod/models/item/artefacts_item.json"
         ]
       },
-      "path": "~/items/Special"
+      "path": "~/items/Special/VisualItems"
     },
     {
       "name": "OnMilestonesMenuTick",
@@ -5838,7 +5736,7 @@
           "src/main/java/net/mcreator/toamod/network/FighterMilestoneRewardsMenuSlotMessage.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "DwarvesWayMilestoneRewardsMenu",
@@ -5853,7 +5751,7 @@
           "src/main/java/net/mcreator/toamod/client/gui/DwarvesWayMilestoneRewardsMenuScreen.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "OnFighterMilestoneButtonClicked",
@@ -5937,7 +5835,7 @@
           "src/main/java/net/mcreator/toamod/item/DarkRedDyeItem.java"
         ]
       },
-      "path": "~/items/Special"
+      "path": "~/items/Special/VisualItems"
     },
     {
       "name": "CmdSetMilestonesLvl",
@@ -6268,7 +6166,7 @@
           "src/main/java/net/mcreator/toamod/world/inventory/MinSkillRewardsMenuMenu.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "OnPlayerProfileBackButtonClicked",
@@ -6318,7 +6216,7 @@
           "src/main/java/net/mcreator/toamod/network/PlayerStatsMenuSlotMessage.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "OnPlayerStatsButtonClicked",
@@ -6443,7 +6341,7 @@
           "src/main/java/net/mcreator/toamod/network/IllfangRngDropsMenuSlotMessage.java"
         ]
       },
-      "path": "~/guis"
+      "path": "~/guis/PlayerProfile"
     },
     {
       "name": "OnIllfangRngDropsButtonClicked",
@@ -7321,7 +7219,7 @@
           "src/main/java/net/mcreator/toamod/item/StatIconHPItem.java"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconAR",
@@ -7335,7 +7233,7 @@
           "src/main/java/net/mcreator/toamod/item/StatIconARItem.java"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconMR",
@@ -7349,7 +7247,7 @@
           "src/main/resources/assets/toamod/models/item/stat_icon_mr.json"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconAD",
@@ -7363,7 +7261,7 @@
           "src/main/resources/assets/toamod/models/item/stat_icon_ad.json"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconMP",
@@ -7377,7 +7275,7 @@
           "src/main/java/net/mcreator/toamod/item/StatIconMPItem.java"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconCRCD",
@@ -7391,7 +7289,7 @@
           "src/main/java/net/mcreator/toamod/item/StatIconCRCDItem.java"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconMF",
@@ -7405,7 +7303,7 @@
           "src/main/resources/assets/toamod/models/item/stat_icon_mf.json"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconMINF",
@@ -7419,7 +7317,7 @@
           "src/main/java/net/mcreator/toamod/item/StatIconMINFItem.java"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconWIS",
@@ -7433,7 +7331,7 @@
           "src/main/resources/assets/toamod/models/item/stat_icon_wis.json"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "StatIconMANA",
@@ -7447,7 +7345,7 @@
           "src/main/java/net/mcreator/toamod/item/StatIconMANAItem.java"
         ]
       },
-      "path": "~/items/Special/StatIcons"
+      "path": "~/items/Special/VisualItems/StatIcons"
     },
     {
       "name": "EnchantmentBook",
@@ -7734,41 +7632,6 @@
         ]
       },
       "path": "~/tools/Weapons"
-    },
-    {
-      "name": "OnMagicCrafterGuiTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_magic_crafter_gui_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMagicCrafterGuiTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/MagicCrafter"
     },
     {
       "name": "GetEnchUnlockedLvlLifeSteal",
@@ -11342,19 +11205,6 @@
       "path": "~/classes"
     },
     {
-      "name": "ToaAbstractContainerScreen",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "toa_abstract_container_screen",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/ToaAbstractContainerScreen.java"
-        ]
-      },
-      "path": "~/classes"
-    },
-    {
       "name": "ForgerEnchants",
       "type": "gui",
       "compiles": true,
@@ -11381,6 +11231,19 @@
         ]
       },
       "path": "~/guis/Forger"
+    },
+    {
+      "name": "ToaSkillHandler",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_skill_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaSkillHandler.java"
+        ]
+      },
+      "path": "~/classes"
     }
   ],
   "variable_elements": [
@@ -11901,7 +11764,6 @@
       "entity.toamod.npc_miner_1": "NPC Miner 2",
       "entity.toamod.npc_miner_2": "NPC Miner 2",
       "item.toamod.power_catalyst_1": "§fPower Catalyst §7(Tier §fI§7)§f",
-      "item.toamod.empty_book": "§fEmpty Book§r",
       "effect.toamod.invincible": "Invincible",
       "enchant.spikes.description": "\u0027{\"text\":\"§7Deflects a portion of your received damage back to the attacker§7.§r\"}\u0027",
       "stat.hp": "Health",
@@ -12300,7 +12162,6 @@
       "block.toamod.player_barrier": "Player Barrier",
       "item.toamod.npc_mist_mage_spawn_egg": "§5Mist Mage§r Spawn Egg",
       "gui.toamod.forger_gui.label_your_cor_ss6varintegercor": "Your Cor: §6\u003cVAR:integer:cor\u003e",
-      "item.toamod.ench_book": "§fMagical Book§r",
       "skill.magic.rewards.8": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
       "item.toamod.stat_icon_mana": "Stat Icon Mana",
       "skill.magic.rewards.9": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
@@ -12670,6 +12531,10 @@
           {
             "name": "Forger",
             "children": []
+          },
+          {
+            "name": "PlayerProfile",
+            "children": []
           }
         ]
       },
@@ -12950,8 +12815,13 @@
             "name": "Special",
             "children": [
               {
-                "name": "StatIcons",
-                "children": []
+                "name": "VisualItems",
+                "children": [
+                  {
+                    "name": "StatIcons",
+                    "children": []
+                  }
+                ]
               }
             ]
           },

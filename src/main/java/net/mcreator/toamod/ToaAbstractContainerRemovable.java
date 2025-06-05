@@ -7,10 +7,16 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.core.BlockPos;
+
+import java.lang.reflect.Constructor;
 
 import javax.annotation.Nullable;
+
+import io.netty.buffer.Unpooled;
 
 public abstract class ToaAbstractContainerRemovable extends AbstractContainerMenu {
 	public final int slotCount;
@@ -64,10 +70,11 @@ public abstract class ToaAbstractContainerRemovable extends AbstractContainerMen
 	/**
 	 * Clears illegal visual items from carried slot and (one) from player inventory. Should be called in click event
 	 */
-	public void clearIllegalVItems(Player entity){
+	public void clearIllegalVItems(Player entity) {
 		//When called in click event illegal item can only be on either the carried slot or inventory
-		if(!clearIllegalCarried());
-			clearIllegalFromInv(entity);
+		if (!clearIllegalCarried())
+			;
+		clearIllegalFromInv(entity);
 	}
 
 	/**
@@ -83,14 +90,13 @@ public abstract class ToaAbstractContainerRemovable extends AbstractContainerMen
 		return false;
 	}
 
-	public boolean isExitedByESC(){
+	public boolean isExitedByESC() {
 		return this.exitedByESC;
 	}
 
-	public void setExitedByESC(boolean bool){
+	public void setExitedByESC(boolean bool) {
 		this.exitedByESC = bool;
 	}
-
 
 	/**
 	 * Removes first visual item (has nbt "delete" = true) from player inventory.
@@ -117,4 +123,67 @@ public abstract class ToaAbstractContainerRemovable extends AbstractContainerMen
 		return false;
 	}
 
+	/**
+	 * Create a MenuProvider for NetworkHooks.openScreen with a Menu-Class to generalize this MenuProvider Creation
+	 * 
+	 * @param displayName for MenuProvider
+	 * @param block pos for extraData (FriendlyByteBuf)
+	 * @param class to make instance of it in MenuProvider createMenu method (should be instanceof AbstractContainerMenu)
+	 * 
+	 * @return the MenuProvider with given displayName and Menu-type (clazz)
+	 */
+	protected final MenuProvider createMenuToOpen(String displayName, BlockPos bPos, Class<?> clazz) {
+		try {
+			Constructor<?> constr = clazz.getConstructor(int.class, Inventory.class, FriendlyByteBuf.class);
+			MenuProvider menu = new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.literal(displayName);
+				}
+
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					try {
+						return (AbstractContainerMenu) constr.newInstance(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(bPos));
+					} catch (Exception e) {
+						e.printStackTrace();
+						return null;
+					}
+				}
+			};
+			return menu;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	/**
+	 * Same as createMenuToOpen but with transferItem passed to menu
+	 */
+	protected final MenuProvider createMenuWithItem(String displayName, BlockPos bPos, Class<?> clazz, ItemStack transferItem) {
+		try {
+			Constructor<?> constr = clazz.getConstructor(int.class, Inventory.class, FriendlyByteBuf.class, ItemStack.class);
+			MenuProvider menu = new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.literal(displayName);
+				}
+
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					try {
+						return (AbstractContainerMenu) constr.newInstance(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(bPos), transferItem);
+					} catch (Exception e) {
+						e.printStackTrace();
+						return null;
+					}
+				}
+			};
+			return menu;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

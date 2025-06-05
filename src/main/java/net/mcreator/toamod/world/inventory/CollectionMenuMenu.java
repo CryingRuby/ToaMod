@@ -23,9 +23,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.procedures.OnBossCollectionMenuTickProcedure;
-import net.mcreator.toamod.network.CollectionMenuSlotMessage;
 import net.mcreator.toamod.init.ToamodModMenus;
-import net.mcreator.toamod.ToamodMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -86,18 +84,6 @@ public class CollectionMenuMenu extends AbstractContainerMenu implements Supplie
 		}
 		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 7, 14) {
 			private final int slot = 0;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(0, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(0, 2, b.getCount() - a.getCount());
-			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -170,18 +156,6 @@ public class CollectionMenuMenu extends AbstractContainerMenu implements Supplie
 		}));
 		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 79, 48) {
 			private final int slot = 9;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(9, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(9, 2, b.getCount() - a.getCount());
-			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -370,13 +344,6 @@ public class CollectionMenuMenu extends AbstractContainerMenu implements Supplie
 					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
 				}
 			}
-		}
-	}
-
-	private void slotChanged(int slotid, int ctype, int meta) {
-		if (this.world != null && this.world.isClientSide()) {
-			ToamodMod.PACKET_HANDLER.sendToServer(new CollectionMenuSlotMessage(slotid, x, y, z, ctype, meta));
-			CollectionMenuSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
 		}
 	}
 

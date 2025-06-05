@@ -14,7 +14,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.world.inventory.PlayerProfileMenu;
-import net.mcreator.toamod.network.ToamodModVariables;
 
 import io.netty.buffer.Unpooled;
 
@@ -22,16 +21,6 @@ public class OnKeyProfilePressedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.isClientSide())
-			return;
-		System.out.println("---------------------------------------Skills Menu V-Items------------------------------------------------");
-		OnSkillsMenuTickProcedure.execute(entity);
-		System.out.println("---------------------------------------Milestones Menu V-Items------------------------------------------------");
-		OnMilestonesMenuTickProcedure.execute(entity);
-		System.out.println("---------------------------------------Boss Collection Menu V-Items------------------------------------------------");
-		OnBossCollectionMenuTickProcedure.execute(entity);
-		System.out.println("---------------------------------------Illfang RNG Drops Menu V-Items------------------------------------------------");
-		OnIllfangsRngDropsMenuTickProcedure.execute();
 		if (world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()) {
 			if (entity instanceof ServerPlayer _ent) {
 				BlockPos _bpos = BlockPos.containing(x, y, z);
@@ -51,7 +40,5 @@ public class OnKeyProfilePressedProcedure {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal((Component.translatable("msg.cantopen.inair").getString())), false);
 		}
-		ToamodModVariables.WorldVariables.get(world).gameStartStage = 0;
-		ToamodModVariables.WorldVariables.get(world).syncData(world);
 	}
 }

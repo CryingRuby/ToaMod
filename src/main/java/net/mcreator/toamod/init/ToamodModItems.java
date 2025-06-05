@@ -119,8 +119,6 @@ import net.mcreator.toamod.item.FineRuneFragmentItem;
 import net.mcreator.toamod.item.FieryHeartItem;
 import net.mcreator.toamod.item.ExquisiteRuneFragmentItem;
 import net.mcreator.toamod.item.EnchantmentBookItem;
-import net.mcreator.toamod.item.EnchBookItem;
-import net.mcreator.toamod.item.EmptyBookItem;
 import net.mcreator.toamod.item.DwarfsHymnItem;
 import net.mcreator.toamod.item.DropOfBloodItem;
 import net.mcreator.toamod.item.DragonSlayerItem;
@@ -281,8 +279,6 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> ENHANCMENT_TABLE = block(ToamodModBlocks.ENHANCMENT_TABLE);
 	public static final RegistryObject<Item> MAGIC_CRAFTER = block(ToamodModBlocks.MAGIC_CRAFTER);
 	public static final RegistryObject<Item> FORGER = block(ToamodModBlocks.FORGER);
-	public static final RegistryObject<Item> ENCH_BOOK = REGISTRY.register("ench_book", () -> new EnchBookItem());
-	public static final RegistryObject<Item> EMPTY_BOOK = REGISTRY.register("empty_book", () -> new EmptyBookItem());
 	public static final RegistryObject<Item> HARD_STONE = block(ToamodModBlocks.HARD_STONE);
 	public static final RegistryObject<Item> HARD_STONE_SLAB = block(ToamodModBlocks.HARD_STONE_SLAB);
 	public static final RegistryObject<Item> GOBLIN_OMLETTE = block(ToamodModBlocks.GOBLIN_OMLETTE);

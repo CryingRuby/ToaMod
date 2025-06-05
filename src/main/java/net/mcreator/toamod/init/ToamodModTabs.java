@@ -171,8 +171,6 @@ public class ToamodModTabs {
 				tabData.accept(ToamodModItems.RUNE_FRAGMENTS.get());
 				tabData.accept(ToamodModItems.DWARFS_HYMN.get());
 				tabData.accept(ToamodModItems.MYTHIC_RUNE_SCROLL.get());
-				tabData.accept(ToamodModItems.ENCH_BOOK.get());
-				tabData.accept(ToamodModItems.EMPTY_BOOK.get());
 				tabData.accept(ToamodModItems.GOBLIN_EGG_SPICES.get());
 				tabData.accept(ToamodModItems.BOSS_KEY_TIER_1.get());
 				tabData.accept(ToamodModItems.BOSS_KEY_TIER_2.get());

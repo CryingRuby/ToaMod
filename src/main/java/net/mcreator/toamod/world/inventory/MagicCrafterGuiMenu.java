@@ -4,9 +4,6 @@ package net.mcreator.toamod.world.inventory;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -22,17 +19,12 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.toamod.procedures.OnMagicCrafterGuiTickProcedure;
-import net.mcreator.toamod.procedures.OnMagicCrafterClosedProcedure;
-import net.mcreator.toamod.network.MagicCrafterGuiSlotMessage;
 import net.mcreator.toamod.init.ToamodModMenus;
-import net.mcreator.toamod.ToamodMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-@Mod.EventBusSubscriber
 public class MagicCrafterGuiMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
@@ -89,163 +81,42 @@ public class MagicCrafterGuiMenu extends AbstractContainerMenu implements Suppli
 			private final int slot = 0;
 
 			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(0, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(0, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 43, 13) {
 			private final int slot = 1;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(1, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(1, 2, b.getCount() - a.getCount());
-			}
 		}));
 		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 25, 22) {
 			private final int slot = 2;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(2, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(2, 2, b.getCount() - a.getCount());
-			}
 		}));
 		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 61, 22) {
 			private final int slot = 3;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(3, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(3, 2, b.getCount() - a.getCount());
-			}
 		}));
 		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 16, 40) {
 			private final int slot = 4;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(4, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(4, 2, b.getCount() - a.getCount());
-			}
 		}));
 		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 43, 40) {
 			private final int slot = 5;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(5, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(5, 2, b.getCount() - a.getCount());
-			}
 		}));
 		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 70, 40) {
 			private final int slot = 6;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(6, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(6, 2, b.getCount() - a.getCount());
-			}
 		}));
 		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 25, 58) {
 			private final int slot = 7;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(7, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(7, 2, b.getCount() - a.getCount());
-			}
 		}));
 		this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 61, 58) {
 			private final int slot = 8;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(8, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(8, 2, b.getCount() - a.getCount());
-			}
 		}));
 		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 43, 67) {
 			private final int slot = 9;
-
-			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(9, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(9, 2, b.getCount() - a.getCount());
-			}
 		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 11 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 11 + 142));
-		OnMagicCrafterClosedProcedure.execute(world, entity);
 	}
 
 	@Override
@@ -372,7 +243,6 @@ public class MagicCrafterGuiMenu extends AbstractContainerMenu implements Suppli
 	@Override
 	public void removed(Player playerIn) {
 		super.removed(playerIn);
-		OnMagicCrafterClosedProcedure.execute(world, entity);
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
 				for (int j = 0; j < internal.getSlots(); ++j) {
@@ -386,26 +256,7 @@ public class MagicCrafterGuiMenu extends AbstractContainerMenu implements Suppli
 		}
 	}
 
-	private void slotChanged(int slotid, int ctype, int meta) {
-		if (this.world != null && this.world.isClientSide()) {
-			ToamodMod.PACKET_HANDLER.sendToServer(new MagicCrafterGuiSlotMessage(slotid, x, y, z, ctype, meta));
-			MagicCrafterGuiSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
-		}
-	}
-
 	public Map<Integer, Slot> get() {
 		return customSlots;
-	}
-
-	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		Player entity = event.player;
-		if (event.phase == TickEvent.Phase.END && entity.containerMenu instanceof MagicCrafterGuiMenu) {
-			Level world = entity.level();
-			double x = entity.getX();
-			double y = entity.getY();
-			double z = entity.getZ();
-			OnMagicCrafterGuiTickProcedure.execute(world, x, y, z, entity);
-		}
 	}
 }

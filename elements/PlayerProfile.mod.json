@@ -18,12 +18,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnSkillsButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnSkillsButtonClicked"
-          },
           "x": 138,
           "y": 69
         }
@@ -36,12 +30,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnMilestonesButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnMilestonesButtonClicked"
-          },
           "x": 160,
           "y": 69
         }
@@ -66,12 +54,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnPlayerStatsButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnPlayerStatsButtonClicked"
-          },
           "x": 204,
           "y": 69
         }
@@ -84,12 +66,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnBossCollectionsButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnBossCollectionsButtonClicked"
-          },
           "x": 226,
           "y": 69
         }
@@ -114,12 +90,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnArtefactsButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnArtefactsButtonClicked"
-          },
           "x": 270,
           "y": 69
         }
