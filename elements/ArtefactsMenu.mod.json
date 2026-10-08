@@ -18,12 +18,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnArtefactRemovedSlot0"
-          },
-          "onStackTransfer": {
-            "name": "OnArtefactRemovedSlot0"
-          },
           "x": 132,
           "y": 39
         }
@@ -348,20 +342,11 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnPlayerProfileBackButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnPlayerProfileBackButtonClicked"
-          },
           "x": 204,
           "y": 98
         }
       }
     ],
-    "onTick": {
-      "name": "OnArtefactsMenuTick"
-    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,

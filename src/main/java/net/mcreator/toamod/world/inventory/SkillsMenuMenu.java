@@ -1,6 +1,7 @@
 
 package net.mcreator.toamod.world.inventory;
 
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -16,6 +17,8 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.StringTag;
@@ -24,6 +27,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.network.ToamodModVariables;
 import net.mcreator.toamod.init.ToamodModMenus;
+import net.mcreator.toamod.ToaSkillHandler;
 import net.mcreator.toamod.ToaFormats;
 import net.mcreator.toamod.ToaAbstractContainerRemovable;
 
@@ -45,7 +49,7 @@ public class SkillsMenuMenu extends ToaAbstractContainerRemovable implements Sup
 	private BlockEntity boundBlockEntity = null;
 
 	public SkillsMenuMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(ToamodModMenus.SKILLS_MENU.get(), id, 5, -1);
+		super(ToamodModMenus.SKILLS_MENU.get(), id, 5);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(slotCount);
@@ -83,7 +87,7 @@ public class SkillsMenuMenu extends ToaAbstractContainerRemovable implements Sup
 					});
 			}
 		}
-		for (int i = 0; i < slotCount; i++) {
+		for (int i = 0; i < slotCount-1; i++) {
 			final int slotid = i;
 			this.customSlots.put(slotid, this.addSlot(new SlotItemHandler(internal, slotid, 25 + 36 * i, 20) {
 				private final int slot = slotid;
@@ -92,13 +96,37 @@ public class SkillsMenuMenu extends ToaAbstractContainerRemovable implements Sup
 				public boolean mayPlace(ItemStack stack) {
 					return false;
 				}
+
+				@Override
+				public void onTake(Player entity, ItemStack stack) {
+					super.onTake(entity, stack);
+					slotChanged(slot, 1, 0);
+				}
 			}));
 		}
+
+		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 79, 52) {
+			private final int slot = 4;
+
+			@Override
+			public boolean mayPlace(ItemStack stack) {
+				return false;
+			}
+
+			@Override
+			public void onTake(Player entity, ItemStack stack) {
+				super.onTake(entity, stack);
+				slotChanged(slot, 1, 0);
+			}
+		}));
+		
+		
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
+		refreshVisualItems();
 	}
 
 	@Override
@@ -193,27 +221,70 @@ public class SkillsMenuMenu extends ToaAbstractContainerRemovable implements Sup
 	private void slotChanged(int slotid, int ctype, int meta) {
 		if (world.isClientSide())
 			return;
+		BlockPos _bpos = BlockPos.containing(x, y, z);
+		MenuProvider menu = null;
+
+		switch (slotid) {
+			case 0 :
+				menu = createMenuToOpen("SkillRewardGUI", _bpos, SkillRewardGUIMenu.class, ToaSkillHandler.SkillType.COMBAT);
+				break;
+			case 1 :
+				menu = createMenuToOpen("SkillRewardGUI", _bpos, SkillRewardGUIMenu.class, ToaSkillHandler.SkillType.MINING);
+
+				break;
+			case 2 :
+				menu = createMenuToOpen("SkillRewardGUI", _bpos, SkillRewardGUIMenu.class, ToaSkillHandler.SkillType.MAGIC);
+				break;
+			case 3 :
+				//TO-DO remove // when cooking skill release
+				//menu = createMenuToOpen("SkillRewardGUI", _bpos, SkillRewardGUIMenu.class, ToaSkillHandler.SkillType.COOKING);
+				break;
+			case 4 :
+				menu = createMenuToOpen("PlayerProfile", _bpos, PlayerProfileMenu.class);
+			default :
+				return;
+		}
+		NetworkHooks.openScreen((ServerPlayer) entity, menu, _bpos);
 	}
 
 	private void refreshVisualItems() {
 		ItemStack setItem = null;
 		ListTag lore = new ListTag();
 		{
-
-			int miningLevel = (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).skillDefenseLvl;
-			int magicLevel = (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).skillMagicLvl;
+			ToamodModVariables.PlayerVariables plyVars = entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables());
 			//Combat
 			{
-				int combatLevel = (int) (entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables())).skillAttackLvl;
-				setItem = new ItemStack(Items.GOLDEN_SWORD);
-				setItem.setHoverName(Component.literal("§9Combat " + ToaFormats.RomanNumbers[combatLevel]));
-				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Fight mobs and bosses to gain Combat XP!")));
-				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
-				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Progress to Level " + ToaFormats.RomanNumbers[combatLevel] + ": §e")));
-
+				setItem = new ItemStack(Items.DIAMOND_SWORD);
+				setVSkillItemTxt(setItem, lore, ToaSkillHandler.SkillType.COMBAT, (int) plyVars.skillAttackLvl, plyVars.skillAttackXp);
+				finalizeVItem(setItem, 0, lore);
 			}
-			setItem = new ItemStack(Items.DIAMOND_SWORD);
-			setItem.setHoverName(Component.literal("Combat"));
+			//Mining
+			{
+				setItem = new ItemStack(Items.DIAMOND_PICKAXE);
+				lore = new ListTag();
+				setVSkillItemTxt(setItem, lore, ToaSkillHandler.SkillType.MINING, (int) plyVars.skillDefenseLvl, plyVars.skillDefenseXp);
+				finalizeVItem(setItem, 1, lore);
+			}
+			//Magic
+			{
+				setItem = new ItemStack(Items.ENCHANTED_BOOK);
+				lore = new ListTag();
+				setVSkillItemTxt(setItem, lore, ToaSkillHandler.SkillType.MAGIC, (int) plyVars.skillMagicLvl, plyVars.skillMagicXp);
+				finalizeVItem(setItem, 2, lore);
+			}
+			//Cooking
+			{
+				setItem = new ItemStack(Items.BARRIER);
+				lore = new ListTag();
+				setItem.setHoverName(Component.literal("§4§lCOMING SOON"));
+				//setVSkillItemTxt(setItem, lore, ToaSkillHandler.SkillType.COOKING, plyVars.skillCookingLvl, plyVars.skillCookingXp);
+				//finalizeVItem(setItem, 3, lore);
+				setItem.getOrCreateTag().putBoolean("delete", true);
+				((Slot) customSlots.get(3)).set(setItem);
+			}
+			setItem = getBackVItem();
+			setItem.getOrCreateTag().putBoolean("delete", true);
+			((Slot) customSlots.get(4)).set(setItem);
 		}
 	}
 
@@ -221,13 +292,21 @@ public class SkillsMenuMenu extends ToaAbstractContainerRemovable implements Sup
 		lore.add(StringTag.valueOf(StringTag.quoteAndEscape(" ")));
 		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§eClick to view")));
 		setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
+		setItem.getOrCreateTag().putInt("HideFlags", 3);
 		setItem.getOrCreateTag().putBoolean("delete", true);
 		((Slot) customSlots.get(setSlot)).set(setItem);
 	}
 
-	@Override
-	public void removed(Player playerIn) {
-		super.removed(playerIn);
+	private void setVSkillItemTxt(ItemStack setItem, ListTag lore, ToaSkillHandler.SkillType skillType, int skillLvl, double skillXp) {
+		double progress = skillXp / (double) ToaSkillHandler.XpForLevelUp[skillLvl];
+		setItem.setHoverName(Component.literal("§9" + skillType.Name + " " + ToaFormats.RomanNumbers[skillLvl]));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§8Current level: " + skillLvl)));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape(skillType.Description)));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
+		lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§7Progress to Level "+ ToaFormats.RomanNumbers[skillLvl] +": §e" + ToaFormats.doubleToString(progress * 100) + "%")));
+		lore.add(StringTag.valueOf(
+				StringTag.quoteAndEscape(ToaFormats.getPercentageLine(Math.min(progress, 1), 16) + " §e" + ToaFormats.formatWholeNumber((int) Math.floor(skillXp)) + "§6/§e" + ToaFormats.formatWholeNumber(ToaSkillHandler.XpForLevelUp[skillLvl]))));
 	}
 
 	public Map<Integer, Slot> get() {

@@ -19,9 +19,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.toamod.network.PlayerStatsMenuSlotMessage;
 import net.mcreator.toamod.init.ToamodModMenus;
-import net.mcreator.toamod.ToamodMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -265,18 +263,6 @@ public class PlayerStatsMenuMenu extends AbstractContainerMenu implements Suppli
 			private final int slot = 14;
 
 			@Override
-			public void onTake(Player entity, ItemStack stack) {
-				super.onTake(entity, stack);
-				slotChanged(14, 1, 0);
-			}
-
-			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(14, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
@@ -482,13 +468,6 @@ public class PlayerStatsMenuMenu extends AbstractContainerMenu implements Suppli
 					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
 				}
 			}
-		}
-	}
-
-	private void slotChanged(int slotid, int ctype, int meta) {
-		if (this.world != null && this.world.isClientSide()) {
-			ToamodMod.PACKET_HANDLER.sendToServer(new PlayerStatsMenuSlotMessage(slotid, x, y, z, ctype, meta));
-			PlayerStatsMenuSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
 		}
 	}
 

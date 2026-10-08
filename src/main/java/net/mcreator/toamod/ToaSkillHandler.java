@@ -3,9 +3,9 @@ package net.mcreator.toamod;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.toamod.procedures.ChkPlayerLvlLevelUpProcedure;
 import net.mcreator.toamod.network.ToamodModVariables;
 import net.mcreator.toamod.item.IronSwordItem;
 import net.mcreator.toamod.item.HardenedIronSwordItem;
@@ -34,43 +34,76 @@ public final class ToaSkillHandler {
 	private ToaSkillHandler() {
 	}
 
-	enum SkillType {
-		COMBAT("Combat"), MINING("Mining"), MAGIC("Magic"), COOKING("Cooking");
+	public enum SkillType {
+		COMBAT("Combat", "§7Kill mobs and bosses to gain Combat XP!"), 
+		MINING("Mining", "§7Mine ores to gain Mining XP!"), 
+		MAGIC("Magic", "§7Enchant items, find secrets and more to gain Magic XP"), 
+		COOKING("Cooking", "§7Cook meals, gather ingredients and more to gain Cooking XP");
 
 		public final String Name;
+		public final String Description;
 
-		SkillType(String _name) {
+		SkillType(String _name, String _desc) {
 			Name = _name;
+			Description = _desc;
 		}
 	}
 
-	public static final int[] XpForLevelUp = {50, 125, 200, 300, 500, 750, 1000, 1500, 2000, 3500, 5000, 7500, 10_000, 15_000, 20_000, 30_000, 50_000, 75_000, 100_000, 200_000, 300_000, 400_000, 500_000, 600_000, 700_000};
-	public static final int[] CorRewOnLvlUp = {250, 500, 750, 1000, 2000, 3000, 4000, 5000, 7500, 10_000, 15_000, 20_000, 25_000, 30_000, 40_000, 50_000, 65_000, 80_000, 100_000, 125_000, 150_000, 175_000, 200_000, 225_000, 250_000};
+	public static final int[] XpForLevelUp = {50, 200, 500, 1000, 1500, 2000, 3500, 5000, 7500, 10_000, 15_000, 20_000, 30_000, 50_000, 75_000, 100_000, 200_000, 300_000, 400_000, 500_000, 600_000, 700_000, 800_000, 900_000, 1_000_000};
+	public static final int[] CorRewOnLvlUp = {100, 500, 1000, 3000, 4000, 5000, 7500, 10_000, 15_000, 20_000, 25_000, 30_000, 40_000, 50_000, 65_000, 80_000, 100_000, 125_000, 150_000, 175_000, 200_000, 225_000, 250_000, 275_000, 300_000};
 	public static final int MaxSkillLevel = 25;
 
-	public static void addSkillXP(ServerPlayer player, int xpAmount, SkillType skillType) {
+	public static void addSkillXP(Player player, double xpAmount, SkillType skillType) {
 		ToamodModVariables.PlayerVariables capability = (player.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables()));
-		int skillXp = switch (skillType) {
-			case COMBAT -> (int) capability.skillAttackXp;
-			case MINING -> (int) capability.skillDefenseXp;
-			case MAGIC -> (int) capability.skillMagicXp;
-			case COOKING -> (int) capability.skillCookingXp;
-			default -> 0;
-		};
-		levelUpIfPossible(player, skillXp, skillType);
+		double playerWisFac = 1 + StatHandler.getPlayerStats(player, new byte[]{4})[0] / 100;
+		player.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(cap -> {
+			switch (skillType) {
+				case COMBAT :
+					cap.skillAttackXp += xpAmount;
+					break;
+				case MINING :
+					cap.skillDefenseXp += xpAmount;
+					break;
+				case MAGIC :
+					cap.skillMagicXp += xpAmount;
+					break;
+				case COOKING :
+					cap.skillCookingXp += xpAmount;
+					break;
+				default :
+			}
+			capability.syncPlayerVariables(player);
+		});
+		levelUpIfPossible(player, skillType);
 	}
 
-	private static void levelUpIfPossible(ServerPlayer player, int skillXp, SkillType skillType) {
+	private static void levelUpIfPossible(Player player, SkillType skillType) {
 		ToamodModVariables.PlayerVariables capability = (player.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new ToamodModVariables.PlayerVariables()));
-		int skillLvl = switch (skillType) {
-			case COMBAT -> (int) capability.skillAttackLvl;
-			case MINING -> (int) capability.skillDefenseLvl;
-			case MAGIC -> (int) capability.skillMagicLvl;
-			case COOKING -> (int) capability.skillCookingLvl;
-			default -> 0;
-		};
+		final int skillLvl;
+		int skillXp = -1;
+		switch (skillType) {
+			case COMBAT :
+				skillLvl = (int) capability.skillAttackLvl;
+				skillXp = (int) capability.skillAttackXp;
+				break;
+			case MINING :
+				skillLvl = (int) capability.skillDefenseLvl;
+				skillXp = (int) capability.skillDefenseXp;
+				break;
+			case MAGIC :
+				skillLvl = (int) capability.skillMagicLvl;
+				skillXp = (int) capability.skillMagicXp;
+				break;
+			case COOKING :
+				skillLvl = (int) capability.skillCookingLvl;
+				skillXp = (int) capability.skillCookingXp;
+				break;
+			default :
+				return;
+		}
 		if (skillLvl >= MaxSkillLevel)
 			return;
+		//change player vars when lvl up
 		if (skillXp >= XpForLevelUp[skillLvl]) {
 			player.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(cap -> {
 				switch (skillType) {
@@ -92,6 +125,10 @@ public final class ToaSkillHandler {
 						break;
 					default :
 				}
+				printSkillUpMsg(player, skillLvl + 1, skillType);
+				//add player xp depending on skill-lvl
+				capability.xp += 10 * Math.ceil((double) skillLvl / 10.0);
+				ChkPlayerLvlLevelUpProcedure.execute(player);
 				capability.syncPlayerVariables(player);
 			});
 		}
@@ -102,8 +139,8 @@ public final class ToaSkillHandler {
 	 * @param the specific lvl the rewards are applied
 	 * @param the type of skill the rewards are collected from
 	 */
-	public static void applySkillRewards(int lvl, SkillType skilltype) {
-		switch (skilltype) {
+	public static void applySkillRewards(int lvl, SkillType skillType) {
+		switch (skillType) {
 			case COMBAT :
 				applyAtkRewards(lvl);
 				break;
@@ -139,8 +176,8 @@ public final class ToaSkillHandler {
 	 * 
 	 * @return the list of txt lines with each representing a reward (or multiple in case of enchants unlocked)
 	 */
-	public static List<Component> getSkillRewardStrings(int lvl, SkillType skilltype) {
-		return switch (skilltype) {
+	public static List<String> getSkillRewardStrings(int lvl, SkillType skillType) {
+		return switch (skillType) {
 			case COMBAT -> getAtkRewardStrings(lvl);
 			case MINING -> getDefRewardStrings(lvl);
 			case MAGIC -> getMagRewardStrings(lvl);
@@ -149,8 +186,8 @@ public final class ToaSkillHandler {
 		};
 	}
 
-	private static List<Component> getAtkRewardStrings(int lvl) {
-		ArrayList<Component> rewards = new ArrayList<>();
+	private static List<String> getAtkRewardStrings(int lvl) {
+		ArrayList<String> rewards = new ArrayList<>();
 		//Überlegung: Nicht einzelne Lvl von Enchants unlocken, sondern ganzes Enchant (alle Lvl) => Dann aber maybe im Magic Skill
 		switch (lvl) {
 			case 1 :
@@ -167,40 +204,42 @@ public final class ToaSkillHandler {
 				break;
 			default :
 		}
-		rewards.add(Component.literal("§8- §7+§6" + CorRewOnLvlUp[lvl - 1]));
+		rewards.add("§8- §7+§6" + CorRewOnLvlUp[lvl - 1]);
 		int statIncrease = 3 * (lvl / 5 + 1);
-		rewards.add(Component.literal("§8- §7+§c" + statIncrease + " §7Strength"));
-		rewards.add(Component.literal("§8- §7+§b" + statIncrease + " §7Intelligence"));
-		rewards.add(Component.literal("§8- §7+§41% §7Crit Rate"));
+		rewards.add("§8- §7+§c" + statIncrease + " §7Strength");
+		rewards.add("§8- §7+§b" + statIncrease + " §7Intelligence");
+		rewards.add("§8- §7+§41% §7Crit Rate");
+		rewards.add("§8- §b+"+(10 * Math.ceil((double) lvl / 10.0))+" TOA XP");
 		return rewards;
 	}
 
-	private static List<Component> getDefRewardStrings(int lvl) {
-		ArrayList<Component> rewards = new ArrayList<>();
+	private static List<String> getDefRewardStrings(int lvl) {
+		ArrayList<String> rewards = new ArrayList<>();
 		switch (lvl) {
 			case 1 :
-				rewards.add(Component.literal("§8- §fIron Armor §7set recipe unlocked"));
+				rewards.add("§8- §fIron Armor §7set recipe unlocked");
 				break;
 			case 2 :
-				rewards.add(Component.literal("§8- §fHardened Iron Armor §7set recipe unlocked"));
+				rewards.add("§8- §fHardened Iron Armor §7set recipe unlocked");
 				break;
 			case 3 :
-				rewards.add(Component.literal("§8- §aGold Armor §7set recipe unlocked"));
+				rewards.add("§8- §aGold Armor §7set recipe unlocked");
 				break;
 			case 4 :
 				//addRewRecipe(rewards, MithrilArmorItem::new);
 			default :
 		}
-		rewards.add(Component.literal("§8- §7+§6" + CorRewOnLvlUp[lvl - 1]));
+		rewards.add("§8- §7+§6" + CorRewOnLvlUp[lvl - 1]);
 		int statIncrease = 5 * (lvl / 5 + 1);
-		rewards.add(Component.literal("§8- §7+§e" + statIncrease + " §7Armor"));
-		rewards.add(Component.literal("§8- §7+§9" + statIncrease + " §7Magic Res"));
-		rewards.add(Component.literal("§8- §7+§c5 §7Health"));
+		rewards.add("§8- §7+§e" + statIncrease + " §7Armor");
+		rewards.add("§8- §7+§9" + statIncrease + " §7Magic Res");
+		rewards.add("§8- §7+§c5 §7Health");
+		rewards.add("§8- §b+"+(10 * Math.ceil((double) lvl / 10.0))+" TOA XP");
 		return rewards;
 	}
 
-	private static List<Component> getMagRewardStrings(int lvl) {
-		ArrayList<Component> rewards = new ArrayList<>();
+	private static List<String> getMagRewardStrings(int lvl) {
+		ArrayList<String> rewards = new ArrayList<>();
 		switch (lvl) {
 			case 1 :
 				addRewEnchant(rewards, new SharpnessEnchantment());
@@ -231,16 +270,18 @@ public final class ToaSkillHandler {
 			case 16 :
 			default :
 		}
-		rewards.add(Component.literal("§8- §7+§6" + CorRewOnLvlUp[lvl - 1]));
+		rewards.add("§8- §7+§6" + CorRewOnLvlUp[lvl - 1]);
 		int statIncrease = 5 * (lvl / 5 + 1);
-		rewards.add(Component.literal("§8- §7+§3" + statIncrease + " §7Wisdom"));
+		rewards.add("§8- §7+§3" + statIncrease + " §7Wisdom");
+		rewards.add("§8- §b+"+(10 * Math.ceil((double) lvl / 10.0))+" TOA XP");
 		return rewards;
 	}
 
-	private static List<Component> getCookRewardStrings(int lvl) {
-		ArrayList<Component> rewards = new ArrayList<>();
+	private static List<String> getCookRewardStrings(int lvl) {
+		ArrayList<String> rewards = new ArrayList<>();
 		//COOMING SOON -> TODO
-		rewards.add(Component.literal("§8- §7+§c5 §7Health"));
+		rewards.add("§8- §7+§c5 §7Health");
+		rewards.add("§8- §b+"+(10 * Math.ceil((double) lvl / 10.0)) + " TOA XP");
 		return rewards;
 	}
 
@@ -250,8 +291,8 @@ public final class ToaSkillHandler {
 	 * @param list the recipe is added to
 	 * @param the item that is unlocked (the recipe of the item is added)
 	 */
-	private static void addRewRecipe(List<Component> rewards, Item item) {
-		rewards.add(Component.literal("§8- " + (new ItemStack(item)).getDisplayName() + " §7recipe unlocked"));
+	private static void addRewRecipe(List<String> rewards, Item item) {
+		rewards.add("§8- " + (new ItemStack(item)).getDisplayName() + " §7recipe unlocked");
 	}
 
 	/**
@@ -260,34 +301,31 @@ public final class ToaSkillHandler {
 	 * @param list the enchants are added to
 	 * @param the enchants that are added 
 	 */
-	private static void addRewEnchant(List<Component> rewards, ToaEnchantment enchant) {
-		rewards.add(Component.literal("§8- §9" + enchant.getEnchantName() + " §7enchant unlocked"));
+	private static void addRewEnchant(List<String> rewards, ToaEnchantment enchant) {
+		rewards.add("§8- §9" + enchant.getEnchantName() + " §7enchant unlocked");
 	}
 
-	public static void printSkillUpMsg(Player player, int newLvl, SkillType skilltype) {
+	public static void printSkillUpMsg(Player player, int newLvl, SkillType skillType) {
 		if (newLvl < 1)
 			return;
-		printSeperationLine(player);
-		printEmptyLine(player);
-		player.displayClientMessage(Component.literal("§3" + skilltype.Name + " Skill:"), false);
+		ToaFormats.printSeperationLine(player);
+		ToaFormats.printEmptyLine(player);
+
+		player.displayClientMessage(Component.literal("§3" + skillType.Name + " Skill:"), false);
 		player.displayClientMessage(Component.literal("§6" + (newLvl - 1) + " §3-> § 6§l" + newLvl), false);
-		printEmptyLine(player);
+
+		ToaFormats.printEmptyLine(player);
+
 		player.displayClientMessage(Component.literal("§3Rewards:"), false);
-		List<Component> rewards = getSkillRewardStrings(newLvl, skilltype);
+		List<String> rewards = getSkillRewardStrings(newLvl, skillType);
 		if (rewards == null)
 			return;
 		for (int i = 0; i < rewards.size(); i++) {
-			player.displayClientMessage(rewards.get(i), false);
+			player.displayClientMessage(Component.literal(rewards.get(i)), false);
 		}
-		printEmptyLine(player);
-		printSeperationLine(player);
+
+		ToaFormats.printEmptyLine(player);
+		ToaFormats.printSeperationLine(player);
 	}
 
-	public static void printSeperationLine(Player player) {
-		player.displayClientMessage(Component.literal("§3-----------------------------------------------------"), false); //54x '-'
-	}
-
-	public static void printEmptyLine(Player player) {
-		player.displayClientMessage(Component.literal(" "), false);
-	}
 }

@@ -48,7 +48,10 @@ public class BlacksmithTableTypeRecipe implements Recipe<SimpleContainer> {
 		System.out.println("---------match-func-----FOR ITEM: "+output.getItem()+"-------");
 		System.out.println("	---------------------------Recipe Items------------------");
 		for(int i = 0; i < recipeItems.size(); i++){
-			System.out.println("		Slot: "+i+" - "/*+recipeItems.get(i).getItems()[0].getItem()*/);
+			if(recipeItems.get(i).isEmpty())
+				System.out.println("		Slot: "+i+" - air");
+			else
+				System.out.println("		Slot: "+i+" - "+recipeItems.get(i).getItems()[0].getItem());
 		}
 		System.out.println("	----------------------------------------------------------");
 		for (int i = 0; i < recipeItems.size(); i++) {
@@ -59,7 +62,7 @@ public class BlacksmithTableTypeRecipe implements Recipe<SimpleContainer> {
 					return false;
 				}
 			} else{
-				System.out.println("Slot: "+i+", Got: "+pContainer.getItem(i+1).getItem()+" should be "/*+recipeItems.get(i).getItems()[0].getItem()*/);
+				System.out.println("Slot: "+i+", Got: "+pContainer.getItem(i+1).getItem()+" should be "+recipeItems.get(i).getItems()[0].getItem());
 				if (!recipeItems.get(i).test(pContainer.getItem(i+1))){
 					System.out.println("Did NOT match -> return false");
 					return false;

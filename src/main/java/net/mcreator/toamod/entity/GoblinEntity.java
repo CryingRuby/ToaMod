@@ -30,6 +30,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -39,10 +40,11 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.toamod.procedures.GoblinSpawnConditionProcedure;
 import net.mcreator.toamod.procedures.GoblinInitialSpawnProcedure;
 import net.mcreator.toamod.init.ToamodModEntities;
+import net.mcreator.toamod.ToaMob;
 
 import javax.annotation.Nullable;
 
-public class GoblinEntity extends Monster {
+public class GoblinEntity extends Monster implements ToaMob {
 	public GoblinEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(ToamodModEntities.GOBLIN.get(), world);
 	}
@@ -140,4 +142,17 @@ public class GoblinEntity extends Monster {
 		builder = builder.add(Attributes.FOLLOW_RANGE, 11);
 		return builder;
 	}
+
+	@Override
+	public int getCorReward(){
+		//The random thing return a number between 1 and 3 (both inclusive)
+		return (int) Math.floor(1 + Math.random() * 3) * 2;
+	}
+
+	@Override
+	public int getComXpReward(){
+		//Result Xp (inclusive): 3-7
+		return (int) Math.floor(1 + Math.random() * 2) * 2 + 1;
+	}
+
 }

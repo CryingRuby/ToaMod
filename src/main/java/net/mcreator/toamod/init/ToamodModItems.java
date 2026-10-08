@@ -74,7 +74,6 @@ import net.mcreator.toamod.item.PowerCatalyst4Item;
 import net.mcreator.toamod.item.PowerCatalyst3Item;
 import net.mcreator.toamod.item.PowerCatalyst2Item;
 import net.mcreator.toamod.item.PowerCatalyst1Item;
-import net.mcreator.toamod.item.PlayerRecipesItemItem;
 import net.mcreator.toamod.item.PerfectRuneFragmentItem;
 import net.mcreator.toamod.item.OnionItem;
 import net.mcreator.toamod.item.ObsidianItem;
@@ -298,7 +297,6 @@ public class ToamodModItems {
 	public static final RegistryObject<Item> BOSS_KEY_TIER_1 = REGISTRY.register("boss_key_tier_1", () -> new BossKeyTier1Item());
 	public static final RegistryObject<Item> BOSS_KEY_TIER_2 = REGISTRY.register("boss_key_tier_2", () -> new BossKeyTier2Item());
 	public static final RegistryObject<Item> BOSS_KEY_TIER_3 = REGISTRY.register("boss_key_tier_3", () -> new BossKeyTier3Item());
-	public static final RegistryObject<Item> PLAYER_RECIPES_ITEM = REGISTRY.register("player_recipes_item", () -> new PlayerRecipesItemItem());
 	public static final RegistryObject<Item> SUPER_ENCHANTMENT_BOOK = REGISTRY.register("super_enchantment_book", () -> new SuperEnchantmentBookItem());
 	public static final RegistryObject<Item> PURE_CRYSTAL = REGISTRY.register("pure_crystal", () -> new PureCrystalItem());
 	public static final RegistryObject<Item> POWER_CATALYST_1 = REGISTRY.register("power_catalyst_1", () -> new PowerCatalyst1Item());

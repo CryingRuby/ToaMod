@@ -119,7 +119,7 @@ public class OnEntityAttackedProcedure {
 
 		//OnEnemyKilled  (if source is Player)
 		if (source instanceof Player && entity.getPersistentData().getDouble("currentHealth") - finalDmg < 10e-13 && entity.getPersistentData().getInt("dmgCooldown") == 0) {
-			OnEntityKilledProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, source);
+			OnEntityKilledProcedure.execute(entity, source);
 		}
 
 		//################################################

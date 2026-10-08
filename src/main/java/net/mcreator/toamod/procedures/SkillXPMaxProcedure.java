@@ -44,23 +44,9 @@ public class SkillXPMaxProcedure {
 			});
 		}
 		{
-			double _setval = 10;
-			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.skillAttackNeededXp = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
 			double _setval = 5;
 			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.skillDefenseXp = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = 10;
-			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.skillDefenseNeededXp = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
@@ -72,23 +58,9 @@ public class SkillXPMaxProcedure {
 			});
 		}
 		{
-			double _setval = 10;
-			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.skillMagicNeededXp = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
 			double _setval = 5;
 			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.skillCookingXp = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = 10;
-			entity.getCapability(ToamodModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.skillCookingNeededXp = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}

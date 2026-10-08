@@ -8,6 +8,7 @@ import net.minecraftforge.common.capabilities.Capability;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Inventory;
@@ -130,25 +131,28 @@ public class BlacksmithTableBlockEntity extends RandomizableContainerBlockEntity
 
 	@Override
 	public boolean canTakeItemThroughFace(int index, ItemStack stack, Direction direction) {
-		if (index == 1)
-			return false;
-		if (index == 2)
-			return false;
-		if (index == 3)
-			return false;
-		if (index == 4)
-			return false;
-		if (index == 5)
-			return false;
-		if (index == 6)
-			return false;
-		if (index == 7)
-			return false;
-		if (index == 8)
-			return false;
-		if (index == 9)
-			return false;
-		return true;
+		return false;
+		/*
+				if (index == 1)
+					return false;
+				if (index == 2)
+					return false;
+				if (index == 3)
+					return false;
+				if (index == 4)
+					return false;
+				if (index == 5)
+					return false;
+				if (index == 6)
+					return false;
+				if (index == 7)
+					return false;
+				if (index == 8)
+					return false;
+				if (index == 9)
+					return false;
+				return true;
+		*/
 	}
 
 	@Override
@@ -164,36 +168,30 @@ public class BlacksmithTableBlockEntity extends RandomizableContainerBlockEntity
 		for (LazyOptional<? extends IItemHandler> handler : handlers)
 			handler.invalidate();
 	}
-
+/*
 	public void refreshRecipe() {
-		if(this.level.isClientSide())
+		if (this.level.isClientSide())
 			return;
 		System.out.println("BT-BlockEntity - refreshRecipe called");
 		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
-		if (!hasRecipe(recipe))
-{
+		if (!hasRecipe(recipe)) {
 			System.out.println("BT-BlockEntity - has no valid recipe");
-			if(!this.stacks.get(0).isEmpty())
+			if (!this.stacks.get(0).isEmpty())
 				this.stacks.set(0, ItemStack.EMPTY);
 			return;
 		}
 		System.out.println("Valid recipe found -> set Item in output slot");
 		ItemStack result = recipe.get().getResultItem();
-		if(recipe.get().getHasNbt()){
+		if (recipe.get().getHasNbt()) {
 			System.out.println("Recipe has Nbt -> call methods");
 			CustomNbtHandler.applyItemBaseStats(result);
-			if(recipe.get().getCopyNbtFromSlot() > 0){
+			if (recipe.get().getCopyNbtFromSlot() > 0) {
 				System.out.println("Recipe has NbtCopy -> call copyUpgrades");
 				CustomNbtHandler.copyUpgrades(this.stacks.get(recipe.get().getCopyNbtFromSlot()), result);
 			}
 			CustomNbtHandler.setLoreOfItem(result);
 		}
 		this.stacks.set(0, result);
-	}
-
-	public boolean hasRecipe() {
-		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
-		return !recipe.isEmpty();
 	}
 
 	public boolean hasRecipe(Optional<BlacksmithTableTypeRecipe> recipe) {
@@ -209,9 +207,31 @@ public class BlacksmithTableBlockEntity extends RandomizableContainerBlockEntity
 		return this.level.getRecipeManager().getRecipeFor(BlacksmithTableTypeRecipe.Type.INSTANCE, inventory, level);
 	}
 
-	public void extractItemsFromCrafting() {
-		for (int i = 1; i < stacks.size(); i++) {
-			this.stacks.get(i).shrink(1);
+
+	private int getMaxCraftableAmount() {
+		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
+		if (!hasRecipe(recipe))
+			return 0;
+		//if valid recipe is in BT checks how often it could be crafted
+		int maxCraftAmount = 1;
+		NonNullList<Ingredient> recipeIngr = recipe.get().getIngredients();
+		for (int i = 0; i < recipeIngr.size(); i++) {
+			if (recipeIngr.get(i).isEmpty())
+				continue;
+			//Could be done by simply checking the count of the item in Slot. BUT for future I probably will change recipes that the inputs are able to have different counts than 1
+			int tempMaxCraftable = this.stacks.get(i + 1).getCount() / recipeIngr.get(i).getItems()[0].getCount();
+			if (tempMaxCraftable < maxCraftAmount)
+				maxCraftAmount = tempMaxCraftable;
 		}
+		return maxCraftAmount;
 	}
+
+	public void extractItemsFromCrafting(int craftAmount) {
+		if (this.level.isClientSide() || craftAmount < 1)
+			return;
+
+		for (int i = 1; i < stacks.size(); i++) {
+			this.stacks.get(i).shrink(1 * craftAmount);
+		}
+	}*/
 }

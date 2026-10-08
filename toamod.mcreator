@@ -1357,17 +1357,13 @@
       "name": "OnBlockDestroy",
       "type": "procedure",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "on_block_destroy",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/procedures/OnBlockDestroyProcedure.java"
         ],
         "dependencies": [
-          {
-            "name": "blockstate",
-            "type": "blockstate"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -1393,119 +1389,10 @@
       "path": "~/procedures/Global"
     },
     {
-      "name": "OnDefenseSkillUp",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_defense_skill_up",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnDefenseSkillUpProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/Skillrewards"
-    },
-    {
-      "name": "OnAttackSkillUp",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_attack_skill_up",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnAttackSkillUpProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/Skillrewards"
-    },
-    {
-      "name": "OnMagicSkillUp",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_magic_skill_up",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMagicSkillUpProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/Skillrewards"
-    },
-    {
       "name": "OnEntityKilled",
       "type": "procedure",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "on_entity_killed",
       "metadata": {
         "files": [
@@ -1519,22 +1406,6 @@
           {
             "name": "sourceentity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3431,371 +3302,11 @@
       "registry_name": "mining_milestone_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/toamod/network/MiningMilestoneGuiButtonMessage.java",
           "src/main/java/net/mcreator/toamod/world/inventory/MiningMilestoneGuiMenu.java",
           "src/main/java/net/mcreator/toamod/client/gui/MiningMilestoneGuiScreen.java"
         ]
       },
       "path": "~/guis"
-    },
-    {
-      "name": "CheckMinMilestoneMaxLvlReached",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "check_min_milestone_max_lvl_reached",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/CheckMinMilestoneMaxLvlReachedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone"
-    },
-    {
-      "name": "CheckMinMilestoneNextLvl",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "check_min_milestone_next_lvl",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/CheckMinMilestoneNextLvlProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone"
-    },
-    {
-      "name": "ChkMinMilestoneProgress1",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_1",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress1Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress2",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_2",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress2Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress3",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_3",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress3Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress4",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_4",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress4Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress5",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_5",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress5Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress6",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_6",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress6Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress7",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_7",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress7Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress8",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_8",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress8Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress9",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_9",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress9Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress10",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_10",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress10Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress11",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_11",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress11Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress12",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_12",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress12Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress13",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_13",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress13Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress14",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_14",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress14Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "ChkMinMilestoneProgress15",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_min_milestone_progress_15",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkMinMilestoneProgress15Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone/ProgessBar"
-    },
-    {
-      "name": "GetMiningMilestoneRewards",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "get_mining_milestone_rewards",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/GetMiningMilestoneRewardsProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone"
     },
     {
       "name": "RuneFragments",
@@ -3938,25 +3449,6 @@
       "path": "~/items/Special"
     },
     {
-      "name": "ClaimMinMilestoneRewardsPressed",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "claim_min_milestone_rewards_pressed",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ClaimMinMilestoneRewardsPressedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/MiningMilestone"
-    },
-    {
       "name": "ClaimComMilestonRewardsPressed",
       "type": "procedure",
       "compiles": true,
@@ -3995,46 +3487,6 @@
       "path": "~/procedures/CombatMilestone"
     },
     {
-      "name": "CheckComMilestoneNextLvl",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "check_com_milestone_next_lvl",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/CheckComMilestoneNextLvlProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone"
-    },
-    {
-      "name": "CheckComMilestoneMaxLvl",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "check_com_milestone_max_lvl",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/CheckComMilestoneMaxLvlProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone"
-    },
-    {
       "name": "CombatMilestoneGui",
       "type": "gui",
       "compiles": true,
@@ -4043,311 +3495,10 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/world/inventory/CombatMilestoneGuiMenu.java",
-          "src/main/java/net/mcreator/toamod/network/CombatMilestoneGuiButtonMessage.java",
           "src/main/java/net/mcreator/toamod/client/gui/CombatMilestoneGuiScreen.java"
         ]
       },
       "path": "~/guis"
-    },
-    {
-      "name": "ChkComMilestoneProgress1",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_1",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress1Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress2",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_2",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress2Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress3",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_3",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress3Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress4",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_4",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress4Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress5",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_5",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress5Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress6",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_6",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress6Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress7",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_7",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress7Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress8",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_8",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress8Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress9",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_9",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress9Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress10",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_10",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress10Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress11",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_11",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress11Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress12",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_12",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress12Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress13",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_13",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress13Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress14",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_14",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress14Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
-    },
-    {
-      "name": "ChkComMilestoneProgress15",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "chk_com_milestone_progress_15",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/ChkComMilestoneProgress15Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/CombatMilestone/ProgressBar"
     },
     {
       "name": "CreatureBarrier",
@@ -4657,26 +3808,6 @@
           "src/main/java/net/mcreator/toamod/command/GamemasterCommand.java"
         ]
       }
-    },
-    {
-      "name": "SlotsToRecipeString",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "slots_to_recipe_string",
-      "metadata": {
-        "return_type": "string",
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/SlotsToRecipeStringProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/Other"
     },
     {
       "name": "BlacksmithTableGui",
@@ -5067,7 +4198,7 @@
       "name": "Goblin",
       "type": "livingentity",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "goblin",
       "metadata": {
         "files": [
@@ -5170,7 +4301,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/client/gui/ArtefactsMenuScreen.java",
-          "src/main/java/net/mcreator/toamod/network/ArtefactsMenuSlotMessage.java",
           "src/main/java/net/mcreator/toamod/world/inventory/ArtefactsMenuMenu.java"
         ]
       },
@@ -5444,25 +4574,6 @@
       "path": "~/procedures/PlayerProfile"
     },
     {
-      "name": "OnSkillsMenuTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_skills_menu_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnSkillsMenuTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
       "name": "StarfallHyperion",
       "type": "item",
       "compiles": true,
@@ -5505,191 +4616,6 @@
       "path": "~/items/Special"
     },
     {
-      "name": "ComSkillRewardsMenu",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "com_skill_rewards_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/network/ComSkillRewardsMenuSlotMessage.java",
-          "src/main/java/net/mcreator/toamod/client/gui/ComSkillRewardsMenuScreen.java",
-          "src/main/java/net/mcreator/toamod/world/inventory/ComSkillRewardsMenuMenu.java"
-        ]
-      },
-      "path": "~/guis/PlayerProfile"
-    },
-    {
-      "name": "MagSkillRewardsMenu",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mag_skill_rewards_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/network/MagSkillRewardsMenuSlotMessage.java",
-          "src/main/java/net/mcreator/toamod/world/inventory/MagSkillRewardsMenuMenu.java",
-          "src/main/java/net/mcreator/toamod/client/gui/MagSkillRewardsMenuScreen.java"
-        ]
-      },
-      "path": "~/guis/PlayerProfile"
-    },
-    {
-      "name": "CookSkillRewardsMenu",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cook_skill_rewards_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/network/CookSkillRewardsMenuSlotMessage.java",
-          "src/main/java/net/mcreator/toamod/world/inventory/CookSkillRewardsMenuMenu.java",
-          "src/main/java/net/mcreator/toamod/client/gui/CookSkillRewardsMenuScreen.java"
-        ]
-      },
-      "path": "~/guis/PlayerProfile"
-    },
-    {
-      "name": "OnComSkillButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_com_skill_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnComSkillButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
-      "name": "OnMinSkillButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_min_skill_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMinSkillButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
-      "name": "OnMagSkillButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_mag_skill_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMagSkillButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
-      "name": "OnCookSkillButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_cook_skill_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnCookSkillButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
       "name": "ArtefactsItem",
       "type": "item",
       "compiles": true,
@@ -5703,125 +4629,6 @@
         ]
       },
       "path": "~/items/Special/VisualItems"
-    },
-    {
-      "name": "OnMilestonesMenuTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_milestones_menu_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMilestonesMenuTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/MilestonesMenu"
-    },
-    {
-      "name": "FighterMilestoneRewardsMenu",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "fighter_milestone_rewards_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/client/gui/FighterMilestoneRewardsMenuScreen.java",
-          "src/main/java/net/mcreator/toamod/world/inventory/FighterMilestoneRewardsMenuMenu.java",
-          "src/main/java/net/mcreator/toamod/network/FighterMilestoneRewardsMenuSlotMessage.java"
-        ]
-      },
-      "path": "~/guis/PlayerProfile"
-    },
-    {
-      "name": "DwarvesWayMilestoneRewardsMenu",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "dwarves_way_milestone_rewards_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/world/inventory/DwarvesWayMilestoneRewardsMenuMenu.java",
-          "src/main/java/net/mcreator/toamod/network/DwarvesWayMilestoneRewardsMenuSlotMessage.java",
-          "src/main/java/net/mcreator/toamod/client/gui/DwarvesWayMilestoneRewardsMenuScreen.java"
-        ]
-      },
-      "path": "~/guis/PlayerProfile"
-    },
-    {
-      "name": "OnFighterMilestoneButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_fighter_milestone_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnFighterMilestoneButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/MilestonesMenu"
-    },
-    {
-      "name": "OnDwarvesWayMilestoneButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_dwarves_way_milestone_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnDwarvesWayMilestoneButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/MilestonesMenu"
     },
     {
       "name": "DarkRedDye",
@@ -5874,336 +4681,6 @@
       "path": "~/commands"
     },
     {
-      "name": "OnMilestoneRewardsBackButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_milestone_rewards_back_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMilestoneRewardsBackButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/MilestonesMenu"
-    },
-    {
-      "name": "OnSkillRewardsBackButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_skill_rewards_back_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnSkillRewardsBackButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
-      "name": "OnComSkillRewardsTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_com_skill_rewards_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnComSkillRewardsTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
-      "name": "OnMagSkillRewardsTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_mag_skill_rewards_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMagSkillRewardsTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
-      "name": "OnCookSkillRewardsTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_cook_skill_rewards_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnCookSkillRewardsTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
-      "name": "OnFighterRewardsTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_fighter_rewards_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnFighterRewardsTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/MilestonesMenu"
-    },
-    {
-      "name": "OnDwarfsWayRewardsTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_dwarfs_way_rewards_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnDwarfsWayRewardsTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/MilestonesMenu"
-    },
-    {
-      "name": "OnMinSkillRewardsTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_min_skill_rewards_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnMinSkillRewardsTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/SkillsMenu"
-    },
-    {
-      "name": "MinSkillRewardsMenu",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "min_skill_rewards_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/network/MinSkillRewardsMenuSlotMessage.java",
-          "src/main/java/net/mcreator/toamod/client/gui/MinSkillRewardsMenuScreen.java",
-          "src/main/java/net/mcreator/toamod/world/inventory/MinSkillRewardsMenuMenu.java"
-        ]
-      },
-      "path": "~/guis/PlayerProfile"
-    },
-    {
-      "name": "OnPlayerProfileBackButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_player_profile_back_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnPlayerProfileBackButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile"
-    },
-    {
       "name": "PlayerStatsMenu",
       "type": "gui",
       "compiles": true,
@@ -6212,8 +4689,7 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/toamod/world/inventory/PlayerStatsMenuMenu.java",
-          "src/main/java/net/mcreator/toamod/client/gui/PlayerStatsMenuScreen.java",
-          "src/main/java/net/mcreator/toamod/network/PlayerStatsMenuSlotMessage.java"
+          "src/main/java/net/mcreator/toamod/client/gui/PlayerStatsMenuScreen.java"
         ]
       },
       "path": "~/guis/PlayerProfile"
@@ -6421,41 +4897,6 @@
       "path": "~/procedures/PlayerProfile/BossCollectionMenu/Illfang"
     },
     {
-      "name": "OnBossCollectionBackButtonClicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_boss_collection_back_button_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnBossCollectionBackButtonClickedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/BossCollectionMenu"
-    },
-    {
       "name": "OnGoblinEggSpicesIllfangDropSelected",
       "type": "procedure",
       "compiles": true,
@@ -6547,73 +4988,6 @@
         ]
       },
       "path": "~/commands"
-    },
-    {
-      "name": "SetArtfItem",
-      "type": "command",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "set_artf_item",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/command/SetArtfItemCommand.java"
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "CmdSetArtfItem",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cmd_set_artf_item",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/CmdSetArtfItemProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "OnArtefactsMenuTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_artefacts_menu_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnArtefactsMenuTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/ArtefactsMenu"
     },
     {
       "name": "BossKeyTier1",
@@ -6762,28 +5136,7 @@
         "files": [
           "src/main/java/net/mcreator/toamod/procedures/OnItemRightClickedProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/procedures/Global"
     },
@@ -6827,73 +5180,6 @@
       "path": "~/procedures/Global"
     },
     {
-      "name": "OnArtefactRemovedSlot0",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_artefact_removed_slot_0",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnArtefactRemovedSlot0Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/ArtefactsMenu/RemoveArtefact"
-    },
-    {
-      "name": "OnArtefactRemovedSlot1",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_artefact_removed_slot_1",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/OnArtefactRemovedSlot1Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/PlayerProfile/ArtefactsMenu/RemoveArtefact"
-    },
-    {
-      "name": "PlayerRecipesItemInventory",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "player_recipes_item_inventory",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/world/inventory/PlayerRecipesItemInventoryMenu.java",
-          "src/main/java/net/mcreator/toamod/client/gui/PlayerRecipesItemInventoryScreen.java"
-        ]
-      },
-      "path": "~/guis/NotVisibleForPlayer"
-    },
-    {
-      "name": "PlayerRecipesItem",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "player_recipes_item",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/item/PlayerRecipesItemItem.java",
-          "src/main/java/net/mcreator/toamod/item/inventory/PlayerRecipesItemInventoryCapability.java",
-          "src/main/resources/assets/toamod/models/item/player_recipes_item.json"
-        ]
-      },
-      "path": "~/items/Special"
-    },
-    {
       "name": "CmdGetSkillsLvl",
       "type": "procedure",
       "compiles": true,
@@ -6924,190 +5210,6 @@
         ]
       },
       "path": "~/commands"
-    },
-    {
-      "name": "UtilAddRecItemToMenu",
-      "type": "command",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "util_add_rec_item_to_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/command/UtilAddRecItemToMenuCommand.java"
-        ]
-      },
-      "path": "~/procedures/Commands/UtilityForCode"
-    },
-    {
-      "name": "GetItemByID",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "get_item_by_id",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/GetItemByIDProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/Commands/UtilityForCode"
-    },
-    {
-      "name": "UtilGetItem",
-      "type": "command",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "util_get_item",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/command/UtilGetItemCommand.java"
-        ]
-      },
-      "path": "~/procedures/Commands/UtilityForCode"
-    },
-    {
-      "name": "GiveItemByID",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "give_item_by_id",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/GiveItemByIDProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/Commands/UtilityForCode"
-    },
-    {
-      "name": "CmdGetParamItem",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cmd_get_param_item",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/CmdGetParamItemProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "GetParamItem",
-      "type": "command",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "get_param_item",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/command/GetParamItemCommand.java"
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "CmdSetGetParamItem",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cmd_set_get_param_item",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/CmdSetGetParamItemProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "AddRecItemToWeaponsMenu",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_rec_item_to_weapons_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/AddRecItemToWeaponsMenuProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/Commands/UtilityForCode"
-    },
-    {
-      "name": "AddRecItemToArmorsMenu",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_rec_item_to_armors_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/AddRecItemToArmorsMenuProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/Commands/UtilityForCode"
-    },
-    {
-      "name": "AddRecItemToMaterialsMenu",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_rec_item_to_materials_menu",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/AddRecItemToMaterialsMenuProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/procedures/Commands/UtilityForCode"
     },
     {
       "name": "SuperEnchantmentBook",
@@ -7360,38 +5462,6 @@
         ]
       },
       "path": "~/items/Special"
-    },
-    {
-      "name": "AddRecipeToPly",
-      "type": "command",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "add_recipe_to_ply",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/command/AddRecipeToPlyCommand.java"
-        ]
-      },
-      "path": "~/commands"
-    },
-    {
-      "name": "CmdResetRecipes",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "cmd_reset_recipes",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/procedures/CmdResetRecipesProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/commands"
     },
     {
       "name": "GuiYourCorValue",
@@ -10243,7 +8313,7 @@
           "src/main/java/net/mcreator/toamod/ToaProperties.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "BlacksmithTableType",
@@ -10284,7 +8354,7 @@
           "src/main/java/net/mcreator/toamod/ToaRarity.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "BossKeyTier4",
@@ -10332,19 +8402,6 @@
       "path": "~/items/Materials"
     },
     {
-      "name": "ToaRuneSlot",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "toa_rune_slot",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/toamod/ToaRuneSlot.java"
-        ]
-      },
-      "path": "~/classes"
-    },
-    {
       "name": "RuneType",
       "type": "code",
       "compiles": true,
@@ -10355,7 +8412,7 @@
           "src/main/java/net/mcreator/toamod/RuneType.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "RuneSlot",
@@ -10368,7 +8425,7 @@
           "src/main/java/net/mcreator/toamod/RuneSlot.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "ReforgeType",
@@ -10381,7 +8438,7 @@
           "src/main/java/net/mcreator/toamod/ReforgeType.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "HardenedIronSword",
@@ -10408,7 +8465,7 @@
           "src/main/java/net/mcreator/toamod/ToaWeapon.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "IToaSetBonus",
@@ -10445,7 +8502,7 @@
           "src/main/java/net/mcreator/toamod/ToaElement.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "InfernalHyperion",
@@ -10555,7 +8612,7 @@
           "src/main/java/net/mcreator/toamod/CustomNbtHandler.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/Handlers"
     },
     {
       "name": "ToaRune",
@@ -10568,7 +8625,7 @@
           "src/main/java/net/mcreator/toamod/ToaRune.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "ToaReforgeable",
@@ -10581,7 +8638,7 @@
           "src/main/java/net/mcreator/toamod/ToaReforgeable.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "ToaEnchantment",
@@ -10594,7 +8651,7 @@
           "src/main/java/net/mcreator/toamod/ToaEnchantment.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "MagicProtection",
@@ -10633,7 +8690,7 @@
           "src/main/java/net/mcreator/toamod/ISuperiorEnchantment.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "ToaFormats",
@@ -10646,7 +8703,7 @@
           "src/main/java/net/mcreator/toamod/ToaFormats.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "GoldIngot",
@@ -10791,7 +8848,7 @@
           "src/main/java/net/mcreator/toamod/StatHandler.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/Handlers"
     },
     {
       "name": "GoldenNecklace",
@@ -11163,7 +9220,7 @@
           "src/main/java/net/mcreator/toamod/ToaSellable.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "ToaItemType",
@@ -11176,7 +9233,7 @@
           "src/main/java/net/mcreator/toamod/ToaItemType.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "ToaAbstractContainerRemovable",
@@ -11189,7 +9246,7 @@
           "src/main/java/net/mcreator/toamod/ToaAbstractContainerRemovable.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/BaseStructures"
     },
     {
       "name": "ToaEnchantmentHandler",
@@ -11202,7 +9259,7 @@
           "src/main/java/net/mcreator/toamod/ToaEnchantmentHandler.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/Handlers"
     },
     {
       "name": "ForgerEnchants",
@@ -11243,7 +9300,74 @@
           "src/main/java/net/mcreator/toamod/ToaSkillHandler.java"
         ]
       },
-      "path": "~/classes"
+      "path": "~/classes/Handlers"
+    },
+    {
+      "name": "ToaMob",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_mob",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaMob.java"
+        ]
+      },
+      "path": "~/classes/BaseStructures"
+    },
+    {
+      "name": "ToaMilestoneHandler",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_milestone_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaMilestoneHandler.java"
+        ]
+      },
+      "path": "~/classes/Handlers"
+    },
+    {
+      "name": "ToaMineable",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "toa_mineable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/ToaMineable.java"
+        ]
+      },
+      "path": "~/classes/BaseStructures"
+    },
+    {
+      "name": "SkillRewardGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "skill_reward_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/client/gui/SkillRewardGUIScreen.java",
+          "src/main/java/net/mcreator/toamod/world/inventory/SkillRewardGUIMenu.java"
+        ]
+      },
+      "path": "~/guis/PlayerProfile"
+    },
+    {
+      "name": "MilestoneRewardGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "milestone_reward_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/client/gui/MilestoneRewardGUIScreen.java",
+          "src/main/java/net/mcreator/toamod/world/inventory/MilestoneRewardGUIMenu.java"
+        ]
+      },
+      "path": "~/guis/PlayerProfile"
     }
   ],
   "variable_elements": [
@@ -11255,12 +9379,6 @@
     },
     {
       "name": "xp",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
-      "name": "neededxp",
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
@@ -11308,12 +9426,6 @@
       "value": "0.0"
     },
     {
-      "name": "skillAttackNeededXp",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "25.0"
-    },
-    {
       "name": "skillDefenseLvl",
       "type": "number",
       "scope": "player_persistent",
@@ -11324,12 +9436,6 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
-    },
-    {
-      "name": "skillDefenseNeededXp",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "25.0"
     },
     {
       "name": "skillMagicLvl",
@@ -11344,18 +9450,6 @@
       "value": "0.0"
     },
     {
-      "name": "skillMagicNeededXp",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
-      "name": "playerRecipes",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": "\"\""
-    },
-    {
       "name": "skillCookingLvl",
       "type": "number",
       "scope": "player_persistent",
@@ -11363,12 +9457,6 @@
     },
     {
       "name": "skillCookingXp",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "skillCookingNeededXp",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
@@ -11488,25 +9576,7 @@
       "value": "0.0"
     },
     {
-      "name": "miningMilestoneOresNeeded",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "20.0"
-    },
-    {
-      "name": "miningMilestoneProgress",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
-      "name": "minMilNextLvl",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "1.0"
-    },
-    {
-      "name": "MinMilestoneRewardsClaimed",
+      "name": "minMilestoneRewardsClaimed",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
@@ -11522,24 +9592,6 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
-    },
-    {
-      "name": "combatMilestoneKillsNeeded",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "30.0"
-    },
-    {
-      "name": "combatMilestoneProgress",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0.0"
-    },
-    {
-      "name": "comMilNextLvl",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "1.0"
     },
     {
       "name": "comMilestoneRewardsClaimed",
@@ -11639,54 +9691,6 @@
     },
     {
       "name": "IllfangRNGSelected",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": "\"\""
-    },
-    {
-      "name": "artefacts",
-      "type": "itemstack",
-      "scope": "player_persistent",
-      "value": "ItemStack.EMPTY"
-    },
-    {
-      "name": "plyRecWeapons",
-      "type": "itemstack",
-      "scope": "player_persistent",
-      "value": "ItemStack.EMPTY"
-    },
-    {
-      "name": "plyRecArmor",
-      "type": "itemstack",
-      "scope": "player_persistent",
-      "value": "ItemStack.EMPTY"
-    },
-    {
-      "name": "plyRecArtefacts",
-      "type": "itemstack",
-      "scope": "player_persistent",
-      "value": "ItemStack.EMPTY"
-    },
-    {
-      "name": "plyRecEnchants",
-      "type": "itemstack",
-      "scope": "player_persistent",
-      "value": "ItemStack.EMPTY"
-    },
-    {
-      "name": "plyRecMaterials",
-      "type": "itemstack",
-      "scope": "player_persistent",
-      "value": "ItemStack.EMPTY"
-    },
-    {
-      "name": "paramItem",
-      "type": "itemstack",
-      "scope": "player_persistent",
-      "value": "ItemStack.EMPTY"
-    },
-    {
-      "name": "openRecGui",
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
@@ -11811,7 +9815,6 @@
       "skill.magic.rewards.18": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
       "item.toamod.npc_miner_2_spawn_egg": "NPC Miner 2 Spawn Egg",
       "skill.magic.rewards.17": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
-      "item.toamod.player_recipes_item": "Player Recipes Item",
       "item_group.toamod.mobs": "Mobs",
       "skill.magic.rewards.16": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
       "skill.magic.rewards.15": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
@@ -11833,7 +9836,6 @@
       "block.toamod.blacksmith_table": "Blacksmith Table",
       "msg.enemy_immune": "§cThis entity is immune to any damage right now!§r",
       "stat.cd.description": "\u0027{\"text\":\"§7Bonus damage percent upon hitting critically.§r\"}\u0027",
-      "item.toamod.milestones_mining_item.description": "\u0027{\"text\":\"§7Mine any ore to progress towards§r\"}\u0027,\u0027{\"text\":\"§7your §bDwarfs Way§7 milestone§r\"}\u0027",
       "block.toamod.hard_stone": "Hard Stone",
       "gui.toamod.horse_color_change_gui.gray": "Gray main color",
       "skill.mining.rewards.16": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
@@ -11851,7 +9853,6 @@
       "biome.toamod.crystal_hallows": "Crystal Hallows",
       "gui.toamod.control_barrier_gui.label_required_bosses_defeated": "Required Bosses Defeated",
       "entity.toamod.npc_necrotic_knight": "§cNecrotic Knight§r",
-      "gui.toamod.combat_milestone_gui.label_varintegercommilnextlvl": "\u003cVAR:integer:comMilNextLvl\u003e",
       "entity.toamod.npc_priate_captain": "§9Pirate Captain§r",
       "rarity.prefix.3": "§5",
       "rarity.prefix.4": "§6",
@@ -11942,7 +9943,6 @@
       "entity.toamod.npc_female_6": "NPC Female 6",
       "mob.type.xedres": "Xedres, The Black Goblin",
       "entity.toamod.npc_female_8": "NPC Female 8",
-      "gui.toamod.mining_milestone_gui.label_claim_available_rewards": "Claim available rewards:",
       "item.toamod.hardened_iron_armor_boots": "§fHardened Iron Boots§r",
       "entity.toamod.npc_female_1": "NPC Female 1",
       "item.toamod.pristine_rune_fragment": "Rune Fragments",
@@ -11959,7 +9959,6 @@
       "entity.toamod.npc_foreign_merchant": "§dForeign Merchant§r",
       "artefacts.name": "Artefacts",
       "block.toamod.dec_grindstone_side": "Dec Grindstone Side",
-      "gui.toamod.mining_milestone_gui.label_mining_milestone": "Mining Milestone",
       "block.toamod.iron_ore": "Iron Ore",
       "key.toamod.key_profile": "TOA Profile",
       "entity.toamod.npc_mist_mage": "§5Mist Mage§r",
@@ -11978,10 +9977,8 @@
       "block.toamod.ore_respawn_stone": "Ore Respawn Stone",
       "item.toamod.jade_armor_leggings": "§bJade Leggings§r",
       "item.toamod.dragon_armor_chestplate": "§6Dragon Body§r",
-      "gui.toamod.mining_milestone_gui.label_varminingmilestoneprogress": "\u003cVAR:miningMilestoneProgress\u003e %",
       "item.toamod.npc_male_2_spawn_egg": "NPC Male 2 Spawn Egg",
       "item.toamod.cristal_sword": "§bCristal Sword§r",
-      "gui.toamod.mining_milestone_gui.label_varintegerminingmilestonelvl": "\u003cVAR:integer:miningMilestoneLvl\u003e",
       "item.toamod.pure_crystal": "§5Pure Crystal§r",
       "msg.current_bonus": "Current Bonus:",
       "item.toamod.illfangs_cutlass": "§5Illfangs Cutlass§r",
@@ -12003,10 +10000,8 @@
       "curios.identifier.bracelet": "Bracelet",
       "item.toamod.raw_ham": "§bRaw Ham§r",
       "item.toamod.raw_beef": "§aRaw Beef§r",
-      "gui.toamod.combat_milestone_gui.label_claim_available_rewards": "Claim available rewards:",
       "msg.click_select": "§eClick to select§r",
       "enchantment.toamod.ignite": "Ignite",
-      "gui.toamod.combat_milestone_gui.label_varintegercommilnextlvl_max": "\u003cVAR:integer:comMilNextLvl\u003e (max)",
       "entity.toamod.npc_necron": "§dNecron§r",
       "item.toamod.dragon_slayer": "§6Dragon Slayer§r",
       "entity.toamod.npc_golden_knight": "§6Golden Knight§r",
@@ -12021,7 +10016,6 @@
       "item.toamod.jade_armor_boots": "§bJade Boots§r ",
       "item.toamod.iron_ingot": "§aIron Ingot§r",
       "entity.toamod.npc_dungeon_master": "§cDungeon Master§r",
-      "gui.toamod.combat_milestone_gui.label_combat_milestone": "Combat Milestone",
       "item.toamod.jade_ingot": "§5Jade Ingot§r",
       "msg.rewards_unlocked": "Rewards Unlocked",
       "item.toamod.spicy_spiced_chilli": "§5Spicy Spiced Chilli§r",
@@ -12032,7 +10026,6 @@
       "biome.toamod.goblin_hideout": "Goblin Hideout",
       "item.toamod.npc_knight_4_spawn_egg": "NPC Knight 4 Spawn Egg",
       "item.toamod.flame_sword": "§5Flame Sword§r",
-      "gui.toamod.combat_milestone_gui.label_varintegercombatmilestonelvl": "\u003cVAR:integer:combatMilestoneLvl\u003e",
       "item.toamod.hardened_iron_sword": "§fHardened Iron Sword§r",
       "block.toamod.dec_crafting_table": "Dec Crafting Table",
       "gui.toamod.horse_upgrade_gui.button_change_pattern": "change pattern",
@@ -12049,7 +10042,6 @@
       "entity.toamod.npc_male_6": "NPC Male 6",
       "item.toamod.npc_phantom_spawn_egg": "§4§kPhantom§r Spawn Egg",
       "entity.toamod.npc_male_9": "NPC Male 9",
-      "gui.toamod.mining_milestone_gui.label_total_ores_mined_varintegert": "Total ores mined: \u003cVAR:integer:totalOresMined\u003e / \u003cVAR:integer:miningMilestoneOresNeeded\u003e",
       "entity.toamod.npc_male_3": "NPC Male 3",
       "entity.toamod.npc_male_4": "NPC Male 4",
       "entity.toamod.npc_male_1": "NPC Male 1",
@@ -12066,7 +10058,6 @@
       "skill.combat.rewards.2": "\u0027{\"text\":\"§8- §fIron Sword§7 recipe for Blacksmith Table§r\"}\u0027",
       "block.toamod.empheias_soul": "§6Empheias Soul§r",
       "entity.toamod.npc_warden_knight": "§4§kDMG§r§3 Warden Knight §r§4§kDMG§r",
-      "gui.toamod.mining_milestone_gui.label_varintegerminmilnextlvl_max": "\u003cVAR:integer:minMilNextLvl\u003e (max)",
       "enchantment.toamod.executing": "Executing",
       "item.toamod.rabbit_ragout": "§6Rabbit Ragout§r",
       "item.toamod.dragon_armor_helmet": "§6Dragon Helmet§r",
@@ -12082,7 +10073,6 @@
       "skill.cooking.rewards.8": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
       "stat.mp": "Magic Power",
       "skill.cooking.rewards.9": "\u0027{\"text\":\"§c(Cooming Soon)§r\"}\u0027",
-      "milestones.name": "Milestones",
       "stat.mf": "Magic Find",
       "artefact.wither.description": "\u0027{\"text\":\"§7Reduces the damage taken from any necromantic monster.§r\"}\u0027",
       "item.toamod.obsidian": "§6Obsidian§r",
@@ -12205,7 +10195,6 @@
       "item.toamod.lamb_plate": "§5Lamb Plate§r",
       "entity.toamod.npc_fairy_2": "NPC Fairy 2",
       "entity.toamod.npc_fairy_1": "NPC Fairy 1",
-      "gui.toamod.mining_milestone_gui.label_varintegerminmilnextlvl": "\u003cVAR:integer:minMilNextLvl\u003e",
       "block.toamod.control_barrier": "Control Barrier",
       "enchantment.toamod.powerful": "Powerful",
       "gui.toamod.control_barrier_gui.inputDefenseSLvl": "1",
@@ -12268,7 +10257,6 @@
       "stat.mr.description": "\u0027{\"text\":\"§7Reduces magical damage.§r\"}\u0027",
       "item.toamod.wood_armor_chestplate": "Wood Body",
       "item.toamod.npc_warden_knight_spawn_egg": "§4§kDMG§r§3 Warden Knight §r§4§kDMG§r Spawn Egg",
-      "gui.toamod.mining_milestone_gui.button_claim": "Claim",
       "block.toamod.cursed_obsidian": "Cursed Obsidian",
       "entity.toamod.npc_dwarf_1": "NPC Dwarf 1",
       "gui.toamod.horse_pattern_change_gui.white_stonkings": "White Stonkings",
@@ -12302,7 +10290,6 @@
       "effect.toamod.freezing_cold": "Freezing Cold",
       "entity.toamod.npc_dwarf_7": "NPC Dwarf 7",
       "skill.mining.rewards.6": "\u0027{\"text\":\"§8- §aJade Armor§7 recipe for Blacksmith Table §c(Cooming Soon)§r\"}\u0027,\u0027{\"text\":\"§8- §dProtection II§7 recipe for Magic Crafter§r\"}\u0027,\u0027{\"text\":\"§8- §dMagic Shield II§7 recipe for Magic Crafter§r\"}\u0027",
-      "item.toamod.milestones_item.description": "\u0027{\"text\":\"§7Complete different milestones by mining ores,§r\"}\u0027,\u0027{\"text\":\"§7killing monsters and other tasks to get §6Special Rewards§r\"}\u0027",
       "entity.toamod.npc_dwarf_8": "NPC Dwarf 8",
       "skill.mining.rewards.5": "\u0027{\"text\":\"§8- §aBasic Shield Upgrade§7 recipe for Magic Crafter §c(Cooming Soon)§r\"}\u0027,\u0027{\"text\":\"§8- §dSpikes I§7 recipe for Magic Crafter§r\"}\u0027",
       "curios.identifier.back": "Back",
@@ -12319,7 +10306,6 @@
       "item.toamod.the_dark_blade": "§6The Dark Blade§r",
       "item.toamod.mythic_rune_scroll": "§cMythic Rune Scroll§r",
       "block.toamod.condensed_iron_block": "§3Condensed Iron Block§r",
-      "gui.toamod.combat_milestone_gui.button_claim": "Claim",
       "recipe.weapons.name": "Weapons",
       "skill.combat.name": "Combat",
       "enchantment.toamod.divine_gift": "Divine Gift",
@@ -12417,7 +10403,6 @@
       "stat.minf.description": "\u0027{\"text\":\"§7Increases the amount of drops you gain from ores.§r\"}\u0027",
       "item.toamod.npc_female_5_spawn_egg": "NPC Female 5 Spawn Egg",
       "block.toamod.condensed_gold_block": "§3Condensed Gold Block§r",
-      "gui.toamod.combat_milestone_gui.label_total_mobs_killed_varinteger": "Total mobs killed: \u003cVAR:integer:totalMobsKilled\u003e / \u003cVAR:integer:combatMilestoneKillsNeeded\u003e",
       "item.toamod.cristal_armor_leggings": "§bCristal Leggings§r",
       "entity.toamod.npc_merchant": "NPC Merchant",
       "gui.toamod.horse_upgrade_gui.button_empty": "^",
@@ -12433,7 +10418,6 @@
       "drop.rarity.extraordinary": "§6Extraordinary§r",
       "item.toamod.magic_dust": "§6Magic Dust§r",
       "location.goblin_outpost.name": "§3Goblin Outpost§r",
-      "gui.toamod.combat_milestone_gui.label_varcombatmilestoneprogress": "\u003cVAR:combatMilestoneProgress\u003e %",
       "item.toamod.cor": "§6Cor§r",
       "block.toamod.pesto_goblin_omlette": "§aPesto Goblin Omlette§r",
       "stat.max_mana": "Max Mana",
@@ -12456,7 +10440,6 @@
       "item.toamod.dark_red_dye": "Dark Red Dye",
       "gui.toamod.control_barrier_gui.chkAttackSkill": "Bound to Attack-Skill",
       "item.toamod.iron_armor_chestplate": "Iron Body",
-      "item.toamod.milestones_combat_item.description": "\u0027{\"text\":\"§7Kill any kind of mob to progress§r\"}\u0027,\u0027{\"text\":\"§7towards your §cFighter§7 milestone§r\"}\u0027",
       "enchantment.toamod.focus": "Focus",
       "item.toamod.gold_armor_leggings": "§aGold Leggings§r",
       "msg.stor_xp": "Stored XP",
@@ -12676,10 +10659,6 @@
                 "children": []
               }
             ]
-          },
-          {
-            "name": "MagicCrafter",
-            "children": []
           },
           {
             "name": "Artefacts",
@@ -12941,7 +10920,16 @@
       },
       {
         "name": "classes",
-        "children": []
+        "children": [
+          {
+            "name": "Handlers",
+            "children": []
+          },
+          {
+            "name": "BaseStructures",
+            "children": []
+          }
+        ]
       },
       {
         "name": "jei",

@@ -186,12 +186,6 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": false,
-          "onTakenFromSlot": {
-            "name": "OnPlayerProfileBackButtonClicked"
-          },
-          "onStackTransfer": {
-            "name": "OnPlayerProfileBackButtonClicked"
-          },
           "x": 204,
           "y": 90
         }

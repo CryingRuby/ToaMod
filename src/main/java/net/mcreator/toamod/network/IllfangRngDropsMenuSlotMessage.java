@@ -20,7 +20,6 @@ import net.mcreator.toamod.procedures.OnGoblinEggSpicesIllfangDropSelectedProced
 import net.mcreator.toamod.procedures.OnBossKeyTier3IllfangDropProcedure;
 import net.mcreator.toamod.procedures.OnBossKeyTier2IllfangDropSelectedProcedure;
 import net.mcreator.toamod.procedures.OnBossKeyTier1IllfangDropSelectedProcedure;
-import net.mcreator.toamod.procedures.OnBossCollectionBackButtonClickedProcedure;
 import net.mcreator.toamod.ToamodMod;
 
 import java.util.function.Supplier;
@@ -149,15 +148,6 @@ public class IllfangRngDropsMenuSlotMessage {
 			int amount = meta;
 
 			OnBossKeyTier1IllfangDropSelectedProcedure.execute(entity);
-		}
-		if (slot == 8 && changeType == 1) {
-
-			OnBossCollectionBackButtonClickedProcedure.execute(world, x, y, z, entity);
-		}
-		if (slot == 8 && changeType == 2) {
-			int amount = meta;
-
-			OnBossCollectionBackButtonClickedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

@@ -11,6 +11,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.ContainerLevelAccess;
@@ -18,17 +19,20 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.procedures.OnBlacksmithTableClosedProcedure;
-import net.mcreator.toamod.network.BlacksmithTableGuiSlotMessage;
+import net.mcreator.toamod.jei_recipes.BlacksmithTableTypeRecipe;
 import net.mcreator.toamod.init.ToamodModMenus;
 import net.mcreator.toamod.block.entity.BlacksmithTableBlockEntity;
-import net.mcreator.toamod.ToamodMod;
+import net.mcreator.toamod.CustomNbtHandler;
 
 import java.util.function.Supplier;
+import java.util.Optional;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -164,12 +168,14 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 		ItemStack itemstack = ItemStack.EMPTY;
 		Slot slot = (Slot) this.slots.get(index);
 		if (slot != null && slot.hasItem()) {
+			boolean quickCrafted = false;
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
 			if (index < 10) {
 				if (!this.moveItemStackTo(itemstack1, 10, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
+				quickCrafted = true;
 			} else if (!this.moveItemStackTo(itemstack1, 0, 10, false)) {
 				if (index < 10 + 27) {
 					if (!this.moveItemStackTo(itemstack1, 10 + 27, this.slots.size(), true))
@@ -186,7 +192,8 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 				slot.setChanged();
 			if (itemstack1.getCount() == itemstack.getCount())
 				return ItemStack.EMPTY;
-			slot.onTake(playerIn, itemstack1);
+			//if(!quickCrafted)
+			//slot.onTake(playerIn, itemstack1);
 		}
 		return itemstack;
 	}
@@ -273,15 +280,11 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 		OnBlacksmithTableClosedProcedure.execute(world, entity);
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
-				for (int j = 0; j < internal.getSlots(); ++j) {
-					if (j == 0)
-						continue;
+				for (int j = 1; j < internal.getSlots(); ++j) {
 					playerIn.drop(internal.extractItem(j, internal.getStackInSlot(j).getCount(), false), false);
 				}
 			} else {
-				for (int i = 0; i < internal.getSlots(); ++i) {
-					if (i == 0)
-						continue;
+				for (int i = 1; i < internal.getSlots(); ++i) {
 					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
 				}
 			}
@@ -290,20 +293,150 @@ public class BlacksmithTableGuiMenu extends AbstractContainerMenu implements Sup
 
 	private void slotChanged(int slotid, int ctype, int meta) {
 		System.out.println("BlacksmithTableGUIMenu - slotChanged -> try call refreshRecipe");
-		if (this.world != null) {
-			if (this.world.isClientSide()) {
-				ToamodMod.PACKET_HANDLER.sendToServer(new BlacksmithTableGuiSlotMessage(slotid, x, y, z, ctype, meta));
-			} else {
-				if (boundBlockEntity instanceof BlacksmithTableBlockEntity bT) {
-					System.out.println("block at x=" + x + ", y=" + y + ", z=" + z + " has BlacksmithTableBlockEntity - call refreshRecipe in bT");
-					if (slotid == 0 && ctype == 1 || ctype == 2) {
-						System.out.println("extract Input-item due to crafting");
-						bT.extractItemsFromCrafting();
-					}
-					bT.refreshRecipe();
-				}
+		if (this.world.isClientSide())
+			return;
+		if (boundBlockEntity instanceof BlacksmithTableBlockEntity bT) {
+			System.out.println("block at x=" + x + ", y=" + y + ", z=" + z + " has BlacksmithTableBlockEntity - call refreshRecipe in bT");
+			if (slotid == 0) {
+				System.out.println("	Slot is 0 -> extract Input-item due to crafting");
+				craftItems(ctype == 2);
 			}
-			//BlacksmithTableGuiSlotMessage.handleSlotAction(entity, slotid, ctype, meta, x, y, z);
+			refreshRecipe();
+		}
+	}
+
+	public boolean hasRecipe(Optional<BlacksmithTableTypeRecipe> recipe) {
+		return !recipe.isEmpty();
+	}
+
+	public void refreshRecipe() {
+		if (this.world.isClientSide())
+			return;
+		System.out.println("BT-GUIMenu - refreshRecipe called");
+		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
+		if (!hasRecipe(recipe)) {
+			System.out.println("BT-GUIMenu - has no valid recipe");
+			if (!this.customSlots.get(0).getItem().isEmpty())
+				this.customSlots.get(0).set(ItemStack.EMPTY);
+			return;
+		}
+		System.out.println("Valid recipe found -> set Item in output slot");
+		ItemStack result = recipe.get().getResultItem();
+		if (recipe.get().getHasNbt()) {
+			System.out.println("Recipe has Nbt -> call methods");
+			CustomNbtHandler.applyItemBaseStats(result);
+			if (recipe.get().getCopyNbtFromSlot() > 0) {
+				System.out.println("Recipe has NbtCopy -> call copyUpgrades");
+				CustomNbtHandler.copyUpgrades(this.customSlots.get(recipe.get().getCopyNbtFromSlot()).getItem(), result);
+			}
+			CustomNbtHandler.setLoreOfItem(result);
+		}
+		this.customSlots.get(0).set(result);
+	}
+
+	private Optional<BlacksmithTableTypeRecipe> getCurrentRecipe() {
+		SimpleContainer inventory = new SimpleContainer(this.customSlots.size());
+		for (int i = 1; i < customSlots.size(); i++) {
+			System.out.println("	found Item in slot: " + i + " : " + customSlots.get(i).getItem().getItem());
+			inventory.setItem(i, customSlots.get(i).getItem());
+		}
+		return world.getRecipeManager().getRecipeFor(BlacksmithTableTypeRecipe.Type.INSTANCE, inventory, world);
+	}
+
+	private void craftItems(boolean multiCrafted) {
+		if (multiCrafted) {
+			//variable maxCraftable here for better code understanding (it's redundant)
+			//The -1 is because the shift+click it selfs adds the result item with base Count 1 times to the inv
+			int maxCraftable = getMaxCraftableAmount() - 1;
+			int actualItemAmountCrafted = maxCraftable;
+			ItemStack resultItem = getCurrentRecipe().get().getResultItem();
+			int completeItemCount = maxCraftable * resultItem.getCount();
+			System.out.println("		maxCraftable: " + maxCraftable + ", base resultItemCount: " + resultItem.getCount());
+			ItemStack setItem;
+			while (completeItemCount > 0) {
+				System.out.println("		CompleteItemCount: " + completeItemCount);
+				setItem = resultItem.copy();
+				System.out.println("			Result-Craft Amount: min{~maxStackSize: " + (resultItem.getMaxStackSize() - resultItem.getMaxStackSize() % resultItem.getCount()) + "; mit maxStackSize: " + resultItem.getMaxStackSize() + " und Abzug: "
+						+ (resultItem.getMaxStackSize() % resultItem.getCount()) + " | completeItemCount: " + completeItemCount + " }");
+				setItem.setCount(Math.min(resultItem.getMaxStackSize(), completeItemCount));
+				int tempItemCount = setItem.getCount();
+				System.out.println("			tempItemCount: " + tempItemCount);
+				System.out.println("			moveItems to inv; setItemCount: " + setItem.getCount());
+				moveItemStackTo(setItem, 10, this.slots.size(), true);
+				System.out.println("			setItem: " + setItem.getItem() + ", Count: " + setItem.getCount());
+				//if not maximum possible crafted could be added to inv, calc actual amount the recipe is crafted
+				if (!setItem.isEmpty()) {
+					System.out.println("!!!!		Stacks couldn't be all added -> reduce actualAmountsCrafted. tempItemCount: " + tempItemCount + ", setItemCount: " + setItem.getCount() + "; actualItemAmountCrafted: "
+							+ (maxCraftable - (completeItemCount - tempItemCount + setItem.getCount()) / resultItem.getCount()));
+					actualItemAmountCrafted = maxCraftable - (int) Math.ceil((completeItemCount - tempItemCount + setItem.getCount()) / (double) resultItem.getCount());
+					removeExcessiveItems(resultItem, resultItem.getMaxStackSize() % resultItem.getCount());
+
+					/**
+					 * PROBLEM - Imagine: 
+					 * 
+					 * ResultItem hat Count 3. Im Inv ist 1 Slot frei. Es sollen 100 oder so result items gecraftet werden.
+					 * der erste Stack (64x) wird geplaced alles easy. Dann zweiter Stack wir nichts platziert, also 36 werden abgezogen.
+					 * ABER warte: 64 / 3 = 21.333 ??? -> Naja 64 ist halt kein Vielfaches vom Count des Result item.
+					 * 
+					 * 2 Lösungen (Präventiv oder im Nachhinein):
+					 * 	- Beim Count setzten nicht .getMaxStackSize(), sondern davon halt was abziehen, sodass vielfaches von Result-Count   (completeItemCount ist dann immer Vielfaches von Result-Count; fun-fact: Am Anfang ist das schon jetzt so)
+					 * 	- Wenn nicht alles ins inv passt, dann vorm abbrechen (also hier) die überschüssigen Items wieder aus inv nehmen. Idk maybe bissl scheiße, weil wieder inv durchgehen.
+					 */
+					break;
+				}
+				completeItemCount -= tempItemCount;
+				System.out.println("			reduce cICount to " + completeItemCount);
+			}
+			System.out.println("		All possible items placed in inv -> extracting input-items for " + actualItemAmountCrafted + "x (+1) the recipe");
+			//+1 to extract items from shift+click itself
+			extractItemsFromCrafting(actualItemAmountCrafted + 1);
+		} else
+			extractItemsFromCrafting(1);
+	}
+
+	private void removeExcessiveItems(ItemStack matchItem, int amount){
+		if(amount <= 0)
+			return;
+			
+		Inventory inv = entity.getInventory();
+		for (int i = 0; i < inv.items.size(); i++) {
+			if (inv.items.get(i).isEmpty())
+				continue;
+			ItemStack item = inv.items.get(i);
+			if (ItemStack.isSameItemSameTags(item, matchItem)) {
+				System.out.println("		item has delete nbt tag true -> clear");
+				item.shrink(amount);
+				entity.containerMenu.broadcastChanges();
+				return;
+			}
+		}
+
+	}
+
+	private int getMaxCraftableAmount() {
+		Optional<BlacksmithTableTypeRecipe> recipe = getCurrentRecipe();
+		if (!hasRecipe(recipe))
+			return 0;
+		//if valid recipe is in BT checks how often it could be crafted
+		/**the max is 64 because inputs have to be at least 1*/
+		int maxCraftAmount = 64;
+		NonNullList<Ingredient> recipeIngr = recipe.get().getIngredients();
+		for (int i = 0; i < recipeIngr.size(); i++) {
+			if (recipeIngr.get(i).isEmpty())
+				continue;
+			//Could be done by simply checking the count of the item in Slot. BUT for future I probably will change recipes that the inputs are able to have different counts than 1
+			int tempMaxCraftable = this.customSlots.get(i + 1).getItem().getCount() / recipeIngr.get(i).getItems()[0].getCount();
+			if (tempMaxCraftable < maxCraftAmount)
+				maxCraftAmount = tempMaxCraftable;
+		}
+		return maxCraftAmount;
+	}
+
+	private void extractItemsFromCrafting(int craftAmount) {
+		if (craftAmount < 1)
+			return;
+		for (int i = 1; i < customSlots.size(); i++) {
+			this.customSlots.get(i).getItem().shrink(1 * craftAmount);
 		}
 	}
 

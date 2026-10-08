@@ -12,9 +12,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import java.lang.reflect.Constructor;
-
 import javax.annotation.Nullable;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Constructor;
 
 import io.netty.buffer.Unpooled;
 
@@ -73,8 +74,7 @@ public abstract class ToaAbstractContainerRemovable extends AbstractContainerMen
 	public void clearIllegalVItems(Player entity) {
 		//When called in click event illegal item can only be on either the carried slot or inventory
 		if (!clearIllegalCarried())
-			;
-		clearIllegalFromInv(entity);
+			clearIllegalFromInv(entity);
 	}
 
 	/**
@@ -132,9 +132,9 @@ public abstract class ToaAbstractContainerRemovable extends AbstractContainerMen
 	 * 
 	 * @return the MenuProvider with given displayName and Menu-type (clazz)
 	 */
-	protected final MenuProvider createMenuToOpen(String displayName, BlockPos bPos, Class<?> clazz) {
+	protected final <T extends AbstractContainerMenu> MenuProvider createMenuToOpen(String displayName, BlockPos bPos, Class<T> menuClass, Object... addiParaValues) {
 		try {
-			Constructor<?> constr = clazz.getConstructor(int.class, Inventory.class, FriendlyByteBuf.class);
+			Constructor<T> constr = menuClass.getDeclaredConstructor(getConstrParams(addiParaValues));
 			MenuProvider menu = new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
@@ -144,9 +144,9 @@ public abstract class ToaAbstractContainerRemovable extends AbstractContainerMen
 				@Override
 				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
 					try {
-						return (AbstractContainerMenu) constr.newInstance(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(bPos));
+						return constr.newInstance(getConstrValues(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(bPos), addiParaValues));
 					} catch (Exception e) {
-						e.printStackTrace();
+						((InvocationTargetException) e).printStackTrace();
 						return null;
 					}
 				}
@@ -158,32 +158,29 @@ public abstract class ToaAbstractContainerRemovable extends AbstractContainerMen
 		}
 	}
 
-	/**
-	 * Same as createMenuToOpen but with transferItem passed to menu
-	 */
-	protected final MenuProvider createMenuWithItem(String displayName, BlockPos bPos, Class<?> clazz, ItemStack transferItem) {
-		try {
-			Constructor<?> constr = clazz.getConstructor(int.class, Inventory.class, FriendlyByteBuf.class, ItemStack.class);
-			MenuProvider menu = new MenuProvider() {
-				@Override
-				public Component getDisplayName() {
-					return Component.literal(displayName);
-				}
+	protected final <T extends AbstractContainerMenu> MenuProvider createMenuToOpen(String displayName, BlockPos bPos, Class<T> clazz) {
+		return createMenuToOpen(displayName, bPos, clazz, new Object[]{});
+	}
 
-				@Override
-				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					try {
-						return (AbstractContainerMenu) constr.newInstance(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(bPos), transferItem);
-					} catch (Exception e) {
-						e.printStackTrace();
-						return null;
-					}
-				}
-			};
-			return menu;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
+	private final Class<?>[] getConstrParams(Object[] addiParaValues) {
+		Class<?>[] constrParams = new Class<?>[addiParaValues.length + 3];
+		constrParams[0] = int.class;
+		constrParams[1] = Inventory.class;
+		constrParams[2] = FriendlyByteBuf.class;
+		for (int i = 0; i < addiParaValues.length; i++) {
+			constrParams[i + 3] = addiParaValues[i].getClass();
 		}
+		return constrParams;
+	}
+
+	private final Object[] getConstrValues(Integer id, Inventory inv, FriendlyByteBuf extraData, Object[] addiParaValues) {
+		Object[] constrValues = new Object[addiParaValues.length + 3];
+		constrValues[0] = id;
+		constrValues[1] = inv;
+		constrValues[2] = extraData;
+		for (int i = 0; i < addiParaValues.length; i++) {
+			constrValues[i + 3] = addiParaValues[i];
+		}
+		return constrValues;
 	}
 }

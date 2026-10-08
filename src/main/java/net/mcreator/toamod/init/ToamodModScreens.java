@@ -12,14 +12,13 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.toamod.client.gui.SkillsMenuScreen;
+import net.mcreator.toamod.client.gui.SkillRewardGUIScreen;
 import net.mcreator.toamod.client.gui.PlayerStatsMenuScreen;
-import net.mcreator.toamod.client.gui.PlayerRecipesItemInventoryScreen;
 import net.mcreator.toamod.client.gui.PlayerProfileScreen;
 import net.mcreator.toamod.client.gui.MiningMilestoneGuiScreen;
-import net.mcreator.toamod.client.gui.MinSkillRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.MilestonesMenuScreen;
+import net.mcreator.toamod.client.gui.MilestoneRewardGUIScreen;
 import net.mcreator.toamod.client.gui.MagicCrafterGuiScreen;
-import net.mcreator.toamod.client.gui.MagSkillRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.IllfangRngDropsMenuScreen;
 import net.mcreator.toamod.client.gui.HorseUpgradeGuiScreen;
 import net.mcreator.toamod.client.gui.HorsePatternChangeGuiScreen;
@@ -32,14 +31,10 @@ import net.mcreator.toamod.client.gui.ForgerPrestigeScreen;
 import net.mcreator.toamod.client.gui.ForgerGuiScreen;
 import net.mcreator.toamod.client.gui.ForgerEnchantsScreen;
 import net.mcreator.toamod.client.gui.ForgerEnchantsApplyScreen;
-import net.mcreator.toamod.client.gui.FighterMilestoneRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.EnhancementTableGuiScreen;
-import net.mcreator.toamod.client.gui.DwarvesWayMilestoneRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.CookingTableGuiScreen;
-import net.mcreator.toamod.client.gui.CookSkillRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.ControlBarrierGuiScreen;
 import net.mcreator.toamod.client.gui.CombatMilestoneGuiScreen;
-import net.mcreator.toamod.client.gui.ComSkillRewardsMenuScreen;
 import net.mcreator.toamod.client.gui.CollectionMenuScreen;
 import net.mcreator.toamod.client.gui.ChestNormalGuiScreen;
 import net.mcreator.toamod.client.gui.ChestLegendaryGuiScreen;
@@ -70,15 +65,8 @@ public class ToamodModScreens {
 			MenuScreens.register(ToamodModMenus.SKILLS_MENU.get(), SkillsMenuScreen::new);
 			MenuScreens.register(ToamodModMenus.MILESTONES_MENU.get(), MilestonesMenuScreen::new);
 			MenuScreens.register(ToamodModMenus.COLLECTION_MENU.get(), CollectionMenuScreen::new);
-			MenuScreens.register(ToamodModMenus.COM_SKILL_REWARDS_MENU.get(), ComSkillRewardsMenuScreen::new);
-			MenuScreens.register(ToamodModMenus.MAG_SKILL_REWARDS_MENU.get(), MagSkillRewardsMenuScreen::new);
-			MenuScreens.register(ToamodModMenus.COOK_SKILL_REWARDS_MENU.get(), CookSkillRewardsMenuScreen::new);
-			MenuScreens.register(ToamodModMenus.FIGHTER_MILESTONE_REWARDS_MENU.get(), FighterMilestoneRewardsMenuScreen::new);
-			MenuScreens.register(ToamodModMenus.DWARVES_WAY_MILESTONE_REWARDS_MENU.get(), DwarvesWayMilestoneRewardsMenuScreen::new);
-			MenuScreens.register(ToamodModMenus.MIN_SKILL_REWARDS_MENU.get(), MinSkillRewardsMenuScreen::new);
 			MenuScreens.register(ToamodModMenus.PLAYER_STATS_MENU.get(), PlayerStatsMenuScreen::new);
 			MenuScreens.register(ToamodModMenus.ILLFANG_RNG_DROPS_MENU.get(), IllfangRngDropsMenuScreen::new);
-			MenuScreens.register(ToamodModMenus.PLAYER_RECIPES_ITEM_INVENTORY.get(), PlayerRecipesItemInventoryScreen::new);
 			MenuScreens.register(ToamodModMenus.FORGER_GUI.get(), ForgerGuiScreen::new);
 			MenuScreens.register(ToamodModMenus.FORGER_REFORGE.get(), ForgerReforgeScreen::new);
 			MenuScreens.register(ToamodModMenus.FORGER_RUNES.get(), ForgerRunesScreen::new);
@@ -87,6 +75,8 @@ public class ToamodModScreens {
 			MenuScreens.register(ToamodModMenus.FORGER_PRESTIGE.get(), ForgerPrestigeScreen::new);
 			MenuScreens.register(ToamodModMenus.FORGER_ENCHANTS.get(), ForgerEnchantsScreen::new);
 			MenuScreens.register(ToamodModMenus.FORGER_ENCHANTS_APPLY.get(), ForgerEnchantsApplyScreen::new);
+			MenuScreens.register(ToamodModMenus.SKILL_REWARD_GUI.get(), SkillRewardGUIScreen::new);
+			MenuScreens.register(ToamodModMenus.MILESTONE_REWARD_GUI.get(), MilestoneRewardGUIScreen::new);
 		});
 	}
 }
