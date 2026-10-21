@@ -14,7 +14,7 @@ import net.mcreator.toamod.init.ToamodModBlocks;
 
 public class IronOreDestroyedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
-		world.setBlock(BlockPos.containing(x, y, z), ToamodModBlocks.ORE_RESPAWN_STONE.get().defaultBlockState(), 3);
+		world.setBlock(BlockPos.containing(x, y, z), ToamodModBlocks.RESPAWN_ORE.get().defaultBlockState(), 3);
 		if (!world.isClientSide()) {
 			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);

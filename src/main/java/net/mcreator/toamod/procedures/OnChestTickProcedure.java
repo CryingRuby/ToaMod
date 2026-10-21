@@ -17,7 +17,7 @@ public class OnChestTickProcedure {
 			}
 		}.getValue(world, BlockPos.containing(x, y, z), "locked")) {
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.GLOW, x, y, z, 45, 0.5, 0.5, 0.5, 0);
+				_level.sendParticles(ParticleTypes.GLOW, (x + 0.5), (y - 0.5), (z + 0.5), 45, 0.5, 0.5, 0.5, 0);
 		}
 	}
 }

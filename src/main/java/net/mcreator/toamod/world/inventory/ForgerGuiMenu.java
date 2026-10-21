@@ -21,6 +21,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.nbt.Tag;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.CompoundTag;
@@ -28,7 +29,6 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.init.ToamodModMenus;
 import net.mcreator.toamod.init.ToamodModItems;
-import net.mcreator.toamod.init.ToamodModEnchantments;
 import net.mcreator.toamod.ToaReforgeable;
 import net.mcreator.toamod.ToaItemType;
 import net.mcreator.toamod.ToaEnchantmentHandler;
@@ -41,8 +41,6 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
-
-import io.netty.buffer.Unpooled;
 
 public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
@@ -161,7 +159,6 @@ public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supp
 		}
 		refreshVisualItems();
 		this.modifyItem = ((Slot) customSlots.get(0)).getItem();
-
 	}
 
 	public ForgerGuiMenu(int id, Inventory inv, FriendlyByteBuf extraData, ItemStack boundItem) {
@@ -285,18 +282,16 @@ public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supp
 		setExitedByESC(false);
 		entity.containerMenu.broadcastChanges();
 		BlockPos _bpos = BlockPos.containing(x, y, z);
-
 		//To-Do übersichtlicher machen -> look in PlayerProfileMenu/ superclass with createMenuToOpen(...)
 		MenuProvider menu = null;
-		
+
 		if (slotid == 1) {
 			menu = createMenuToOpen("ForgerReforge", _bpos, ForgerReforgeMenu.class, transferItem);
-		}
-		else if (slotid == 2) {
+		} else if (slotid == 2) {
 			menu = createMenuToOpen("ForgerEnchants", _bpos, ForgerEnchantsMenu.class, transferItem);
 		}
-		//Else if any slot with index 3 or higher is clicked
-		else{
+		//Else if any slot with index 3 or higher is clicked //dynamic slot number numbers
+		else {
 			switch (visualItemIds.get(slotid - 3)) {
 				case 0 :
 					//menu = createMenuToOpen<ForgerSuperiorEnchantsMenu>("ForgerEnchants", _bpos, ForgerSuperiorEnchantsMenu.class, transferItem);
@@ -304,14 +299,15 @@ public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supp
 					break;
 				case 1 :
 					//menu = createMenuToOpen<ForgerRunesMenu>("ForgerEnchants", _bpos, ForgerRunesMenu.class, transferItem);
-					
+
 					refreshVisualItems(); //for now until gui exists(and works)
 					break;
 				default :
 					break;
 			}
 		}
-		NetworkHooks.openScreen((ServerPlayer) entity, menu, _bpos);
+		if (menu != null)
+			NetworkHooks.openScreen((ServerPlayer) entity, menu, _bpos);
 	}
 
 	/**
@@ -373,15 +369,16 @@ public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supp
 				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("")));
 				lore.add(StringTag.valueOf(StringTag.quoteAndEscape("§cCOOMING SOON§r")));
 				setItem.setHoverName(Component.literal("§dSuperior Enchantments"));
-				setItem.getOrCreateTag().putBoolean("delete", true);
 				setItem.getOrCreateTag().getCompound("display").put("Lore", lore);
+				setItem.getOrCreateTag().putBoolean("delete", true);
 				((Slot) customSlots.get(setSlot)).set(setItem);
 				setSlot++;
 				visualItemIds.add(0);
 			}
 		}
+		
 		//inputItem has Rune-Slots
-		if (upgrades.contains("Runes") && !upgrades.getList("Runes", 10).isEmpty()) {
+		if (upgrades.contains("Runes") && !upgrades.getList("Runes", Tag.TAG_COMPOUND).isEmpty()) {
 			setItem = new ItemStack(ToamodModItems.RUNE.get());
 			lore = new ListTag();
 			setItem.setHoverName(Component.literal("§r§9Runes§r"));
@@ -411,7 +408,6 @@ public class ForgerGuiMenu extends ToaAbstractContainerRemovable implements Supp
 		if (playerIn instanceof ServerPlayer serverPlayer && serverPlayer.hasDisconnected()) {
 			playerIn.drop(internal.extractItem(0, internal.getStackInSlot(0).getCount(), false), false);
 		}
-
 		if (isExitedByESC()) {
 			playerIn.getInventory().placeItemBackInInventory(internal.extractItem(0, internal.getStackInSlot(nonVItemSlot).getCount(), false));
 			((Slot) customSlots.get(0)).set(ItemStack.EMPTY);

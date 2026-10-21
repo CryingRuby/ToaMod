@@ -489,7 +489,7 @@
       "name": "ChestNormal",
       "type": "block",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "chest_normal",
       "metadata": {
         "files": [
@@ -7948,28 +7948,7 @@
         "files": [
           "src/main/java/net/mcreator/toamod/procedures/OnEmpheiasSoulRightClickedProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/procedures/Other"
     },
@@ -9368,6 +9347,82 @@
         ]
       },
       "path": "~/guis/PlayerProfile"
+    },
+    {
+      "name": "ModifyMaxSouls",
+      "type": "command",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "modify_max_souls",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/command/ModifyMaxSoulsCommand.java"
+        ]
+      },
+      "path": "~/commands/EmpheiasSouls"
+    },
+    {
+      "name": "OnModifyMaxSoulsCmd",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "on_modify_max_souls_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/procedures/OnModifyMaxSoulsCmdProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/commands/EmpheiasSouls"
+    },
+    {
+      "name": "OnResetBlocksCmd",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "on_reset_blocks_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/procedures/OnResetBlocksCmdProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/resetGame"
+    },
+    {
+      "name": "BlockResetEvent",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "block_reset_event",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/BlockResetEvent.java"
+        ]
+      },
+      "path": "~/resetGame"
+    },
+    {
+      "name": "ResetBlocks",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reset_blocks",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/toamod/command/ResetBlocksCommand.java"
+        ]
+      },
+      "path": "~/resetGame"
     }
   ],
   "variable_elements": [
@@ -10536,7 +10591,12 @@
       },
       {
         "name": "commands",
-        "children": []
+        "children": [
+          {
+            "name": "EmpheiasSouls",
+            "children": []
+          }
+        ]
       },
       {
         "name": "procedures",
@@ -10933,6 +10993,10 @@
       },
       {
         "name": "jei",
+        "children": []
+      },
+      {
+        "name": "resetGame",
         "children": []
       }
     ]

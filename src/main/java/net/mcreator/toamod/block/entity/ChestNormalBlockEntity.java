@@ -2,6 +2,8 @@ package net.mcreator.toamod.block.entity;
 
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.Capability;
@@ -23,6 +25,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.toamod.world.inventory.ChestNormalGuiMenu;
 import net.mcreator.toamod.init.ToamodModBlockEntities;
+import net.mcreator.toamod.BlockResetEvent;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +33,7 @@ import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
 
+@Mod.EventBusSubscriber(modid = "toamod")
 public class ChestNormalBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
@@ -157,5 +161,11 @@ public class ChestNormalBlockEntity extends RandomizableContainerBlockEntity imp
 		super.setRemoved();
 		for (LazyOptional<? extends IItemHandler> handler : handlers)
 			handler.invalidate();
+	}
+
+	@SubscribeEvent
+	public void onBlockResetEvent(BlockResetEvent event) {
+		getPersistentData().putBoolean("locked", true);
+		System.out.println("chest relocked");
 	}
 }
